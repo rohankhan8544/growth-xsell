@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Process | GrowthXsell</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f6f3ec;
+        --warm: #efe9dd;
+        --dark: #16203a;
+        --accent: #e8792f;
+        --text: #1b1f2a;
+        --muted: #666f80;
+        --border: #e7e1d3;
+        --peach: #f6c6a6;
+        --mint: #bfe3d2;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, sans-serif;
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 600;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: auto;
+        padding: 0 32px;
+      }
+      nav {
+        padding: 20px 0;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+      }
+      .logo span {
+        color: var(--accent);
+        font-style: italic;
+      }
+      .links {
+        display: flex;
+        gap: 26px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .links a:hover {
+        color: var(--text);
+      }
+      .button {
+        display: inline-flex;
+        background: var(--dark);
+        color: #fff;
+        padding: 12px 22px;
+        border-radius: 100px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .hero {
+        padding: 76px 0 65px;
+        background:
+          radial-gradient(
+            ellipse 60% 80% at 15% 20%,
+            var(--peach),
+            transparent 65%
+          ),
+          radial-gradient(
+            ellipse 50% 80% at 90% 25%,
+            var(--mint),
+            transparent 65%
+          ),
+          var(--warm);
+      }
+      .eyebrow {
+        font:
+          11px "IBM Plex Mono",
+          monospace;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
+      .hero h1 {
+        font-size: clamp(38px, 6vw, 70px);
+        line-height: 1.05;
+        max-width: 820px;
+        margin-bottom: 20px;
+      }
+      .hero p {
+        max-width: 580px;
+        color: var(--muted);
+        font-size: 17px;
+      }
+      .section {
+        padding: 72px 0;
+      }
+      .section h2 {
+        font-size: clamp(28px, 4vw, 42px);
+        margin-bottom: 14px;
+      }
+      .intro {
+        max-width: 610px;
+        color: var(--muted);
+        margin-bottom: 38px;
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .step {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 28px;
+        min-height: 285px;
+      }
+      .step:nth-child(2) {
+        background: var(--dark);
+        color: #fff;
+      }
+      .step:nth-child(3) {
+        background: linear-gradient(135deg, var(--mint), #fff);
+      }
+      .num {
+        font:
+          12px "IBM Plex Mono",
+          monospace;
+        color: var(--accent);
+      }
+      .step h3 {
+        font-size: 25px;
+        margin: 48px 0 10px;
+      }
+      .step p {
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .step:nth-child(2) p {
+        color: #c3c9d5;
+      }
+      .checklist {
+        margin-top: 20px;
+        list-style: none;
+        display: grid;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .step:nth-child(2) .checklist {
+        color: #c3c9d5;
+      }
+      .band {
+        background: var(--dark);
+        color: #fff;
+      }
+      .band p {
+        color: #c3c9d5;
+        max-width: 570px;
+        margin-bottom: 22px;
+      }
+      .light {
+        background: #fff;
+        color: var(--dark);
+      }
+      footer {
+        padding: 25px 0;
+        color: #9198a6;
+        font:
+          11px "IBM Plex Mono",
+          monospace;
+      }
+      @media (max-width: 800px) {
+        .links {
+          display: none;
+        }
+        .steps {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          padding: 55px 0 45px;
+        }
+        .section {
+          padding: 50px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap nav">
+        <a class="logo" href="../index.html">Growth<span>X</span>sell</a>
+        <div class="links">
+          <a href="../solutions/solutions.html">Solutions</a
+          ><a href="../capabilities/capabilities.html">Capabilities</a
+          ><a href="process.html">Process</a
+          ><a href="../about/about.html">About</a
+          ><a href="../case studies/case-studies.html">Case Studies</a>
+        </div>
+        <a class="button" href="../index.html#contact">Free assessment</a>
+      </div>
+    </nav>
+    <header class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Our growth system</div>
+        <h1>Diagnose. Strategize. Execute. Optimize. Scale.</h1>
+        <p>
+          Every engagement starts with understanding the business before
+          deciding which Amazon levers to pull.
+        </p>
+      </div>
+    </header>
+    <main>
+      <section class="section">
+        <div class="wrap">
+          <h2>A clear path from insight to action.</h2>
+          <p class="intro">
+            The process stays focused on decisions. We find the bottleneck,
+            prioritize the moves, and build a feedback loop that keeps improving
+            the business.
+          </p>
+          <div class="steps">
+            <article class="step">
+              <div class="num">01 / DIAGNOSE</div>
+              <h3>Find the bottleneck.</h3>
+              <p>
+                Understand what is actually limiting growth before making more
+                changes.
+              </p>
+              <ul class="checklist">
+                <li>Account and product analysis</li>
+                <li>Market and competitor review</li>
+                <li>Customer and performance signals</li>
+              </ul>
+            </article>
+            <article class="step">
+              <div class="num">02 / STRATEGIZE</div>
+              <h3>Prioritize the moves.</h3>
+              <p>
+                Turn evidence into a practical plan with clear owners and
+                success metrics.
+              </p>
+              <ul class="checklist">
+                <li>Growth priorities</li>
+                <li>Channel and product plan</li>
+                <li>Clear success metrics</li>
+              </ul>
+            </article>
+            <article class="step">
+              <div class="num">03 / EXECUTE</div>
+              <h3>Build the loop.</h3>
+              <p>
+                Put the plan into motion, measure the response, and iterate with
+                discipline.
+              </p>
+              <ul class="checklist">
+                <li>PPC, SEO, and conversion</li>
+                <li>Catalog and operations</li>
+                <li>Reporting and iteration</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section band">
+        <div class="wrap">
+          <div class="eyebrow">Start with clarity</div>
+          <h2>You do not need another generic audit.</h2>
+          <p>
+            You need to know what is holding the business back and what to do
+            about it first.
+          </p>
+          <a class="button light" href="../index.html#contact"
+            >Book a free assessment &rarr;</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">&copy; 2026 GrowthXsell / Amazon Growth Partners</div>
+    </footer>
+  </body>
+</html>
