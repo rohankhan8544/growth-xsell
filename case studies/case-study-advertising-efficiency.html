@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advertising Efficiency Case Study | GrowthXsell</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f6f3ec;
+        --surface: #ffffff;
+        --surface-warm: #efe9dd;
+        --dark: #16203a;
+        --peach: #f6c6a6;
+        --mint: #bfe3d2;
+        --lav: #d6cdec;
+        --accent: #e8792f;
+        --text: #1b1f2a;
+        --text-muted: #666f80;
+        --text-dim: #9198a6;
+        --border: #e7e1d3;
+        --radius-md: 20px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      nav {
+        padding: 20px 0;
+      }
+      .nav-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+      }
+      .logo span {
+        color: var(--accent);
+        font-style: italic;
+      }
+      .nav-links {
+        display: flex;
+        gap: 26px;
+        color: var(--text-muted);
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .nav-links a:hover {
+        color: var(--text);
+      }
+      .pill-btn {
+        display: inline-flex;
+        background: var(--dark);
+        color: #fff;
+        padding: 12px 22px;
+        border-radius: 100px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .hero {
+        padding: 58px 0 34px;
+      }
+      .crumb {
+        color: var(--text-dim);
+        font:
+          12px "IBM Plex Mono",
+          monospace;
+        margin-bottom: 22px;
+      }
+      .crumb a:hover {
+        color: var(--accent);
+      }
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font:
+          12px "IBM Plex Mono",
+          monospace;
+        margin-bottom: 16px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 20px;
+        height: 1px;
+        background: var(--accent);
+      }
+      h1 {
+        max-width: 790px;
+        font-size: clamp(32px, 5vw, 58px);
+        line-height: 1.08;
+        margin-bottom: 18px;
+      }
+      .hero-copy {
+        max-width: 650px;
+        color: var(--text-muted);
+        font-size: 17px;
+      }
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 24px;
+      }
+      .tag {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 100px;
+        color: var(--text-muted);
+        font:
+          11px "IBM Plex Mono",
+          monospace;
+        padding: 7px 12px;
+      }
+      .snapshot {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin: 18px 0 54px;
+      }
+      .snapshot-card {
+        background: var(--dark);
+        border-radius: var(--radius-md);
+        padding: 26px;
+        color: #fff;
+      }
+      .snapshot-card:nth-child(2) {
+        background: var(--accent);
+      }
+      .snapshot-card:nth-child(3) {
+        background: #486b61;
+      }
+      .snapshot-value {
+        font:
+          700 clamp(28px, 4vw, 40px) "Plus Jakarta Sans",
+          sans-serif;
+      }
+      .snapshot-label {
+        color: #d6ddea;
+        font-size: 12px;
+        margin-top: 4px;
+      }
+      .snapshot-card:nth-child(2) .snapshot-label,
+      .snapshot-card:nth-child(3) .snapshot-label {
+        color: #fff;
+      }
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 22px;
+        align-items: start;
+      }
+      .story-card {
+        background: var(--surface-warm);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 30px;
+      }
+      .story-card h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+      .story-card p {
+        color: var(--text-muted);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .story-card p + p {
+        margin-top: 14px;
+      }
+      .chart {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 22px;
+      }
+      .chart-row {
+        display: grid;
+        grid-template-columns: 125px 1fr 72px;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 12px;
+      }
+      .chart-row:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+      .chart-row:first-child {
+        padding-top: 0;
+      }
+      .chart-label {
+        color: var(--text-muted);
+      }
+      .bar {
+        height: 9px;
+        background: var(--surface-warm);
+        border-radius: 100px;
+        overflow: hidden;
+      }
+      .bar span {
+        display: block;
+        height: 100%;
+        background: var(--accent);
+        border-radius: inherit;
+      }
+      .chart-value {
+        color: var(--dark);
+        font:
+          600 12px "IBM Plex Mono",
+          monospace;
+        text-align: right;
+      }
+      .section {
+        padding: 34px 0;
+      }
+      .section h2 {
+        font-size: clamp(25px, 3vw, 34px);
+        margin-bottom: 20px;
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .step {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 24px;
+      }
+      .step-number {
+        color: var(--accent);
+        font:
+          12px "IBM Plex Mono",
+          monospace;
+        margin-bottom: 18px;
+      }
+      .step h3 {
+        font-size: 17px;
+        margin-bottom: 8px;
+      }
+      .step p {
+        color: var(--text-muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      .cta {
+        margin: 34px 0 48px;
+        padding: 42px 30px;
+        border-radius: var(--radius-md);
+        text-align: center;
+        background: linear-gradient(135deg, var(--peach), var(--mint));
+      }
+      .cta h2 {
+        font-size: clamp(24px, 3vw, 34px);
+        margin-bottom: 10px;
+      }
+      .cta p {
+        color: var(--text-muted);
+        margin: 0 auto 22px;
+        max-width: 470px;
+      }
+      footer {
+        padding: 22px 0;
+        color: var(--text-dim);
+        font:
+          12px "IBM Plex Mono",
+          monospace;
+      }
+      @media (max-width: 800px) {
+        .nav-links {
+          display: none;
+        }
+        .nav-inner {
+          padding: 0 20px;
+        }
+        .wrap {
+          padding: 0 20px;
+        }
+        .snapshot,
+        .story-grid,
+        .steps {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          padding-top: 36px;
+        }
+      }
+      @media (max-width: 520px) {
+        .snapshot-card,
+        .story-card,
+        .step {
+          padding: 22px;
+        }
+        .chart-row {
+          grid-template-columns: 105px 1fr 60px;
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a href="../index.html" class="logo">Growth<span>X</span>sell</a>
+        <div class="nav-links">
+          <a href="../index.html#solutions">Solutions</a>
+          <a href="../index.html#capabilities">Capabilities</a>
+          <a href="case-studies.html">Case Studies</a>
+          <a href="../index.html#story">About</a>
+        </div>
+        <a href="../index.html#contact" class="pill-btn">Free assessment</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <div class="crumb">
+            <a href="case-studies.html">Case Studies</a> / Advertising
+            Efficiency
+          </div>
+          <div class="eyebrow">Advertising efficiency · Pet care</div>
+          <h1>Less wasted spend. More profitable demand.</h1>
+          <p class="hero-copy">
+            How we helped a pet-care brand cut its advertising spend by a third
+            while holding sales steady, then reinvested the savings into
+            healthier growth.
+          </p>
+          <div class="hero-meta">
+            <span class="tag">Amazon PPC</span>
+            <span class="tag">ACoS reduction</span>
+            <span class="tag">90-day engagement</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="snapshot">
+            <div class="snapshot-card">
+              <div class="snapshot-value">1.8X &rarr; 2.9X</div>
+              <div class="snapshot-label">ROAS in 90 days</div>
+            </div>
+            <div class="snapshot-card">
+              <div class="snapshot-value">55% &rarr; 34%</div>
+              <div class="snapshot-label">ACoS</div>
+            </div>
+            <div class="snapshot-card">
+              <div class="snapshot-value">$14K &rarr; $9K</div>
+              <div class="snapshot-label">Monthly ad spend</div>
+            </div>
+          </div>
+          <div class="story-grid">
+            <article class="story-card">
+              <h2>The situation</h2>
+              <p>
+                The brand was generating demand, but its advertising account was
+                paying too much to capture it. Broad targeting, duplicated
+                search terms, and weak budget rules made performance look busy
+                without making it more efficient.
+              </p>
+              <p>
+                Our first move was not to spend more. It was to separate
+                profitable demand from expensive noise and give each campaign a
+                job it could be measured against.
+              </p>
+            </article>
+            <article class="story-card">
+              <h2>What changed</h2>
+              <div class="chart">
+                <div class="chart-row">
+                  <span class="chart-label">ROAS</span
+                  ><span class="bar"><span style="width: 78%"></span></span
+                  ><span class="chart-value">2.9X</span>
+                </div>
+                <div class="chart-row">
+                  <span class="chart-label">ACoS</span
+                  ><span class="bar"><span style="width: 62%"></span></span
+                  ><span class="chart-value">34%</span>
+                </div>
+                <div class="chart-row">
+                  <span class="chart-label">Sales</span
+                  ><span class="bar"><span style="width: 82%"></span></span
+                  ><span class="chart-value">$27K</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <h2>The work behind the result</h2>
+          <div class="steps">
+            <article class="step">
+              <div class="step-number">01 / FIND THE LEAK</div>
+              <h3>Rebuilt the account view</h3>
+              <p>
+                We grouped campaigns by product economics, intent, and role so
+                spend could be judged against contribution rather than clicks
+                alone.
+              </p>
+            </article>
+            <article class="step">
+              <div class="step-number">02 / PROTECT EFFICIENCY</div>
+              <h3>Moved budget toward proof</h3>
+              <p>
+                Winning search terms received cleaner budgets while weak
+                placements and overlapping targets were reduced or removed.
+              </p>
+            </article>
+            <article class="step">
+              <div class="step-number">03 / REINVEST WITH INTENT</div>
+              <h3>Turned savings into growth</h3>
+              <p>
+                Once efficiency stabilized, the recovered budget supported the
+                products and audiences with the clearest path to incremental
+                sales.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <div class="cta">
+          <h2>Make your ad spend work harder.</h2>
+          <p>
+            Get a clear view of where your Amazon advertising is creating growth
+            and where it is quietly eroding margin.
+          </p>
+          <a href="../index.html#contact" class="pill-btn"
+            >Get a free assessment &rarr;</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span
+          >&copy; 2025 GrowthXsell &middot; Built for brands that want healthier
+          growth.</span
+        >
+      </div>
+    </footer>
+  </body>
+</html>
