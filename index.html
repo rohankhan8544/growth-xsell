@@ -1522,8 +1522,14 @@
         gap: 8px;
       }
       .cs-select {
+        position: relative;
         width: min(100%, 420px);
-        appearance: none;
+      }
+      .cs-select-trigger {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
         font-family: "Inter", sans-serif;
         font-size: 13px;
         font-weight: 500;
@@ -1533,14 +1539,76 @@
         border-radius: var(--radius-sm);
         padding: 11px 13px;
         cursor: pointer;
+        text-align: left;
+        transition:
+          border-color 0.15s ease,
+          box-shadow 0.15s ease;
       }
-      .cs-select:hover,
-      .cs-select:focus {
+      .cs-select-trigger:hover,
+      .cs-select-trigger[aria-expanded="true"] {
         border-color: var(--accent);
+        box-shadow: 0 8px 20px -14px rgba(22, 32, 58, 0.5);
       }
-      .cs-select:focus-visible {
+      .cs-select-trigger:focus-visible {
         outline: 2px solid var(--accent);
         outline-offset: 2px;
+      }
+      .cs-select-chevron {
+        color: var(--accent);
+        font-size: 15px;
+        line-height: 1;
+        transition: transform 0.15s ease;
+      }
+      .cs-select-trigger[aria-expanded="true"] .cs-select-chevron {
+        transform: rotate(180deg);
+      }
+      .cs-select-menu {
+        position: absolute;
+        top: calc(100% + 7px);
+        left: 0;
+        right: 0;
+        z-index: 20;
+        display: none;
+        padding: 7px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        box-shadow: 0 18px 35px -16px rgba(22, 32, 58, 0.3);
+      }
+      .cs-select-menu.open {
+        display: grid;
+        gap: 2px;
+        animation: filter-menu-in 0.15s ease-out;
+      }
+      .cs-select-option {
+        display: block;
+        width: 100%;
+        border: 0;
+        border-radius: 8px;
+        padding: 9px 10px;
+        background: transparent;
+        color: var(--text-muted);
+        font: 500 12.5px "Inter", sans-serif;
+        text-align: left;
+        cursor: pointer;
+      }
+      .cs-select-option:hover,
+      .cs-select-option[aria-selected="true"] {
+        background: var(--surface-warm);
+        color: var(--dark);
+      }
+      .cs-select-option[aria-selected="true"] {
+        box-shadow: inset 3px 0 var(--accent);
+      }
+      @keyframes filter-menu-in {
+        from {
+          opacity: 0;
+          transform: translateY(-4px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       .cs-chip {
         display: inline-flex;
@@ -2199,19 +2267,36 @@
         <div class="cs-filter">
           <div class="cs-filter-group">
             <div class="cs-filter-label">What are you trying to solve?</div>
-            <select class="cs-select" aria-label="Filter by challenge">
-              <option value="">Select a challenge</option>
-              <option value="scale-revenue" data-first="revenue-growth">Scale revenue</option>
-              <option value="increase-profit" data-first="profit-turnaround">Increase profit</option>
-              <option value="reduce-acos" data-first="advertising-efficiency">Reduce ACoS</option>
-              <option value="improve-roas" data-first="advertising-efficiency">Improve ROAS</option>
-              <option value="organic-rankings" data-first="organic-ranking">Improve organic rankings</option>
-              <option value="conversion-rate" data-first="conversion-growth">Increase conversion rate</option>
-              <option value="listings-creatives" data-first="conversion-growth">Improve listings &amp; creatives</option>
-              <option value="launch" data-first="product-launch">Launch a new product</option>
-              <option value="market-share" data-first="revenue-growth">Defend / grow market share</option>
-              <option value="fix-account" data-first="account-rescue">Fix an underperforming account</option>
-            </select>
+            <div class="cs-select">
+              <button
+                type="button"
+                class="cs-select-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-controls="challenge-options"
+              >
+                <span class="cs-select-value">Select a challenge</span>
+                <span class="cs-select-chevron" aria-hidden="true">⌄</span>
+              </button>
+              <div
+                id="challenge-options"
+                class="cs-select-menu"
+                role="listbox"
+                aria-label="Filter by challenge"
+              >
+                <button type="button" class="cs-select-option" data-challenge="" data-label="Select a challenge" aria-selected="true">Select a challenge</button>
+                <button type="button" class="cs-select-option" data-challenge="scale-revenue" data-first="revenue-growth" data-label="Scale revenue" aria-selected="false">Scale revenue</button>
+                <button type="button" class="cs-select-option" data-challenge="increase-profit" data-first="profit-turnaround" data-label="Increase profit" aria-selected="false">Increase profit</button>
+                <button type="button" class="cs-select-option" data-challenge="reduce-acos" data-first="advertising-efficiency" data-label="Reduce ACoS" aria-selected="false">Reduce ACoS</button>
+                <button type="button" class="cs-select-option" data-challenge="improve-roas" data-first="advertising-efficiency" data-label="Improve ROAS" aria-selected="false">Improve ROAS</button>
+                <button type="button" class="cs-select-option" data-challenge="organic-rankings" data-first="organic-ranking" data-label="Improve organic rankings" aria-selected="false">Improve organic rankings</button>
+                <button type="button" class="cs-select-option" data-challenge="conversion-rate" data-first="conversion-growth" data-label="Increase conversion rate" aria-selected="false">Increase conversion rate</button>
+                <button type="button" class="cs-select-option" data-challenge="listings-creatives" data-first="conversion-growth" data-label="Improve listings &amp; creatives" aria-selected="false">Improve listings &amp; creatives</button>
+                <button type="button" class="cs-select-option" data-challenge="launch" data-first="product-launch" data-label="Launch a new product" aria-selected="false">Launch a new product</button>
+                <button type="button" class="cs-select-option" data-challenge="market-share" data-first="revenue-growth" data-label="Defend / grow market share" aria-selected="false">Defend / grow market share</button>
+                <button type="button" class="cs-select-option" data-challenge="fix-account" data-first="account-rescue" data-label="Fix an underperforming account" aria-selected="false">Fix an underperforming account</button>
+              </div>
+            </div>
           </div>
           <div class="cs-filter-group">
             <div class="cs-filter-label">Or filter by service</div>
@@ -2891,6 +2976,11 @@
           root.querySelectorAll(".cs-chip[data-service]"),
         );
         var challengeSelect = root.querySelector(".cs-select");
+        var challengeTrigger = root.querySelector(".cs-select-trigger");
+        var challengeMenu = root.querySelector(".cs-select-menu");
+        var challengeOptions = Array.prototype.slice.call(
+          root.querySelectorAll(".cs-select-option"),
+        );
         var status = root.querySelector(".cs-filter-status");
         var clearBtn = root.querySelector(".cs-filter-clear");
         var empty = document.querySelector(".cs-empty");
@@ -2915,9 +3005,9 @@
         }
         function chipFor(group, key) {
           if (group === "challenge" && challengeSelect) {
-            return Array.prototype.slice.call(challengeSelect.options).filter(
+            return challengeOptions.filter(
               function (option) {
-                return option.value === key;
+                return option.getAttribute("data-challenge") === key;
               },
             )[0];
           }
@@ -2972,7 +3062,19 @@
             c.classList.toggle("is-active", on);
             c.setAttribute("aria-pressed", on ? "true" : "false");
           });
-          if (challengeSelect) challengeSelect.value = state.challenge || "";
+          if (challengeSelect) {
+            var selectedChallenge = chipFor("challenge", state.challenge || "");
+            challengeSelect.querySelector(".cs-select-value").textContent =
+              selectedChallenge
+                ? selectedChallenge.getAttribute("data-label")
+                : "Select a challenge";
+            challengeOptions.forEach(function (option) {
+              option.setAttribute(
+                "aria-selected",
+                option === selectedChallenge ? "true" : "false",
+              );
+            });
+          }
           if (clearBtn) clearBtn.hidden = !active;
 
           var what = [label("challenge"), label("service")]
@@ -3039,10 +3141,36 @@
             render();
           });
         });
-        if (challengeSelect) {
-          challengeSelect.addEventListener("change", function () {
-            state.challenge = challengeSelect.value || null;
-            render();
+        function closeChallengeMenu() {
+          if (!challengeMenu || !challengeTrigger) return;
+          challengeMenu.classList.remove("open");
+          challengeTrigger.setAttribute("aria-expanded", "false");
+        }
+        if (challengeSelect && challengeTrigger && challengeMenu) {
+          challengeTrigger.addEventListener("click", function () {
+            var open = challengeMenu.classList.toggle("open");
+            challengeTrigger.setAttribute("aria-expanded", String(open));
+          });
+          challengeTrigger.addEventListener("keydown", function (event) {
+            if (event.key === "ArrowDown" || event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              challengeMenu.classList.add("open");
+              challengeTrigger.setAttribute("aria-expanded", "true");
+              challengeOptions[0].focus();
+            }
+          });
+          challengeOptions.forEach(function (option) {
+            option.addEventListener("click", function () {
+              state.challenge = option.getAttribute("data-challenge") || null;
+              closeChallengeMenu();
+              render();
+            });
+          });
+          document.addEventListener("click", function (event) {
+            if (!challengeSelect.contains(event.target)) closeChallengeMenu();
+          });
+          document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") closeChallengeMenu();
           });
         }
         if (clearBtn) {
