@@ -1,494 +1,2292 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advertising Efficiency Case Study | GrowthXsell</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Toys &amp; Games Amazon PPC Case Study: 22% More Ad Sales From 19% Less
+      Spend | GrowthXsell
+    </title>
+    <meta
+      name="description"
+      content="How GrowthXsell cut a Toys & Games brand's Amazon ACOS from 46.49% to 30.78% and lifted ROAS from 2.15x to 3.25x — 22% more ad-driven sales from 19% less ad spend. Jan 1 – Oct 11, 2025, from the account's own Business Report and Ads data."
+    />
+    <meta
+      property="og:title"
+      content="22% more ad-driven sales from 19% less ad spend — Toys & Games Amazon PPC case study"
+    />
+    <meta
+      property="og:description"
+      content="ACOS 46.49% → 30.78%. ROAS 2.15x → 3.25x. Real numbers from the account's own Amazon reports."
+    />
+    <meta property="og:type" content="article" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <style>
+      /* ------------------------------------------------------------------
+   Design tokens — sampled from the live GrowthXsell case-studies page.
+   If the site's stylesheet exposes its own variables, map them here.
+   ------------------------------------------------------------------ */
       :root {
-        --bg: #f6f3ec;
-        --surface: #ffffff;
-        --surface-warm: #efe9dd;
-        --dark: #16203a;
-        --peach: #f6c6a6;
-        --mint: #bfe3d2;
-        --lav: #d6cdec;
-        --accent: #e8792f;
-        --text: #1b1f2a;
-        --text-muted: #666f80;
-        --text-dim: #9198a6;
-        --border: #e7e1d3;
-        --radius-md: 20px;
+        --bg: #f6f3ec; /* page background (warm cream) */
+        --surface: #efe9dd; /* light cards */
+        --surface-2: #faf8f3; /* figure frames, table cards */
+        --line: #e3dccf; /* hairlines on cream */
+        --navy: #16203a; /* dark cards, buttons */
+        --navy-2: #242d46; /* stat tiles inside dark cards */
+        --ink: #1b1f2a; /* headings */
+        --body: #4b4f5a; /* body copy */
+        --muted: #75716b; /* secondary copy */
+        --label: #8a8680; /* mono labels on cream */
+        --orange: #e8792f; /* brand accent */
+        --orange-deep: #cf661f; /* accent hover */
+        --orange-tint: #fbe7d7; /* accent tint */
+        --peach: #f6b784; /* accent values on navy */
+        --on-navy-muted: #aab3c7;
+        --grad-peach: #f3d1b7;
+        --grad-mint: #d4e5d7;
+        --grad-lavender: #d9d1e8;
+        --sans:
+          "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+          "Segoe UI", Roboto, sans-serif;
+        --mono:
+          "JetBrains Mono", "DM Mono", "IBM Plex Mono", ui-monospace,
+          SFMono-Regular, Menlo, monospace;
+        --r-lg: 28px;
+        --r: 18px;
+        --r-sm: 12px;
+        --pill: 999px;
+        --container: 1120px;
       }
+
+      /* Base ------------------------------------------------------------- */
       * {
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
       }
       html {
         scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
       }
       body {
+        margin: 0;
         background: var(--bg);
-        color: var(--text);
-        font-family: "Inter", sans-serif;
-        line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
-      }
-      h1,
-      h2,
-      h3 {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        font-weight: 600;
-        letter-spacing: -0.01em;
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 16.5px;
+        line-height: 1.62;
+        font-feature-settings: "tnum" 1;
       }
       a {
         color: inherit;
         text-decoration: none;
       }
-      .wrap {
-        max-width: 1180px;
-        margin: 0 auto;
-        padding: 0 32px;
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--orange);
+        outline-offset: 3px;
+        border-radius: 6px;
       }
-      nav {
-        padding: 20px 0;
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
       }
-      .nav-inner {
-        max-width: 1180px;
-        margin: 0 auto;
-        padding: 0 32px;
+      p {
+        margin: 0 0 1em;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .container {
+        width: min(var(--container), calc(100% - 40px));
+        margin-inline: auto;
+      }
+      .section {
+        padding: 84px 0;
+      }
+      .section-head {
+        max-width: 720px;
+        margin-bottom: 40px;
+      }
+      .section-head p {
+        color: var(--muted);
+        font-size: 17.5px;
+      }
+      .center {
+        text-align: center;
+        margin-inline: auto;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin: 0;
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+      h1 {
+        font-size: clamp(36px, 5vw, 58px);
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        line-height: 1.08;
+      }
+      h2 {
+        font-size: clamp(28px, 3.4vw, 40px);
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        margin-bottom: 14px;
+      }
+      h3 {
+        font-size: 19px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .body-copy {
+        color: var(--body);
+      }
+      .small {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      /* Mono labels (site convention) ------------------------------------ */
+      .mono {
+        font-family: var(--mono);
+        font-size: 11.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--label);
+      }
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--mono);
+        font-size: 11.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--orange);
+        margin-bottom: 16px;
+      }
+      .kicker::before {
+        content: "";
+        width: 18px;
+        height: 2px;
+        background: var(--orange);
+        flex: none;
+      }
+      .num-label {
+        font-family: var(--mono);
+        font-size: 11.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--orange);
+        margin-bottom: 14px;
+      }
+      .foot-note {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--label);
+        line-height: 1.6;
+      }
+
+      /* Buttons (pill, site convention) ---------------------------------- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 24px;
+        border-radius: var(--pill);
+        font-weight: 700;
+        font-size: 15px;
+        border: 1px solid transparent;
+        transition:
+          background-color 0.15s ease,
+          border-color 0.15s ease,
+          color 0.15s ease;
+      }
+      .btn.primary {
+        background: var(--navy);
+        color: #fff;
+      }
+      .btn.primary:hover {
+        background: #0f1730;
+      }
+      .btn.secondary {
+        border-color: rgba(22, 32, 58, 0.22);
+        color: var(--ink);
+        background: transparent;
+      }
+      .btn.secondary:hover {
+        border-color: rgba(22, 32, 58, 0.5);
+      }
+      .btn.on-navy {
+        background: #fff;
+        color: var(--navy);
+      }
+      .btn.on-navy:hover {
+        background: var(--surface);
+      }
+      .btn.ghost-navy {
+        border-color: rgba(255, 255, 255, 0.28);
+        color: #fff;
+      }
+      .btn.ghost-navy:hover {
+        border-color: rgba(255, 255, 255, 0.6);
+      }
+      .link {
+        color: var(--orange);
+        font-weight: 600;
+      }
+      .link:hover {
+        color: var(--orange-deep);
+      }
+
+      /* Nav -------------------------------------------------------------- */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(246, 243, 236, 0.94);
+        backdrop-filter: saturate(160%) blur(8px);
+        border-bottom: 1px solid rgba(22, 32, 58, 0.06);
+      }
+      .nav .container {
+        height: 72px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 20px;
       }
-      .logo {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        font-size: 21px;
+      .brand {
+        font-weight: 800;
+        font-size: 22px;
+        letter-spacing: -0.03em;
+        color: var(--ink);
+      }
+      .brand span {
+        color: var(--orange);
+      }
+      .navlinks {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #4b5060;
+      }
+      .navlinks a:hover {
+        color: var(--ink);
+      }
+      .navlinks a[aria-current="page"] {
+        color: var(--ink);
         font-weight: 700;
       }
-      .logo span {
-        color: var(--accent);
-        font-style: italic;
+      .navcta {
+        background: var(--navy);
+        color: #fff;
+        padding: 11px 20px;
+        border-radius: var(--pill);
+        font-weight: 700;
+        font-size: 14px;
       }
-      .nav-links {
-        display: flex;
-        gap: 26px;
-        color: var(--text-muted);
+      .navcta:hover {
+        background: #0f1730;
+        color: #fff;
+      }
+      .menu-btn {
+        display: none;
+        background: none;
+        border: 1px solid rgba(22, 32, 58, 0.2);
+        border-radius: var(--pill);
+        padding: 9px 16px;
+        font: inherit;
         font-size: 14px;
         font-weight: 600;
+        color: var(--ink);
+        cursor: pointer;
       }
-      .nav-links a:hover {
-        color: var(--text);
+      .mobile-menu {
+        display: none;
+        border-top: 1px solid var(--line);
+        background: var(--bg);
       }
-      .pill-btn {
-        display: inline-flex;
-        background: var(--dark);
-        color: #fff;
-        padding: 12px 22px;
-        border-radius: 100px;
-        font-size: 13px;
-        font-weight: 600;
+      .mobile-menu.open {
+        display: block;
       }
+      .mobile-menu a {
+        display: block;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .mobile-menu a:last-child {
+        border-bottom: 0;
+        color: var(--orange);
+        font-weight: 700;
+      }
+
+      /* Hero (centered, like the hub) ------------------------------------ */
       .hero {
-        padding: 58px 0 34px;
+        padding: 56px 0 72px;
+        text-align: center;
       }
-      .crumb {
-        color: var(--text-dim);
-        font:
-          12px "IBM Plex Mono",
-          monospace;
-        margin-bottom: 22px;
-      }
-      .crumb a:hover {
-        color: var(--accent);
-      }
-      .eyebrow {
+      .chips {
         display: flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--accent);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font:
-          12px "IBM Plex Mono",
-          monospace;
-        margin-bottom: 16px;
-      }
-      .eyebrow::before {
-        content: "";
-        width: 20px;
-        height: 1px;
-        background: var(--accent);
-      }
-      h1 {
-        max-width: 790px;
-        font-size: clamp(32px, 5vw, 58px);
-        line-height: 1.08;
-        margin-bottom: 18px;
-      }
-      .hero-copy {
-        max-width: 650px;
-        color: var(--text-muted);
-        font-size: 17px;
-      }
-      .hero-meta {
-        display: flex;
+        justify-content: center;
         flex-wrap: wrap;
         gap: 8px;
-        margin-top: 24px;
+        margin-bottom: 34px;
       }
-      .tag {
-        background: #fff;
-        border: 1px solid var(--border);
-        border-radius: 100px;
-        color: var(--text-muted);
-        font:
-          11px "IBM Plex Mono",
-          monospace;
-        padding: 7px 12px;
-      }
-      .snapshot {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-        margin: 18px 0 54px;
-      }
-      .snapshot-card {
-        background: var(--dark);
-        border-radius: var(--radius-md);
-        padding: 26px;
-        color: #fff;
-      }
-      .snapshot-card:nth-child(2) {
-        background: var(--accent);
-      }
-      .snapshot-card:nth-child(3) {
-        background: #486b61;
-      }
-      .snapshot-value {
-        font:
-          700 clamp(28px, 4vw, 40px) "Plus Jakarta Sans",
-          sans-serif;
-      }
-      .snapshot-label {
-        color: #d6ddea;
+      .chip {
+        display: inline-block;
+        padding: 7px 14px;
+        border: 1px solid rgba(22, 32, 58, 0.18);
+        border-radius: var(--pill);
+        font-family: var(--mono);
         font-size: 12px;
-        margin-top: 4px;
+        color: var(--ink);
+        background: transparent;
       }
-      .snapshot-card:nth-child(2) .snapshot-label,
-      .snapshot-card:nth-child(3) .snapshot-label {
-        color: #fff;
+      .chip.solid {
+        background: var(--orange-tint);
+        border-color: rgba(232, 121, 47, 0.45);
+        color: var(--orange-deep);
       }
-      .story-grid {
+      .hero h1 {
+        max-width: 860px;
+        margin-inline: auto;
+      }
+      .hero .lead {
+        font-size: 18px;
+        line-height: 1.6;
+        color: var(--muted);
+        max-width: 720px;
+        margin: 22px auto 0;
+      }
+      .hero .meta {
+        margin-top: 20px;
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--label);
+        letter-spacing: 0.02em;
+      }
+      .hero-actions {
+        margin-top: 30px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .stats {
+        margin: 52px auto 0;
+        max-width: 960px;
+        padding-top: 36px;
+        border-top: 1px solid var(--line);
         display: grid;
-        grid-template-columns: 1fr 1.15fr;
-        gap: 22px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+      .stats strong {
+        display: block;
+        font-size: clamp(30px, 3.4vw, 40px);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        color: var(--orange);
+      }
+      .stats span {
+        display: block;
+        margin-top: 10px;
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--label);
+        line-height: 1.6;
+      }
+
+      /* Cards ------------------------------------------------------------ */
+      .card {
+        background: var(--surface);
+        border-radius: var(--r);
+        padding: 28px;
+        border: 1px solid rgba(22, 32, 58, 0.05);
+      }
+      .card p {
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+
+      /* Brand / situation ------------------------------------------------ */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 56px;
         align-items: start;
       }
-      .story-card {
-        background: var(--surface-warm);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-md);
-        padding: 30px;
-      }
-      .story-card h2 {
-        font-size: 22px;
-        margin-bottom: 12px;
-      }
-      .story-card p {
-        color: var(--text-muted);
-        font-size: 14px;
-        line-height: 1.7;
-      }
-      .story-card p + p {
-        margin-top: 14px;
-      }
-      .chart {
+      .snapshot {
         background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 22px;
+        border-radius: var(--r);
+        padding: 10px 28px;
       }
-      .chart-row {
-        display: grid;
-        grid-template-columns: 125px 1fr 72px;
-        align-items: center;
-        gap: 12px;
-        padding: 14px 0;
-        border-bottom: 1px solid var(--border);
-        font-size: 12px;
+      .snapshot li {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 20px;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(22, 32, 58, 0.08);
+        font-family: var(--mono);
+        font-size: 11.5px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--label);
       }
-      .chart-row:last-child {
+      .snapshot li:last-child {
         border-bottom: 0;
-        padding-bottom: 0;
       }
-      .chart-row:first-child {
-        padding-top: 0;
+      .snapshot li strong {
+        font-family: var(--sans);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        text-transform: none;
+        color: var(--ink);
+        white-space: nowrap;
       }
-      .chart-label {
-        color: var(--text-muted);
+      .took-over {
+        margin-top: 22px;
+        padding: 18px 22px;
+        border-radius: var(--r-sm);
+        background: var(--orange-tint);
+        color: var(--ink);
+        font-size: 15px;
       }
-      .bar {
-        height: 9px;
-        background: var(--surface-warm);
-        border-radius: 100px;
-        overflow: hidden;
+      .took-over strong {
+        color: var(--orange-deep);
       }
-      .bar span {
-        display: block;
-        height: 100%;
-        background: var(--accent);
-        border-radius: inherit;
+
+      /* Check lists (site convention: ✓ items) --------------------------- */
+      .checks li {
+        position: relative;
+        padding: 8px 0 8px 30px;
+        color: var(--body);
+        font-size: 15.5px;
       }
-      .chart-value {
-        color: var(--dark);
-        font:
-          600 12px "IBM Plex Mono",
-          monospace;
-        text-align: right;
+      .checks li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--orange-tint);
+        color: var(--orange-deep);
+        font-size: 12px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      .section {
-        padding: 34px 0;
-      }
-      .section h2 {
-        font-size: clamp(25px, 3vw, 34px);
-        margin-bottom: 20px;
-      }
-      .steps {
+      .needs {
+        margin-top: 40px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 40px;
+        padding: 36px 40px;
+        border-radius: var(--r);
+        background: var(--surface);
+      }
+      .needs h3 {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+      .needs p {
+        color: var(--muted);
+        font-size: 15.5px;
+      }
+      .objective {
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(22, 32, 58, 0.1);
+        font-size: 15.5px;
+        color: var(--ink);
+      }
+      .objective strong {
+        color: var(--orange-deep);
+      }
+
+      /* Diagnosis -------------------------------------------------------- */
+      .findings {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 48px;
+        align-items: start;
+      }
+      .finding {
+        padding: 22px 0;
+        border-top: 1px solid var(--line);
+      }
+      .finding:last-of-type {
+        border-bottom: 1px solid var(--line);
+      }
+      .finding h3 {
+        font-size: 18px;
+      }
+      .finding p {
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .bigstat {
+        margin-top: 28px;
+        display: flex;
+        align-items: baseline;
         gap: 14px;
       }
-      .step {
-        background: #fff;
-        border: 1px solid var(--border);
-        border-radius: var(--radius-md);
-        padding: 24px;
+      .bigstat strong {
+        font-size: clamp(48px, 6vw, 72px);
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        color: var(--orange);
       }
-      .step-number {
-        color: var(--accent);
-        font:
-          12px "IBM Plex Mono",
-          monospace;
-        margin-bottom: 18px;
+      .bigstat span {
+        font-family: var(--mono);
+        font-size: 11.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--label);
+        max-width: 160px;
+        line-height: 1.6;
+      }
+
+      /* Figures ---------------------------------------------------------- */
+      .figure {
+        margin: 0;
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        padding: 12px;
+      }
+      .figure img {
+        width: 100%;
+        border-radius: 10px;
+        background: #fff;
+      }
+      .figure figcaption {
+        padding: 14px 6px 4px;
+        font-size: 13.5px;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+      .figure figcaption strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .figure.paired img {
+        aspect-ratio: 2.4/1;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      /* Strategy flow ---------------------------------------------------- */
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+      }
+      .step {
+        position: relative;
+        padding: 26px 22px 24px;
+        background: var(--surface);
+        border-radius: var(--r);
       }
       .step h3 {
         font-size: 17px;
-        margin-bottom: 8px;
       }
       .step p {
-        color: var(--text-muted);
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .step::after {
+        content: "→";
+        position: absolute;
+        right: -12px;
+        top: 26px;
+        color: var(--orange);
+        font-size: 15px;
+        line-height: 1;
+        z-index: 1;
+      }
+      .step:last-child::after {
+        content: none;
+      }
+      .flow-note {
+        margin-top: 28px;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--ink);
+        max-width: 680px;
+        letter-spacing: -0.01em;
+      }
+
+      /* Execution -------------------------------------------------------- */
+      .exec {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .exec .card h3 {
+        font-size: 17px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(22, 32, 58, 0.1);
+        margin-bottom: 8px;
+      }
+      .exec .checks li {
+        font-size: 15px;
+      }
+      .scope {
+        margin-top: 20px;
+      }
+
+      /* Transformation — dark card, same treatment as the hub's featured card */
+      .transform {
+        background: var(--navy);
+        color: #fff;
+        border-radius: var(--r-lg);
+        padding: 60px 56px;
+      }
+      .transform .kicker {
+        color: var(--orange);
+      }
+      .transform h2 {
+        color: #fff;
+      }
+      .transform .section-head p {
+        color: var(--on-navy-muted);
+      }
+      .tiles {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+      .tile {
+        padding: 24px 24px 22px;
+        border-radius: 14px;
+        background: var(--navy-2);
+      }
+      .tile .label {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--on-navy-muted);
+        margin-bottom: 16px;
+      }
+      .tile .from {
+        font-size: 17px;
+        font-weight: 500;
+        color: #8f98ad;
+      }
+      .tile .to {
+        display: block;
+        font-size: clamp(30px, 3.2vw, 40px);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        color: var(--peach);
+        margin: 4px 0 12px;
+      }
+      .tile .delta {
+        display: inline-block;
+        font-family: var(--mono);
+        font-size: 11.5px;
+        letter-spacing: 0.06em;
+        padding: 4px 10px;
+        border-radius: var(--pill);
+        background: rgba(246, 183, 132, 0.14);
+        color: var(--peach);
+      }
+      .compare {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .compare .figure {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+      .compare figcaption {
+        color: var(--on-navy-muted);
+      }
+      .compare figcaption strong {
+        color: #fff;
+      }
+      .pill {
+        display: inline-block;
+        font-family: var(--mono);
+        font-size: 10.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border-radius: var(--pill);
+        margin-right: 8px;
+        vertical-align: 2px;
+      }
+      .pill.before {
+        background: rgba(255, 255, 255, 0.12);
+        color: #dbe2ea;
+      }
+      .pill.after {
+        background: var(--orange);
+        color: #fff;
+      }
+      .table-wrap {
+        margin-top: 16px;
+        overflow: auto;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 620px;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 15px 22px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        font-size: 15px;
+      }
+      th {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: var(--on-navy-muted);
+      }
+      tr:last-child td {
+        border-bottom: 0;
+      }
+      td {
+        font-weight: 600;
+      }
+      td.before {
+        color: #8f98ad;
+      }
+      td.after {
+        color: var(--peach);
+      }
+      td.change {
+        color: #fff;
+        font-family: var(--mono);
         font-size: 13px;
-        line-height: 1.6;
+        font-weight: 500;
       }
-      .cta {
-        margin: 34px 0 48px;
-        padding: 42px 30px;
-        border-radius: var(--radius-md);
+      .transform .foot-note {
+        margin-top: 16px;
+        color: #7f8aa3;
+      }
+
+      /* Impact ----------------------------------------------------------- */
+      .impact-lead {
+        font-size: 19px;
+        line-height: 1.55;
+        color: var(--body);
+        max-width: 800px;
+      }
+      .today {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 20px;
+        align-items: stretch;
+      }
+      .today-table {
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        overflow: hidden;
+      }
+      .today-table table {
+        min-width: 0;
+      }
+      .today-table th {
+        color: var(--label);
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+        padding: 14px 20px;
+      }
+      .today-table td {
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
+        padding: 12px 20px;
+        font-size: 15px;
+      }
+      .today-table td:first-child {
+        font-weight: 500;
+        color: var(--body);
+      }
+      .today-table td.val {
+        white-space: nowrap;
+        font-weight: 700;
+      }
+      .today-table td.desc {
+        font-weight: 400;
+        color: var(--muted);
+        font-size: 13.5px;
+      }
+      .share {
+        background: var(--surface);
+        border-radius: var(--r);
+        padding: 34px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
-        background: linear-gradient(135deg, var(--peach), var(--mint));
       }
-      .cta h2 {
-        font-size: clamp(24px, 3vw, 34px);
-        margin-bottom: 10px;
+      .donut {
+        position: relative;
+        width: 210px;
+        height: 210px;
       }
-      .cta p {
-        color: var(--text-muted);
-        margin: 0 auto 22px;
-        max-width: 470px;
+      .donut svg {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
       }
-      footer {
-        padding: 22px 0;
-        color: var(--text-dim);
-        font:
-          12px "IBM Plex Mono",
-          monospace;
+      .donut .center {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
-      @media (max-width: 800px) {
-        .nav-links {
-          display: none;
+      .donut .center strong {
+        font-size: 46px;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        color: var(--ink);
+      }
+      .donut .center span {
+        font-family: var(--mono);
+        font-size: 10.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--label);
+        margin-top: 8px;
+      }
+      .legend {
+        margin-top: 22px;
+        display: flex;
+        gap: 22px;
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .legend i {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 8px;
+        vertical-align: -1px;
+      }
+      .share p {
+        margin-top: 20px;
+        font-size: 15.5px;
+        color: var(--body);
+        max-width: 320px;
+      }
+      .trend {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 36px;
+        align-items: center;
+      }
+      .trend h3 {
+        font-size: 21px;
+      }
+      .trend p {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      /* Demonstrates (stands in for a testimonial until one exists) ----- */
+      .demonstrates {
+        max-width: 820px;
+        margin-inline: auto;
+        text-align: center;
+      }
+      .demonstrates p {
+        font-size: clamp(20px, 2.4vw, 27px);
+        line-height: 1.45;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+
+      /* Evidence --------------------------------------------------------- */
+      .evidence-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .note {
+        margin-top: 20px;
+      }
+
+      /* Takeaway --------------------------------------------------------- */
+      .takeaway {
+        border-radius: var(--r-lg);
+        background: var(--surface);
+        padding: 56px;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 48px;
+        align-items: center;
+      }
+      .takeaway h2 {
+        font-size: clamp(26px, 3.2vw, 38px);
+      }
+      .takeaway p {
+        color: var(--body);
+        font-size: 16.5px;
+      }
+      .takeaway .rule {
+        border-left: 1px solid rgba(22, 32, 58, 0.12);
+        padding-left: 40px;
+      }
+      .takeaway .rule li {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(22, 32, 58, 0.08);
+        font-size: 15px;
+        color: var(--muted);
+      }
+      .takeaway .rule li:last-child {
+        border-bottom: 0;
+      }
+      .takeaway .rule strong {
+        display: block;
+        color: var(--ink);
+        font-size: 15.5px;
+      }
+
+      /* CTA — gradient card, same treatment as the hub ------------------ */
+      .cta-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--r-lg);
+        padding: 96px 40px;
+        text-align: center;
+        background:
+          radial-gradient(
+            55% 60% at 10% 18%,
+            var(--grad-peach) 0%,
+            rgba(243, 209, 183, 0) 72%
+          ),
+          radial-gradient(
+            42% 55% at 94% 26%,
+            var(--grad-mint) 0%,
+            rgba(212, 229, 215, 0) 72%
+          ),
+          radial-gradient(
+            50% 45% at 52% 104%,
+            var(--grad-lavender) 0%,
+            rgba(217, 209, 232, 0) 72%
+          ),
+          #f4efe6;
+      }
+      .cta-card .kicker {
+        justify-content: center;
+      }
+      .cta-card h2 {
+        max-width: 720px;
+        margin-inline: auto;
+      }
+      .cta-card p {
+        color: var(--muted);
+        max-width: 620px;
+        margin-inline: auto;
+        font-size: 17px;
+      }
+      .cta-card .actions {
+        margin-top: 30px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .cta-card .fine {
+        margin-top: 22px;
+      }
+
+      /* Related — hub-style cards ---------------------------------------- */
+      .related-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 20px;
+        margin-bottom: 28px;
+      }
+      .related-head h2 {
+        margin-bottom: 0;
+      }
+      .related-head a {
+        white-space: nowrap;
+        font-size: 15px;
+      }
+      .related {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .related .card {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        transition: border-color 0.15s ease;
+      }
+      .related .card:hover {
+        border-color: rgba(232, 121, 47, 0.5);
+      }
+      .related .type {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--orange);
+        margin-bottom: 8px;
+      }
+      .related h3 {
+        font-size: 18px;
+        margin-bottom: 14px;
+      }
+      .related .result {
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        color: var(--ink);
+        line-height: 1;
+      }
+      .related .result-label {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--label);
+        margin-top: 8px;
+      }
+      .related .more {
+        margin-top: auto;
+        padding-top: 22px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--orange);
+      }
+      .solution-strip {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .solution-strip a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 22px 26px;
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        background: var(--surface-2);
+        transition: border-color 0.15s ease;
+      }
+      .solution-strip a:hover {
+        border-color: rgba(232, 121, 47, 0.5);
+      }
+      .solution-strip strong {
+        display: block;
+        font-size: 16.5px;
+        color: var(--ink);
+      }
+      .solution-strip span {
+        font-family: var(--mono);
+        font-size: 11.5px;
+        letter-spacing: 0.06em;
+        color: var(--label);
+      }
+      .solution-strip b {
+        color: var(--orange);
+        white-space: nowrap;
+        font-weight: 600;
+      }
+
+      /* Footer ----------------------------------------------------------- */
+      .footer {
+        border-top: 1px solid var(--line);
+        padding: 30px 0;
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--label);
+      }
+      .footer .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .footer a:hover {
+        color: var(--ink);
+      }
+
+      /* Responsive ------------------------------------------------------- */
+      @media (max-width: 1000px) {
+        .flow {
+          grid-template-columns: repeat(3, 1fr);
         }
-        .nav-inner {
-          padding: 0 20px;
+        .step::after {
+          content: none;
         }
-        .wrap {
-          padding: 0 20px;
+        .stats,
+        .tiles,
+        .grid-4 {
+          grid-template-columns: repeat(2, 1fr);
         }
-        .snapshot,
-        .story-grid,
-        .steps {
+        .two-col,
+        .findings,
+        .needs,
+        .today,
+        .trend,
+        .takeaway {
           grid-template-columns: 1fr;
         }
-        .hero {
-          padding-top: 36px;
+        .takeaway .rule {
+          border-left: 0;
+          padding-left: 0;
+          border-top: 1px solid rgba(22, 32, 58, 0.1);
+          padding-top: 24px;
+        }
+        .transform {
+          padding: 48px 36px;
         }
       }
-      @media (max-width: 520px) {
-        .snapshot-card,
-        .story-card,
-        .step {
-          padding: 22px;
+      @media (max-width: 820px) {
+        .navlinks {
+          display: none;
         }
-        .chart-row {
-          grid-template-columns: 105px 1fr 60px;
+        .menu-btn {
+          display: inline-block;
+        }
+        .compare,
+        .evidence-grid,
+        .exec,
+        .grid-2,
+        .solution-strip,
+        .related {
+          grid-template-columns: 1fr;
+        }
+        .section {
+          padding: 64px 0;
+        }
+        .takeaway {
+          padding: 36px 28px;
+        }
+        .needs {
+          padding: 28px 26px;
+        }
+        .cta-card {
+          padding: 72px 28px;
+        }
+      }
+      @media (max-width: 560px) {
+        .container {
+          width: min(100% - 24px, var(--container));
+        }
+        .hero {
+          padding: 36px 0 56px;
+        }
+        .flow,
+        .grid-4 {
+          grid-template-columns: 1fr;
+        }
+        .stats {
+          gap: 28px 16px;
+        }
+        .tile {
+          padding: 20px 18px 18px;
+        }
+        .tile .to {
+          font-size: 28px;
+        }
+        .transform {
+          padding: 36px 22px;
+          border-radius: 22px;
+        }
+        .bigstat {
+          flex-direction: column;
           gap: 8px;
+        }
+        .related-head {
+          flex-direction: column;
+          align-items: start;
         }
       }
     </style>
   </head>
   <body>
-    <nav>
-      <div class="nav-inner">
-        <a href="../index.html" class="logo">Growth<span>X</span>sell</a>
-        <div class="nav-links">
-          <a href="../index.html#solutions">Solutions</a>
-          <a href="../index.html#capabilities">Capabilities</a>
-          <a href="case-studies.html">Case Studies</a>
-          <a href="../index.html#story">About</a>
-        </div>
-        <a href="../index.html#contact" class="pill-btn">Free assessment</a>
+    <header class="nav">
+      <div class="container">
+        <a class="brand" href="https://www.growthxsell.com/index.html"
+          >Growth<span>X</span>sell</a
+        >
+        <nav class="navlinks" aria-label="Primary">
+          <a href="https://www.growthxsell.com/solutions/solutions.html"
+            >Solutions</a
+          >
+          <a href="https://www.growthxsell.com/capabilities/capabilities.html"
+            >Capabilities</a
+          >
+          <a href="https://www.growthxsell.com/process/process.html">Process</a>
+          <a href="https://www.growthxsell.com/about/about.html">About</a>
+          <a
+            href="https://www.growthxsell.com/case%20studies/case-studies.html"
+            aria-current="page"
+            >Case Studies</a
+          >
+          <a
+            class="navcta"
+            href="https://www.growthxsell.com/index.html#contact"
+            >Free assessment</a
+          >
+        </nav>
+        <button
+          class="menu-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          Menu
+        </button>
       </div>
-    </nav>
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="container">
+          <a href="https://www.growthxsell.com/solutions/solutions.html"
+            >Solutions</a
+          >
+          <a href="https://www.growthxsell.com/capabilities/capabilities.html"
+            >Capabilities</a
+          >
+          <a href="https://www.growthxsell.com/process/process.html">Process</a>
+          <a href="https://www.growthxsell.com/about/about.html">About</a>
+          <a href="https://www.growthxsell.com/case%20studies/case-studies.html"
+            >Case Studies</a
+          >
+          <a href="https://www.growthxsell.com/index.html#contact"
+            >Free assessment →</a
+          >
+        </div>
+      </div>
+    </header>
 
     <main>
+      <!-- 1. HERO — problem + outcome, snapshot metrics, CTA -->
       <section class="hero">
-        <div class="wrap">
-          <div class="crumb">
-            <a href="case-studies.html">Case Studies</a> / Advertising
-            Efficiency
+        <div class="container">
+          <div class="chips" aria-label="Case study tags">
+            <a
+              class="chip"
+              href="https://www.growthxsell.com/case%20studies/case-studies.html"
+              >← All case studies</a
+            >
+            <span class="chip solid">Toys &amp; Games</span>
+            <span class="chip">Amazon PPC</span>
+            <span class="chip">Advertising efficiency</span>
           </div>
-          <div class="eyebrow">Advertising efficiency · Pet care</div>
-          <h1>Less wasted spend. More profitable demand.</h1>
-          <p class="hero-copy">
-            How we helped a pet-care brand cut its advertising spend by a third
-            while holding sales steady, then reinvested the savings into
-            healthier growth.
+          <span class="kicker">Client results</span>
+          <h1>22% more ad-driven sales from 19% less ad spend.</h1>
+          <p class="lead">
+            How a Toys &amp; Games brand with $10.2M in Amazon sales this year
+            cut its ACOS from 46.49% to 30.78% and lifted ROAS from 2.15x to
+            3.25x — by making ad spend follow demand instead of a fixed monthly
+            plan.
           </p>
-          <div class="hero-meta">
-            <span class="tag">Amazon PPC</span>
-            <span class="tag">ACoS reduction</span>
-            <span class="tag">90-day engagement</span>
+          <p class="meta">
+            Amazon Business Report + Ads data · Jan 1 – Oct 11, 2025 ·
+            Confidential client, figures used with permission
+          </p>
+          <div class="hero-actions">
+            <a
+              class="btn primary"
+              href="https://www.growthxsell.com/index.html#contact"
+              >Get a free assessment →</a
+            >
+            <a class="btn secondary" href="#results"
+              >See the before &amp; after</a
+            >
+          </div>
+
+          <div class="stats" aria-label="Headline results">
+            <div><strong>3.25x</strong><span>ROAS · up from 2.15x</span></div>
+            <div>
+              <strong>30.78%</strong><span>ACOS · down from 46.49%</span>
+            </div>
+            <div>
+              <strong>−19%</strong><span>Ad spend · $1.85M → $1.49M</span>
+            </div>
+            <div>
+              <strong>+22%</strong><span>Ad sales · $3.97M → $4.84M</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section>
-        <div class="wrap">
-          <div class="snapshot">
-            <div class="snapshot-card">
-              <div class="snapshot-value">1.8X &rarr; 2.9X</div>
-              <div class="snapshot-label">ROAS in 90 days</div>
-            </div>
-            <div class="snapshot-card">
-              <div class="snapshot-value">55% &rarr; 34%</div>
-              <div class="snapshot-label">ACoS</div>
-            </div>
-            <div class="snapshot-card">
-              <div class="snapshot-value">$14K &rarr; $9K</div>
-              <div class="snapshot-label">Monthly ad spend</div>
+      <!-- 2. BRAND / SITUATION -->
+      <section class="section" id="brand">
+        <div class="container two-col">
+          <div>
+            <span class="kicker">About the brand</span>
+            <h2>
+              A high-volume Toys &amp; Games seller where ads carry almost half
+              the business.
+            </h2>
+            <p class="body-copy">
+              The brand sells in Toys &amp; Games — one of the hardest
+              categories on Amazon to make money in. From January 1 to October
+              11, 2025 the account did $10,221,209 in sales across 441,013
+              orders, an average of just $23.18 per order.
+            </p>
+            <p class="body-copy">
+              Advertising brought in $4.84M of that: 47% of everything sold.
+              That makes PPC a business-level lever here, not a side channel —
+              even small changes in how well ads work show up in profit. The
+              client is not named at their request.
+            </p>
+            <div class="took-over">
+              <strong>What we took over:</strong> Amazon PPC — campaign
+              structure, budgets, bids and search-term management.
             </div>
           </div>
-          <div class="story-grid">
-            <article class="story-card">
-              <h2>The situation</h2>
+          <ul class="snapshot" aria-label="Account snapshot">
+            <li>Total sales, YTD<strong>$10.2M</strong></li>
+            <li>Orders<strong>441,013</strong></li>
+            <li>Units ordered<strong>468,418</strong></li>
+            <li>Average order value<strong>$23.18</strong></li>
+            <li>Share of sales from ads<strong>47%</strong></li>
+            <li>Category<strong>Toys &amp; Games</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 3. CHALLENGE + what they needed + objective -->
+      <section class="section" id="challenge">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">The challenge</span>
+            <h2>A tough category. Very little margin for error.</h2>
+            <p>
+              Demand in Toys &amp; Games doesn't stay steady. It jumps around
+              school schedules, holiday shopping and whatever toy is trending
+              that month, then drops off just as fast.
+            </p>
+          </div>
+          <div class="grid-4">
+            <div class="card">
+              <div class="num-label">01</div>
+              <h3>Seasonal, spiky demand</h3>
               <p>
-                The brand was generating demand, but its advertising account was
-                paying too much to capture it. Broad targeting, duplicated
-                search terms, and weak budget rules made performance look busy
-                without making it more efficient.
+                Keep spend the same all year and you either miss the busy weeks
+                or pay for clicks nobody wants during the slow ones.
               </p>
+            </div>
+            <div class="card">
+              <div class="num-label">02</div>
+              <h3>Ads carry almost half of sales</h3>
               <p>
-                Our first move was not to spend more. It was to separate
-                profitable demand from expensive noise and give each campaign a
-                job it could be measured against.
+                With 47% of revenue coming through advertising, even small
+                changes in ad efficiency make a big difference to profit.
               </p>
-            </article>
-            <article class="story-card">
-              <h2>What changed</h2>
-              <div class="chart">
-                <div class="chart-row">
-                  <span class="chart-label">ROAS</span
-                  ><span class="bar"><span style="width: 78%"></span></span
-                  ><span class="chart-value">2.9X</span>
-                </div>
-                <div class="chart-row">
-                  <span class="chart-label">ACoS</span
-                  ><span class="bar"><span style="width: 62%"></span></span
-                  ><span class="chart-value">34%</span>
-                </div>
-                <div class="chart-row">
-                  <span class="chart-label">Sales</span
-                  ><span class="bar"><span style="width: 82%"></span></span
-                  ><span class="chart-value">$27K</span>
+            </div>
+            <div class="card">
+              <div class="num-label">03</div>
+              <h3>Spending heavily, not efficiently</h3>
+              <p>
+                The account was spending $1.85M to generate $3.97M in ad sales:
+                a 46.49% ACOS and a 2.15 ROAS.
+              </p>
+            </div>
+            <div class="card">
+              <div class="num-label">04</div>
+              <h3>A low average order value</h3>
+              <p>
+                At $23.18 per order, wasted ad spend has very little room to
+                hide before it cuts into profit.
+              </p>
+            </div>
+          </div>
+
+          <div class="needs">
+            <div>
+              <h3>What they needed</h3>
+              <p>Not a bigger budget — a smarter one.</p>
+              <div class="objective">
+                <strong>Objective:</strong> make every ad dollar work harder —
+                more ad-driven sales at a lower ACOS, without simply increasing
+                spend.
+              </div>
+            </div>
+            <ul class="checks">
+              <li>
+                Advertising that follows demand instead of a fixed monthly plan
+              </li>
+              <li>Less spend on keywords that sell but don't make a profit</li>
+              <li>
+                Budget concentrated on the search terms that actually convert
+              </li>
+              <li>
+                A whole-account view: ads, organic, ACOS and TACOS read together
+              </li>
+              <li>Profitable growth, not just more ad-attributed sales</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. DIAGNOSIS -->
+      <section class="section" id="diagnosis">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">What we found</span>
+            <h2>The account's own numbers told the story.</h2>
+            <p>
+              Before changing anything, we read the account's Business Report
+              and Ads dashboard month by month — not just one quarter, but the
+              full picture.
+            </p>
+          </div>
+          <div class="findings">
+            <div>
+              <div class="finding">
+                <h3>Spend wasn't following performance</h3>
+                <p>
+                  Monthly ad spend followed roughly the same plan while ACOS
+                  moved around a lot. Budget wasn't being adjusted to how each
+                  month was actually selling.
+                </p>
+              </div>
+              <div class="finding">
+                <h3>PPC was a business-level lever</h3>
+                <p>
+                  Ads produced 47% of total sales, so advertising efficiency
+                  directly shaped the account's profit — not just its marketing
+                  numbers.
+                </p>
+              </div>
+              <div class="finding">
+                <h3>Efficiency, not scale, was the problem</h3>
+                <p>
+                  $1.85M in spend for $3.97M in ad sales. The opportunity was to
+                  make that spend work harder, not to spend more.
+                </p>
+              </div>
+              <div class="bigstat">
+                <strong>46.49%</strong>
+                <span>ACOS before the strategy</span>
+              </div>
+            </div>
+            <figure class="figure">
+              <img
+                src="assets/amazon-ads-console-before.png"
+                width="1378"
+                height="576"
+                alt="Amazon Ads console before the strategy: $1,846,575.00 spend, $3,971,756.27 sales, 2.15 ROAS, 46.49% ACOS, with spend and ACOS trending up over the period"
+                loading="lazy"
+              />
+              <figcaption>
+                <strong>Amazon Ads console, before the strategy.</strong>
+                $1,846,575 in spend against $3,971,756 in ad sales — a 2.15 ROAS
+                and 46.49% ACOS.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. STRATEGY (a real sequence, so it is numbered) -->
+      <section class="section" id="strategy">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">Our growth strategy</span>
+            <h2>Making ad spend follow demand.</h2>
+            <p>
+              The fix wasn't spending less for its own sake. It was changing
+              when and where the account spent.
+            </p>
+          </div>
+          <div class="flow">
+            <div class="step">
+              <div class="num-label">01</div>
+              <h3>Diagnose</h3>
+              <p>
+                Read total sales and ad performance together — ad share, ACOS,
+                TACOS and order economics — month by month.
+              </p>
+            </div>
+            <div class="step">
+              <div class="num-label">02</div>
+              <h3>Rebuild</h3>
+              <p>
+                Restructured campaigns so budgets could flex with the season
+                instead of running the same setup every month.
+              </p>
+            </div>
+            <div class="step">
+              <div class="num-label">03</div>
+              <h3>Cut waste</h3>
+              <p>
+                Lowered bids on keywords that spent without making a profit —
+                even when their sales looked fine at first glance.
+              </p>
+            </div>
+            <div class="step">
+              <div class="num-label">04</div>
+              <h3>Scale with demand</h3>
+              <p>
+                Raised bids in the weeks that sell best — spring restock,
+                back-to-school and the holiday run-up — and pulled back when
+                efficiency dropped.
+              </p>
+            </div>
+            <div class="step">
+              <div class="num-label">05</div>
+              <h3>Optimize</h3>
+              <p>
+                Moved freed-up budget to the search terms that convert, and kept
+                judging performance on profit, not ad-attributed sales alone.
+              </p>
+            </div>
+          </div>
+          <p class="flow-note">
+            The account isn't managed campaign by campaign. It's managed against
+            demand.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. EXECUTION — only the service actually used -->
+      <section class="section" id="execution">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">What we changed</span>
+            <h2>Amazon PPC, rebuilt around the economics of the category.</h2>
+            <p>
+              One service was used in this engagement: Amazon PPC. Every change
+              was made inside the advertising account.
+            </p>
+          </div>
+          <div class="exec">
+            <div class="card">
+              <h3>Campaign &amp; budget structure</h3>
+              <ul class="checks">
+                <li>
+                  Campaigns restructured so spend can change with the season
+                </li>
+                <li>
+                  Budgets that flex with demand rather than a fixed monthly
+                  amount
+                </li>
+                <li>
+                  Seasonal bid plans for spring restock, back-to-school and the
+                  holiday run-up
+                </li>
+                <li>Pull-backs when efficiency dropped</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Bids &amp; search terms</h3>
+              <ul class="checks">
+                <li>
+                  Bid reductions on keywords that produced sales but not profit
+                </li>
+                <li>Search-term analysis to find what actually converts</li>
+                <li>Budget reallocated toward converting search terms</li>
+                <li>
+                  Performance judged on ACOS, TACOS and order economics — not
+                  ROAS alone
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="scope foot-note">
+            Solution used: Amazon PPC scaling. The results below come from the
+            advertising changes above.
+          </p>
+        </div>
+      </section>
+
+      <!-- 7. BEFORE vs AFTER — the transformation (dark card) -->
+      <section class="section" id="results">
+        <div class="container">
+          <div class="transform">
+            <div class="section-head">
+              <span class="kicker">Before → after</span>
+              <h2>Less spend. More sales. Better efficiency.</h2>
+              <p>
+                After the strategy, the account generated more ad-driven sales
+                while spending less. Ad spend fell 19%, ad-driven sales rose
+                22%.
+              </p>
+            </div>
+
+            <div class="tiles">
+              <div class="tile">
+                <div class="label">Ad spend</div>
+                <div class="from">$1.85M</div>
+                <strong class="to">$1.49M</strong>
+                <span class="delta">↓ 19%</span>
+              </div>
+              <div class="tile">
+                <div class="label">Ad-driven sales</div>
+                <div class="from">$3.97M</div>
+                <strong class="to">$4.84M</strong>
+                <span class="delta">↑ 22%</span>
+              </div>
+              <div class="tile">
+                <div class="label">ROAS</div>
+                <div class="from">2.15x</div>
+                <strong class="to">3.25x</strong>
+                <span class="delta">↑ 51%</span>
+              </div>
+              <div class="tile">
+                <div class="label">ACOS</div>
+                <div class="from">46.49%</div>
+                <strong class="to">30.78%</strong>
+                <span class="delta">↓ 15.71 pts</span>
+              </div>
+            </div>
+
+            <div class="compare">
+              <figure class="figure paired">
+                <img
+                  src="assets/amazon-ads-console-before.png"
+                  width="1378"
+                  height="576"
+                  alt="Before: Amazon Ads console showing $1,846,575.00 spend, $3,971,756.27 sales, 2.15 ROAS and 46.49% ACOS"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <span class="pill before">Before</span
+                  ><strong
+                    >$1.85M spend · $3.97M ad sales · 2.15 ROAS · 46.49%
+                    ACOS.</strong
+                  >
+                  Spend was climbing while ROAS fell.
+                </figcaption>
+              </figure>
+              <figure class="figure paired">
+                <img
+                  src="assets/amazon-ads-console-after.png"
+                  width="1110"
+                  height="359"
+                  alt="After: Amazon Ads console for Jan–Oct 2025 showing $1,488,160.71 spend, $4,835,112.66 sales, 3.25 ROAS and 30.78% ACOS"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <span class="pill after">After</span
+                  ><strong
+                    >$1.49M spend · $4.84M ad sales · 3.25 ROAS · 30.78%
+                    ACOS.</strong
+                  >
+                  Spend (purple) held steady while ACOS (blue) stayed between
+                  the mid-20s and mid-30s. The drop at the right edge is an
+                  11-day partial October, not a real decline.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <caption style="position: absolute; left: -9999px">
+                  Before and after advertising metrics
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Metric</th>
+                    <th scope="col">Before</th>
+                    <th scope="col">After</th>
+                    <th scope="col">Change</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ad spend</td>
+                    <td class="before">$1,846,575</td>
+                    <td class="after">$1,488,161</td>
+                    <td class="change">↓ 19%</td>
+                  </tr>
+                  <tr>
+                    <td>Ad-driven sales</td>
+                    <td class="before">$3,971,756</td>
+                    <td class="after">$4,835,113</td>
+                    <td class="change">↑ 22%</td>
+                  </tr>
+                  <tr>
+                    <td>ROAS</td>
+                    <td class="before">2.15x</td>
+                    <td class="after">3.25x</td>
+                    <td class="change">↑ 51%</td>
+                  </tr>
+                  <tr>
+                    <td>ACOS</td>
+                    <td class="before">46.49%</td>
+                    <td class="after">30.78%</td>
+                    <td class="change">↓ 15.71 pts</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="foot-note">
+              "After" figures are the account's Jan 1 – Oct 11, 2025 totals from
+              the Amazon Ads console. "Before" figures are the same console view
+              prior to the strategy.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. WHY IT WORKED -->
+      <section class="section" id="why">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">Why it worked</span>
+            <h2>What drove the improvement.</h2>
+            <p>"ACOS fell 15.71 points" is a result. This is the how.</p>
+          </div>
+          <div class="grid-4">
+            <div class="card">
+              <div class="num-label">01</div>
+              <h3>Spend followed demand</h3>
+              <p>
+                Higher bids in the weeks that sell best, lower bids when
+                efficiency dropped — instead of one static plan for the whole
+                year.
+              </p>
+            </div>
+            <div class="card">
+              <div class="num-label">02</div>
+              <h3>Waste was cut at the keyword level</h3>
+              <p>
+                Keywords that produced sales but not profit lost budget, even
+                when their top-line numbers looked fine.
+              </p>
+            </div>
+            <div class="card">
+              <div class="num-label">03</div>
+              <h3>Budget went where conversion was</h3>
+              <p>
+                Freed-up spend was concentrated on the search terms already
+                proving they convert, so they could keep bringing in sales.
+              </p>
+            </div>
+            <div class="card">
+              <div class="num-label">04</div>
+              <h3>Success was measured on profit</h3>
+              <p>
+                ACOS, TACOS, order economics and total-sales contribution were
+                read together — not ROAS on its own.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. BUSINESS IMPACT + where the account stands today -->
+      <section class="section" id="impact">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">Business impact</span>
+            <h2>More ad-driven sales from a smaller investment.</h2>
+          </div>
+          <p class="impact-lead">
+            Ad spend fell 19% while ad-driven sales rose 22%. That lifted ROAS
+            by 51% and cut ACOS by 15.71 percentage points — on an account where
+            47% of total sales come from ads, which makes PPC efficiency a
+            business-level lever rather than a marketing tweak.
+          </p>
+
+          <div class="today">
+            <div class="today-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="3">
+                      Where the account stands today · Jan 1 – Oct 11, 2025
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Total sales</td>
+                    <td class="val">$10,221,209.00</td>
+                    <td class="desc">Ordered product sales, year to date</td>
+                  </tr>
+                  <tr>
+                    <td>Ad-driven sales</td>
+                    <td class="val">$4,835,112.66</td>
+                    <td class="desc">47% of total sales</td>
+                  </tr>
+                  <tr>
+                    <td>Organic / other sales</td>
+                    <td class="val">$5,386,096.34</td>
+                    <td class="desc">53% of total sales</td>
+                  </tr>
+                  <tr>
+                    <td>Ad spend</td>
+                    <td class="val">$1,488,160.71</td>
+                    <td class="desc">Year-to-date advertising spend</td>
+                  </tr>
+                  <tr>
+                    <td>ROAS</td>
+                    <td class="val">3.25</td>
+                    <td class="desc">Sales earned per $1 of ad spend</td>
+                  </tr>
+                  <tr>
+                    <td>ACOS</td>
+                    <td class="val">30.78%</td>
+                    <td class="desc">Ad spend as a share of ad sales</td>
+                  </tr>
+                  <tr>
+                    <td>TACOS</td>
+                    <td class="val">14.6%</td>
+                    <td class="desc">Ad spend as a share of total sales</td>
+                  </tr>
+                  <tr>
+                    <td>Average order value</td>
+                    <td class="val">$23.18</td>
+                    <td class="desc">Across 441,013 orders</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="share">
+              <div
+                class="donut"
+                role="img"
+                aria-label="47% of total sales came from ads; 53% from organic and other sources"
+              >
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle
+                    cx="60"
+                    cy="60"
+                    r="50"
+                    fill="none"
+                    stroke="#e3dccf"
+                    stroke-width="14"
+                  />
+                  <circle
+                    cx="60"
+                    cy="60"
+                    r="50"
+                    fill="none"
+                    stroke="#e8792f"
+                    stroke-width="14"
+                    stroke-dasharray="147.65 314.16"
+                  />
+                </svg>
+                <div class="center">
+                  <strong>47%</strong><span>of sales from ads</span>
                 </div>
               </div>
-            </article>
+              <div class="legend">
+                <span><i style="background: #e8792f"></i>Ads · $4.84M</span
+                ><span
+                  ><i style="background: #e3dccf"></i>Organic · $5.39M</span
+                >
+              </div>
+              <p>
+                Less than 15 cents of every sales dollar went to ads, yet ads
+                still brought in almost half of all sales.
+              </p>
+            </div>
+          </div>
+
+          <div class="trend">
+            <div>
+              <h3>Where the business stands against last year</h3>
+              <p>
+                The Business Report tracks units and sales month by month
+                against the same period last year (blue is this year, red is
+                last year). For most of the year this year ran a little below
+                last year; by September the two lines were almost equal. The
+                sharp drop after that isn't a real decline — this year's data
+                stops on October 11 while last year's covers full months through
+                December.
+              </p>
+              <p>
+                The business is catching up to last year but hasn't passed it
+                yet — which is exactly why ads need to keep pulling their
+                weight.
+              </p>
+            </div>
+            <figure class="figure">
+              <img
+                src="assets/amazon-business-report-sales-snapshot.png"
+                width="1339"
+                height="632"
+                alt="Amazon Business Report sales snapshot, year to date through Oct 11, 2025: 441,013 order items, 468,418 units, $10,221,209.00 ordered product sales, with this-year vs last-year comparison charts for units and sales"
+                loading="lazy"
+              />
+              <figcaption>
+                <strong>Amazon Business Report, Compare Sales view.</strong>
+                Units ordered and ordered product sales, this year vs last year.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="wrap">
-          <h2>The work behind the result</h2>
-          <div class="steps">
-            <article class="step">
-              <div class="step-number">01 / FIND THE LEAK</div>
-              <h3>Rebuilt the account view</h3>
-              <p>
-                We grouped campaigns by product economics, intent, and role so
-                spend could be judged against contribution rather than clicks
-                alone.
-              </p>
-            </article>
-            <article class="step">
-              <div class="step-number">02 / PROTECT EFFICIENCY</div>
-              <h3>Moved budget toward proof</h3>
-              <p>
-                Winning search terms received cleaner budgets while weak
-                placements and overlapping targets were reduced or removed.
-              </p>
-            </article>
-            <article class="step">
-              <div class="step-number">03 / REINVEST WITH INTENT</div>
-              <h3>Turned savings into growth</h3>
-              <p>
-                Once efficiency stabilized, the recovered budget supported the
-                products and audiences with the clearest path to incremental
-                sales.
-              </p>
-            </article>
+      <!-- 10. PROOF STATEMENT — replaces a testimonial until a real one exists -->
+      <section class="section" id="demonstrates">
+        <div class="container">
+          <div class="demonstrates">
+            <span class="kicker">What this demonstrates</span>
+            <p>
+              In a highly seasonal category with a $23 average order,
+              advertising efficiency is a business-level lever. Reading total
+              sales and ad performance together, then letting spend follow
+              demand, produced 22% more ad-driven sales from a 19% smaller
+              budget — all through Amazon PPC.
+            </p>
           </div>
         </div>
       </section>
 
-      <section class="wrap">
-        <div class="cta">
-          <h2>Make your ad spend work harder.</h2>
-          <p>
-            Get a clear view of where your Amazon advertising is creating growth
-            and where it is quietly eroding margin.
+      <!-- 11. SOURCE DATA -->
+      <section class="section" id="evidence">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">Source data</span>
+            <h2>
+              Every number on this page comes from the account's own reports.
+            </h2>
+            <p>
+              The client's Amazon Business Report and Ads dashboard are shown
+              here so the figures are easy to check.
+            </p>
+          </div>
+          <div class="evidence-grid">
+            <figure class="figure paired">
+              <img
+                src="assets/amazon-business-report-sales-snapshot.png"
+                width="1339"
+                height="632"
+                alt="Amazon Seller Central Business Report sales snapshot taken 10/11/2025: 441,013 total order items, 468,418 units ordered, $10,221,209.00 ordered product sales, $23.18 average sales per order item"
+                loading="lazy"
+              />
+              <figcaption>
+                <strong>Amazon Business Report — sales snapshot.</strong> Year
+                to date through October 11, 2025: 441,013 order items, 468,418
+                units and $10,221,209.00 in ordered product sales. The source
+                for every total-sales figure on this page.
+              </figcaption>
+            </figure>
+            <figure class="figure paired">
+              <img
+                src="assets/amazon-ads-console-after.png"
+                width="1110"
+                height="359"
+                alt="Amazon Ads console performance, Jan–Oct 2025: $1,488,160.71 spend, $4,835,112.66 sales, 3.25 ROAS, 30.78% ACOS"
+                loading="lazy"
+              />
+              <figcaption>
+                <strong
+                  >Amazon Ads console — spend, sales, ROAS &amp; ACOS.</strong
+                >
+                Jan–Oct 2025 totals: $1,488,160.71 in spend against
+                $4,835,112.66 in sales — a 3.25 ROAS and 30.78% ACOS. The source
+                for every ad-performance figure on this page. The pre-strategy
+                view is shown in
+                <a class="link" href="#results">Before → after</a>.
+              </figcaption>
+            </figure>
+          </div>
+          <p class="note foot-note">
+            Confidential client data. Figures and screenshots are used with the
+            client's permission. The client is not named at their request.
           </p>
-          <a href="../index.html#contact" class="pill-btn"
-            >Get a free assessment &rarr;</a
-          >
+        </div>
+      </section>
+
+      <!-- 12. KEY TAKEAWAY -->
+      <section class="section" id="takeaway">
+        <div class="container">
+          <div class="takeaway">
+            <div>
+              <span class="kicker">The takeaway</span>
+              <h2>
+                The goal wasn't to spend less. It was to make the advertising
+                engine work harder.
+              </h2>
+              <p>
+                Scaling Amazon ads doesn't mean increasing spend blindly. It
+                means finding where profitable demand exists, cutting the spend
+                that doesn't pay for itself, and concentrating budget on what
+                actually converts — especially when almost half your sales
+                already come from ads.
+              </p>
+            </div>
+            <ul class="rule">
+              <li>
+                <strong>Push when demand is there.</strong> Seasonal weeks earn
+                higher bids.
+              </li>
+              <li>
+                <strong>Cut waste when it isn't.</strong> Sales without profit
+                don't earn budget.
+              </li>
+              <li>
+                <strong>Judge ads by the whole account.</strong> ACOS, TACOS and
+                order economics together.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. CTA — gradient card -->
+      <section class="section" id="contact" style="padding-top: 0">
+        <div class="container">
+          <div class="cta-card">
+            <span class="kicker">Want results like these?</span>
+            <h2>Want your ads working this hard?</h2>
+            <p>
+              If almost half your sales already come from ads, small
+              improvements matter more than spending more. We'll look at the
+              relationship between your ad spend, total sales, ACOS, TACOS and
+              product economics — and show you where the biggest opportunities
+              are.
+            </p>
+            <div class="actions">
+              <a
+                class="btn primary"
+                href="https://www.growthxsell.com/index.html#contact"
+                >Get my free assessment →</a
+              >
+              <a
+                class="btn secondary"
+                href="https://www.growthxsell.com/solution-amazon-profitability.html"
+                >Explore Amazon Profitability</a
+              >
+            </div>
+            <p class="fine foot-note">
+              No commitment. No generic sales pitch. Just a clear view of your
+              growth opportunities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 14. RELATED — hub-style cards, then link back to the solution -->
+      <section class="section" id="related" style="padding-top: 0">
+        <div class="container">
+          <div class="related-head">
+            <div>
+              <span class="kicker">Looking to improve PPC?</span>
+              <h2>More Amazon growth stories.</h2>
+            </div>
+            <a
+              class="link"
+              href="https://www.growthxsell.com/case%20studies/case-studies.html"
+              >All case studies →</a
+            >
+          </div>
+          <div class="related">
+            <a
+              class="card"
+              href="https://www.growthxsell.com/case%20studies/case-study-ppc-launch.html"
+            >
+              <span class="type">PPC &amp; Product Launch</span>
+              <h3>
+                Turning a stalled product launch into profitable, ranked ad
+                spend.
+              </h3>
+              <span class="result">42% → 19%</span>
+              <span class="result-label">ACOS reduced</span>
+              <span class="more">Read the result →</span>
+            </a>
+            <a
+              class="card"
+              href="https://www.growthxsell.com/case%20studies/case-study-listing-seo.html"
+            >
+              <span class="type">Listing &amp; SEO</span>
+              <h3>
+                Fixing a suppressed, poorly indexed listing without losing
+                existing rank.
+              </h3>
+              <span class="result">+31%</span>
+              <span class="result-label">Conversion rate lift</span>
+              <span class="more">Read the result →</span>
+            </a>
+            <a
+              class="card"
+              href="https://www.growthxsell.com/case%20studies/case-study-account-management.html"
+            >
+              <span class="type">Full Account Management</span>
+              <h3>
+                Cleaning up account health issues that were quietly costing
+                sales.
+              </h3>
+              <span class="result">94%</span>
+              <span class="result-label"
+                >Account health score, up from 71%</span
+              >
+              <span class="more">Read the result →</span>
+            </a>
+          </div>
+          <div class="solution-strip">
+            <a
+              href="https://www.growthxsell.com/solution-amazon-profitability.html"
+            >
+              <div>
+                <strong>The solution behind this result</strong
+                ><span
+                  >Amazon Profitability · TACoS · Advertising · Product
+                  economics</span
+                >
+              </div>
+              <b>Explore →</b>
+            </a>
+            <a
+              href="https://www.growthxsell.com/capabilities/capabilities.html"
+            >
+              <div>
+                <strong>The capability we used</strong
+                ><span>Amazon PPC · Traffic &amp; Discovery</span>
+              </div>
+              <b>Explore →</b>
+            </a>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="wrap">
-        <span
-          >&copy; 2025 GrowthXsell &middot; Built for brands that want healthier
-          growth.</span
-        >
+    <footer class="footer">
+      <div class="container">
+        <div>© 2026 GrowthXsell — Amazon Growth Partners</div>
+        <div>
+          <a href="https://www.growthxsell.com/index.html"
+            >www.growthxsell.com</a
+          >
+          · Confidential client data, figures used with permission
+        </div>
       </div>
     </footer>
+
+    <!-- Structured case-study record (matches the Case Study data model in the strategy guide).
+     Not rendered; here so this page can be lifted into a CMS / hub card without retyping numbers. -->
+    <script type="application/json" id="case-study-data">
+      {
+        "id": "toys-games-amazon-ppc-efficiency",
+        "brand": "Toys & Games brand (confidential, figures used with permission)",
+        "industry": "toys-games",
+        "caseStudyType": "advertising-efficiency",
+        "challengeTags": ["reduce-acos", "improve-roas", "increase-profit"],
+        "serviceTags": ["amazon-ppc"],
+        "period": { "start": "2025-01-01", "end": "2025-10-11" },
+        "headline": "22% more ad-driven sales from 19% less ad spend",
+        "cardResult": "ACOS 46.49% → 30.78%",
+        "situation": "High-volume Toys & Games seller; $10.2M YTD sales; 47% of sales from ads; $23.18 AOV.",
+        "challenge": "Seasonal demand, low AOV, 46.49% ACOS on $1.85M spend; spend not following demand.",
+        "objective": "More ad-driven sales at a lower ACOS without increasing spend.",
+        "strategy": [
+          "Diagnose",
+          "Rebuild",
+          "Cut waste",
+          "Scale with demand",
+          "Optimize"
+        ],
+        "metrics": {
+          "adSpend": {
+            "before": 1846575.0,
+            "after": 1488160.71,
+            "change": "-19%"
+          },
+          "adSales": {
+            "before": 3971756.27,
+            "after": 4835112.66,
+            "change": "+22%"
+          },
+          "roas": { "before": 2.15, "after": 3.25, "change": "+51%" },
+          "acos": { "before": 46.49, "after": 30.78, "change": "-15.71 pts" },
+          "totalSales": 10221209.0,
+          "organicSales": 5386096.34,
+          "adShareOfSales": 0.47,
+          "tacos": 0.146,
+          "orders": 441013,
+          "units": 468418,
+          "aov": 23.18
+        },
+        "evidence": [
+          "assets/amazon-business-report-sales-snapshot.png",
+          "assets/amazon-ads-console-before.png",
+          "assets/amazon-ads-console-after.png"
+        ],
+        "testimonial": null,
+        "keyTakeaway": "The goal wasn't to spend less. It was to make the advertising engine work harder.",
+        "cta": "https://www.growthxsell.com/index.html#contact",
+        "relatedSolution": "https://www.growthxsell.com/solution-amazon-profitability.html",
+        "featured": true
+      }
+    </script>
+
+    <script>
+      // Mobile menu toggle — no dependencies.
+      (function () {
+        var btn = document.querySelector(".menu-btn"),
+          menu = document.getElementById("mobile-menu");
+        if (!btn || !menu) return;
+        btn.addEventListener("click", function () {
+          var open = menu.classList.toggle("open");
+          btn.setAttribute("aria-expanded", open ? "true" : "false");
+          btn.textContent = open ? "Close" : "Menu";
+        });
+      })();
+    </script>
   </body>
 </html>
