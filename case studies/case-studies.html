@@ -1716,7 +1716,9 @@
         padding: 9px 10px;
         background: transparent;
         color: var(--text-muted);
-        font: 500 12.5px "Inter", sans-serif;
+        font:
+          500 12.5px "Inter",
+          sans-serif;
         text-align: left;
         cursor: pointer;
       }
@@ -2004,42 +2006,242 @@
           <div class="cs-filter-group">
             <div class="cs-filter-label">What are you trying to solve?</div>
             <div class="cs-select">
-              <button type="button" class="cs-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="challenge-options">
+              <button
+                type="button"
+                class="cs-select-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-controls="challenge-options"
+              >
                 <span class="cs-select-value">Select a challenge</span>
                 <span class="cs-select-chevron" aria-hidden="true">⌄</span>
               </button>
-              <div id="challenge-options" class="cs-select-menu" role="listbox" aria-label="Filter by challenge">
-                <button type="button" class="cs-select-option" data-challenge="" data-label="Select a challenge" aria-selected="true">Select a challenge</button>
-                <button type="button" class="cs-select-option" data-challenge="scale-revenue" data-first="revenue-growth" data-label="Scale revenue" aria-selected="false">Scale revenue</button>
-                <button type="button" class="cs-select-option" data-challenge="increase-profit" data-first="profit-turnaround" data-label="Increase profit" aria-selected="false">Increase profit</button>
-                <button type="button" class="cs-select-option" data-challenge="reduce-acos" data-first="advertising-efficiency" data-label="Reduce ACoS" aria-selected="false">Reduce ACoS</button>
-                <button type="button" class="cs-select-option" data-challenge="improve-roas" data-first="advertising-efficiency" data-label="Improve ROAS" aria-selected="false">Improve ROAS</button>
-                <button type="button" class="cs-select-option" data-challenge="organic-rankings" data-first="organic-ranking" data-label="Improve organic rankings" aria-selected="false">Improve organic rankings</button>
-                <button type="button" class="cs-select-option" data-challenge="conversion-rate" data-first="conversion-growth" data-label="Increase conversion rate" aria-selected="false">Increase conversion rate</button>
-                <button type="button" class="cs-select-option" data-challenge="listings-creatives" data-first="conversion-growth" data-label="Improve listings &amp; creatives" aria-selected="false">Improve listings &amp; creatives</button>
-                <button type="button" class="cs-select-option" data-challenge="launch" data-first="product-launch" data-label="Launch a new product" aria-selected="false">Launch a new product</button>
-                <button type="button" class="cs-select-option" data-challenge="market-share" data-first="revenue-growth" data-label="Defend / grow market share" aria-selected="false">Defend / grow market share</button>
-                <button type="button" class="cs-select-option" data-challenge="fix-account" data-first="account-rescue" data-label="Fix an underperforming account" aria-selected="false">Fix an underperforming account</button>
+              <div
+                id="challenge-options"
+                class="cs-select-menu"
+                role="listbox"
+                aria-label="Filter by challenge"
+              >
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-challenge=""
+                  data-label="Select a challenge"
+                  aria-selected="true"
+                >
+                  Select a challenge
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-challenge="scale-revenue"
+                  data-first="revenue-growth"
+                  data-label="Scale revenue"
+                  aria-selected="false"
+                >
+                  Scale revenue
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-challenge="increase-profit"
+                  data-first="profit-turnaround"
+                  data-label="Increase profit"
+                  aria-selected="false"
+                >
+                  Increase profit
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-challenge="reduce-acos"
+                  data-first="advertising-efficiency"
+                  data-label="Reduce ACoS"
+                  aria-selected="false"
+                >
+                  Reduce ACoS
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-challenge="improve-roas"
+                  data-first="advertising-efficiency"
+                  data-label="Improve ROAS"
+                  aria-selected="false"
+                >
+                  Improve ROAS
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-challenge="organic-rankings"
+                  data-first="organic-ranking"
+                  data-label="Improve organic rankings"
+                  aria-selected="false"
+                >
+                  Improve organic rankings
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-challenge="conversion-rate"
+                  data-first="conversion-growth"
+                  data-label="Increase conversion rate"
+                  aria-selected="false"
+                >
+                  Increase conversion rate
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-challenge="listings-creatives"
+                  data-first="conversion-growth"
+                  data-label="Improve listings &amp; creatives"
+                  aria-selected="false"
+                >
+                  Improve listings &amp; creatives
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-challenge="launch"
+                  data-first="product-launch"
+                  data-label="Launch a new product"
+                  aria-selected="false"
+                >
+                  Launch a new product
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-challenge="market-share"
+                  data-first="revenue-growth"
+                  data-label="Defend / grow market share"
+                  aria-selected="false"
+                >
+                  Defend / grow market share
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-challenge="fix-account"
+                  data-first="account-rescue"
+                  data-label="Fix an underperforming account"
+                  aria-selected="false"
+                >
+                  Fix an underperforming account
+                </button>
               </div>
             </div>
           </div>
           <div class="cs-filter-group">
             <div class="cs-filter-label">Or filter by service</div>
             <div class="cs-select">
-              <button type="button" class="cs-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="service-options">
+              <button
+                type="button"
+                class="cs-select-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-controls="service-options"
+              >
                 <span class="cs-select-value">Select a service</span>
                 <span class="cs-select-chevron" aria-hidden="true">⌄</span>
               </button>
-              <div id="service-options" class="cs-select-menu" role="listbox" aria-label="Filter by service">
-                <button type="button" class="cs-select-option" data-service="" data-label="Select a service" aria-selected="true">Select a service</button>
-                <button type="button" class="cs-select-option" data-service="ppc" data-first="advertising-efficiency" data-label="Amazon PPC" aria-selected="false">Amazon PPC</button>
-                <button type="button" class="cs-select-option" data-service="listing" data-first="conversion-growth" data-label="Listing Optimization" aria-selected="false">Listing Optimization</button>
-                <button type="button" class="cs-select-option" data-service="seo" data-first="organic-ranking" data-label="Amazon SEO" aria-selected="false">Amazon SEO</button>
-                <button type="button" class="cs-select-option" data-service="creative" data-first="conversion-growth" data-label="Creative Optimization" aria-selected="false">Creative Optimization</button>
-                <button type="button" class="cs-select-option" data-service="account-management" data-first="account-rescue" data-label="Full Account Management" aria-selected="false">Full Account Management</button>
-                <button type="button" class="cs-select-option" data-service="storefront" data-first="" data-label="Amazon Storefront" aria-selected="false">Amazon Storefront</button>
-                <button type="button" class="cs-select-option" data-service="launch-strategy" data-first="product-launch" data-label="Launch Strategy" aria-selected="false">Launch Strategy</button>
-                <button type="button" class="cs-select-option" data-service="profit" data-first="profit-turnaround" data-label="Profit Optimization" aria-selected="false">Profit Optimization</button>
+              <div
+                id="service-options"
+                class="cs-select-menu"
+                role="listbox"
+                aria-label="Filter by service"
+              >
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-service=""
+                  data-label="Select a service"
+                  aria-selected="true"
+                >
+                  Select a service
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-service="ppc"
+                  data-first="advertising-efficiency"
+                  data-label="Amazon PPC"
+                  aria-selected="false"
+                >
+                  Amazon PPC
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-service="listing"
+                  data-first="conversion-growth"
+                  data-label="Listing Optimization"
+                  aria-selected="false"
+                >
+                  Listing Optimization
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-service="seo"
+                  data-first="organic-ranking"
+                  data-label="Amazon SEO"
+                  aria-selected="false"
+                >
+                  Amazon SEO
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-service="creative"
+                  data-first="conversion-growth"
+                  data-label="Creative Optimization"
+                  aria-selected="false"
+                >
+                  Creative Optimization
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-service="account-management"
+                  data-first="account-rescue"
+                  data-label="Full Account Management"
+                  aria-selected="false"
+                >
+                  Full Account Management
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-service="storefront"
+                  data-first=""
+                  data-label="Amazon Storefront"
+                  aria-selected="false"
+                >
+                  Amazon Storefront
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-service="launch-strategy"
+                  data-first="product-launch"
+                  data-label="Launch Strategy"
+                  aria-selected="false"
+                >
+                  Launch Strategy
+                </button>
+                <button
+                  type="button"
+                  class="cs-select-option"
+                  data-service="profit"
+                  data-first="profit-turnaround"
+                  data-label="Profit Optimization"
+                  aria-selected="false"
+                >
+                  Profit Optimization
+                </button>
               </div>
             </div>
           </div>
@@ -2530,16 +2732,15 @@
           );
         }
         function chipFor(group, key) {
-          var options = group === "challenge" ? challengeOptions : serviceOptions;
+          var options =
+            group === "challenge" ? challengeOptions : serviceOptions;
           return options.filter(function (option) {
             return option.getAttribute("data-" + group) === key;
           })[0];
         }
         function label(group) {
           var c = state[group] && chipFor(group, state[group]);
-          return c
-            ? c.getAttribute("data-label") || c.textContent.trim()
-            : "";
+          return c ? c.getAttribute("data-label") || c.textContent.trim() : "";
         }
         function plural(n, word) {
           return n + " " + (n === 1 ? word : word.replace("study", "studies"));
@@ -2676,7 +2877,11 @@
             trigger.setAttribute("aria-expanded", String(open));
           });
           trigger.addEventListener("keydown", function (event) {
-            if (event.key === "ArrowDown" || event.key === "Enter" || event.key === " ") {
+            if (
+              event.key === "ArrowDown" ||
+              event.key === "Enter" ||
+              event.key === " "
+            ) {
               event.preventDefault();
               menu.classList.add("open");
               trigger.setAttribute("aria-expanded", "true");
