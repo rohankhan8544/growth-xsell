@@ -1521,6 +1521,27 @@
         flex-wrap: wrap;
         gap: 8px;
       }
+      .cs-select {
+        width: min(100%, 420px);
+        appearance: none;
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text);
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 11px 13px;
+        cursor: pointer;
+      }
+      .cs-select:hover,
+      .cs-select:focus {
+        border-color: var(--accent);
+      }
+      .cs-select:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
       .cs-chip {
         display: inline-flex;
         align-items: center;
@@ -2178,118 +2199,19 @@
         <div class="cs-filter">
           <div class="cs-filter-group">
             <div class="cs-filter-label">What are you trying to solve?</div>
-            <div class="cs-chips" role="group" aria-label="Filter by challenge">
-              <button
-                type="button"
-                class="cs-chip"
-                data-challenge="scale-revenue"
-                data-first="revenue-growth"
-                data-label="Scale revenue"
-                aria-pressed="false"
-              >
-                <span class="cs-chip-icon" aria-hidden="true">🚀</span>Scale
-                revenue
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-challenge="increase-profit"
-                data-first="profit-turnaround"
-                data-label="Increase profit"
-                aria-pressed="false"
-              >
-                <span class="cs-chip-icon" aria-hidden="true">💰</span>Increase
-                profit
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-challenge="reduce-acos"
-                data-first="advertising-efficiency"
-                data-label="Reduce ACoS"
-                aria-pressed="false"
-              >
-                <span class="cs-chip-icon" aria-hidden="true">📉</span>Reduce
-                ACoS
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-challenge="improve-roas"
-                data-first="advertising-efficiency"
-                data-label="Improve ROAS"
-                aria-pressed="false"
-              >
-                <span class="cs-chip-icon" aria-hidden="true">📈</span>Improve
-                ROAS
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-challenge="organic-rankings"
-                data-first="organic-ranking"
-                data-label="Improve organic rankings"
-                aria-pressed="false"
-              >
-                <span class="cs-chip-icon" aria-hidden="true">🔎</span>Improve
-                organic rankings
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-challenge="conversion-rate"
-                data-first="conversion-growth"
-                data-label="Increase conversion rate"
-                aria-pressed="false"
-              >
-                <span class="cs-chip-icon" aria-hidden="true">🛒</span>Increase
-                conversion rate
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-challenge="listings-creatives"
-                data-first="conversion-growth"
-                data-label="Improve listings &amp; creatives"
-                aria-pressed="false"
-              >
-                <span class="cs-chip-icon" aria-hidden="true">🎨</span>Improve
-                listings &amp; creatives
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-challenge="launch"
-                data-first="product-launch"
-                data-label="Launch a new product"
-                aria-pressed="false"
-              >
-                <span class="cs-chip-icon" aria-hidden="true">📦</span>Launch a
-                new product
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-challenge="market-share"
-                data-first="revenue-growth"
-                data-label="Defend / grow market share"
-                aria-pressed="false"
-              >
-                <span class="cs-chip-icon" aria-hidden="true">🏆</span>Defend /
-                grow market share
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-challenge="fix-account"
-                data-first="account-rescue"
-                data-label="Fix an underperforming account"
-                aria-pressed="false"
-              >
-                <span class="cs-chip-icon" aria-hidden="true">🔧</span>Fix an
-                underperforming account
-              </button>
-            </div>
+            <select class="cs-select" aria-label="Filter by challenge">
+              <option value="">Select a challenge</option>
+              <option value="scale-revenue" data-first="revenue-growth">Scale revenue</option>
+              <option value="increase-profit" data-first="profit-turnaround">Increase profit</option>
+              <option value="reduce-acos" data-first="advertising-efficiency">Reduce ACoS</option>
+              <option value="improve-roas" data-first="advertising-efficiency">Improve ROAS</option>
+              <option value="organic-rankings" data-first="organic-ranking">Improve organic rankings</option>
+              <option value="conversion-rate" data-first="conversion-growth">Increase conversion rate</option>
+              <option value="listings-creatives" data-first="conversion-growth">Improve listings &amp; creatives</option>
+              <option value="launch" data-first="product-launch">Launch a new product</option>
+              <option value="market-share" data-first="revenue-growth">Defend / grow market share</option>
+              <option value="fix-account" data-first="account-rescue">Fix an underperforming account</option>
+            </select>
           </div>
           <div class="cs-filter-group">
             <div class="cs-filter-label">Or filter by service</div>
@@ -2966,8 +2888,9 @@
           grid.querySelectorAll(".cs-card"),
         );
         var chips = Array.prototype.slice.call(
-          root.querySelectorAll(".cs-chip"),
+          root.querySelectorAll(".cs-chip[data-service]"),
         );
+        var challengeSelect = root.querySelector(".cs-select");
         var status = root.querySelector(".cs-filter-status");
         var clearBtn = root.querySelector(".cs-filter-clear");
         var empty = document.querySelector(".cs-empty");
@@ -2991,13 +2914,22 @@
           );
         }
         function chipFor(group, key) {
+          if (group === "challenge" && challengeSelect) {
+            return Array.prototype.slice.call(challengeSelect.options).filter(
+              function (option) {
+                return option.value === key;
+              },
+            )[0];
+          }
           return chips.filter(function (c) {
             return c.getAttribute("data-" + group) === key;
           })[0];
         }
         function label(group) {
           var c = state[group] && chipFor(group, state[group]);
-          return c ? c.getAttribute("data-label") : "";
+          return c
+            ? c.getAttribute("data-label") || c.textContent.trim()
+            : "";
         }
         function plural(n, word) {
           return n + " " + (n === 1 ? word : word.replace("study", "studies"));
@@ -3036,11 +2968,11 @@
           });
           if (empty) empty.hidden = !(active && visible.length === 0);
           chips.forEach(function (c) {
-            var g = c.hasAttribute("data-challenge") ? "challenge" : "service";
-            var on = state[g] === c.getAttribute("data-" + g);
+            var on = state.service === c.getAttribute("data-service");
             c.classList.toggle("is-active", on);
             c.setAttribute("aria-pressed", on ? "true" : "false");
           });
+          if (challengeSelect) challengeSelect.value = state.challenge || "";
           if (clearBtn) clearBtn.hidden = !active;
 
           var what = [label("challenge"), label("service")]
@@ -3102,12 +3034,17 @@
         }
         chips.forEach(function (c) {
           c.addEventListener("click", function () {
-            var g = c.hasAttribute("data-challenge") ? "challenge" : "service";
-            var key = c.getAttribute("data-" + g);
-            state[g] = state[g] === key ? null : key;
+            var key = c.getAttribute("data-service");
+            state.service = state.service === key ? null : key;
             render();
           });
         });
+        if (challengeSelect) {
+          challengeSelect.addEventListener("change", function () {
+            state.challenge = challengeSelect.value || null;
+            render();
+          });
+        }
         if (clearBtn) {
           clearBtn.addEventListener("click", function () {
             state = { challenge: null, service: null };
