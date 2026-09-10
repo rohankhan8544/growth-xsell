@@ -1092,7 +1092,7 @@
       .solution-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 18px;
+        gap: 14px;
       }
       @media (max-width: 760px) {
         .solution-grid {
@@ -1100,10 +1100,10 @@
         }
       }
       .solution-card {
-        min-height: 330px;
+        min-height: 230px;
         border: 1px solid var(--border);
         border-radius: var(--radius-md);
-        padding: 30px;
+        padding: 18px 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -1135,25 +1135,26 @@
         color: #8f98aa;
       }
       .solution-icon {
-        font-size: 30px;
-        margin: 18px 0 15px;
+        font-size: 22px;
+        margin: 10px 0 8px;
       }
       .solution-card h3 {
-        font-size: 23px;
-        margin-bottom: 10px;
+        font-size: 18px;
+        margin-bottom: 6px;
       }
       .solution-card p {
-        font-size: 14px;
+        font-size: 12.5px;
         color: var(--text-muted);
         max-width: 470px;
+        line-height: 1.45;
       }
       .featured p {
         color: #c3c9d5;
       }
       .solution-bottom {
         border-top: 1px solid var(--border);
-        padding-top: 17px;
-        margin-top: 28px;
+        padding-top: 12px;
+        margin-top: 16px;
         display: flex;
         justify-content: space-between;
         gap: 14px;
@@ -1313,6 +1314,74 @@
         font-weight: 500;
         color: #f4f5f7;
       }
+
+      /* NICHE MARQUEE */
+      .niche-section {
+        padding: 56px 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        overflow: hidden;
+      }
+      .niche-eyebrow {
+        text-align: center;
+        margin-bottom: 26px;
+      }
+      .niche-marquee-wrap {
+        position: relative;
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 10%,
+          #000 90%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 10%,
+          #000 90%,
+          transparent
+        );
+      }
+      .niche-track {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        animation: niche-scroll 34s linear infinite;
+      }
+      .niche-track:hover {
+        animation-play-state: paused;
+      }
+      .niche-item {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 700;
+        font-size: clamp(16px, 2.2vw, 26px);
+        line-height: 1;
+        color: #4b5563;
+        white-space: nowrap;
+        padding: 0 26px;
+        letter-spacing: -0.01em;
+      }
+      .niche-sep {
+        color: var(--accent);
+        font-size: clamp(12px, 1.6vw, 18px);
+        padding: 0 4px;
+        opacity: 0.85;
+      }
+      @keyframes niche-scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .niche-track {
+          animation: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1377,92 +1446,44 @@
       </div>
     </div>
 
-    <!-- INTRO -->
-    <section>
-      <div class="wrap">
-        <div class="intro-split">
-          <div>
-            <div class="eyebrow">Start with the problem</div>
-            <h2>Amazon growth is rarely one problem.</h2>
-            <a href="#solutions" class="pill-btn-outline"
-              >Find your solution →</a
-            >
-          </div>
-          <p>
-            Traffic, conversion, advertising efficiency, customer feedback,
-            catalog health, and product economics are connected. We look across
-            the business first, then bring the right specialists and
-            capabilities to the problem that matters most.
-          </p>
+    <!-- NICHE MARQUEE -->
+    <section class="niche-section" aria-label="Niches we specialize in">
+      <div class="niche-eyebrow">
+        <div class="eyebrow" style="justify-content: center">
+          Niches we specialize in
         </div>
-
-        <div class="grid-3">
-          <div class="feat-card light">
-            <div class="feat-visual">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#16203A"
-                stroke-width="2"
-              >
-                <path d="M3 3v18h18" />
-                <path d="M7 15l4-5 3 3 5-7" />
-              </svg>
-            </div>
-            <div>
-              <h3>Diagnose before you optimize</h3>
-              <p>
-                We start with the account, products, market, customers, and
-                performance data — not a generic checklist.
-              </p>
-            </div>
-          </div>
-          <div class="feat-card dark">
-            <div class="feat-visual">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#fff"
-                stroke-width="2"
-              >
-                <circle cx="12" cy="12" r="9" />
-                <path d="M12 7v5l3 3" />
-              </svg>
-            </div>
-            <div>
-              <h3>One team, connected decisions</h3>
-              <p>
-                PPC, SEO, creative, customer intelligence, catalog, and strategy
-                work toward the same commercial goal.
-              </p>
-            </div>
-          </div>
-          <div class="feat-card dark">
-            <div class="feat-visual">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#fff"
-                stroke-width="2"
-              >
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                <path d="M22 4L12 14.01l-3-3" />
-              </svg>
-            </div>
-            <div>
-              <h3>Built around outcomes</h3>
-              <p>
-                We focus on the metrics that matter to the business: growth,
-                conversion, efficiency, and sustainable profitability.
-              </p>
-            </div>
-          </div>
+      </div>
+      <div class="niche-marquee-wrap">
+        <div class="niche-track">
+          <span class="niche-item">Health &amp; Beauty</span
+          ><span class="niche-sep">✦</span>
+          <span class="niche-item">Home &amp; Kitchen</span
+          ><span class="niche-sep">✦</span>
+          <span class="niche-item">Supplements &amp; Wellness</span
+          ><span class="niche-sep">✦</span>
+          <span class="niche-item">Pet Care</span
+          ><span class="niche-sep">✦</span>
+          <span class="niche-item">Baby &amp; Kids</span
+          ><span class="niche-sep">✦</span>
+          <span class="niche-item">Sports &amp; Outdoors</span
+          ><span class="niche-sep">✦</span>
+          <span class="niche-item">Electronics</span
+          ><span class="niche-sep">✦</span>
+          <!-- duplicate set — keeps the loop seamless, do not remove -->
+          <span class="niche-item">Health &amp; Beauty</span
+          ><span class="niche-sep">✦</span>
+          <span class="niche-item">Home &amp; Kitchen</span
+          ><span class="niche-sep">✦</span>
+          <span class="niche-item">Supplements &amp; Wellness</span
+          ><span class="niche-sep">✦</span>
+          <span class="niche-item">Pet Care</span
+          ><span class="niche-sep">✦</span>
+          <span class="niche-item">Baby &amp; Kids</span
+          ><span class="niche-sep">✦</span>
+          <span class="niche-item">Sports &amp; Outdoors</span
+          ><span class="niche-sep">✦</span>
+          <span class="niche-item">Electronics</span
+          ><span class="niche-sep">✦</span>
         </div>
       </div>
     </section>
@@ -1939,7 +1960,7 @@
     <footer>
       <div class="wrap footer-row">
         <span>© 2026 Amazon Growth Partners</span>
-        <span>[contact@domain.com] · [phone placeholder]</span>
+        <span>[contact@domain.com] · [phone placeholder</span>
       </div>
     </footer>
 
