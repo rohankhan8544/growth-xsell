@@ -2300,87 +2300,33 @@
           </div>
           <div class="cs-filter-group">
             <div class="cs-filter-label">Or filter by service</div>
-            <div class="cs-chips" role="group" aria-label="Filter by service">
+            <div class="cs-select">
               <button
                 type="button"
-                class="cs-chip"
-                data-service="ppc"
-                data-first="advertising-efficiency"
-                data-label="Amazon PPC"
-                aria-pressed="false"
+                class="cs-select-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-controls="service-options"
               >
-                Amazon PPC
+                <span class="cs-select-value">Select a service</span>
+                <span class="cs-select-chevron" aria-hidden="true">⌄</span>
               </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-service="listing"
-                data-first="conversion-growth"
-                data-label="Listing Optimization"
-                aria-pressed="false"
+              <div
+                id="service-options"
+                class="cs-select-menu"
+                role="listbox"
+                aria-label="Filter by service"
               >
-                Listing Optimization
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-service="seo"
-                data-first="organic-ranking"
-                data-label="Amazon SEO"
-                aria-pressed="false"
-              >
-                Amazon SEO
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-service="creative"
-                data-first="conversion-growth"
-                data-label="Creative Optimization"
-                aria-pressed="false"
-              >
-                Creative Optimization
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-service="account-management"
-                data-first="account-rescue"
-                data-label="Full Account Management"
-                aria-pressed="false"
-              >
-                Full Account Management
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-service="storefront"
-                data-first=""
-                data-label="Amazon Storefront"
-                aria-pressed="false"
-              >
-                Amazon Storefront
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-service="launch-strategy"
-                data-first="product-launch"
-                data-label="Launch Strategy"
-                aria-pressed="false"
-              >
-                Launch Strategy
-              </button>
-              <button
-                type="button"
-                class="cs-chip"
-                data-service="profit"
-                data-first="profit-turnaround"
-                data-label="Profit Optimization"
-                aria-pressed="false"
-              >
-                Profit Optimization
-              </button>
+                <button type="button" class="cs-select-option" data-service="" data-label="Select a service" aria-selected="true">Select a service</button>
+                <button type="button" class="cs-select-option" data-service="ppc" data-first="advertising-efficiency" data-label="Amazon PPC" aria-selected="false">Amazon PPC</button>
+                <button type="button" class="cs-select-option" data-service="listing" data-first="conversion-growth" data-label="Listing Optimization" aria-selected="false">Listing Optimization</button>
+                <button type="button" class="cs-select-option" data-service="seo" data-first="organic-ranking" data-label="Amazon SEO" aria-selected="false">Amazon SEO</button>
+                <button type="button" class="cs-select-option" data-service="creative" data-first="conversion-growth" data-label="Creative Optimization" aria-selected="false">Creative Optimization</button>
+                <button type="button" class="cs-select-option" data-service="account-management" data-first="account-rescue" data-label="Full Account Management" aria-selected="false">Full Account Management</button>
+                <button type="button" class="cs-select-option" data-service="storefront" data-first="" data-label="Amazon Storefront" aria-selected="false">Amazon Storefront</button>
+                <button type="button" class="cs-select-option" data-service="launch-strategy" data-first="product-launch" data-label="Launch Strategy" aria-selected="false">Launch Strategy</button>
+                <button type="button" class="cs-select-option" data-service="profit" data-first="profit-turnaround" data-label="Profit Optimization" aria-selected="false">Profit Optimization</button>
+              </div>
             </div>
           </div>
           <div class="cs-filter-status-row">
@@ -2972,14 +2918,21 @@
         var cards = Array.prototype.slice.call(
           grid.querySelectorAll(".cs-card"),
         );
-        var chips = Array.prototype.slice.call(
-          root.querySelectorAll(".cs-chip[data-service]"),
+        var challengeSelect = root.querySelector(
+          '[aria-controls="challenge-options"]',
+        ).parentElement;
+        var serviceSelect = root.querySelector(
+          '[aria-controls="service-options"]',
+        ).parentElement;
+        var challengeTrigger = challengeSelect.querySelector(
+          ".cs-select-trigger",
         );
-        var challengeSelect = root.querySelector(".cs-select");
-        var challengeTrigger = root.querySelector(".cs-select-trigger");
-        var challengeMenu = root.querySelector(".cs-select-menu");
+        var challengeMenu = challengeSelect.querySelector(".cs-select-menu");
         var challengeOptions = Array.prototype.slice.call(
-          root.querySelectorAll(".cs-select-option"),
+          challengeSelect.querySelectorAll(".cs-select-option"),
+        );
+        var serviceOptions = Array.prototype.slice.call(
+          serviceSelect.querySelectorAll(".cs-select-option"),
         );
         var status = root.querySelector(".cs-filter-status");
         var clearBtn = root.querySelector(".cs-filter-clear");
@@ -3011,8 +2964,8 @@
               },
             )[0];
           }
-          return chips.filter(function (c) {
-            return c.getAttribute("data-" + group) === key;
+          return serviceOptions.filter(function (option) {
+            return option.getAttribute("data-service") === key;
           })[0];
         }
         function label(group) {
@@ -3057,24 +3010,18 @@
             card.classList.toggle("cs-featured", featured);
           });
           if (empty) empty.hidden = !(active && visible.length === 0);
-          chips.forEach(function (c) {
-            var on = state.service === c.getAttribute("data-service");
-            c.classList.toggle("is-active", on);
-            c.setAttribute("aria-pressed", on ? "true" : "false");
-          });
-          if (challengeSelect) {
-            var selectedChallenge = chipFor("challenge", state.challenge || "");
-            challengeSelect.querySelector(".cs-select-value").textContent =
-              selectedChallenge
-                ? selectedChallenge.getAttribute("data-label")
-                : "Select a challenge";
-            challengeOptions.forEach(function (option) {
-              option.setAttribute(
-                "aria-selected",
-                option === selectedChallenge ? "true" : "false",
-              );
-            });
-          }
+          syncDropdown(
+            challengeSelect,
+            challengeOptions,
+            state.challenge,
+            "Select a challenge",
+          );
+          syncDropdown(
+            serviceSelect,
+            serviceOptions,
+            state.service,
+            "Select a service",
+          );
           if (clearBtn) clearBtn.hidden = !active;
 
           var what = [label("challenge"), label("service")]
@@ -3134,45 +3081,70 @@
             } catch (e) {}
           }
         }
-        chips.forEach(function (c) {
-          c.addEventListener("click", function () {
-            var key = c.getAttribute("data-service");
-            state.service = state.service === key ? null : key;
-            render();
+        function syncDropdown(container, options, value, placeholder) {
+          var selected = options.filter(function (option) {
+            return (
+              option.getAttribute("data-" +
+                (container === challengeSelect ? "challenge" : "service")) ===
+              (value || "")
+            );
+          })[0];
+          container.querySelector(".cs-select-value").textContent = selected
+            ? selected.getAttribute("data-label")
+            : placeholder;
+          options.forEach(function (option) {
+            option.setAttribute(
+              "aria-selected",
+              option === selected ? "true" : "false",
+            );
           });
-        });
+        }
+
         function closeChallengeMenu() {
           if (!challengeMenu || !challengeTrigger) return;
           challengeMenu.classList.remove("open");
           challengeTrigger.setAttribute("aria-expanded", "false");
         }
-        if (challengeSelect && challengeTrigger && challengeMenu) {
-          challengeTrigger.addEventListener("click", function () {
-            var open = challengeMenu.classList.toggle("open");
-            challengeTrigger.setAttribute("aria-expanded", String(open));
+        function bindDropdown(container, options, group, placeholder) {
+          var trigger = container.querySelector(".cs-select-trigger");
+          var menu = container.querySelector(".cs-select-menu");
+          function close() {
+            menu.classList.remove("open");
+            trigger.setAttribute("aria-expanded", "false");
+          }
+          trigger.addEventListener("click", function () {
+            var open = menu.classList.toggle("open");
+            trigger.setAttribute("aria-expanded", String(open));
           });
-          challengeTrigger.addEventListener("keydown", function (event) {
+          trigger.addEventListener("keydown", function (event) {
             if (event.key === "ArrowDown" || event.key === "Enter" || event.key === " ") {
               event.preventDefault();
-              challengeMenu.classList.add("open");
-              challengeTrigger.setAttribute("aria-expanded", "true");
-              challengeOptions[0].focus();
+              menu.classList.add("open");
+              trigger.setAttribute("aria-expanded", "true");
+              options[0].focus();
             }
           });
-          challengeOptions.forEach(function (option) {
+          options.forEach(function (option) {
             option.addEventListener("click", function () {
-              state.challenge = option.getAttribute("data-challenge") || null;
-              closeChallengeMenu();
+              state[group] = option.getAttribute("data-" + group) || null;
+              close();
               render();
             });
           });
           document.addEventListener("click", function (event) {
-            if (!challengeSelect.contains(event.target)) closeChallengeMenu();
+            if (!container.contains(event.target)) close();
           });
           document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") closeChallengeMenu();
+            if (event.key === "Escape") close();
           });
         }
+        bindDropdown(
+          challengeSelect,
+          challengeOptions,
+          "challenge",
+          "Select a challenge",
+        );
+        bindDropdown(serviceSelect, serviceOptions, "service", "Select a service");
         if (clearBtn) {
           clearBtn.addEventListener("click", function () {
             state = { challenge: null, service: null };
