@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profit Turnaround Case Study | GrowthXsell</title>
+    <meta
+      name="description"
+      content="How GrowthXsell turned a Home & Kitchen Amazon account from -$4K/month profit to +$9K/month without cutting revenue."
+    />
+    <meta
+      property="og:title"
+      content="Profit Turnaround: from -$4K to +$9K monthly profit"
+    />
+    <meta
+      property="og:description"
+      content="Net margin improved from -6% to 12% and ROAS rose from 2.6x to 4.5x."
+    />
+    <meta property="og:type" content="article" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f6f3ec;
+        --surface: #efe9dd;
+        --surface-2: #faf8f3;
+        --line: #e3dccf;
+        --navy: #16203a;
+        --navy-2: #242d46;
+        --ink: #1b1f2a;
+        --body: #4b4f5a;
+        --muted: #75716b;
+        --label: #8a8680;
+        --orange: #e8792f;
+        --orange-deep: #cf661f;
+        --orange-tint: #fbe7d7;
+        --peach: #f6b784;
+        --on-navy-muted: #aab3c7;
+        --sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        --mono: "JetBrains Mono", "DM Mono", "IBM Plex Mono", ui-monospace, monospace;
+        --r-lg: 28px;
+        --r: 18px;
+        --r-sm: 12px;
+        --pill: 999px;
+        --container: 1120px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--sans);
+        line-height: 1.62;
+        font-size: 16.5px;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible, button:focus-visible {
+        outline: 3px solid var(--orange);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
+      img { max-width: 100%; display: block; }
+      p { margin: 0 0 1em; }
+      p:last-child { margin-bottom: 0; }
+      ul { margin: 0; padding: 0; list-style: none; }
+      .container { width: min(var(--container), calc(100% - 40px)); margin-inline: auto; }
+      .section { padding: 42px 0; }
+      .section-head { max-width: 720px; margin-bottom: 22px; }
+      .section-head p { color: var(--muted); font-size: 17.5px; }
+      .center { text-align: center; }
+      h1,h2,h3,h4 { margin: 0; line-height: 1.12; letter-spacing: -0.02em; }
+      h1 { font-size: clamp(36px, 5vw, 58px); font-weight: 700; }
+      h2 { font-size: clamp(28px, 3.4vw, 40px); font-weight: 600; margin-bottom: 14px; }
+      h3 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
+      .body-copy { color: var(--body); }
+      .kicker, .mono, .num-label {
+        font-family: var(--mono);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--orange);
+        font-size: 11.5px;
+        margin-bottom: 16px;
+      }
+      .kicker::before {
+        content: "";
+        width: 18px;
+        height: 2px;
+        background: var(--orange);
+      }
+      .num-label {
+        font-size: 11.5px;
+        color: var(--orange);
+        margin-bottom: 14px;
+      }
+      .lead {
+        font-size: clamp(18px, 2vw, 22px);
+        color: var(--body);
+        max-width: 720px;
+      }
+      .meta {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 0 22px;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+        padding: 9px 12px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.32);
+        border: 1px solid var(--line);
+        color: var(--body);
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .chip.solid {
+        background: var(--navy);
+        border-color: var(--navy);
+        color: #fff;
+      }
+      .hero {
+        padding: 52px 0 18px;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 30px;
+      }
+      .stats div {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--r-lg);
+        padding: 22px 20px;
+      }
+      .stats strong {
+        display: block;
+        font-size: clamp(24px, 2.6vw, 38px);
+        line-height: 1.1;
+        margin-bottom: 8px;
+      }
+      .stats span {
+        color: var(--body);
+        font-size: 14px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 24px;
+        border-radius: var(--pill);
+        font-weight: 700;
+        border: 1px solid transparent;
+      }
+      .btn.primary {
+        background: var(--orange);
+        color: white;
+      }
+      .btn.secondary {
+        background: transparent;
+        border-color: var(--line);
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: 1.4fr 0.9fr;
+        gap: 30px;
+      }
+      .snapshot {
+        background: var(--navy);
+        border-radius: var(--r-lg);
+        padding: 24px 24px 8px;
+        color: white;
+        display: grid;
+        gap: 14px;
+      }
+      .snapshot li {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        color: var(--on-navy-muted);
+      }
+      .snapshot li strong {
+        color: white;
+        font-size: 1.1em;
+      }
+      .took-over {
+        margin-top: 18px;
+        background: rgba(255,255,255,0.35);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px 18px;
+      }
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .card {
+        background: rgba(255,255,255,0.25);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        padding: 24px 20px;
+      }
+      .card p { color: var(--body); }
+      .needs {
+        margin-top: 24px;
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: var(--r-lg);
+        padding: 22px 24px;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 24px;
+      }
+      .objective {
+        margin-top: 12px;
+        background: rgba(232, 121, 47, 0.08);
+        border: 1px solid rgba(232, 121, 47, 0.2);
+        border-radius: 16px;
+        padding: 14px 16px;
+      }
+      .checks { display: grid; gap: 10px; }
+      .checks li {
+        position: relative;
+        padding-left: 24px;
+        color: var(--body);
+      }
+      .checks li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--orange);
+        font-weight: 700;
+      }
+      .findings {
+        display: grid;
+        gap: 18px;
+      }
+      .finding {
+        background: rgba(255,255,255,0.25);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        padding: 22px 20px;
+      }
+      .quote {
+        background: var(--navy);
+        color: white;
+        border-radius: var(--r-lg);
+        padding: 28px 28px;
+      }
+      .quote strong { font-size: 1.3em; display: block; margin-bottom: 8px; }
+      .result-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .result-grid .card {
+        background: var(--surface);
+      }
+      .highlight {
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--ink);
+        display: block;
+        margin-bottom: 8px;
+      }
+      .nav {
+        background: rgba(246,243,236,0.9);
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(10px);
+      }
+      .nav .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 72px;
+      }
+      .brand {
+        font-weight: 800;
+        letter-spacing: -0.06em;
+        font-size: 1.7rem;
+      }
+      .brand span { color: var(--orange); }
+      .navlinks {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        color: var(--body);
+      }
+      .navcta {
+        background: var(--navy);
+        color: white !important;
+        padding: 10px 16px;
+        border-radius: 999px;
+      }
+      .menu-btn {
+        display: none;
+        background: transparent;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 9px 14px;
+      }
+      .mobile-menu {
+        display: none;
+        border-top: 1px solid var(--line);
+        background: var(--bg);
+      }
+      .mobile-menu .container {
+        display: grid;
+        gap: 12px;
+        padding: 18px 0 20px;
+      }
+      @media (max-width: 980px) {
+        .stats, .grid-4, .two-col, .needs, .result-grid { grid-template-columns: 1fr 1fr; }
+        .navlinks { display: none; }
+        .menu-btn { display: inline-flex; }
+      }
+      @media (max-width: 620px) {
+        .stats, .grid-4, .two-col, .needs, .result-grid { grid-template-columns: 1fr; }
+        .hero { padding-top: 38px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container">
+        <a class="brand" href="/">Growth<span>X</span>sell</a>
+        <nav class="navlinks" aria-label="Primary">
+          <a href="/solutions/">Solutions</a>
+          <a href="/capabilities/">Capabilities</a>
+          <a href="/process/">Process</a>
+          <a href="/about/">About</a>
+          <a href="/case studies/" aria-current="page">Case Studies</a>
+          <a class="navcta" href="/#contact">Free assessment</a>
+        </nav>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="container">
+          <a href="/solutions/">Solutions</a>
+          <a href="/capabilities/">Capabilities</a>
+          <a href="/process/">Process</a>
+          <a href="/about/">About</a>
+          <a href="/case studies/">Case Studies</a>
+          <a href="/#contact">Free assessment →</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="chips" aria-label="Case study tags">
+            <a class="chip" href="/case studies/">← All case studies</a>
+            <span class="chip solid">Home &amp; Kitchen</span>
+            <span class="chip">Amazon PPC</span>
+            <span class="chip">Profit turnaround</span>
+          </div>
+
+          <span class="kicker">Client results</span>
+          <h1>From -$4K monthly profit to +$9K in four months.</h1>
+          <p class="lead">
+            We took a $62K/month Home &amp; Kitchen account that was losing money
+            and rebuilt the economics so it could grow revenue without sacrificing
+            profit. The fix was not simply more spend — it was better pricing,
+            tighter PPC control, and smarter product-level decisions.
+          </p>
+          <p class="meta">
+            Amazon sales + ads data · 4-month turnaround · confidential client,
+            figures used with permission
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="/#contact">Get a free assessment →</a>
+            <a class="btn secondary" href="#results">See the before &amp; after</a>
+          </div>
+
+          <div class="stats" aria-label="Headline results">
+            <div><strong>+$9K</strong><span>Monthly profit · from -$4K</span></div>
+            <div><strong>12%</strong><span>Net margin · up from -6%</span></div>
+            <div><strong>+$13K</strong><span>Monthly revenue · $62K → $75K</span></div>
+            <div><strong>4.5x</strong><span>ROAS · up from 2.6x</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="brand">
+        <div class="container two-col">
+          <div>
+            <span class="kicker">About the brand</span>
+            <h2>A profitable revenue story hiding behind a bad margin mix.</h2>
+            <p class="body-copy">
+              The brand was already generating meaningful revenue, but the account was
+              leaking profit in the wrong places. Revenue looked healthy on paper,
+              while the real issue was product economics and campaign efficiency.
+            </p>
+            <p class="body-copy">
+              That meant the business was not failing because it was small — it was failing
+              because the money coming in was being spent too expensively and too broadly.
+              Many of the account's top sellers were carrying too much ad cost, and pricing
+              wasn't supporting a healthy margin structure.
+            </p>
+            <div class="took-over">
+              <strong>What we took over:</strong> PPC structure, spend allocation,
+              product-level economics, bid strategy, and pricing guardrails.
+            </div>
+          </div>
+
+          <ul class="snapshot" aria-label="Account snapshot">
+            <li>Monthly revenue<strong>$62K</strong></li>
+            <li>Profit before<strong>-$4K</strong></li>
+            <li>Net margin<strong>-6%</strong></li>
+            <li>ROAS<strong>2.6x</strong></li>
+            <li>Category<strong>Home &amp; Kitchen</strong></li>
+            <li>Timeline<strong>4 months</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="challenge">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">The challenge</span>
+            <h2>Revenue was moving, but profit was being burned.</h2>
+            <p>
+              The brand had enough demand to grow, but the account structure was making it hard to tell
+              which SKUs and campaigns were creating real value versus just burning ad spend.
+            </p>
+          </div>
+
+          <div class="grid-4">
+            <div class="card">
+              <div class="num-label">01</div>
+              <h3>Weak product economics</h3>
+              <p>Some products were profitable on paper and still not sustainable once ads, fees, and shipping were considered.</p>
+            </div>
+            <div class="card">
+              <div class="num-label">02</div>
+              <h3>Ad spend was too blunt</h3>
+              <p>Budget was being distributed without enough attention to profitability by product, keyword, and search intent.</p>
+            </div>
+            <div class="card">
+              <div class="num-label">03</div>
+              <h3>Low margin for error</h3>
+              <p>At a negative net margin, every inefficient click or underpriced unit reduced financial performance quickly.</p>
+            </div>
+            <div class="card">
+              <div class="num-label">04</div>
+              <h3>Growth was not truly healthy</h3>
+              <p>The business could buy revenue, but it could not buy profit. The problem was operational, not demand-driven.</p>
+            </div>
+          </div>
+
+          <div class="needs">
+            <div>
+              <h3>What they needed</h3>
+              <p>More than a better campaign setup — a healthier profit model.</p>
+              <div class="objective">
+                <strong>Objective:</strong> fix the margin leak without reducing top-line revenue, and turn ad efficiency into profit growth.
+              </div>
+            </div>
+            <ul class="checks">
+              <li>Identify which products and keywords were actually creating profit</li>
+              <li>Reduce waste in broad, low-intent spend</li>
+              <li>Improve bid strategy around contribution margin, not just clicks</li>
+              <li>Use pricing and product positioning to protect margin</li>
+              <li>Keep growth compounding without a revenue tradeoff</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="diagnosis">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">What we found</span>
+            <h2>The issue was not demand. It was the economics behind it.</h2>
+            <p>
+              Before changing anything, we read the account as a profit system — not a marketing dashboard.
+              That meant looking at revenue, margin, PPC efficiency, and how SKU-level performance translated into real profit.
+            </p>
+          </div>
+
+          <div class="findings">
+            <div class="finding">
+              <h3>Some campaigns were converting but not contributing.</h3>
+              <p>
+                A few campaigns were producing sales, but at a cost structure that erased the benefit. We needed to separate high-volume activity from high-value profit activity.
+              </p>
+            </div>
+            <div class="finding">
+              <h3>Product-level spend was misallocated.</h3>
+              <p>
+                Budget was concentrated on products that looked strong in top-line sales but were actually dragging margin down once ad costs and fee pressure were included.</p>
+            </div>
+            <div class="finding">
+              <h3>Efficiency was lagging behind the real opportunity.</h3>
+              <p>
+                The account had room to grow without adding waste; the quick win was to improve how spend was deployed, not to cut the business back.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="strategy">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">The strategy</span>
+            <h2>We rebuilt the account around profit, not just volume.</h2>
+          </div>
+
+          <div class="result-grid">
+            <div class="card">
+              <span class="highlight">01</span>
+              <h3>Repriced the margin mix</h3>
+              <p>We corrected pricing and product-level economics so more sales could land profitably instead of just selling at a loss.</p>
+            </div>
+            <div class="card">
+              <span class="highlight">02</span>
+              <h3>Changed PPC behavior</h3>
+              <p>Campaigns were tightened to prioritize strong contribution margin, with smarter bids and less spend on weak-intent traffic.</p>
+            </div>
+            <div class="card">
+              <span class="highlight">03</span>
+              <h3>Protected volume growth</h3>
+              <p>We kept the account moving upward without letting the growth engine consume profit. The goal was stronger revenue quality, not reduced scale.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="results">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">The outcome</span>
+            <h2>A turn from margin loss to consistent monthly profit.</h2>
+          </div>
+
+          <div class="result-grid">
+            <div class="card">
+              <span class="highlight">$62K</span>
+              <h3>Revenue before</h3>
+              <p>Monthly sales were healthy, but the business was still operating at a loss.</p>
+            </div>
+            <div class="card">
+              <span class="highlight">$75K</span>
+              <h3>Revenue after</h3>
+              <p>Sales increased while the account became structurally healthier and more efficient.</p>
+            </div>
+            <div class="card">
+              <span class="highlight">+18 pts</span>
+              <h3>Net margin improvement</h3>
+              <p>We moved the business from -6% net margin to 12% in four months.</p>
+            </div>
+          </div>
+
+          <div class="quote" style="margin-top: 24px;">
+            <strong>Bottom line:</strong>
+            The account did not need a smaller business. It needed a better one.
+            We improved the unit economics enough to turn a losing Amazon account into a profitable growth engine.
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="takeaway">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">Takeaway</span>
+            <h2>Profitability was the lever, not just ad efficiency.</h2>
+            <p>
+              When revenue is already there, the real opportunity is often not more spending — it is better pricing, sharper PPC decisions, and a tougher margin lens.
+              This account proves that a business can grow while getting more efficient at the same time.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact" style="padding-top: 0;">
+        <div class="container">
+          <div class="quote">
+            <span class="kicker" style="color: #f6b784;">Want results like these?</span>
+            <h2 style="margin-bottom: 14px;">Get a free assessment and see what is leaking profit in your account.</h2>
+            <a class="btn primary" href="/#contact">Book a strategy call →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
