@@ -76,7 +76,7 @@
       h1,
       h2,
       h3 {
-        font-family: "Plus Jakarta Sans", Inter, sans-serif;
+        font-family: "Plus Jakarta Sans", sans-serif;
         letter-spacing: -0.025em;
       }
       .mono {
@@ -97,7 +97,7 @@
       }
 
       /* NAV */
-      nav {
+      .nav {
         padding: 0;
         border-bottom: 1px solid var(--line);
         background: rgba(246, 243, 236, 0.9);
@@ -113,7 +113,9 @@
         min-height: 72px;
       }
       .logo {
-        font: 800 1.7rem "Plus Jakarta Sans", sans-serif;
+        font:
+          800 1.7rem "Plus Jakarta Sans",
+          sans-serif;
         letter-spacing: -0.06em;
         white-space: nowrap;
       }
@@ -148,6 +150,26 @@
         border-radius: 999px;
         padding: 9px 14px;
         cursor: pointer;
+      }
+      .mobile-menu {
+        display: none;
+        border-top: 1px solid var(--line);
+        background: var(--bg);
+      }
+      .mobile-menu.open {
+        display: block;
+      }
+      .mobile-menu a {
+        display: block;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .mobile-menu a:last-child {
+        border-bottom: 0;
+        color: var(--accent);
+        font-weight: 700;
       }
       @media (max-width: 850px) {
         .nav-links {
@@ -253,7 +275,7 @@
         font-size: 14px;
       }
       .hero-result .arrow {
-        color: #67d1c4;
+        color: #f6b784;
       }
 
       /* METRICS */
@@ -346,7 +368,7 @@
         display: grid;
         place-items: center;
         font:
-          700 12px "IBM Plex Mono",
+          700 12px "JetBrains Mono",
           monospace;
       }
       .list {
@@ -425,7 +447,7 @@
       }
       .strategy-card .step {
         font:
-          500 11px "IBM Plex Mono",
+          500 11px "JetBrains Mono",
           monospace;
         color: var(--accent);
       }
@@ -466,7 +488,7 @@
       }
       .ba-card .tag {
         font:
-          500 11px "IBM Plex Mono",
+          500 11px "JetBrains Mono",
           monospace;
         text-transform: uppercase;
         letter-spacing: 0.08em;
@@ -636,7 +658,7 @@
         padding: 38px;
       }
       .quote .eyebrow {
-        color: #67d1c4;
+        color: #f6b784;
       }
       .quote p {
         font:
@@ -847,28 +869,43 @@
   </head>
 
   <body>
-    <nav>
+    <header class="nav">
       <div class="wrap nav-inner">
         <a class="logo" href="/">Growth<span>X</span>sell</a>
-        <div class="nav-links">
-          <a href="/#solutions">Solutions</a>
-          <a href="/#capabilities">Capabilities</a>
-          <a href="/#process">Process</a>
-          <a href="/#about">About</a>
-          <a href="/case%20studies/case-studies.html">Case Studies</a>
-        </div>
-        <a class="nav-cta" href="/#assessment">Free assessment →</a>
-        <button class="menu" aria-label="Menu">☰</button>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/solutions/">Solutions</a>
+          <a href="/capabilities/">Capabilities</a>
+          <a href="/process/">Process</a>
+          <a href="/about/">About</a>
+          <a href="/case studies/" aria-current="page">Case Studies</a>
+          <a class="nav-cta" href="/#contact">Free assessment</a>
+        </nav>
+        <button
+          class="menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          Menu
+        </button>
       </div>
-    </nav>
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="wrap">
+          <a href="/solutions/">Solutions</a>
+          <a href="/capabilities/">Capabilities</a>
+          <a href="/process/">Process</a>
+          <a href="/about/">About</a>
+          <a href="/case studies/">Case Studies</a>
+          <a href="/#contact">Free assessment →</a>
+        </div>
+      </div>
+    </header>
 
     <main>
       <!-- HERO -->
       <section class="hero">
         <div class="wrap">
-          <a class="back" href="/case%20studies/case-studies.html"
-            >← All case studies</a
-          >
+          <a class="back" href="/case studies/">← All case studies</a>
 
           <div class="hero-grid">
             <div>
@@ -888,7 +925,7 @@
                 Confidential client, figures used with permission
               </div>
               <div class="hero-actions">
-                <a class="btn btn-dark" href="/#assessment"
+                <a class="btn btn-dark" href="/#contact"
                   >Get a free assessment →</a
                 >
                 <a class="btn btn-outline" href="#before-after"
@@ -1571,7 +1608,7 @@
                   can scale.
                 </p>
               </div>
-              <a class="btn" href="/#assessment">Get my free assessment →</a>
+              <a class="btn" href="/#contact">Get my free assessment →</a>
             </div>
           </div>
         </div>
@@ -1588,25 +1625,12 @@
     </footer>
 
     <script>
-      // Lightweight mobile menu
       const menu = document.querySelector(".menu");
-      const links = document.querySelector(".nav-links");
-      if (menu) {
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (menu && mobileMenu) {
         menu.addEventListener("click", () => {
-          const open = links.style.display === "flex";
-          links.style.display = open ? "" : "flex";
-          if (!open) {
-            links.style.position = "absolute";
-            links.style.top = "70px";
-            links.style.left = "20px";
-            links.style.right = "20px";
-            links.style.flexDirection = "column";
-            links.style.padding = "14px";
-            links.style.background = "#fff";
-            links.style.border = "1px solid #e4e8ee";
-            links.style.borderRadius = "16px";
-            links.style.boxShadow = "0 18px 35px rgba(20,31,51,.12)";
-          }
+          const open = mobileMenu.classList.toggle("open");
+          menu.setAttribute("aria-expanded", String(open));
         });
       }
     </script>
