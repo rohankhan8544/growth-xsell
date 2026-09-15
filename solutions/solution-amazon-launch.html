@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Launch | GrowthXsell</title>
+  <meta name="description" content="Launch your Amazon product with the research, positioning, listing, and advertising foundation needed to build traction." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f3ec;
+      --surface: #fff;
+      --warm: #efe9dd;
+      --dark: #16203a;
+      --accent: #e8792f;
+      --text: #1b1f2a;
+      --muted: #666f80;
+      --border: #e7e1d3;
+      --mint: #bfe3d2;
+      --lav: #d6cdec;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: Inter, sans-serif; line-height: 1.6; }
+    h1, h2, h3 { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 600; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1180px; margin: auto; padding: 0 32px; }
+
+    nav { padding: 20px 0; }
+    .nav { display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: "Plus Jakarta Sans", sans-serif; font-size: 21px; font-weight: 700; }
+    .logo span { color: var(--accent); font-style: italic; }
+    .links { display: flex; gap: 26px; color: var(--muted); font-size: 14px; font-weight: 600; }
+    .links a:hover { color: var(--text); }
+    .button { display: inline-flex; background: var(--dark); color: #fff; padding: 12px 22px; border-radius: 100px; font-size: 13px; font-weight: 600; }
+    .mobile-menu-toggle { display: none; border: 0; background: transparent; color: var(--dark); cursor: pointer; padding: 8px; }
+
+    .hero { padding: 82px 0 76px; background: linear-gradient(115deg, var(--peach, #f6c6a6), var(--warm) 48%, var(--lav)); }
+    .eyebrow { font: 11px "IBM Plex Mono", monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .hero h1 { max-width: 820px; font-size: clamp(42px, 7vw, 78px); line-height: 1.04; margin-bottom: 24px; }
+    .hero p { max-width: 610px; color: var(--muted); font-size: 18px; }
+    .section { padding: 76px 0; }
+    .section h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.1; margin-bottom: 16px; }
+    .intro { max-width: 650px; color: var(--muted); margin-bottom: 36px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; min-height: 220px; }
+    .card:nth-child(2) { background: var(--dark); color: #fff; }
+    .card:nth-child(3) { background: linear-gradient(135deg, var(--mint), var(--surface)); }
+    .number { font: 11px "IBM Plex Mono", monospace; color: var(--accent); }
+    .card h3 { font-size: 21px; margin: 34px 0 10px; }
+    .card p { color: var(--muted); font-size: 14px; }
+    .card:nth-child(2) p { color: #c3c9d5; }
+    .band { background: var(--dark); color: #fff; }
+    .band p { max-width: 600px; color: #c3c9d5; margin-bottom: 24px; }
+    .light-button { background: #fff; color: var(--dark); }
+    footer { padding: 25px 0; color: #9198a6; font: 11px "IBM Plex Mono", monospace; }
+
+    @media (max-width: 800px) {
+      .wrap { padding: 0 20px; }
+      .links { display: none; }
+      .mobile-menu-toggle { display: block; order: -1; }
+      .nav { position: relative; justify-content: flex-start; }
+      .nav > .logo { margin-left: 4px; }
+      .nav > .button { margin-left: auto; padding: 11px 15px; font-size: 12px; white-space: nowrap; }
+      .links.open { display: flex; position: absolute; top: calc(100% + 10px); left: 20px; z-index: 90; flex-direction: column; gap: 0; width: min(280px, calc(100vw - 40px)); padding: 8px; background: #fff; border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 18px 35px -16px rgba(22, 32, 58, .3); }
+      .links.open a { padding: 11px 12px; }
+      .hero { padding: 58px 0 52px; }
+      .section { padding: 54px 0; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="wrap nav">
+      <a class="logo" href="/">Growth<span>X</span>sell</a>
+      <div class="links">
+        <a href="/solutions/">Solutions</a>
+        <a href="/capabilities/">Capabilities</a>
+        <a href="/process/">Process</a>
+        <a href="/about/">About</a>
+        <a href="/case studies/">Case Studies</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" />
+        </svg>
+      </button>
+      <a class="button" href="/#contact" data-analytics-cta="launch_assessment">Free assessment</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">01 / Market entry</div>
+      <h1>Launch on Amazon with a foundation built to grow.</h1>
+      <p>Turn a promising product into a commercially ready Amazon business with the research, positioning, content, and launch strategy needed to earn traction.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <h2>Make the first moves count.</h2>
+        <p class="intro">A strong launch is more than publishing a listing. We connect market intelligence, customer insight, conversion, and advertising into one practical path from preparation to momentum.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="number">01 / DISCOVER</div>
+            <h3>Find the opportunity</h3>
+            <p>Map demand, competitors, keywords, pricing, and customer expectations so the launch is grounded in a market worth entering.</p>
+          </article>
+          <article class="card">
+            <div class="number">02 / POSITION</div>
+            <h3>Build the offer</h3>
+            <p>Shape the product positioning, listing story, images, and conversion strategy around the reasons customers actually choose.</p>
+          </article>
+          <article class="card">
+            <div class="number">03 / ACCELERATE</div>
+            <h3>Create traction</h3>
+            <p>Launch with a focused PPC structure, clear measurement, and a testing rhythm that turns early signals into better decisions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="wrap">
+        <div class="eyebrow">Ready for market entry?</div>
+        <h2>Know what your launch needs next.</h2>
+        <p>Get a focused assessment of your product, market, listing readiness, and launch plan before you commit more time or spend.</p>
+        <a class="button light-button" href="/#contact">Start with a free assessment &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">&copy; 2026 GrowthXsell / Amazon Growth Partners</div></footer>
+  <script type="module" src="index.js"></script>
+  <script>
+    var mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+    var mobileMenu = document.querySelector(".links");
+    mobileMenuToggle.addEventListener("click", function () {
+      var isOpen = mobileMenu.classList.toggle("open");
+      mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+      mobileMenuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+  </script>
+</body>
+
+</html>
