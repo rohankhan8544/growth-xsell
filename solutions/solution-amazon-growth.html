@@ -50,6 +50,35 @@
         width: min(calc(100% - 40px), var(--max));
         margin: auto;
       }
+      .site-nav {
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        padding: 18px 0;
+      }
+      .site-nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .logo {
+        font-size: 21px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+      .logo span {
+        color: var(--accent);
+      }
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .nav-links a:hover {
+        color: var(--ink);
+      }
       .eyebrow {
         font-size: 12px;
         letter-spacing: 0.16em;
@@ -525,10 +554,34 @@
         h1 {
           font-size: 52px;
         }
+        .site-nav-inner {
+          align-items: flex-start;
+          flex-wrap: wrap;
+        }
+        .nav-links {
+          order: 3;
+          width: 100%;
+          justify-content: space-between;
+          gap: 10px;
+          font-size: 12px;
+        }
       }
     </style>
   </head>
   <body>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <div class="container site-nav-inner">
+          <a class="logo" href="../index.html">Growth<span>X</span>sell</a>
+          <div class="nav-links">
+            <a href="index.html" aria-current="page">Solutions</a>
+            <a href="../capabilities/">Capabilities</a>
+            <a href="../process/">Process</a>
+            <a href="../about/">About</a>
+            <a href="../case studies/">Case Studies</a>
+          </div>
+          <a class="btn dark" href="../index.html#contact">Free assessment</a>
+        </div>
+      </nav>
     <header class="hero">
       <div class="container hero-grid">
         <div>
@@ -942,7 +995,7 @@
             <div style="margin-top: 20px">
               <a
                 class="btn dark"
-                href="/case%20studies/case-study-advertising-efficiency.html"
+                href="../case studies/case-study-advertising-efficiency.html"
                 >Read Case Study →</a
               >
             </div>
@@ -962,7 +1015,7 @@
               >
             </div>
             <div style="margin-top: 20px">
-              <a class="btn light" href="/case%20studies/"
+              <a class="btn light" href="../case studies/"
                 >View Case Studies →</a
               >
             </div>
@@ -984,7 +1037,7 @@
             next.
           </p>
         </div>
-        <a class="btn dark" href="/contact.html">Talk to GrowthXsell →</a>
+        <a class="btn dark" href="../index.html#contact">Talk to GrowthXsell →</a>
       </div>
     </section>
 
@@ -1007,11 +1060,16 @@
 
     <script>
       document.querySelectorAll(".issue").forEach((btn) => {
+        btn.setAttribute("aria-pressed", btn.classList.contains("active"));
         btn.addEventListener("click", () => {
           document
             .querySelectorAll(".issue")
-            .forEach((x) => x.classList.remove("active"));
+            .forEach((x) => {
+              x.classList.remove("active");
+              x.setAttribute("aria-pressed", "false");
+            });
           btn.classList.add("active");
+          btn.setAttribute("aria-pressed", "true");
           document.getElementById("diagTitle").textContent = btn.dataset.title;
           document.getElementById("diagCopy").textContent = btn.dataset.copy;
           document.getElementById("diagPills").innerHTML = "";
