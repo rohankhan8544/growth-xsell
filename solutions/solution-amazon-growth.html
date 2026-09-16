@@ -3,392 +3,1026 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amazon Growth | GrowthXsell</title>
+    <title>Amazon Growth Framework™ | GrowthXsell</title>
     <meta
       name="description"
-      content="A focused Amazon growth system for brands ready to accelerate sales, rankings, and market share."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
+      content="GrowthXsell's Amazon Growth Framework™ identifies the constraint limiting growth, deploys the right capabilities, and scales what works."
     />
     <style>
       :root {
-        --bg: #f6f3ec;
-        --surface: #fff;
-        --warm: #efe9dd;
-        --dark: #16203a;
-        --accent: #e8792f;
-        --mint: #bfe3d2;
-        --text: #1b1f2a;
-        --muted: #666f80;
-        --border: #e7e1d3;
+        --bg: #f7f8fa;
+        --ink: #101114;
+        --muted: #656a73;
+        --line: #dfe2e7;
+        --card: #fff;
+        --dark: #111216;
+        --dark2: #191b20;
+        --accent: #c7ff4a;
+        --accent2: #e8ffb9;
+        --max: 1180px;
+        --radius: 22px;
       }
-
       * {
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
       }
-
+      html {
+        scroll-behavior: smooth;
+      }
       body {
+        margin: 0;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--ink);
         background: var(--bg);
-        color: var(--text);
-        font-family: Inter, sans-serif;
-        line-height: 1.6;
+        line-height: 1.55;
       }
-
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .container {
+        width: min(calc(100% - 40px), var(--max));
+        margin: auto;
+      }
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #727780;
+      }
       h1,
       h2,
-      h3 {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        font-weight: 600;
+      h3,
+      p {
+        margin-top: 0;
       }
-
-      a {
-        color: inherit;
-        text-decoration: none;
+      h1 {
+        font-size: clamp(48px, 7vw, 88px);
+        line-height: 0.94;
+        letter-spacing: -0.055em;
+        margin-bottom: 28px;
       }
-
-      .wrap {
-        max-width: 1180px;
-        margin: 0 auto;
-        padding: 0 32px;
-      }
-
-      nav {
-        padding: 20px 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-      }
-
-      .logo {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        font-size: 21px;
-        font-weight: 700;
-      }
-
-      .logo span {
-        color: var(--accent);
-        font-style: italic;
-      }
-
-      .links {
-        display: flex;
-        gap: 26px;
-        color: var(--muted);
-        font-size: 14px;
-        font-weight: 600;
-      }
-
-      .links a:hover {
-        color: var(--text);
-      }
-
-      .button {
-        display: inline-flex;
-        background: var(--dark);
-        color: #fff;
-        padding: 12px 22px;
-        border-radius: 100px;
-        font-size: 13px;
-        font-weight: 600;
-      }
-
-      .hero {
-        padding: 86px 0 76px;
-        background:
-          radial-gradient(
-            ellipse 45% 90% at 12% 20%,
-            var(--mint),
-            transparent 68%
-          ),
-          radial-gradient(ellipse 45% 90% at 92% 10%, #f6c6a6, transparent 68%),
-          var(--warm);
-      }
-
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 64px;
-        align-items: center;
-      }
-
-      .eyebrow {
-        color: var(--accent);
-        font:
-          11px "IBM Plex Mono",
-          monospace;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+      h2 {
+        font-size: clamp(36px, 5vw, 62px);
+        line-height: 1;
+        letter-spacing: -0.045em;
         margin-bottom: 18px;
       }
-
-      h1 {
-        max-width: 680px;
-        font-size: clamp(42px, 6vw, 72px);
-        line-height: 1.04;
-        letter-spacing: -0.02em;
+      h3 {
+        font-size: 22px;
+        line-height: 1.15;
+        margin-bottom: 10px;
       }
-
-      .lead {
-        max-width: 580px;
-        margin-top: 22px;
+      p {
         color: var(--muted);
-        font-size: 19px;
       }
-
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 30px;
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 20px;
+        border-radius: 999px;
+        font-weight: 800;
+        border: 1px solid var(--ink);
+        transition: 0.2s;
       }
-
-      .button.secondary {
-        background: transparent;
-        border: 1px solid var(--dark);
-        color: var(--dark);
-      }
-
-      .signal {
+      .btn.dark {
         background: var(--dark);
         color: #fff;
-        border-radius: 20px;
-        padding: 32px;
       }
-
-      .signal h2 {
-        font-size: 25px;
-        line-height: 1.2;
-        margin-bottom: 24px;
+      .btn.light {
+        background: #fff;
       }
-
-      .signal ul {
-        list-style: none;
+      .btn:hover {
+        transform: translateY(-2px);
       }
-
-      .signal li {
-        border-top: 1px solid rgba(255, 255, 255, 0.16);
-        padding: 17px 0;
-        color: #d8dce5;
+      .btn.accent {
+        background: var(--accent);
+        border-color: var(--accent);
       }
-
-      .signal li::before {
-        content: "+";
+      .hero {
+        background: var(--dark);
+        color: #fff;
+        padding: 115px 0 95px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        width: 520px;
+        height: 520px;
+        border-radius: 50%;
+        right: -180px;
+        top: -180px;
+        background: radial-gradient(circle, var(--accent), transparent 65%);
+        opacity: 0.18;
+      }
+      .hero p {
+        color: #b8bbc2;
+        font-size: 18px;
+        max-width: 690px;
+      }
+      .hero .eyebrow {
         color: var(--accent);
-        font-weight: 700;
-        margin-right: 10px;
       }
-
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 60px;
+        align-items: end;
+      }
+      .hero-note {
+        border: 1px solid #33363e;
+        background: #181a1f;
+        border-radius: 24px;
+        padding: 26px;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-note strong {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+      .hero-note span {
+        display: inline-block;
+        background: #252830;
+        color: #d7d9de;
+        padding: 7px 10px;
+        border-radius: 8px;
+        font-size: 13px;
+        margin: 4px 3px 0 0;
+      }
       .section {
-        padding: 76px 0;
+        padding: 105px 0;
       }
-
-      .section h2 {
-        max-width: 620px;
-        font-size: clamp(30px, 4vw, 46px);
-        line-height: 1.1;
+      .section.dark {
+        background: var(--dark);
+        color: #fff;
       }
-
-      .intro {
-        max-width: 620px;
-        color: var(--muted);
-        margin-top: 16px;
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: end;
+        margin-bottom: 50px;
       }
-
-      .grid {
+      .section-head p {
+        max-width: 520px;
+      }
+      .dark p {
+        color: #aeb2ba;
+      }
+      .kicker {
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--ink);
+      }
+      .dark .kicker {
+        color: var(--accent);
+      }
+      .stack {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-        margin-top: 36px;
+        gap: 14px;
+        margin-top: 35px;
       }
-
-      .card {
-        background: var(--surface);
-        border: 1px solid var(--border);
+      .stack-card {
+        padding: 30px;
+        background: var(--card);
+        border: 1px solid var(--line);
         border-radius: 20px;
-        padding: 28px;
+        min-height: 185px;
       }
-
-      .number {
-        color: var(--accent);
-        font:
-          11px "IBM Plex Mono",
-          monospace;
+      .stack-card .num {
+        font-size: 12px;
+        color: #858991;
+        font-weight: 800;
+        letter-spacing: 0.1em;
       }
-
-      .card h3 {
-        font-size: 21px;
-        margin: 28px 0 10px;
+      .stack-card p {
+        font-size: 14px;
       }
-
-      .card p {
-        color: var(--muted);
-        font-size: 15px;
-      }
-
-      .band {
+      .stack-card.wide {
+        grid-column: span 3;
+        text-align: center;
+        min-height: auto;
         background: var(--dark);
         color: #fff;
+        border-color: var(--dark);
       }
-
-      .band p {
-        max-width: 580px;
-        color: #c7ccd7;
-        margin: 16px 0 24px;
+      .stack-card.wide p {
+        color: #aeb2ba;
       }
-
-      .light {
+      .arrow {
+        font-size: 28px;
+        text-align: center;
+        margin: 8px 0;
+        color: #858991;
+      }
+      .capabilities {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+      .cap {
         background: #fff;
-        color: var(--dark);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 32px;
+        position: relative;
+        overflow: hidden;
       }
-
+      .cap:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 5px;
+        height: 100%;
+        background: var(--accent);
+      }
+      .cap-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .cap-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: #f0f2f5;
+        display: grid;
+        place-items: center;
+        font-weight: 900;
+      }
+      .cap ul {
+        padding-left: 18px;
+        color: var(--muted);
+        margin-bottom: 0;
+      }
+      .cap li {
+        margin: 7px 0;
+      }
+      .diagnostic {
+        background: var(--dark);
+        border-radius: 30px;
+        padding: 44px;
+        color: #fff;
+      }
+      .diagnostic h2 {
+        max-width: 700px;
+      }
+      .problem {
+        font-size: 30px;
+        font-weight: 850;
+        letter-spacing: -0.025em;
+        margin: 30px 0;
+      }
+      .diagnostic-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+      .issues,
+      .solution {
+        border: 1px solid #34373f;
+        border-radius: 20px;
+        padding: 24px;
+        background: #17191e;
+      }
+      .issue {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 16px 18px;
+        background: #20232a;
+        border: 1px solid #30333a;
+        color: #fff;
+        border-radius: 12px;
+        margin: 9px 0;
+        cursor: pointer;
+        font: inherit;
+      }
+      .issue:hover,
+      .issue.active {
+        border-color: var(--accent);
+        background: #242820;
+      }
+      .issue small {
+        color: #9297a0;
+      }
+      .solution {
+        border-color: #454a54;
+      }
+      .solution-label {
+        color: var(--accent);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-weight: 900;
+      }
+      .solution h3 {
+        font-size: 30px;
+        margin: 10px 0;
+      }
+      .solution p {
+        color: #c3c6cc;
+      }
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .pill {
+        padding: 8px 11px;
+        border-radius: 999px;
+        background: #292c33;
+        font-size: 13px;
+      }
+      .framework {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+      .step {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 26px;
+        min-height: 285px;
+      }
+      .step .number {
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        color: #888d95;
+      }
+      .step h3 {
+        margin-top: 28px;
+        font-size: 24px;
+      }
+      .step ul {
+        padding-left: 18px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .constraint {
+        margin: 15px 0 0;
+        padding: 14px;
+        border-radius: 12px;
+        background: #f1f3f5;
+        font-size: 13px;
+        color: #383c43;
+      }
+      .moves {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin-top: 18px;
+      }
+      .move {
+        border: 1px solid #34373e;
+        border-radius: 16px;
+        padding: 18px;
+        background: #17191e;
+      }
+      .move b {
+        color: var(--accent);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .move span {
+        display: block;
+        margin-top: 7px;
+      }
+      .loop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+      .loop-item {
+        border: 1px solid #3a3d45;
+        border-radius: 999px;
+        padding: 12px 18px;
+        background: #181a1f;
+      }
+      .loop-arrow {
+        color: var(--accent);
+        font-weight: 900;
+      }
+      .case {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .case-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 32px;
+      }
+      .case-placeholder {
+        height: 230px;
+        border: 1px dashed #aab0b8;
+        border-radius: 18px;
+        background: #f5f6f7;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        color: #777c84;
+        font-size: 14px;
+        padding: 20px;
+      }
+      .case-card .tag {
+        display: inline-block;
+        padding: 7px 10px;
+        background: var(--accent2);
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 850;
+        margin-bottom: 18px;
+      }
+      .cta {
+        background: var(--accent);
+        padding: 90px 0;
+      }
+      .cta-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: center;
+      }
+      .cta h2 {
+        max-width: 730px;
+      }
       footer {
-        padding: 26px 0;
-        color: #9198a6;
-        font:
-          11px "IBM Plex Mono",
-          monospace;
+        background: var(--dark);
+        color: #aeb2ba;
+        padding: 40px 0;
+        font-size: 13px;
       }
-
-      @media (max-width: 800px) {
-        .wrap {
-          padding: 0 20px;
-        }
-
-        .links {
-          display: none;
-        }
-
-        .nav {
-          justify-content: flex-start;
-        }
-
-        .nav .button {
-          margin-left: auto;
-          padding: 11px 15px;
-        }
-
-        .hero {
-          padding: 58px 0 48px;
-        }
-
+      footer strong {
+        color: #fff;
+      }
+      @media (max-width: 900px) {
         .hero-grid,
-        .grid {
+        .diagnostic-grid,
+        .case {
           grid-template-columns: 1fr;
         }
-
+        .stack {
+          grid-template-columns: 1fr;
+        }
+        .stack-card.wide {
+          grid-column: auto;
+        }
+        .capabilities {
+          grid-template-columns: 1fr;
+        }
+        .framework {
+          grid-template-columns: 1fr 1fr;
+        }
+        .cta-inner,
+        .section-head {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 600px) {
+        .container {
+          width: min(calc(100% - 28px), var(--max));
+        }
+        .hero {
+          padding: 80px 0 70px;
+        }
         .section {
-          padding: 54px 0;
+          padding: 75px 0;
+        }
+        .framework {
+          grid-template-columns: 1fr;
+        }
+        .moves {
+          grid-template-columns: 1fr;
+        }
+        .diagnostic {
+          padding: 25px;
+        }
+        h1 {
+          font-size: 52px;
         }
       }
     </style>
   </head>
   <body>
-    <nav>
-      <div class="wrap nav">
-        <a class="logo" href="../index.html">Growth<span>X</span>sell</a>
-        <div class="links">
-          <a href="index.html">Solutions</a>
-          <a href="../capabilities/">Capabilities</a>
-          <a href="../process/">Process</a>
-          <a href="../about/">About</a>
-          <a href="../case studies/">Case Studies</a>
-        </div>
-        <a class="button" href="../index.html#contact">Free assessment</a>
-      </div>
-    </nav>
-
     <header class="hero">
-      <div class="wrap hero-grid">
+      <div class="container hero-grid">
         <div>
-          <div class="eyebrow">02 / Amazon Growth</div>
-          <h1>Turn Amazon momentum into market share.</h1>
-          <p class="lead">
-            Find the constraint holding an established business back, then
-            coordinate the strategic, advertising, and conversion moves that
-            unlock the next stage of growth.
+          <div class="eyebrow">GrowthXsell™ · Amazon Growth</div>
+          <h1>
+            Find the constraint.<br /><span style="color: var(--accent)"
+              >Deploy the right capabilities.</span
+            ><br />Scale what works.
+          </h1>
+          <p>
+            Amazon growth rarely comes from one service in isolation. Our Growth
+            Framework connects advertising, listing & SEO, creative, and account
+            operations around the constraint actually limiting your business.
           </p>
-          <div class="actions">
-            <a class="button" href="../index.html#contact">Plan my growth</a>
-            <a class="button secondary" href="index.html">View all solutions</a>
+          <div
+            style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px"
+          >
+            <a class="btn accent" href="#diagnose">Diagnose Your Growth</a>
+            <a class="btn light" href="#framework">See The Framework</a>
           </div>
         </div>
-        <aside class="signal">
-          <h2>Growth gets easier when the signal is clear.</h2>
-          <ul>
-            <li>Diagnose the real commercial constraint</li>
-            <li>Prioritize the highest-leverage moves</li>
-            <li>Build a system that compounds over time</li>
-          </ul>
-        </aside>
+        <div class="hero-note">
+          <strong>Amazon Growth Framework™</strong>
+          <p style="font-size: 14px">
+            One integrated system. Multiple growth levers. A continuous process
+            for finding and removing the next bottleneck.
+          </p>
+          <span>PPC</span><span>SEO</span><span>Listing</span
+          ><span>Creative</span><span>Account Health</span
+          ><span>Commercial</span>
+        </div>
       </div>
     </header>
 
-    <main>
-      <section class="section">
-        <div class="wrap">
-          <div class="eyebrow">The growth system</div>
-          <h2>One coordinated plan across the levers that matter.</h2>
-          <p class="intro">
-            We connect strategy, retail execution, and performance marketing so
-            every improvement supports the same commercial outcome.
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The Growth Architecture</div>
+            <h2>Growth is a system,<br />not a single service.</h2>
+          </div>
+          <p>
+            Every Amazon account has a constraint. The job is to identify it,
+            apply the capability that can move it, measure the result, and then
+            find the next constraint.
           </p>
-          <div class="grid">
-            <article class="card">
-              <div class="number">01 / DIAGNOSE</div>
-              <h3>Find the bottleneck</h3>
-              <p>
-                Understand where demand, conversion, rank, catalog structure, or
-                advertising efficiency is limiting the business.
-              </p>
-            </article>
-            <article class="card">
-              <div class="number">02 / PRIORITIZE</div>
-              <h3>Choose the right moves</h3>
-              <p>
-                Focus resources on the opportunities with the clearest path to
-                incremental revenue and durable market share.
-              </p>
-            </article>
-            <article class="card">
-              <div class="number">03 / COMPOUND</div>
-              <h3>Scale what works</h3>
-              <p>
-                Turn winning decisions into repeatable operating rhythms across
-                PPC, SEO, conversion, and customer intelligence.
-              </p>
-            </article>
+        </div>
+
+        <div class="stack">
+          <div class="stack-card">
+            <div class="num">01 · TRAFFIC</div>
+            <h3>PPC & Advertising</h3>
+            <p>
+              Bring profitable demand into the funnel and expand the search
+              terms, keywords and campaigns that work.
+            </p>
+          </div>
+          <div class="stack-card">
+            <div class="num">02 · CONVERSION</div>
+            <h3>Listing & SEO</h3>
+            <p>
+              Turn traffic into sales while improving indexing, organic
+              visibility and rankings.
+            </p>
+          </div>
+          <div class="stack-card">
+            <div class="num">03 · TRUST</div>
+            <h3>Brand & Creative</h3>
+            <p>
+              Improve CTR, communicate value faster and strengthen the
+              conversion experience.
+            </p>
+          </div>
+          <div class="stack-card wide">
+            <h3>Conversion / Rank → Account Health → Scale</h3>
+            <p>
+              When the fundamentals move, we scale the winning system and repeat
+              the process.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section band">
-        <div class="wrap">
-          <div class="eyebrow">Ready for the next stage?</div>
-          <h2>Get a clear view of your highest-leverage growth opportunity.</h2>
+    <section class="section" id="capabilities">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Capability Stack</div>
+            <h2>Four capabilities.<br />One growth system.</h2>
+          </div>
           <p>
-            Start with a focused assessment of the constraints, opportunities,
-            and next actions across your Amazon business.
+            We do not force every account into the same playbook. The mix
+            changes according to the constraint we uncover.
           </p>
-          <a class="button light" href="../index.html#contact"
-            >Get a free assessment</a
-          >
         </div>
-      </section>
-    </main>
+
+        <div class="capabilities">
+          <article class="cap">
+            <div class="cap-top">
+              <div>
+                <div class="eyebrow">01 · Traffic</div>
+                <h3>PPC & Advertising</h3>
+              </div>
+              <div class="cap-icon">P</div>
+            </div>
+            <p>
+              Build an advertising engine around profitable demand—not spend for
+              the sake of spend.
+            </p>
+            <ul>
+              <li>Scale profitable campaigns</li>
+              <li>Cut wasted spend</li>
+              <li>Harvest search terms</li>
+              <li>Expand winning keywords</li>
+            </ul>
+          </article>
+
+          <article class="cap">
+            <div class="cap-top">
+              <div>
+                <div class="eyebrow">02 · Visibility + Conversion</div>
+                <h3>Listing & SEO</h3>
+              </div>
+              <div class="cap-icon">S</div>
+            </div>
+            <p>
+              Improve discoverability and turn more of the traffic you already
+              have into customers.
+            </p>
+            <ul>
+              <li>Improve indexing</li>
+              <li>Increase organic rankings</li>
+              <li>Improve CVR</li>
+              <li>Optimize content</li>
+            </ul>
+          </article>
+
+          <article class="cap">
+            <div class="cap-top">
+              <div>
+                <div class="eyebrow">03 · CTR + Trust + CVR</div>
+                <h3>Brand & Creative</h3>
+              </div>
+              <div class="cap-icon">C</div>
+            </div>
+            <p>
+              Make the product story clearer, stronger and more persuasive
+              across the shopping experience.
+            </p>
+            <ul>
+              <li>Improve main images</li>
+              <li>Build / improve A+ Content</li>
+              <li>Build Brand Store</li>
+              <li>Refresh underperforming creative</li>
+            </ul>
+          </article>
+
+          <article class="cap">
+            <div class="cap-top">
+              <div>
+                <div class="eyebrow">04 · Operational Foundation</div>
+                <h3>Full Account Management</h3>
+              </div>
+              <div class="cap-icon">A</div>
+            </div>
+            <p>
+              Protect the account and keep the operating layer aligned with the
+              growth strategy.
+            </p>
+            <ul>
+              <li>Catalog management</li>
+              <li>Account health</li>
+              <li>Inventory coordination</li>
+              <li>Case resolution & reporting</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="diagnose">
+      <div class="container">
+        <div class="diagnostic">
+          <div class="eyebrow" style="color: var(--accent)">
+            The Killer Question
+          </div>
+          <h2>One problem.<br />Multiple levers.</h2>
+          <p>
+            “Revenue isn't growing” is an outcome—not a diagnosis. Select the
+            symptom below to see how GrowthXsell connects the problem to the
+            capabilities that can address it.
+          </p>
+
+          <div class="problem">Revenue isn't growing.</div>
+
+          <div class="diagnostic-grid">
+            <div class="issues">
+              <button
+                class="issue active"
+                data-title="Traffic is weak"
+                data-copy="Demand generation is the constraint. The focus shifts toward PPC structure, keyword expansion and organic visibility."
+                data-levers="PPC + SEO"
+              >
+                <span>Traffic ↓</span><small>Demand</small>
+              </button>
+              <button
+                class="issue"
+                data-title="Conversion is weak"
+                data-copy="The account is getting visitors, but the shopping experience is not converting enough of them."
+                data-levers="Listing + Creative"
+              >
+                <span>Conversion ↓</span><small>CVR</small>
+              </button>
+              <button
+                class="issue"
+                data-title="PPC efficiency is weak"
+                data-copy="Paid demand is not producing the economics required to scale. Spend and search-term quality become the focus."
+                data-levers="PPC + Commercial Analysis"
+              >
+                <span>PPC efficiency ↓</span><small>Economics</small>
+              </button>
+              <button
+                class="issue"
+                data-title="Organic visibility is weak"
+                data-copy="The account needs stronger indexing, relevance and ranking signals to capture more non-paid demand."
+                data-levers="SEO + Listing"
+              >
+                <span>Organic visibility ↓</span><small>Rank</small>
+              </button>
+              <button
+                class="issue"
+                data-title="Account issue"
+                data-copy="An operational or account-health constraint can block growth even when demand and conversion are healthy."
+                data-levers="Account Management"
+              >
+                <span>Account issue</span><small>Operations</small>
+              </button>
+            </div>
+
+            <div class="solution">
+              <div class="solution-label">
+                GrowthXsell identifies the constraint
+              </div>
+              <h3 id="diagTitle">Traffic is weak</h3>
+              <p id="diagCopy">
+                Demand generation is the constraint. The focus shifts toward PPC
+                structure, keyword expansion and organic visibility.
+              </p>
+              <div class="solution-label" style="margin-top: 24px">Deploy</div>
+              <div class="pills" id="diagPills">
+                <span class="pill">PPC + SEO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="framework">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The Methodology</div>
+            <h2>Five steps.<br />One continuous loop.</h2>
+          </div>
+          <p>
+            The framework keeps strategy tied to execution. Instead of
+            delivering a long list of disconnected recommendations, we identify
+            the few moves most likely to change the growth equation.
+          </p>
+        </div>
+
+        <div class="framework">
+          <article class="step">
+            <div class="number">01</div>
+            <h3>Diagnose</h3>
+            <p>Build the picture before prescribing the solution.</p>
+            <ul>
+              <li>Revenue & traffic</li>
+              <li>Conversion & PPC</li>
+              <li>Organic & rankings</li>
+              <li>Catalog & inventory</li>
+              <li>Pricing & competition</li>
+              <li>Product mix</li>
+            </ul>
+          </article>
+          <article class="step">
+            <div class="number">02</div>
+            <h3>Find the Constraint</h3>
+            <p>Identify the bottleneck that is actually holding growth back.</p>
+            <div class="constraint">
+              <b>Traffic strong</b><br />↓<br /><b>Conversion weak</b
+              ><br />↓<br />Listing problem
+            </div>
+          </article>
+          <article class="step">
+            <div class="number">03</div>
+            <h3>Prioritize</h3>
+            <p>Reduce 30 recommendations to the moves that matter most.</p>
+            <div class="constraint">
+              <b>The 3 Moves That Matter Most</b><br /><br />01 Keyword
+              architecture<br />02 Listing conversion<br />03 Profitable PPC
+              allocation
+            </div>
+          </article>
+          <article class="step">
+            <div class="number">04</div>
+            <h3>Execute</h3>
+            <p>Bring the required capabilities together.</p>
+            <ul>
+              <li>PPC</li>
+              <li>SEO & Listing</li>
+              <li>Creative & A+</li>
+              <li>Storefront</li>
+              <li>Pricing</li>
+              <li>Product strategy</li>
+            </ul>
+          </article>
+          <article class="step">
+            <div class="number">05</div>
+            <h3>Scale</h3>
+            <p>Once the bottleneck moves, find the next one.</p>
+            <div class="constraint">
+              <b>Measure → Learn → Scale</b><br /><br />Growth becomes a
+              continuous operating system—not a one-time optimization project.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Constraint Examples</div>
+            <h2>Different symptoms.<br />Different moves.</h2>
+          </div>
+          <p>
+            Our approach changes based on what the data says—not on a fixed
+            package of deliverables.
+          </p>
+        </div>
+        <div class="moves">
+          <div class="move">
+            <b>Scenario 01</b
+            ><span
+              >Traffic is strong → Conversion is weak →
+              <strong>Listing / Creative</strong></span
+            >
+          </div>
+          <div class="move">
+            <b>Scenario 02</b
+            ><span
+              >Conversion is strong → Traffic is weak →
+              <strong>PPC / SEO</strong></span
+            >
+          </div>
+          <div class="move">
+            <b>Scenario 03</b
+            ><span
+              >Revenue is growing → Profit isn't →
+              <strong>Economics / Commercial</strong></span
+            >
+          </div>
+        </div>
+        <div class="loop">
+          <div class="loop-item">Diagnose</div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-item">Find Constraint</div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-item">Prioritize</div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-item">Execute</div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-item">Scale</div>
+          <div class="loop-arrow">↻</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="case-studies">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Proof, Not Promises</div>
+            <h2>See the framework<br />in action.</h2>
+          </div>
+          <p>
+            Use this section to connect the Growth Framework to your case
+            studies. Each story should show the constraint, the intervention,
+            the capabilities deployed and the measurable outcome.
+          </p>
+        </div>
+
+        <div class="case">
+          <article class="case-card">
+            <div class="tag">CASE STUDY · ADVERTISING EFFICIENCY</div>
+            <h3>From inefficient spend to a clearer advertising engine.</h3>
+            <p>
+              Show the starting problem → diagnosis → key moves → execution →
+              result.
+            </p>
+            <div class="case-placeholder">
+              PLACE CASE STUDY SCREENSHOT / CHART HERE<br /><small
+                >Recommended: before/after PPC efficiency or spend allocation
+                visual</small
+              >
+            </div>
+            <div style="margin-top: 20px">
+              <a
+                class="btn dark"
+                href="/case%20studies/case-study-advertising-efficiency.html"
+                >Read Case Study →</a
+              >
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="tag">CASE STUDY · GROWTH CONSTRAINT</div>
+            <h3>Show how multiple capabilities worked together.</h3>
+            <p>
+              Ideal format: one constraint, 2–3 strategic moves,
+              cross-functional execution, measurable impact.
+            </p>
+            <div class="case-placeholder">
+              PLACE CASE STUDY SCREENSHOT / IMAGE HERE<br /><small
+                >Recommended: listing, creative, keyword or revenue-growth
+                visual</small
+              >
+            </div>
+            <div style="margin-top: 20px">
+              <a class="btn light" href="/case%20studies/"
+                >View Case Studies →</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <div class="eyebrow">Start With The Constraint</div>
+          <h2>
+            Don't start with more services.<br />Start with what's holding
+            growth back.
+          </h2>
+          <p style="max-width: 650px; color: #40452d">
+            Let the data determine which capabilities your Amazon business needs
+            next.
+          </p>
+        </div>
+        <a class="btn dark" href="/contact.html">Talk to GrowthXsell →</a>
+      </div>
+    </section>
 
     <footer>
-      <div class="wrap">&copy; 2026 GrowthXsell / Amazon Growth Partners</div>
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+          flex-wrap: wrap;
+        "
+      >
+        <div><strong>GrowthXsell™</strong> · Amazon Growth Framework™</div>
+        <div>
+          Find the constraint. Deploy the right capabilities. Scale what works.
+        </div>
+      </div>
     </footer>
+
+    <script>
+      document.querySelectorAll(".issue").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".issue")
+            .forEach((x) => x.classList.remove("active"));
+          btn.classList.add("active");
+          document.getElementById("diagTitle").textContent = btn.dataset.title;
+          document.getElementById("diagCopy").textContent = btn.dataset.copy;
+          document.getElementById("diagPills").innerHTML = "";
+          btn.dataset.levers.split("+").forEach((x, i) => {
+            const s = document.createElement("span");
+            s.className = "pill";
+            s.textContent = x.trim();
+            document.getElementById("diagPills").appendChild(s);
+          });
+        });
+      });
+    </script>
   </body>
 </html>
