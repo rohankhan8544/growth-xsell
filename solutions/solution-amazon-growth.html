@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Growth | GrowthXsell</title>
+    <meta
+      name="description"
+      content="A focused Amazon growth system for brands ready to accelerate sales, rankings, and market share."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f6f3ec;
+        --surface: #fff;
+        --warm: #efe9dd;
+        --dark: #16203a;
+        --accent: #e8792f;
+        --mint: #bfe3d2;
+        --text: #1b1f2a;
+        --muted: #666f80;
+        --border: #e7e1d3;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, sans-serif;
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 600;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      nav {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .logo {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+      }
+
+      .logo span {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .links {
+        display: flex;
+        gap: 26px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .links a:hover {
+        color: var(--text);
+      }
+
+      .button {
+        display: inline-flex;
+        background: var(--dark);
+        color: #fff;
+        padding: 12px 22px;
+        border-radius: 100px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .hero {
+        padding: 86px 0 76px;
+        background:
+          radial-gradient(ellipse 45% 90% at 12% 20%, var(--mint), transparent 68%),
+          radial-gradient(ellipse 45% 90% at 92% 10%, #f6c6a6, transparent 68%),
+          var(--warm);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 64px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        font: 11px "IBM Plex Mono", monospace;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        max-width: 680px;
+        font-size: clamp(42px, 6vw, 72px);
+        line-height: 1.04;
+        letter-spacing: -0.02em;
+      }
+
+      .lead {
+        max-width: 580px;
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 19px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .button.secondary {
+        background: transparent;
+        border: 1px solid var(--dark);
+        color: var(--dark);
+      }
+
+      .signal {
+        background: var(--dark);
+        color: #fff;
+        border-radius: 20px;
+        padding: 32px;
+      }
+
+      .signal h2 {
+        font-size: 25px;
+        line-height: 1.2;
+        margin-bottom: 24px;
+      }
+
+      .signal ul {
+        list-style: none;
+      }
+
+      .signal li {
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        padding: 17px 0;
+        color: #d8dce5;
+      }
+
+      .signal li::before {
+        content: "+";
+        color: var(--accent);
+        font-weight: 700;
+        margin-right: 10px;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .section h2 {
+        max-width: 620px;
+        font-size: clamp(30px, 4vw, 46px);
+        line-height: 1.1;
+      }
+
+      .intro {
+        max-width: 620px;
+        color: var(--muted);
+        margin-top: 16px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 36px;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 28px;
+      }
+
+      .number {
+        color: var(--accent);
+        font: 11px "IBM Plex Mono", monospace;
+      }
+
+      .card h3 {
+        font-size: 21px;
+        margin: 28px 0 10px;
+      }
+
+      .card p {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .band {
+        background: var(--dark);
+        color: #fff;
+      }
+
+      .band p {
+        max-width: 580px;
+        color: #c7ccd7;
+        margin: 16px 0 24px;
+      }
+
+      .light {
+        background: #fff;
+        color: var(--dark);
+      }
+
+      footer {
+        padding: 26px 0;
+        color: #9198a6;
+        font: 11px "IBM Plex Mono", monospace;
+      }
+
+      @media (max-width: 800px) {
+        .wrap {
+          padding: 0 20px;
+        }
+
+        .links {
+          display: none;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .nav .button {
+          margin-left: auto;
+          padding: 11px 15px;
+        }
+
+        .hero {
+          padding: 58px 0 48px;
+        }
+
+        .hero-grid,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section {
+          padding: 54px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap nav">
+        <a class="logo" href="../index.html">Growth<span>X</span>sell</a>
+        <div class="links">
+          <a href="index.html">Solutions</a>
+          <a href="../capabilities/">Capabilities</a>
+          <a href="../process/">Process</a>
+          <a href="../about/">About</a>
+          <a href="../case studies/">Case Studies</a>
+        </div>
+        <a class="button" href="../index.html#contact">Free assessment</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">02 / Amazon Growth</div>
+          <h1>Turn Amazon momentum into market share.</h1>
+          <p class="lead">
+            Find the constraint holding an established business back, then
+            coordinate the strategic, advertising, and conversion moves that
+            unlock the next stage of growth.
+          </p>
+          <div class="actions">
+            <a class="button" href="../index.html#contact">Plan my growth</a>
+            <a class="button secondary" href="index.html">View all solutions</a>
+          </div>
+        </div>
+        <aside class="signal">
+          <h2>Growth gets easier when the signal is clear.</h2>
+          <ul>
+            <li>Diagnose the real commercial constraint</li>
+            <li>Prioritize the highest-leverage moves</li>
+            <li>Build a system that compounds over time</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="wrap">
+          <div class="eyebrow">The growth system</div>
+          <h2>One coordinated plan across the levers that matter.</h2>
+          <p class="intro">
+            We connect strategy, retail execution, and performance marketing so
+            every improvement supports the same commercial outcome.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <div class="number">01 / DIAGNOSE</div>
+              <h3>Find the bottleneck</h3>
+              <p>
+                Understand where demand, conversion, rank, catalog structure,
+                or advertising efficiency is limiting the business.
+              </p>
+            </article>
+            <article class="card">
+              <div class="number">02 / PRIORITIZE</div>
+              <h3>Choose the right moves</h3>
+              <p>
+                Focus resources on the opportunities with the clearest path to
+                incremental revenue and durable market share.
+              </p>
+            </article>
+            <article class="card">
+              <div class="number">03 / COMPOUND</div>
+              <h3>Scale what works</h3>
+              <p>
+                Turn winning decisions into repeatable operating rhythms across
+                PPC, SEO, conversion, and customer intelligence.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band">
+        <div class="wrap">
+          <div class="eyebrow">Ready for the next stage?</div>
+          <h2>Get a clear view of your highest-leverage growth opportunity.</h2>
+          <p>
+            Start with a focused assessment of the constraints, opportunities,
+            and next actions across your Amazon business.
+          </p>
+          <a class="button light" href="../index.html#contact">Get a free assessment</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">&copy; 2026 GrowthXsell / Amazon Growth Partners</div>
+    </footer>
+  </body>
+</html>
