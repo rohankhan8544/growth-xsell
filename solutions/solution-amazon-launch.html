@@ -29,16 +29,16 @@
         }
       }
       :root {
-        --cream: #f6f3ec;
-        --card: #efe9dd;
-        --navy: #16203a;
-        --orange: #e8792f;
-        --peach: #f6c6a6;
-        --ink: #2b3448;
-        --muted: #666f80;
-        --tag: #9aa0ab;
-        --hair: rgba(22, 32, 58, 0.12);
-        --r: 20px;
+        --cream: #f7f8fa;
+        --card: #ffffff;
+        --navy: #111216;
+        --orange: #c7ff4a;
+        --peach: #e8ffb9;
+        --ink: #101114;
+        --muted: #656a73;
+        --tag: #858991;
+        --hair: #dfe2e7;
+        --r: 22px;
         --sans:
           "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
         --mono:
@@ -117,7 +117,7 @@
       .lead {
         font-size: clamp(19px, 2vw, 23px);
         line-height: 1.4;
-        color: #3b4459;
+        color: #34373e;
         margin-top: 20px;
         max-width: 36ch;
       }
@@ -166,16 +166,22 @@
         background: var(--card);
         border-radius: var(--r);
         padding: 32px;
-        border: 1px solid rgba(22, 32, 58, 0.06);
+        border: 1px solid rgba(16, 17, 20, 0.06);
       }
       .dark {
-        background: var(--navy);
+        background:
+          radial-gradient(
+            circle at 100% 0%,
+            rgba(199, 255, 74, 0.16),
+            transparent 38%
+          ),
+          var(--navy);
         color: var(--cream);
         border-radius: var(--r);
         padding: 36px;
       }
       .dark .kicker {
-        color: var(--peach);
+        color: var(--orange);
       }
       .dark .mono {
         color: #9198a6;
@@ -241,13 +247,36 @@
 
       /* hero */
       .hero {
-        padding: 72px 0 64px;
+        background: var(--navy);
+        color: #fff;
+        padding: 90px 0 76px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        width: 520px;
+        height: 520px;
+        border-radius: 50%;
+        right: -180px;
+        top: -180px;
+        background: radial-gradient(circle, var(--orange), transparent 65%);
+        opacity: 0.18;
       }
       .hero-grid {
         display: grid;
         grid-template-columns: 1.15fr 0.85fr;
         gap: 56px;
         align-items: start;
+        position: relative;
+        z-index: 1;
+      }
+      .hero h1 {
+        color: #fff;
+      }
+      .hero .lead {
+        color: #b8bbc2;
       }
       .badge {
         display: inline-block;
@@ -310,7 +339,7 @@
       .rail li {
         position: relative;
         padding: 22px 0 22px 52px;
-        border-top: 1px solid rgba(246, 243, 236, 0.14);
+        border-top: 1px solid rgba(199, 255, 74, 0.14);
       }
       .rail li:first-of-type {
         border-top: 0;
@@ -335,7 +364,7 @@
         top: 52px;
         bottom: -14px;
         width: 1px;
-        background: rgba(246, 198, 166, 0.35);
+        background: rgba(199, 255, 74, 0.35);
       }
       .rail li:first-of-type::after {
         top: 32px;
@@ -362,7 +391,7 @@
       .rail-note {
         margin-top: 22px;
         padding-top: 18px;
-        border-top: 1px solid rgba(246, 243, 236, 0.14);
+        border-top: 1px solid rgba(199, 255, 74, 0.14);
         font-size: 14px;
         line-height: 1.55;
         color: #b4bac8;
@@ -787,7 +816,7 @@
       }
       .audit li {
         padding: 12px 0 12px 26px;
-        border-top: 1px solid rgba(246, 243, 236, 0.14);
+        border-top: 1px solid rgba(199, 255, 74, 0.14);
         position: relative;
         font-size: 16px;
       }
@@ -855,7 +884,7 @@
         font-size: 15px;
         line-height: 1.5;
         color: var(--ink);
-        border: 1px solid rgba(22, 32, 58, 0.06);
+        border: 1px solid rgba(16, 17, 20, 0.06);
       }
       .dont li b {
         display: block;
@@ -894,7 +923,7 @@
         gap: 0 40px;
       }
       .expect div {
-        border-top: 1px solid rgba(246, 243, 236, 0.18);
+        border-top: 1px solid rgba(199, 255, 74, 0.18);
         padding-top: 18px;
       }
       .expect b {
@@ -963,68 +992,17 @@
 
       /* cta */
       .cta {
-        border-radius: var(--r);
-        padding: 56px;
-        background:
-          radial-gradient(
-            circle at 12% 18%,
-            #f6c6a6 0,
-            rgba(246, 198, 166, 0) 42%
-          ),
-          radial-gradient(
-            circle at 88% 22%,
-            #cfe8dc 0,
-            rgba(207, 232, 220, 0) 44%
-          ),
-          radial-gradient(
-            circle at 55% 110%,
-            #dcd4f2 0,
-            rgba(220, 212, 242, 0) 52%
-          ),
-          var(--card);
+        background: var(--orange);
+        padding: 90px 0;
       }
-      .cta-grid {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
+      .cta-inner {
+        display: flex;
+        justify-content: space-between;
         gap: 40px;
         align-items: center;
       }
-      .cta p {
-        color: var(--ink);
-        margin-top: 14px;
-        max-width: 48ch;
-      }
-      .path {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        align-items: flex-start;
-      }
-      .path li {
-        font: 500 12px/1 var(--mono);
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        background: rgba(255, 255, 255, 0.6);
-        padding: 12px 14px;
-        border-radius: 999px;
-      }
-      .path li.arrow {
-        background: none;
-        padding: 0 0 0 14px;
-        color: var(--orange);
-        font-size: 16px;
-        line-height: 1;
-      }
-      .route {
-        margin-top: 28px;
-        font-size: 15px;
-        color: var(--muted);
-      }
-      .route a {
-        color: var(--navy);
-        font-weight: 600;
-        border-bottom: 2px solid var(--orange);
+      .cta h2 {
+        max-width: 730px;
       }
 
       /* footer */
@@ -1062,7 +1040,7 @@
       }
       footer .copy {
         width: 100%;
-        border-top: 1px solid rgba(246, 243, 236, 0.14);
+        border-top: 1px solid rgba(199, 255, 74, 0.14);
         padding-top: 18px;
         margin-top: 8px;
       }
@@ -1093,7 +1071,7 @@
         .proof,
         .fit,
         .eng,
-        .cta-grid,
+        .cta-inner,
         .audit,
         .math,
         .picker,
@@ -1130,8 +1108,9 @@
         .dark {
           padding: 26px;
         }
-        .cta {
-          padding: 36px 26px;
+        .cta-inner {
+          align-items: flex-start;
+          flex-direction: column;
         }
         .expect {
           gap: 20px;
@@ -1245,7 +1224,7 @@
             </p>
           </div>
           <div class="actions">
-            <a class="btn" href="assessment.html?path=launch"
+            <a class="btn" href="../index.html#contact"
               >Plan my launch →</a
             ><a class="btn ghost" href="#framework">See the framework</a>
           </div>
@@ -1701,41 +1680,20 @@
         </div>
       </div>
     </section>
-    <section id="start">
-      <div class="wrap">
-        <div class="cta cta-grid">
-          <div>
-            <p class="kicker">Not sure Launch is your path?</p>
-            <h2>Start with the free assessment.</h2>
-            <p>
-              We look at your business, diagnose the situation and recommend a
-              path — this one or a different one. No pitch, no obligation.
-            </p>
-            <div class="actions">
-              <a class="btn" href="assessment.html?path=launch"
-                >Get a free Amazon Growth Assessment →</a
-              >
-            </div>
-            <p class="route">
-              Other paths: <a href="growth.html">Growth</a> ·
-              <a href="profitability.html">Profitability</a> ·
-              <a href="recovery.html">Recovery</a>
-            </p>
-          </div>
-          <div>
-            <ul class="path">
-              <li>Free assessment</li>
-              <li class="arrow">↓</li>
-              <li>Business diagnosis</li>
-              <li class="arrow">↓</li>
-              <li>Recommended path</li>
-            </ul>
-            <p style="margin-top: 18px; font-size: 15px; color: var(--muted)">
-              One conversation. You leave knowing which framework fits and what
-              the first stage would look like.
-            </p>
-          </div>
+    <section id="start" class="cta">
+      <div class="wrap cta-inner">
+        <div>
+          <div class="eyebrow">Start With The Constraint</div>
+          <h2>
+            Don't start with more services.<br />Start with what's holding
+            growth back.
+          </h2>
+          <p style="max-width: 650px; color: #40452d">
+            Let the data determine which capabilities your Amazon business needs
+            next.
+          </p>
         </div>
+        <a class="btn" href="../index.html#contact">Talk to GrowthXsell →</a>
       </div>
     </section>
     <footer>
