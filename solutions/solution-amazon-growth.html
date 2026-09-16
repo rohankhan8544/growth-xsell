@@ -569,19 +569,19 @@
     </style>
   </head>
   <body>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <div class="container site-nav-inner">
-          <a class="logo" href="../index.html">Growth<span>X</span>sell</a>
-          <div class="nav-links">
-            <a href="index.html" aria-current="page">Solutions</a>
-            <a href="../capabilities/">Capabilities</a>
-            <a href="../process/">Process</a>
-            <a href="../about/">About</a>
-            <a href="../case studies/">Case Studies</a>
-          </div>
-          <a class="btn dark" href="../index.html#contact">Free assessment</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="container site-nav-inner">
+        <a class="logo" href="../index.html">Growth<span>X</span>sell</a>
+        <div class="nav-links">
+          <a href="index.html" aria-current="page">Solutions</a>
+          <a href="../capabilities/">Capabilities</a>
+          <a href="../process/">Process</a>
+          <a href="../about/">About</a>
+          <a href="../case studies/">Case Studies</a>
         </div>
-      </nav>
+        <a class="btn dark" href="../index.html#contact">Free assessment</a>
+      </div>
+    </nav>
     <header class="hero">
       <div class="container hero-grid">
         <div>
@@ -1037,7 +1037,9 @@
             next.
           </p>
         </div>
-        <a class="btn dark" href="../index.html#contact">Talk to GrowthXsell →</a>
+        <a class="btn dark" href="../index.html#contact"
+          >Talk to GrowthXsell →</a
+        >
       </div>
     </section>
 
@@ -1062,12 +1064,10 @@
       document.querySelectorAll(".issue").forEach((btn) => {
         btn.setAttribute("aria-pressed", btn.classList.contains("active"));
         btn.addEventListener("click", () => {
-          document
-            .querySelectorAll(".issue")
-            .forEach((x) => {
-              x.classList.remove("active");
-              x.setAttribute("aria-pressed", "false");
-            });
+          document.querySelectorAll(".issue").forEach((x) => {
+            x.classList.remove("active");
+            x.setAttribute("aria-pressed", "false");
+          });
           btn.classList.add("active");
           btn.setAttribute("aria-pressed", "true");
           document.getElementById("diagTitle").textContent = btn.dataset.title;
