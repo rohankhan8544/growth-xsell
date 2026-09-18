@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Recovery Framework™ | GrowthXsell</title>
+    <meta
+      name="description"
+      content="Recover Amazon account momentum with listing fixes, catalog cleanup, compliance remediation, and operational recovery that restores performance."
+    />
+    <style>
+      :root {
+        --bg: #f7f8fa;
+        --ink: #101114;
+        --muted: #656a73;
+        --line: #dfe2e7;
+        --card: #fff;
+        --dark: #111216;
+        --dark2: #191b20;
+        --accent: #c7ff4a;
+        --accent2: #e8ffb9;
+        --max: 1180px;
+        --radius: 22px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.55;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        width: min(calc(100% - 40px), var(--max));
+        margin: auto;
+      }
+
+      .site-nav {
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        padding: 18px 0;
+      }
+
+      .site-nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .logo {
+        font-size: 21px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .logo span {
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .nav-links a:hover {
+        color: var(--ink);
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #727780;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: clamp(48px, 7vw, 88px);
+        line-height: 0.94;
+        letter-spacing: -0.055em;
+        margin-bottom: 28px;
+      }
+
+      h2 {
+        font-size: clamp(36px, 5vw, 62px);
+        line-height: 1;
+        letter-spacing: -0.045em;
+        margin-bottom: 18px;
+      }
+
+      h3 {
+        font-size: 22px;
+        line-height: 1.15;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: var(--muted);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 20px;
+        border-radius: 999px;
+        font-weight: 800;
+        border: 1px solid var(--ink);
+        transition: 0.2s;
+      }
+
+      .btn.dark {
+        background: var(--dark);
+        color: #fff;
+      }
+
+      .btn.light {
+        background: #fff;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn.accent {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .hero {
+        background: var(--dark);
+        color: #fff;
+        padding: 115px 0 95px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero:after {
+        content: "";
+        position: absolute;
+        width: 520px;
+        height: 520px;
+        border-radius: 50%;
+        right: -180px;
+        top: -180px;
+        background: radial-gradient(circle, var(--accent), transparent 65%);
+        opacity: 0.18;
+      }
+
+      .hero p {
+        color: #b8bbc2;
+        font-size: 18px;
+        max-width: 690px;
+      }
+
+      .hero .eyebrow {
+        color: var(--accent);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 60px;
+        align-items: end;
+      }
+
+      .hero-note {
+        border: 1px solid #33363e;
+        background: #181a1f;
+        border-radius: 24px;
+        padding: 26px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-note strong {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      .hero-note span {
+        display: inline-block;
+        background: #252830;
+        color: #d7d9de;
+        padding: 7px 10px;
+        border-radius: 8px;
+        font-size: 13px;
+        margin: 4px 3px 0 0;
+      }
+
+      .section {
+        padding: 105px 0;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: end;
+        margin-bottom: 50px;
+      }
+
+      .section-head p {
+        max-width: 520px;
+      }
+
+      .stack {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 35px;
+      }
+
+      .stack-card {
+        padding: 30px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        min-height: 185px;
+      }
+
+      .stack-card .num {
+        font-size: 12px;
+        color: #858991;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+
+      .stack-card p {
+        font-size: 14px;
+      }
+
+      .stack-card.wide {
+        grid-column: span 3;
+        text-align: center;
+        min-height: auto;
+        background: var(--dark);
+        color: #fff;
+        border-color: var(--dark);
+      }
+
+      .stack-card.wide p {
+        color: #aeb2ba;
+      }
+
+      .diagnostic {
+        background: var(--dark);
+        border-radius: 30px;
+        padding: 44px;
+        color: #fff;
+      }
+
+      .diagnostic h2 {
+        max-width: 700px;
+      }
+
+      .problem {
+        font-size: 30px;
+        font-weight: 850;
+        letter-spacing: -0.025em;
+        margin: 30px 0;
+      }
+
+      .diagnostic-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+
+      .issues,
+      .solution {
+        border: 1px solid #34373f;
+        border-radius: 20px;
+        padding: 24px;
+        background: #17191e;
+      }
+
+      .issue {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 16px 18px;
+        background: #20232a;
+        border: 1px solid #30333a;
+        color: #fff;
+        border-radius: 12px;
+        margin: 9px 0;
+        cursor: pointer;
+        font: inherit;
+      }
+
+      .issue:hover,
+      .issue.active {
+        border-color: var(--accent);
+        background: #242820;
+      }
+
+      .issue small {
+        color: #9297a0;
+      }
+
+      .solution {
+        border-color: #454a54;
+      }
+
+      .solution-label {
+        color: var(--accent);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-weight: 900;
+      }
+
+      .solution h3 {
+        font-size: 30px;
+        margin: 10px 0;
+      }
+
+      .solution p {
+        color: #c3c6cc;
+      }
+
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pill {
+        padding: 8px 11px;
+        border-radius: 999px;
+        background: #292c33;
+        font-size: 13px;
+      }
+
+      .cta {
+        background: var(--accent);
+        padding: 90px 0;
+      }
+
+      .cta-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .cta h2 {
+        max-width: 730px;
+      }
+
+      footer {
+        background: var(--dark);
+        color: #aeb2ba;
+        padding: 40px 0;
+        font-size: 13px;
+      }
+
+      footer strong {
+        color: #fff;
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .diagnostic-grid,
+        .section-head,
+        .cta-inner {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+
+        .stack {
+          grid-template-columns: 1fr;
+        }
+
+        .stack-card.wide {
+          grid-column: auto;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          width: min(calc(100% - 28px), var(--max));
+        }
+
+        .hero {
+          padding: 80px 0 70px;
+        }
+
+        .section {
+          padding: 75px 0;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .site-nav-inner {
+          align-items: flex-start;
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="container site-nav-inner">
+        <a class="logo" href="../index.html">Growth<span>X</span>sell</a>
+        <div class="nav-links">
+          <a href="index.html" aria-current="page">Solutions</a>
+          <a href="../capabilities/">Capabilities</a>
+          <a href="../process/">Process</a>
+          <a href="../about/">About</a>
+          <a href="../case studies/">Case Studies</a>
+        </div>
+        <a class="btn dark" href="../index.html#contact">Free assessment</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">GrowthXsell™ · Amazon Recovery</div>
+          <h1>
+            Restore momentum.<br /><span style="color: var(--accent)"
+              >Fix what is blocking sales.</span
+            ><br />Protect what you built.
+          </h1>
+          <p>
+            When your account, catalog, listings, or compliance issues are hurting
+            performance, recovery is not just triage. It is a structured reset that
+            restores visibility, trust, and revenue momentum.
+          </p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px">
+            <a class="btn accent" href="#diagnose">Diagnose Recovery Needs</a>
+            <a class="btn light" href="#framework">See the framework</a>
+          </div>
+        </div>
+
+        <div class="hero-note">
+          <strong>Amazon Recovery Framework™</strong>
+          <p style="font-size: 14px">
+            We identify the operational and commercial issues behind the drop, then
+            fix them in the order that restores performance safely and efficiently.
+          </p>
+          <span>Account health</span><span>Catalog</span><span>Compliance</span>
+          <span>Listings</span><span>Troubleshooting</span><span>Performance</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Recovery architecture</div>
+            <h2>Momentum stalls when operational issues pile up.</h2>
+          </div>
+          <p>
+            Amazon performance problems are rarely one isolated issue. Usually they
+            show up across listing quality, catalog integrity, compliance, and account
+            execution all at once.
+          </p>
+        </div>
+
+        <div class="stack">
+          <div class="stack-card">
+            <div class="num">01 · ACCOUNT</div>
+            <h3>Account health</h3>
+            <p>
+              Correct platform and operational problems that create friction between your
+              catalog and buyer experience.
+            </p>
+          </div>
+          <div class="stack-card">
+            <div class="num">02 · CATALOG</div>
+            <h3>Catalog integrity</h3>
+            <p>
+              Fix listing issues, parent/child structure problems, and variation problems
+              that break discoverability or conversion.
+            </p>
+          </div>
+          <div class="stack-card">
+            <div class="num">03 · COMPLIANCE</div>
+            <h3>Policy and risk</h3>
+            <p>
+              Reduce exposure to policy risk, suppression, or account restrictions before
+              they impact sales and brand trust.
+            </p>
+          </div>
+          <div class="stack-card wide">
+            <h3>Fix the operational root cause → rebuild the sales engine</h3>
+            <p>
+              Recovery is about more than short-term firefighting. It is how you prevent a
+              small issue from becoming a sustained revenue problem.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="framework">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The framework</div>
+            <h2>We stabilize the account before we scale again.</h2>
+          </div>
+          <p>
+            Recovery work has to be prioritized correctly. The right process restores
+            performance, protects the account, and creates the operating stability needed
+            for future growth.
+          </p>
+        </div>
+
+        <div class="diagnostic" id="diagnose">
+          <div class="eyebrow">Diagnostic</div>
+          <h2>When performance dips, the problem is usually deeper than a single listing or ad campaign.</h2>
+          <div class="problem">
+            Revenue slows because listings, account health, catalog structure, and compliance issues are compounding.
+          </div>
+
+          <div class="diagnostic-grid">
+            <div class="issues">
+              <div class="solution-label">Common issues</div>
+              <button class="issue active" type="button">
+                <span>Listing suppression</span>
+                <small>01</small>
+              </button>
+              <button class="issue" type="button">
+                <span>Catalog or variation errors</span>
+                <small>02</small>
+              </button>
+              <button class="issue" type="button">
+                <span>Policy or compliance risk</span>
+                <small>03</small>
+              </button>
+              <button class="issue" type="button">
+                <span>Account health deterioration</span>
+                <small>04</small>
+              </button>
+            </div>
+
+            <div class="solution">
+              <div class="solution-label">What we do</div>
+              <h3>Stabilize the account and bring performance back online.</h3>
+              <p>
+                We investigate the root issues, fix the operational blockers, and rebuild the
+                account structure so growth can resume without repeating the same mistakes.
+              </p>
+              <div class="pills" style="margin-top: 22px">
+                <span class="pill">Listing diagnostics</span>
+                <span class="pill">Catalog cleanup</span>
+                <span class="pill">Compliance review</span>
+                <span class="pill">Troubleshooting</span>
+                <span class="pill">Operational reset</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Where we focus</div>
+            <h2>Recovery work touches every operational layer.</h2>
+          </div>
+          <p>
+            We trace the problem through the places where performance breaks down so the fixes are durable and measurable.
+          </p>
+        </div>
+
+        <div class="stack">
+          <div class="stack-card">
+            <div class="num">01</div>
+            <h3>Catalog</h3>
+            <p>Repair variation issues, suppressed listings, and product data problems that limit search and conversion.</p>
+          </div>
+          <div class="stack-card">
+            <div class="num">02</div>
+            <h3>Listings</h3>
+            <p>Improve content quality, fix indexing problems, and restore the listing experience that buyers rely on.</p>
+          </div>
+          <div class="stack-card">
+            <div class="num">03</div>
+            <h3>Compliance</h3>
+            <p>Address policy exposure, warning signs, and risk areas before they interrupt the account or sales flow.</p>
+          </div>
+          <div class="stack-card">
+            <div class="num">04</div>
+            <h3>Account health</h3>
+            <p>Clear performance and operational issues that reduce trust, ranking potential, and scaling capacity.</p>
+          </div>
+          <div class="stack-card">
+            <div class="num">05</div>
+            <h3>Problem prioritization</h3>
+            <p>Decide which issues matter most first, so recovery work creates momentum rather than just more noise.</p>
+          </div>
+          <div class="stack-card">
+            <div class="num">06</div>
+            <h3>Operational discipline</h3>
+            <p>Build stronger routines and visibility so the account is less likely to fall into the same trap again.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <div class="eyebrow" style="color: #111216">Recovery plan</div>
+          <h2>Need help diagnosing the issue behind the slowdown before it costs more momentum?</h2>
+        </div>
+        <a class="btn dark" href="../index.html#contact">Book a free assessment</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <strong>GrowthXsell</strong> · Amazon Growth, Launch, Profitability, and Recovery strategy for brands that need structure, speed, and execution.
+      </div>
+    </footer>
+  </body>
+</html>
