@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Profitability Framework™ | GrowthXsell</title>
+    <meta
+      name="description"
+      content="Turn Amazon revenue into healthier profit with better ad efficiency, pricing strategy, product economics, and margin repair."
+    />
+    <style>
+      :root {
+        --bg: #f7f8fa;
+        --ink: #101114;
+        --muted: #656a73;
+        --line: #dfe2e7;
+        --card: #fff;
+        --dark: #111216;
+        --dark2: #191b20;
+        --accent: #c7ff4a;
+        --accent2: #e8ffb9;
+        --max: 1180px;
+        --radius: 22px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.55;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        width: min(calc(100% - 40px), var(--max));
+        margin: auto;
+      }
+
+      .site-nav {
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        padding: 18px 0;
+      }
+
+      .site-nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .logo {
+        font-size: 21px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .logo span {
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .nav-links a:hover {
+        color: var(--ink);
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #727780;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: clamp(48px, 7vw, 88px);
+        line-height: 0.94;
+        letter-spacing: -0.055em;
+        margin-bottom: 28px;
+      }
+
+      h2 {
+        font-size: clamp(36px, 5vw, 62px);
+        line-height: 1;
+        letter-spacing: -0.045em;
+        margin-bottom: 18px;
+      }
+
+      h3 {
+        font-size: 22px;
+        line-height: 1.15;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: var(--muted);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 20px;
+        border-radius: 999px;
+        font-weight: 800;
+        border: 1px solid var(--ink);
+        transition: 0.2s;
+      }
+
+      .btn.dark {
+        background: var(--dark);
+        color: #fff;
+      }
+
+      .btn.light {
+        background: #fff;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn.accent {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .hero {
+        background: var(--dark);
+        color: #fff;
+        padding: 115px 0 95px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero:after {
+        content: "";
+        position: absolute;
+        width: 520px;
+        height: 520px;
+        border-radius: 50%;
+        right: -180px;
+        top: -180px;
+        background: radial-gradient(circle, var(--accent), transparent 65%);
+        opacity: 0.18;
+      }
+
+      .hero p {
+        color: #b8bbc2;
+        font-size: 18px;
+        max-width: 690px;
+      }
+
+      .hero .eyebrow {
+        color: var(--accent);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 60px;
+        align-items: end;
+      }
+
+      .hero-note {
+        border: 1px solid #33363e;
+        background: #181a1f;
+        border-radius: 24px;
+        padding: 26px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-note strong {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      .hero-note span {
+        display: inline-block;
+        background: #252830;
+        color: #d7d9de;
+        padding: 7px 10px;
+        border-radius: 8px;
+        font-size: 13px;
+        margin: 4px 3px 0 0;
+      }
+
+      .section {
+        padding: 105px 0;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: end;
+        margin-bottom: 50px;
+      }
+
+      .section-head p {
+        max-width: 520px;
+      }
+
+      .stack {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 35px;
+      }
+
+      .stack-card {
+        padding: 30px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        min-height: 185px;
+      }
+
+      .stack-card .num {
+        font-size: 12px;
+        color: #858991;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+
+      .stack-card p {
+        font-size: 14px;
+      }
+
+      .stack-card.wide {
+        grid-column: span 3;
+        text-align: center;
+        min-height: auto;
+        background: var(--dark);
+        color: #fff;
+        border-color: var(--dark);
+      }
+
+      .stack-card.wide p {
+        color: #aeb2ba;
+      }
+
+      .diagnostic {
+        background: var(--dark);
+        border-radius: 30px;
+        padding: 44px;
+        color: #fff;
+      }
+
+      .diagnostic h2 {
+        max-width: 700px;
+      }
+
+      .problem {
+        font-size: 30px;
+        font-weight: 850;
+        letter-spacing: -0.025em;
+        margin: 30px 0;
+      }
+
+      .diagnostic-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+
+      .issues,
+      .solution {
+        border: 1px solid #34373f;
+        border-radius: 20px;
+        padding: 24px;
+        background: #17191e;
+      }
+
+      .issue {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 16px 18px;
+        background: #20232a;
+        border: 1px solid #30333a;
+        color: #fff;
+        border-radius: 12px;
+        margin: 9px 0;
+        cursor: pointer;
+        font: inherit;
+      }
+
+      .issue:hover,
+      .issue.active {
+        border-color: var(--accent);
+        background: #242820;
+      }
+
+      .issue small {
+        color: #9297a0;
+      }
+
+      .solution {
+        border-color: #454a54;
+      }
+
+      .solution-label {
+        color: var(--accent);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-weight: 900;
+      }
+
+      .solution h3 {
+        font-size: 30px;
+        margin: 10px 0;
+      }
+
+      .solution p {
+        color: #c3c6cc;
+      }
+
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pill {
+        padding: 8px 11px;
+        border-radius: 999px;
+        background: #292c33;
+        font-size: 13px;
+      }
+
+      .cta {
+        background: var(--accent);
+        padding: 90px 0;
+      }
+
+      .cta-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .cta h2 {
+        max-width: 730px;
+      }
+
+      footer {
+        background: var(--dark);
+        color: #aeb2ba;
+        padding: 40px 0;
+        font-size: 13px;
+      }
+
+      footer strong {
+        color: #fff;
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .diagnostic-grid,
+        .section-head,
+        .cta-inner {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+
+        .stack {
+          grid-template-columns: 1fr;
+        }
+
+        .stack-card.wide {
+          grid-column: auto;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          width: min(calc(100% - 28px), var(--max));
+        }
+
+        .hero {
+          padding: 80px 0 70px;
+        }
+
+        .section {
+          padding: 75px 0;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .site-nav-inner {
+          align-items: flex-start;
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="container site-nav-inner">
+        <a class="logo" href="../index.html">Growth<span>X</span>sell</a>
+        <div class="nav-links">
+          <a href="index.html" aria-current="page">Solutions</a>
+          <a href="../capabilities/">Capabilities</a>
+          <a href="../process/">Process</a>
+          <a href="../about/">About</a>
+          <a href="../case studies/">Case Studies</a>
+        </div>
+        <a class="btn dark" href="../index.html#contact">Free assessment</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">GrowthXsell™ · Amazon Profitability</div>
+          <h1>
+            Turn growth into profit.<br /><span style="color: var(--accent)"
+              >Fix margin leaks.</span
+            ><br />Scale with confidence.
+          </h1>
+          <p>
+            Profitability is not just better advertising. It is the system that
+            aligns spend, pricing, product economics, and operational discipline
+            so your business grows without destroying margin.
+          </p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px">
+            <a class="btn accent" href="#diagnose">Diagnose Profitability</a>
+            <a class="btn light" href="#framework">See the framework</a>
+          </div>
+        </div>
+
+        <div class="hero-note">
+          <strong>Amazon Profitability Framework™</strong>
+          <p style="font-size: 14px">
+            We identify where margin is being lost, then rebuild the economics so
+            growth becomes durable and efficient.
+          </p>
+          <span>TACoS</span><span>ACoS</span><span>Pricing</span><span>Mix</span>
+          <span>Margins</span><span>Product Economics</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The profitability architecture</div>
+            <h2>Healthy revenue requires clean economics.</h2>
+          </div>
+          <p>
+            Many Amazon brands grow revenue while still losing margin. The goal is
+            to increase useful demand and protect unit economics at the same time.
+          </p>
+        </div>
+
+        <div class="stack">
+          <div class="stack-card">
+            <div class="num">01 · SPEND</div>
+            <h3>Ad Efficiency</h3>
+            <p>
+              Stop paying for wasted traffic and redirect budget to the campaigns,
+              keywords, and products driving the best contribution margin.
+            </p>
+          </div>
+          <div class="stack-card">
+            <div class="num">02 · MIX</div>
+            <h3>Product Economics</h3>
+            <p>
+              Identify which SKUs truly earn their place in the catalog and which
+              are dragging the portfolio down.
+            </p>
+          </div>
+          <div class="stack-card">
+            <div class="num">03 · PRICING</div>
+            <h3>Margin Strategy</h3>
+            <p>
+              Tighten pricing, promotion, and deal structure so you protect profit
+              without hurting conversion or market position.
+            </p>
+          </div>
+          <div class="stack-card wide">
+            <h3>Better efficiency → stronger cash flow → scalable growth</h3>
+            <p>
+              Profitability work is not a cost-cutting exercise. It is a growth
+              system that protects the business while you scale.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="framework">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The framework</div>
+            <h2>We find the leak, then fix the system.</h2>
+          </div>
+          <p>
+            Profitability issues usually show up across multiple levers at once.
+            We trace the full path from ad spend to net margin and correct the
+            real causes, not just the symptoms.
+          </p>
+        </div>
+
+        <div class="diagnostic" id="diagnose">
+          <div class="eyebrow">Diagnostic</div>
+          <h2>Most brands are not failing to grow — they are failing to grow profitably.</h2>
+          <div class="problem">
+            Revenue climbs, but margin compresses, CAC rises, and the portfolio
+            becomes harder to scale.
+          </div>
+
+          <div class="diagnostic-grid">
+            <div class="issues">
+              <div class="solution-label">Common issues</div>
+              <button class="issue active" type="button">
+                <span>Wasted ad spend</span>
+                <small>01</small>
+              </button>
+              <button class="issue" type="button">
+                <span>Weak product economics</span>
+                <small>02</small>
+              </button>
+              <button class="issue" type="button">
+                <span>Pricing and promotion leaks</span>
+                <small>03</small>
+              </button>
+              <button class="issue" type="button">
+                <span>Low-margin SKU concentration</span>
+                <small>04</small>
+              </button>
+            </div>
+
+            <div class="solution">
+              <div class="solution-label">What we do</div>
+              <h3>Rebuild the levers that drive profit.</h3>
+              <p>
+                We tighten ad efficiency, improve product selection, reduce waste,
+                and align pricing and promotions with actual margin contribution.
+              </p>
+              <div class="pills" style="margin-top: 22px">
+                <span class="pill">TACoS management</span>
+                <span class="pill">Search term harvesting</span>
+                <span class="pill">SKU profitability review</span>
+                <span class="pill">Promotional optimization</span>
+                <span class="pill">Pricing guardrails</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Where we focus</div>
+            <h2>Profitability has many moving parts.</h2>
+          </div>
+          <p>
+            We evaluate the full margin chain, not just ad metrics, so the fixes
+            hold as the business scales.
+          </p>
+        </div>
+
+        <div class="stack">
+          <div class="stack-card">
+            <div class="num">01</div>
+            <h3>Advertising</h3>
+            <p>Reduce wasted spend, improve efficiency, and find the campaigns that create profitable demand.</p>
+          </div>
+          <div class="stack-card">
+            <div class="num">02</div>
+            <h3>Product economics</h3>
+            <p>Review costs, margins, and contribution across the catalog to focus growth on the right SKUs.</p>
+          </div>
+          <div class="stack-card">
+            <div class="num">03</div>
+            <h3>Pricing</h3>
+            <p>Balance margin protection with conversion by improving pricing and promotion discipline.</p>
+          </div>
+          <div class="stack-card">
+            <div class="num">04</div>
+            <h3>Portfolio strategy</h3>
+            <p>Make decisions about SKU mix, expansion, and opportunity prioritization with better data.</p>
+          </div>
+          <div class="stack-card">
+            <div class="num">05</div>
+            <h3>Operational leverage</h3>
+            <p>Reduce friction in inventory, fulfillment, and account management so profit isn’t lost in the process.</p>
+          </div>
+          <div class="stack-card">
+            <div class="num">06</div>
+            <h3>Commercial discipline</h3>
+            <p>Connect sales, margins, and growth planning so every move improves clarity and decision quality.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <div class="eyebrow" style="color: #111216">Profitability reset</div>
+          <h2>Want to see where your margin is leaking and what to fix next?</h2>
+        </div>
+        <a class="btn dark" href="../index.html#contact">Book a free assessment</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <strong>GrowthXsell</strong> · Amazon Growth, Launch, Profitability, and Recovery strategy for brands ready to scale with discipline.
+      </div>
+    </footer>
+  </body>
+</html>
