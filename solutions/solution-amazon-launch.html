@@ -2,37 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Amazon Launch Framework™ | GrowthXsell</title>
     <meta
       name="description"
-      content="Launch products with the right market research, listing strategy, ad structure, and 90-day execution plan."
+      content="From product idea to first meaningful traction with the GrowthXsell Amazon Launch Framework™."
     />
     <style>
       :root {
-        --bg: #f7f8fa;
+        --bg: #f5f6f8;
         --ink: #101114;
-        --muted: #656a73;
+        --muted: #626975;
         --line: #dfe2e7;
         --card: #fff;
         --dark: #111216;
-        --dark2: #191b20;
+        --dark2: #181a1f;
         --accent: #c7ff4a;
-        --accent2: #e8ffb9;
         --max: 1180px;
-        --radius: 22px;
       }
-
       * {
         box-sizing: border-box;
       }
-
       html {
         scroll-behavior: smooth;
       }
-
       body {
         margin: 0;
+        background: var(--bg);
+        color: var(--ink);
         font-family:
           Inter,
           ui-sans-serif,
@@ -41,565 +38,1120 @@
           BlinkMacSystemFont,
           "Segoe UI",
           sans-serif;
-        color: var(--ink);
-        background: var(--bg);
         line-height: 1.55;
       }
-
       a {
         text-decoration: none;
         color: inherit;
       }
-
       .container {
         width: min(calc(100% - 40px), var(--max));
         margin: auto;
       }
-
-      .site-nav {
+      .nav {
         background: var(--bg);
         border-bottom: 1px solid var(--line);
-        padding: 18px 0;
+        padding: 15px 0;
       }
-
-      .site-nav-inner {
+      .navin {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 24px;
+        gap: 20px;
       }
-
       .logo {
-        font-size: 21px;
-        font-weight: 800;
-        letter-spacing: -0.04em;
+        font-weight: 900;
+        font-size: 15px;
+        letter-spacing: -0.055em;
       }
-
       .logo span {
         color: var(--accent);
       }
-
-      .nav-links {
+      .links {
         display: flex;
-        gap: 22px;
-        color: var(--muted);
-        font-size: 14px;
+        gap: 21px;
+        font-size: 10px;
         font-weight: 700;
+        color: #454b55;
       }
-
-      .nav-links a:hover {
-        color: var(--ink);
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border-radius: 999px;
+        border: 1px solid var(--ink);
+        font-size: 11px;
+        font-weight: 850;
+        transition: 0.2s;
       }
-
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .darkbtn {
+        background: var(--dark);
+        color: #fff;
+      }
+      .lightbtn {
+        background: #fff;
+      }
+      .limebtn {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
       .eyebrow {
-        font-size: 12px;
-        letter-spacing: 0.16em;
+        font-size: 10px;
+        line-height: 1.2;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
-        font-weight: 800;
-        color: #727780;
+        font-weight: 900;
+        color: #737983;
       }
-
       h1,
       h2,
       h3,
       p {
         margin-top: 0;
       }
-
       h1 {
-        font-size: clamp(48px, 7vw, 88px);
-        line-height: 0.94;
-        letter-spacing: -0.055em;
-        margin-bottom: 28px;
+        font-size: clamp(54px, 7.3vw, 88px);
+        line-height: 0.91;
+        letter-spacing: -0.065em;
+        margin: 18px 0 26px;
       }
-
       h2 {
-        font-size: clamp(36px, 5vw, 62px);
-        line-height: 1;
-        letter-spacing: -0.045em;
-        margin-bottom: 18px;
+        font-size: clamp(38px, 5vw, 61px);
+        line-height: 0.97;
+        letter-spacing: -0.055em;
+        margin-bottom: 17px;
       }
-
       h3 {
-        font-size: 22px;
-        line-height: 1.15;
-        margin-bottom: 10px;
+        font-size: 21px;
+        line-height: 1.12;
+        letter-spacing: -0.035em;
+        margin-bottom: 9px;
       }
-
       p {
         color: var(--muted);
       }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 14px 20px;
-        border-radius: 999px;
-        font-weight: 800;
-        border: 1px solid var(--ink);
-        transition: 0.2s;
-      }
-
-      .btn.dark {
-        background: var(--dark);
-        color: #fff;
-      }
-
-      .btn.light {
-        background: #fff;
-      }
-
-      .btn:hover {
-        transform: translateY(-2px);
-      }
-
-      .btn.accent {
-        background: var(--accent);
-        border-color: var(--accent);
-      }
-
       .hero {
         background: var(--dark);
         color: #fff;
-        padding: 115px 0 95px;
+        padding: 76px 0 72px;
         position: relative;
         overflow: hidden;
       }
-
+      .hero:before {
+        content: "";
+        position: absolute;
+        width: 540px;
+        height: 540px;
+        right: -245px;
+        top: -230px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(199, 255, 74, 0.24),
+          transparent 65%
+        );
+      }
       .hero:after {
         content: "";
         position: absolute;
-        width: 520px;
-        height: 520px;
+        width: 330px;
+        height: 330px;
+        left: -230px;
+        bottom: -220px;
         border-radius: 50%;
-        right: -180px;
-        top: -180px;
-        background: radial-gradient(circle, var(--accent), transparent 65%);
-        opacity: 0.18;
+        background: radial-gradient(
+          circle,
+          rgba(199, 255, 74, 0.08),
+          transparent 67%
+        );
       }
-
-      .hero p {
-        color: #b8bbc2;
-        font-size: 18px;
-        max-width: 690px;
-      }
-
-      .hero .eyebrow {
-        color: var(--accent);
-      }
-
-      .hero-grid {
+      .heroGrid {
         display: grid;
         grid-template-columns: 1.3fr 0.7fr;
-        gap: 60px;
+        gap: 65px;
         align-items: end;
-      }
-
-      .hero-note {
-        border: 1px solid #33363e;
-        background: #181a1f;
-        border-radius: 24px;
-        padding: 26px;
         position: relative;
         z-index: 1;
       }
-
-      .hero-note strong {
-        display: block;
-        font-size: 20px;
-        margin-bottom: 12px;
+      .hero .eyebrow {
+        color: var(--accent);
       }
-
-      .hero-note span {
-        display: inline-block;
-        background: #252830;
-        color: #d7d9de;
-        padding: 7px 10px;
-        border-radius: 8px;
-        font-size: 13px;
-        margin: 4px 3px 0 0;
+      .lime {
+        color: var(--accent);
       }
-
-      .section {
-        padding: 105px 0;
+      .heroCopy {
+        max-width: 710px;
       }
-
-      .section-head {
+      .heroCopy p {
+        color: #b8bbc2;
+        max-width: 650px;
+        font-size: 15px;
+      }
+      .actions {
         display: flex;
-        justify-content: space-between;
-        gap: 40px;
-        align-items: end;
-        margin-bottom: 50px;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 24px;
       }
-
-      .section-head p {
-        max-width: 520px;
+      .heroCard {
+        border: 1px solid #34373f;
+        background: #181a1f;
+        border-radius: 18px;
+        padding: 23px;
+        position: relative;
+        overflow: hidden;
       }
-
-      .stack {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-        margin-top: 35px;
+      .heroCard:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: var(--accent);
+        box-shadow: 0 0 25px rgba(199, 255, 74, 0.55);
       }
-
-      .stack-card {
-        padding: 30px;
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        min-height: 185px;
+      .heroCard strong {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 9px;
       }
-
-      .stack-card .num {
+      .heroCard p {
         font-size: 12px;
-        color: #858991;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-      }
-
-      .stack-card p {
-        font-size: 14px;
-      }
-
-      .stack-card.wide {
-        grid-column: span 3;
-        text-align: center;
-        min-height: auto;
-        background: var(--dark);
-        color: #fff;
-        border-color: var(--dark);
-      }
-
-      .stack-card.wide p {
         color: #aeb2ba;
       }
-
-      .diagnostic {
-        background: var(--dark);
-        border-radius: 30px;
-        padding: 44px;
-        color: #fff;
-      }
-
-      .diagnostic h2 {
-        max-width: 700px;
-      }
-
-      .problem {
-        font-size: 30px;
-        font-weight: 850;
-        letter-spacing: -0.025em;
-        margin: 30px 0;
-      }
-
-      .diagnostic-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 22px;
-      }
-
-      .issues,
-      .solution {
-        border: 1px solid #34373f;
-        border-radius: 20px;
-        padding: 24px;
-        background: #17191e;
-      }
-
-      .issue {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: left;
-        padding: 16px 18px;
-        background: #20232a;
-        border: 1px solid #30333a;
-        color: #fff;
-        border-radius: 12px;
-        margin: 9px 0;
-        cursor: pointer;
-        font: inherit;
-      }
-
-      .issue:hover,
-      .issue.active {
-        border-color: var(--accent);
-        background: #242820;
-      }
-
-      .issue small {
-        color: #9297a0;
-      }
-
-      .solution {
-        border-color: #454a54;
-      }
-
-      .solution-label {
-        color: var(--accent);
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        font-weight: 900;
-      }
-
-      .solution h3 {
-        font-size: 30px;
-        margin: 10px 0;
-      }
-
-      .solution p {
-        color: #c3c6cc;
-      }
-
       .pills {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 6px;
       }
-
       .pill {
-        padding: 8px 11px;
-        border-radius: 999px;
-        background: #292c33;
-        font-size: 13px;
+        padding: 6px 8px;
+        border-radius: 7px;
+        background: #24272e;
+        color: #d8dbe0;
+        font-size: 10px;
       }
-
-      .cta {
-        background: var(--accent);
-        padding: 90px 0;
+      .section {
+        padding: 92px 0;
       }
-
-      .cta-inner {
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-        align-items: center;
+      .alt {
+        background: #eef0f3;
       }
-
-      .cta h2 {
-        max-width: 730px;
-      }
-
-      footer {
+      .darkSection {
         background: var(--dark);
-        color: #aeb2ba;
-        padding: 40px 0;
-        font-size: 13px;
-      }
-
-      footer strong {
         color: #fff;
       }
-
-      @media (max-width: 900px) {
-        .hero-grid,
-        .diagnostic-grid,
-        .section-head,
-        .cta-inner {
+      .darkSection p {
+        color: #aeb2ba;
+      }
+      .darkSection .eyebrow {
+        color: var(--accent);
+      }
+      .head {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        align-items: end;
+        margin-bottom: 42px;
+      }
+      .head > div {
+        max-width: 650px;
+      }
+      .head > p {
+        max-width: 470px;
+        font-size: 14px;
+      }
+      .chain {
+        display: grid;
+        grid-template-columns: repeat(17, 1fr);
+        gap: 6px;
+        align-items: center;
+      }
+      .node {
+        min-height: 76px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 7px;
+        font-size: 10px;
+        font-weight: 850;
+      }
+      .arrow {
+        text-align: center;
+        color: #9aa0a9;
+        font-size: 14px;
+        font-weight: 900;
+      }
+      .flight {
+        margin-top: 25px;
+        background: var(--dark);
+        color: #fff;
+        border-radius: 17px;
+        padding: 17px;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 850;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .flight span {
+        color: var(--accent);
+      }
+      .grid6 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 13px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 24px;
+        min-height: 275px;
+        position: relative;
+        overflow: hidden;
+      }
+      .card:after {
+        content: "";
+        position: absolute;
+        left: -70px;
+        bottom: -100px;
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(199, 255, 74, 0.16),
+          transparent 67%
+        );
+      }
+      .num {
+        font-size: 10px;
+        color: #7d838d;
+        letter-spacing: 0.12em;
+        font-weight: 900;
+      }
+      .card h3 {
+        margin-top: 19px;
+      }
+      .card p,
+      .card li {
+        font-size: 11px;
+        line-height: 1.55;
+      }
+      .card ul {
+        padding-left: 17px;
+        color: #5e646e;
+      }
+      .journey {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 9px;
+      }
+      .journeyCard {
+        padding: 22px 17px;
+        border: 1px solid #34373f;
+        background: #181a1f;
+        border-radius: 16px;
+        min-height: 130px;
+      }
+      .journeyCard strong {
+        display: block;
+        color: #fff;
+        font-size: 15px;
+        margin-bottom: 7px;
+      }
+      .journeyCard p {
+        font-size: 11px;
+        margin: 0;
+      }
+      .ads {
+        display: grid;
+        grid-template-columns: 1fr 80px 1fr;
+        align-items: center;
+        gap: 14px;
+      }
+      .adbox {
+        background: #181a1f;
+        border: 1px solid #34373f;
+        border-radius: 18px;
+        padding: 24px;
+      }
+      .adbox h3 {
+        color: #fff;
+      }
+      .adbox p {
+        font-size: 12px;
+      }
+      .adstep {
+        border-top: 1px solid #30333a;
+        padding: 11px 0;
+        color: #d4d7dd;
+        font-size: 11px;
+      }
+      .adstep:first-of-type {
+        border-top: 0;
+      }
+      .adarrow {
+        text-align: center;
+        color: var(--accent);
+        font-size: 28px;
+        font-weight: 900;
+      }
+      .caps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+      .cap {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 24px;
+        min-height: 235px;
+      }
+      .cap h3 {
+        margin-top: 18px;
+      }
+      .cap p,
+      .cap li {
+        font-size: 11px;
+      }
+      .cap ul {
+        padding-left: 16px;
+        color: #5d636d;
+      }
+      .case {
+        background: var(--dark);
+        color: #fff;
+        border-radius: 26px;
+        padding: 42px;
+        position: relative;
+        overflow: hidden;
+      }
+      .case:after {
+        content: "";
+        position: absolute;
+        right: -130px;
+        bottom: -170px;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(199, 255, 74, 0.16),
+          transparent 67%
+        );
+      }
+      .caseGrid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 50px;
+        position: relative;
+        z-index: 1;
+      }
+      .case .eyebrow {
+        color: var(--accent);
+      }
+      .case p {
+        color: #b8bbc2;
+        font-size: 13px;
+      }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 26px;
+      }
+      .metric {
+        border: 1px solid #34373f;
+        background: #181a1f;
+        border-radius: 15px;
+        padding: 17px;
+        min-height: 115px;
+      }
+      .metric b {
+        display: block;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: -0.05em;
+      }
+      .metric .after {
+        color: var(--accent);
+        margin-top: 5px;
+      }
+      .metric small {
+        display: block;
+        color: #898e98;
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        margin-top: 12px;
+      }
+      .proof {
+        border: 1px solid #34373f;
+        background: #181a1f;
+        border-radius: 19px;
+        padding: 25px;
+      }
+      .proof h3 {
+        color: #fff;
+      }
+      .line {
+        padding: 13px 0;
+        border-bottom: 1px solid #30333a;
+        color: #cfd2d8;
+        font-size: 11px;
+      }
+      .line:last-child {
+        border: 0;
+      }
+      .lead {
+        display: grid;
+        grid-template-columns: 1fr 0.72fr;
+        gap: 50px;
+        align-items: center;
+      }
+      .lead ul {
+        list-style: none;
+        padding: 0;
+        margin: 22px 0;
+      }
+      .lead li {
+        padding: 8px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 12px;
+      }
+      .lead li:before {
+        content: "✓";
+        font-weight: 900;
+        margin-right: 8px;
+      }
+      .score {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 24px;
+        box-shadow: 0 16px 40px rgba(16, 17, 20, 0.06);
+      }
+      .scoreTop {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+      }
+      .scoreNum {
+        font-size: 49px;
+        line-height: 0.9;
+        font-weight: 900;
+        letter-spacing: -0.07em;
+      }
+      .scoreNum small {
+        display: block;
+        font-size: 9px;
+        color: #858a93;
+        letter-spacing: 0.08em;
+        margin-top: 7px;
+      }
+      .scoreRow {
+        display: grid;
+        grid-template-columns: 1fr 62px;
+        gap: 14px;
+        align-items: center;
+        padding: 10px 0;
+        border-top: 1px solid #eceef1;
+        font-size: 11px;
+        font-weight: 750;
+      }
+      .bar {
+        height: 6px;
+        border-radius: 999px;
+        background: #e5e8ec;
+        overflow: hidden;
+      }
+      .bar i {
+        display: block;
+        height: 100%;
+        background: var(--dark);
+        border-radius: 999px;
+      }
+      .cta {
+        background: var(--accent);
+        padding: 80px 0;
+      }
+      .ctaIn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+      }
+      .cta h2 {
+        max-width: 760px;
+        margin-bottom: 0;
+      }
+      .cta p {
+        color: #363a31;
+        max-width: 620px;
+        font-size: 13px;
+        margin-top: 14px;
+      }
+      .footer {
+        background: var(--dark);
+        color: #aeb2ba;
+        padding: 38px 0;
+        font-size: 11px;
+      }
+      .footer strong {
+        color: #fff;
+      }
+      @media (max-width: 980px) {
+        .heroGrid,
+        .caseGrid,
+        .lead {
           grid-template-columns: 1fr;
-          display: grid;
         }
-
-        .stack {
+        .grid6 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .caps {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .chain {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .arrow {
+          display: none;
+        }
+        .journey {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .ads {
           grid-template-columns: 1fr;
         }
-
-        .stack-card.wide {
-          grid-column: auto;
+        .adarrow {
+          transform: rotate(90deg);
         }
       }
-
-      @media (max-width: 600px) {
+      @media (max-width: 720px) {
         .container {
           width: min(calc(100% - 28px), var(--max));
         }
-
-        .hero {
-          padding: 80px 0 70px;
-        }
-
-        .section {
-          padding: 75px 0;
-        }
-
-        .nav-links {
+        .links {
           display: none;
         }
-
-        .site-nav-inner {
-          align-items: flex-start;
+        .navin {
           flex-wrap: wrap;
+        }
+        .hero {
+          padding: 64px 0;
+        }
+        .section {
+          padding: 70px 0;
+        }
+        .head {
+          display: block;
+        }
+        .head > p {
+          margin-top: 18px;
+        }
+        .grid6,
+        .caps,
+        .journey,
+        .metrics {
+          grid-template-columns: 1fr;
+        }
+        .case {
+          padding: 28px;
+        }
+        .ctaIn {
+          display: block;
+        }
+        .cta .btn {
+          margin-top: 25px;
+        }
+        h1 {
+          font-size: clamp(48px, 15vw, 70px);
         }
       }
     </style>
   </head>
-
   <body>
-    <nav class="site-nav" aria-label="Primary navigation">
-      <div class="container site-nav-inner">
+    <nav class="nav">
+      <div class="container navin">
         <a class="logo" href="../index.html">Growth<span>X</span>sell</a>
-        <div class="nav-links">
-          <a href="index.html" aria-current="page">Solutions</a>
-          <a href="../capabilities/">Capabilities</a>
-          <a href="../process/">Process</a>
-          <a href="../about/">About</a>
-          <a href="../case studies/">Case Studies</a>
+        <div class="links">
+          <a href="../solutions/">Solutions</a
+          ><a href="../capabilities/">Capabilities</a
+          ><a href="../process/">Process</a><a href="../about/">About</a
+          ><a href="../case studies/">Case Studies</a>
         </div>
-        <a class="btn dark" href="../index.html#contact">Free assessment</a>
+        <a class="btn darkbtn" href="../index.html#contact">Free assessment</a>
       </div>
     </nav>
 
     <header class="hero">
-      <div class="container hero-grid">
-        <div>
+      <div class="container heroGrid">
+        <div class="heroCopy">
           <div class="eyebrow">GrowthXsell™ · Amazon Launch</div>
           <h1>
-            Launch the right way.<br /><span style="color: var(--accent)"
-              >Build traction on purpose.</span
-            ><br />Avoid the common traps.
+            From product idea<br />to
+            <span class="lime">meaningful traction.</span>
           </h1>
           <p>
-            A launch is not just a product listing and a PPC campaign. It is the
-            full system that determines whether a new Amazon product can win
-            demand, earn reviews, and create a durable foundation for growth.
+            The Amazon Launch Framework™ builds the foundation for a profitable
+            launch—not just a live listing. We connect market intelligence,
+            positioning, listing, advertising, conversion and early organic
+            momentum into one launch system.
           </p>
-          <div
-            style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px"
-          >
-            <a class="btn accent" href="#diagnose">Diagnose Your Launch</a>
-            <a class="btn light" href="#framework">See the framework</a>
+          <div class="actions">
+            <a class="btn limebtn" href="#assessment">Diagnose Your Launch →</a
+            ><a class="btn lightbtn" href="#framework"
+              >Explore the framework ↓</a
+            >
           </div>
         </div>
-
-        <div class="hero-note">
+        <div class="heroCard">
           <strong>Amazon Launch Framework™</strong>
-          <p style="font-size: 14px">
-            We decide whether the product is viable, build the market entry
-            system, and execute the first 90 days around the right revenue and
-            ranking milestones.
+          <p>
+            From product idea to first meaningful traction. We decide what the
+            market requires, build the launch foundation, and control the first
+            90 days around measurable milestones.
           </p>
-          <span>Market entry</span><span>Research</span><span>Listing</span>
-          <span>PPC</span><span>Launch strategy</span><span>Reviews</span>
+          <div class="pills">
+            <span class="pill">Market intelligence</span
+            ><span class="pill">Positioning</span
+            ><span class="pill">Listing</span><span class="pill">PPC</span
+            ><span class="pill">Conversion</span
+            ><span class="pill">Organic traction</span>
+          </div>
         </div>
       </div>
     </header>
 
     <section class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="head">
           <div>
-            <div class="eyebrow">The Launch Architecture</div>
-            <h2>Launch success starts before day one.</h2>
+            <div class="eyebrow">The launch architecture</div>
+            <h2>Launch isn't Listing → PPC → Wait.</h2>
           </div>
           <p>
-            Too many brands treat launch as a single campaign. We use a
-            three-step system to test viability, build the landing asset, and
-            then control the first 90 days of momentum.
+            A launch is a connected system. Every decision—from market selection
+            to creative to advertising—should move the product toward the same
+            commercial outcome.
           </p>
         </div>
+        <div class="chain">
+          <div class="node">Market</div>
+          <div class="arrow">→</div>
+          <div class="node">Product</div>
+          <div class="arrow">→</div>
+          <div class="node">Positioning</div>
+          <div class="arrow">→</div>
+          <div class="node">Listing</div>
+          <div class="arrow">→</div>
+          <div class="node">Keywords</div>
+          <div class="arrow">→</div>
+          <div class="node">Advertising</div>
+          <div class="arrow">→</div>
+          <div class="node">Conversion</div>
+          <div class="arrow">→</div>
+          <div class="node">Ranking</div>
+          <div class="arrow">→</div>
+          <div class="node">Traction</div>
+        </div>
+        <div class="flight">
+          <span>Market intelligence</span> → Positioning → Listing foundation →
+          <span>PPC activation</span> → Conversion → Organic traction → Scale
+        </div>
+      </div>
+    </section>
 
-        <div class="stack">
-          <div class="stack-card">
-            <div class="num">01 · DIAGNOSE</div>
-            <h3>Market viability</h3>
-            <p>
-              Determine whether the niche is attractive, whether the product can
-              win at your price, and where risk is hiding before inventory is
-              ordered.
-            </p>
+    <section class="section alt" id="framework">
+      <div class="container">
+        <div class="head">
+          <div>
+            <div class="eyebrow">The Amazon Launch Framework™</div>
+            <h2>Six stages from opportunity to traction.</h2>
           </div>
-          <div class="stack-card">
-            <div class="num">02 · BUILD</div>
-            <h3>Listing + PPC + plan</h3>
+          <p>
+            Each stage answers a different launch question. Together they create
+            the foundation, traffic system and feedback loop required to make
+            early performance measurable.
+          </p>
+        </div>
+        <div class="grid6">
+          <article class="card">
+            <div class="num">01 · MARKET INTELLIGENCE</div>
+            <h3>Know whether the opportunity is winnable.</h3>
             <p>
-              Create the listing, keyword strategy, campaign structure, and
-              launch roadmap required to support momentum instead of guesswork.
+              Understand demand, competition, gaps, pricing and the customer
+              problem before committing heavily to inventory or advertising.
             </p>
+            <ul>
+              <li>Market opportunity map</li>
+              <li>Competitor analysis</li>
+              <li>Keyword universe</li>
+              <li>Category opportunity</li>
+              <li>Demand assessment</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="num">02 · PRODUCT & POSITIONING</div>
+            <h3>Give the product a reason to win.</h3>
+            <p>
+              Define why someone should choose this product and turn that answer
+              into a clear commercial position.
+            </p>
+            <ul>
+              <li>Positioning</li>
+              <li>Value proposition</li>
+              <li>Differentiation</li>
+              <li>Pricing strategy</li>
+              <li>Competitive angle</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="num">03 · LISTING ARCHITECTURE</div>
+            <h3>Build the conversion foundation.</h3>
+            <p>
+              Structure the listing around how shoppers move from search to
+              confidence and purchase.
+            </p>
+            <ul>
+              <li>Title & bullets</li>
+              <li>Description</li>
+              <li>Backend keywords</li>
+              <li>Image strategy</li>
+              <li>A+ & Brand Store</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="num">04 · LAUNCH ADVERTISING</div>
+            <h3>Turn paid traffic into intelligence.</h3>
+            <p>
+              Launch advertising with a deliberate progression from discovery to
+              validated search terms and scalable winners.
+            </p>
+            <ul>
+              <li>Discovery</li>
+              <li>Keyword harvesting</li>
+              <li>Search-term validation</li>
+              <li>Conversion winners</li>
+              <li>Exact-match scaling</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="num">05 · CONVERSION OPTIMIZATION</div>
+            <h3>Make every qualified visit work harder.</h3>
+            <p>
+              Monitor the signals that tell you whether traffic is turning into
+              commercial momentum.
+            </p>
+            <ul>
+              <li>CTR</li>
+              <li>CVR</li>
+              <li>Sessions</li>
+              <li>Add-to-cart behavior</li>
+              <li>Image & offer performance</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="num">06 · TRACTION & SCALE</div>
+            <h3>Know when the launch is actually working.</h3>
+            <p>
+              The launch isn't finished when the ASIN goes live. It is finished
+              when the business has repeatable signals worth scaling.
+            </p>
+            <ul>
+              <li>Repeatable sales</li>
+              <li>Converting keywords</li>
+              <li>Emerging organic rankings</li>
+              <li>Controlled advertising</li>
+              <li>Predictable economics</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section darkSection">
+      <div class="container">
+        <div class="head">
+          <div>
+            <div class="eyebrow">Listing architecture</div>
+            <h2>Build around the shopper journey.</h2>
           </div>
-          <div class="stack-card">
-            <div class="num">03 · ACTIVATE</div>
-            <h3>Execution</h3>
-            <p>
-              Control launch week, manage the ranking window, and use weekly
-              scorecards to adjust based on data, not panic.
-            </p>
+          <p>
+            Search visibility is only the first step. The listing has to move
+            the buyer through understanding, trust and purchase.
+          </p>
+        </div>
+        <div class="journey">
+          <div class="journeyCard">
+            <strong>Search</strong>
+            <p>Keyword relevance, indexing and demand alignment.</p>
           </div>
-          <div class="stack-card wide">
-            <h3>Diagnose → Build → Activate</h3>
-            <p>
-              A launch only works when the strategy, listing, and ad engine all
-              align around the same market opportunity.
-            </p>
+          <div class="journeyCard">
+            <strong>Click</strong>
+            <p>Main image, title and offer create the first decision.</p>
+          </div>
+          <div class="journeyCard">
+            <strong>Understand</strong>
+            <p>Bullets, images and A+ explain the product quickly.</p>
+          </div>
+          <div class="journeyCard">
+            <strong>Trust</strong>
+            <p>Proof, positioning and brand presentation reduce friction.</p>
+          </div>
+          <div class="journeyCard">
+            <strong>Buy</strong>
+            <p>Offer competitiveness and conversion complete the journey.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="framework">
+    <section class="section">
       <div class="container">
-        <div class="section-head">
+        <div class="head">
           <div>
-            <div class="eyebrow">The framework</div>
-            <h2>We reduce launch risk before it becomes expensive.</h2>
+            <div class="eyebrow">Launch advertising</div>
+            <h2>PPC should learn as the launch grows.</h2>
           </div>
           <p>
-            Launches fail because the fundamentals are weak, the plan is fuzzy,
-            or the team moves too late. We fix the decision-making structure
-            before the launch budget gets burned.
+            The goal isn't simply to switch campaigns on. The advertising system
+            should discover demand, validate search terms, identify winners and
+            support organic momentum.
           </p>
         </div>
-
-        <div class="diagnostic" id="diagnose">
-          <div class="eyebrow">Diagnostic</div>
-          <h2>
-            Most product launches fail because the business skipped the hard
-            questions.
-          </h2>
-          <div class="problem">
-            We do not ask whether the product is good enough. We ask whether the
-            market is winnable at the right price and with the right launch
-            plan.
+        <div class="ads">
+          <div class="adbox">
+            <div class="eyebrow">Launch input</div>
+            <h3>Discovery</h3>
+            <p>
+              Start broad enough to learn, while keeping campaign structure and
+              budget pacing controlled.
+            </p>
+            <div class="adstep">01 · Discovery campaigns</div>
+            <div class="adstep">02 · Keyword harvesting</div>
+            <div class="adstep">03 · Search-term validation</div>
           </div>
+          <div class="adarrow">→</div>
+          <div class="adbox">
+            <div class="eyebrow">Scale signal</div>
+            <h3>Conversion winners</h3>
+            <p>
+              Promote validated terms into controlled structures and use
+              performance data to guide the next ranking push.
+            </p>
+            <div class="adstep">04 · Exact-match scaling</div>
+            <div class="adstep">05 · Budget reallocation</div>
+            <div class="adstep">06 · Organic ranking support</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="diagnostic-grid">
-            <div class="issues">
-              <div class="solution-label">Common launch issues</div>
-              <button class="issue active" type="button">
-                <span>Wrong market / weak viability</span>
-                <small>01</small>
-              </button>
-              <button class="issue" type="button">
-                <span>Listing built on assumptions</span>
-                <small>02</small>
-              </button>
-              <button class="issue" type="button">
-                <span>Ads launched without structure</span>
-                <small>03</small>
-              </button>
-              <button class="issue" type="button">
-                <span>No clear definition of traction</span>
-                <small>04</small>
-              </button>
-            </div>
+    <section class="section alt" id="capabilities">
+      <div class="container">
+        <div class="head">
+          <div>
+            <div class="eyebrow">Capabilities behind the framework</div>
+            <h2>Four execution engines. One launch system.</h2>
+          </div>
+          <p>
+            We don't deploy every capability equally on every launch. We
+            identify what the launch needs and coordinate the right execution
+            levers.
+          </p>
+        </div>
+        <div class="caps">
+          <article class="cap">
+            <div class="num">01 · DEMAND ENGINE</div>
+            <h3>PPC & Advertising</h3>
+            <p>
+              Build the paid demand engine and turn early traffic into
+              actionable search-term and conversion intelligence.
+            </p>
+            <ul>
+              <li>Launch campaign structure</li>
+              <li>Keyword discovery</li>
+              <li>Bid & budget management</li>
+              <li>Search-term optimization</li>
+            </ul>
+          </article>
+          <article class="cap">
+            <div class="num">02 · VISIBILITY ENGINE</div>
+            <h3>Listing & SEO</h3>
+            <p>
+              Make the product discoverable for relevant demand and structure
+              the page to convert that traffic.
+            </p>
+            <ul>
+              <li>Keyword research</li>
+              <li>Listing optimization</li>
+              <li>Indexing & SEO</li>
+              <li>A+ content strategy</li>
+            </ul>
+          </article>
+          <article class="cap">
+            <div class="num">03 · TRUST ENGINE</div>
+            <h3>Brand & Creative</h3>
+            <p>
+              Turn attention into understanding and trust through a coherent
+              visual system across the product detail page.
+            </p>
+            <ul>
+              <li>Main image strategy</li>
+              <li>Creative direction</li>
+              <li>A+ content</li>
+              <li>Brand Store</li>
+            </ul>
+          </article>
+          <article class="cap">
+            <div class="num">04 · OPERATING ENGINE</div>
+            <h3>Full Account Management</h3>
+            <p>
+              Keep the account, catalog and operational layer healthy while the
+              launch moves through its critical first 90 days.
+            </p>
+            <ul>
+              <li>Account health</li>
+              <li>Catalog operations</li>
+              <li>Case resolution</li>
+              <li>Ongoing monitoring</li>
+            </ul>
+          </article>
+        </div>
+        <div style="margin-top: 24px; text-align: center">
+          <a class="btn darkbtn" href="../capabilities/"
+            >Explore all capabilities →</a
+          >
+        </div>
+      </div>
+    </section>
 
-            <div class="solution">
-              <div class="solution-label">What we do</div>
-              <h3>Build a real launch system.</h3>
+    <section class="section">
+      <div class="container">
+        <div class="head">
+          <div>
+            <div class="eyebrow">The first 90 days</div>
+            <h2>Launch with milestones—not hope.</h2>
+          </div>
+          <p>
+            The exact cadence changes by category and product, but the operating
+            principle stays the same: establish the foundation, learn from the
+            market, then scale validated signals.
+          </p>
+        </div>
+        <div class="grid6">
+          <article class="card">
+            <div class="num">DAYS 01–30</div>
+            <h3>Foundation + discovery</h3>
+            <p>
+              Validate the market, finalize positioning, build the listing,
+              activate initial advertising and establish the baseline scorecard.
+            </p>
+            <ul>
+              <li>Market & competitor intelligence</li>
+              <li>Listing + creative foundation</li>
+              <li>Initial PPC activation</li>
+              <li>Baseline metrics</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="num">DAYS 31–60</div>
+            <h3>Validation + optimization</h3>
+            <p>
+              Separate useful demand from noise and improve the listing and
+              advertising system around actual shopper behavior.
+            </p>
+            <ul>
+              <li>Search-term validation</li>
+              <li>Conversion optimization</li>
+              <li>Creative refinement</li>
+              <li>Budget reallocation</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="num">DAYS 61–90</div>
+            <h3>Traction + controlled scale</h3>
+            <p>
+              Concentrate investment around signals that are proving repeatable
+              and establish the next growth milestones.
+            </p>
+            <ul>
+              <li>Winning keyword expansion</li>
+              <li>Organic ranking support</li>
+              <li>Repeatable sales signals</li>
+              <li>Next-stage roadmap</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="case">
+          <div class="caseGrid">
+            <div>
+              <div class="eyebrow">The framework in action</div>
+              <h2>
+                Product Launch: from stalled traction to a stronger launch
+                curve.
+              </h2>
               <p>
-                We validate the niche, structure the listing around shopper
-                demand, set up the ad architecture, and define the metrics that
-                tell you when the launch is working.
+                We brought market intelligence, launch strategy, keyword
+                research and PPC into one coordinated system—moving the account
+                from inefficient early advertising toward stronger revenue and
+                page-one visibility.
               </p>
-              <div class="pills" style="margin-top: 22px">
-                <span class="pill">Market viability</span>
-                <span class="pill">Keyword demand</span>
-                <span class="pill">Listing strategy</span>
-                <span class="pill">Launch PPC architecture</span>
-                <span class="pill">90-day scorecard</span>
+              <div class="metrics">
+                <div class="metric">
+                  <b>$6K</b><b class="after">$18.6K</b
+                  ><small>Monthly revenue</small>
+                </div>
+                <div class="metric">
+                  <b>42%</b><b class="after">19%</b><small>ACoS</small>
+                </div>
+                <div class="metric">
+                  <b>0</b><b class="after">3</b><small>Top-10 keywords</small>
+                </div>
+              </div>
+            </div>
+            <div class="proof">
+              <div class="eyebrow">What changed</div>
+              <h3>One launch system instead of disconnected tactics.</h3>
+              <div class="line">
+                <strong>Market →</strong> sharpened the opportunity and demand
+                picture.
+              </div>
+              <div class="line">
+                <strong>Listing →</strong> aligned the product page to search
+                and shopper intent.
+              </div>
+              <div class="line">
+                <strong>PPC →</strong> moved from inefficient spend toward
+                validated converting terms.
+              </div>
+              <div class="line">
+                <strong>Ranking →</strong> supported organic visibility around
+                commercially relevant terms.
+              </div>
+              <div style="margin-top: 20px">
+                <a class="btn limebtn" href="../case studies/"
+                  >Read the case study →</a
+                >
               </div>
             </div>
           </div>
@@ -607,91 +1159,94 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">What we focus on</div>
-            <h2>Every launch needs the same fundamentals.</h2>
-          </div>
+    <section class="section alt" id="assessment">
+      <div class="container lead">
+        <div>
+          <div class="eyebrow">Lead magnet · Amazon Launch Scorecard™</div>
+          <h2>
+            Before you spend on launch, find the gaps that could hold it back.
+          </h2>
           <p>
-            Launches get messy when teams try to improvise. We build around the
-            commercial levers needed to create traction quickly and reliably.
+            Get a structured view of launch readiness across market opportunity,
+            positioning, listing, advertising, conversion and operational
+            readiness.
           </p>
+          <ul>
+            <li>Market & category opportunity</li>
+            <li>Product positioning & differentiation</li>
+            <li>Listing & creative readiness</li>
+            <li>PPC launch architecture</li>
+            <li>Conversion & traction milestones</li>
+            <li>First 90-day priorities</li>
+          </ul>
+          <a class="btn darkbtn" href="../index.html#contact"
+            >Get the Launch Scorecard →</a
+          >
         </div>
-
-        <div class="stack">
-          <div class="stack-card">
-            <div class="num">01</div>
-            <h3>Market viability</h3>
-            <p>
-              Assess the opportunity, size, risk, and price points before you
-              commit inventory or spend.
-            </p>
+        <div class="score">
+          <div class="scoreTop">
+            <div>
+              <div class="eyebrow">Example result</div>
+              <h3 style="margin-top: 8px">Launch readiness</h3>
+            </div>
+            <div class="scoreNum">78<small>/ 100</small></div>
           </div>
-          <div class="stack-card">
-            <div class="num">02</div>
-            <h3>Keyword research</h3>
-            <p>
-              Build a demand map based on the search terms and commercial intent
-              that actually drive clicks.
-            </p>
+          <div class="scoreRow">
+            <span>Market opportunity</span>
+            <div class="bar"><i style="width: 86%"></i></div>
           </div>
-          <div class="stack-card">
-            <div class="num">03</div>
-            <h3>Listing strategy</h3>
-            <p>
-              Write the listing around shopper behavior so it converts instead
-              of sounding like an internal brief.
-            </p>
+          <div class="scoreRow">
+            <span>Positioning</span>
+            <div class="bar"><i style="width: 74%"></i></div>
           </div>
-          <div class="stack-card">
-            <div class="num">04</div>
-            <h3>PPC architecture</h3>
-            <p>
-              Create launch campaigns and budget pacing that support ranking
-              without wasting spend in the first 90 days.
-            </p>
+          <div class="scoreRow">
+            <span>Listing readiness</span>
+            <div class="bar"><i style="width: 82%"></i></div>
           </div>
-          <div class="stack-card">
-            <div class="num">05</div>
-            <h3>Review strategy</h3>
-            <p>
-              Plan the review engine and conversion improvements needed to
-              create authority and competitive traction.
-            </p>
+          <div class="scoreRow">
+            <span>PPC readiness</span>
+            <div class="bar"><i style="width: 68%"></i></div>
           </div>
-          <div class="stack-card">
-            <div class="num">06</div>
-            <h3>Launch scorecard</h3>
-            <p>
-              Make progress measurable with the weekly items that matter most
-              during the ranking window.
-            </p>
+          <div class="scoreRow">
+            <span>Conversion readiness</span>
+            <div class="bar"><i style="width: 71%"></i></div>
+          </div>
+          <div
+            style="
+              margin-top: 18px;
+              padding: 14px;
+              border-radius: 13px;
+              background: #f1f3f5;
+            "
+          >
+            <div class="eyebrow">Primary gap</div>
+            <strong style="display: block; margin-top: 5px; font-size: 13px"
+              >PPC architecture + conversion readiness</strong
+            >
           </div>
         </div>
       </div>
     </section>
 
     <section class="cta">
-      <div class="container cta-inner">
+      <div class="container ctaIn">
         <div>
-          <div class="eyebrow" style="color: #111216">Launch clarity</div>
-          <h2>
-            Need a product launch plan built around real market data and a clear
-            first 90-day path?
-          </h2>
+          <div class="eyebrow">Amazon Launch Framework™</div>
+          <h2>Build the launch around the market—not around a checklist.</h2>
+          <p>
+            We'll help identify the biggest launch gap, the highest-priority
+            actions and the first 90-day path worth executing.
+          </p>
         </div>
-        <a class="btn dark" href="../index.html#contact"
-          >Book a free assessment</a
+        <a class="btn darkbtn" href="../index.html#contact"
+          >Book a free assessment →</a
         >
       </div>
     </section>
-
-    <footer>
+    <footer class="footer">
       <div class="container">
-        <strong>GrowthXsell</strong> · Amazon Growth, Launch, Profitability, and
-        Recovery strategy for brands preparing to enter the market with clarity.
+        <strong>GrowthXsell</strong> · Amazon Launch, Growth, Profitability and
+        Recovery strategy for brands that want a clearer path to traction.
       </div>
     </footer>
   </body>
