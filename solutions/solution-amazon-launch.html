@@ -272,6 +272,49 @@
         gap: 6px;
         align-items: center;
       }
+      .pillars {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(
+            0,
+            1fr
+          ) auto minmax(0, 1fr);
+        gap: 13px;
+        align-items: stretch;
+      }
+      .pillar {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 22px;
+        min-height: 190px;
+      }
+      .pillar .num {
+        color: #7d838d;
+      }
+      .pillar h3 {
+        margin: 16px 0 10px;
+        font-size: 20px;
+        letter-spacing: 0.01em;
+      }
+      .pillar p {
+        margin-bottom: 13px;
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 750;
+        line-height: 1.3;
+      }
+      .pillar .signals {
+        color: var(--muted);
+        font-size: 11px;
+        letter-spacing: 0.02em;
+      }
+      .pillarArrow {
+        align-self: center;
+        color: #9aa0a9;
+        font-size: 22px;
+        font-weight: 900;
+        text-align: center;
+      }
       .node {
         min-height: 76px;
         background: #fff;
@@ -552,6 +595,26 @@
         .grid6 {
           grid-template-columns: repeat(2, 1fr);
         }
+        .pillars {
+          grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(
+              0,
+              1fr
+            ) auto minmax(0, 1fr);
+        }
+        .pillar {
+          min-height: 165px;
+          padding: 17px;
+        }
+        .pillar h3 {
+          margin-top: 13px;
+          font-size: 18px;
+        }
+        .pillar p {
+          font-size: 13px;
+        }
+        .pillar .signals {
+          font-size: 10px;
+        }
         .caps {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -596,8 +659,16 @@
         .grid6,
         .caps,
         .journey,
-        .metrics {
+        .metrics,
+        .pillars {
           grid-template-columns: 1fr;
+        }
+        .pillar {
+          min-height: 0;
+          padding: 18px;
+        }
+        .pillarArrow {
+          transform: rotate(90deg);
         }
         .case {
           padding: 28px;
@@ -673,36 +744,38 @@
         <div class="head">
           <div>
             <div class="eyebrow">The launch architecture</div>
-            <h2>Launch isn't Listing → PPC → Wait.</h2>
+            <h2>Launch Architecture</h2>
           </div>
-          <p>
-            A launch is a connected system. Every decision—from market selection
-            to creative to advertising—should move the product toward the same
-            commercial outcome.
-          </p>
+          <p>Build the system before you buy the traffic.</p>
         </div>
-        <div class="chain">
-          <div class="node">Market</div>
-          <div class="arrow">→</div>
-          <div class="node">Product</div>
-          <div class="arrow">→</div>
-          <div class="node">Positioning</div>
-          <div class="arrow">→</div>
-          <div class="node">Listing</div>
-          <div class="arrow">→</div>
-          <div class="node">Keywords</div>
-          <div class="arrow">→</div>
-          <div class="node">Advertising</div>
-          <div class="arrow">→</div>
-          <div class="node">Conversion</div>
-          <div class="arrow">→</div>
-          <div class="node">Ranking</div>
-          <div class="arrow">→</div>
-          <div class="node">Traction</div>
-        </div>
-        <div class="flight">
-          <span>Market intelligence</span> → Positioning → Listing foundation →
-          <span>PPC activation</span> → Conversion → Organic traction → Scale
+        <div class="pillars">
+          <article class="pillar">
+            <div class="num">01</div>
+            <h3>MARKET</h3>
+            <p>Find the opportunity.</p>
+            <div class="signals">Demand · Competition · Keywords</div>
+          </article>
+          <div class="pillarArrow" aria-hidden="true">→</div>
+          <article class="pillar">
+            <div class="num">02</div>
+            <h3>FOUNDATION</h3>
+            <p>Build the reason to buy.</p>
+            <div class="signals">Product · Positioning · Listing</div>
+          </article>
+          <div class="pillarArrow" aria-hidden="true">→</div>
+          <article class="pillar">
+            <div class="num">03</div>
+            <h3>ACTIVATION</h3>
+            <p>Turn traffic into intelligence.</p>
+            <div class="signals">PPC · Discovery · Validation</div>
+          </article>
+          <div class="pillarArrow" aria-hidden="true">→</div>
+          <article class="pillar">
+            <div class="num">04</div>
+            <h3>TRACTION</h3>
+            <p>Turn signals into scale.</p>
+            <div class="signals">Conversion · Ranking · Economics</div>
+          </article>
         </div>
       </div>
     </section>
