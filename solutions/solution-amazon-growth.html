@@ -53,7 +53,7 @@
       .site-nav {
         background: var(--bg);
         border-bottom: 1px solid var(--line);
-        padding: 18px 0;
+        padding: 13px 0;
       }
       .site-nav-inner {
         display: flex;
@@ -139,7 +139,7 @@
       .hero {
         background: var(--dark);
         color: #fff;
-        padding: 115px 0 95px;
+        padding: 68px 0 54px;
         position: relative;
         overflow: hidden;
       }
@@ -190,8 +190,18 @@
         font-size: 13px;
         margin: 4px 3px 0 0;
       }
+      .hero-note .note-kicker {
+        display: block;
+        background: none;
+        color: var(--accent);
+        padding: 0;
+        margin: 0 0 12px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
       .section {
-        padding: 105px 0;
+        padding: 52px 0;
       }
       .section.dark {
         background: var(--dark);
@@ -202,10 +212,173 @@
         justify-content: space-between;
         gap: 40px;
         align-items: end;
-        margin-bottom: 50px;
+        margin-bottom: 24px;
       }
       .section-head p {
         max-width: 520px;
+      }
+      .model {
+        background: var(--dark);
+        color: #fff;
+        border-radius: 30px;
+        padding: 26px;
+        overflow: hidden;
+        position: relative;
+      }
+      .model::before {
+        content: "";
+        position: absolute;
+        width: 360px;
+        height: 360px;
+        right: -140px;
+        top: -180px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(199, 255, 74, 0.2), transparent 68%);
+      }
+      .model-intro {
+        max-width: 560px;
+        position: relative;
+        z-index: 1;
+      }
+      .model-intro h2 {
+        margin-bottom: 12px;
+      }
+      .model-intro p {
+        color: #b8bbc2;
+      }
+      .model-map {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 18px;
+        position: relative;
+        z-index: 1;
+      }
+      .model-branch {
+        border: 1px solid #343943;
+        border-radius: 16px;
+        padding: 18px;
+        background: rgba(24, 26, 31, 0.82);
+      }
+      .model-branch h3 {
+        color: var(--accent);
+        font-size: 17px;
+        margin-bottom: 5px;
+      }
+      .model-branch-label {
+        display: block;
+        color: #858b98;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .model-branch p {
+        color: #c4c7cd;
+        font-size: 13px;
+        margin: 0;
+        line-height: 1.5;
+      }
+      .model-branch p strong {
+        display: block;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .model-core {
+        margin: 18px auto 0;
+        max-width: 520px;
+        text-align: center;
+        border: 1px solid var(--accent);
+        border-radius: 999px;
+        padding: 15px 20px;
+        color: var(--accent);
+        font-weight: 850;
+        position: relative;
+        z-index: 1;
+        background: #20251b;
+      }
+      .model-core span {
+        display: block;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 3px;
+      }
+      .model-steps {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+        color: #b8bbc2;
+        font-size: 11px;
+      }
+      .model-steps b {
+        color: var(--accent);
+        font-weight: 800;
+      }
+      .flywheel {
+        display: grid;
+        grid-template-columns: 0.8fr 1.4fr 0.8fr;
+        gap: 22px;
+        align-items: center;
+        background: var(--dark);
+        color: #fff;
+        border-radius: 30px;
+        padding: 34px;
+      }
+      .flywheel-side {
+        display: grid;
+        gap: 10px;
+      }
+      .flywheel-side div,
+      .flywheel-economics {
+        border: 1px solid #343943;
+        border-radius: 14px;
+        padding: 14px;
+        background: #181a1f;
+        font-size: 13px;
+      }
+      .flywheel-side strong,
+      .flywheel-economics strong {
+        display: block;
+        color: var(--accent);
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      .flywheel-ring {
+        width: min(100%, 330px);
+        aspect-ratio: 1;
+        margin: auto;
+        border: 1px dashed #68714f;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        padding: 30px;
+        background: radial-gradient(circle, #222a1e 0 34%, transparent 35%), #15171b;
+        box-shadow: 0 0 0 12px rgba(199, 255, 74, 0.04);
+      }
+      .flywheel-ring-inner {
+        text-align: center;
+        color: var(--accent);
+        font-weight: 850;
+        line-height: 1.35;
+      }
+      .flywheel-ring-inner span {
+        display: block;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 8px;
+      }
+      .flywheel-economics {
+        grid-column: 2;
+        text-align: center;
       }
       .dark p {
         color: #aeb2ba;
@@ -266,7 +439,7 @@
         background: #fff;
         border: 1px solid var(--line);
         border-radius: 24px;
-        padding: 32px;
+        padding: 26px 28px;
         position: relative;
         overflow: hidden;
       }
@@ -299,12 +472,12 @@
         margin-bottom: 0;
       }
       .cap li {
-        margin: 7px 0;
+        margin: 5px 0;
       }
       .diagnostic {
         background: var(--dark);
         border-radius: 30px;
-        padding: 44px;
+        padding: 26px;
         color: #fff;
       }
       .diagnostic h2 {
@@ -314,7 +487,7 @@
         font-size: 30px;
         font-weight: 850;
         letter-spacing: -0.025em;
-        margin: 30px 0;
+        margin: 18px 0;
       }
       .diagnostic-grid {
         display: grid;
@@ -327,6 +500,19 @@
         border-radius: 20px;
         padding: 24px;
         background: #17191e;
+      }
+      .panel-label {
+        color: var(--accent);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-weight: 900;
+        margin-bottom: 8px;
+      }
+      .panel-help {
+        color: #9297a0;
+        font-size: 12px;
+        margin: 0 0 14px;
       }
       .issue {
         width: 100%;
@@ -388,8 +574,8 @@
         background: #fff;
         border: 1px solid var(--line);
         border-radius: 20px;
-        padding: 26px;
-        min-height: 285px;
+        padding: 20px;
+        min-height: 225px;
       }
       .step .number {
         font-size: 13px;
@@ -398,7 +584,7 @@
         color: #888d95;
       }
       .step h3 {
-        margin-top: 28px;
+        margin-top: 20px;
         font-size: 24px;
       }
       .step ul {
@@ -465,6 +651,26 @@
         border-radius: 24px;
         padding: 32px;
       }
+      .case-result {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin: 22px 0;
+      }
+      .case-result div {
+        padding: 12px;
+        border-radius: 12px;
+        background: #f1f3f5;
+      }
+      .case-result strong {
+        display: block;
+        font-size: 18px;
+        letter-spacing: -0.04em;
+      }
+      .case-result span {
+        color: var(--muted);
+        font-size: 11px;
+      }
       .case-placeholder {
         height: 230px;
         border: 1px dashed #aab0b8;
@@ -488,7 +694,7 @@
       }
       .cta {
         background: var(--accent);
-        padding: 90px 0;
+        padding: 48px 0;
       }
       .cta-inner {
         display: flex;
@@ -523,6 +729,13 @@
         .capabilities {
           grid-template-columns: 1fr;
         }
+        .model-map,
+        .flywheel {
+          grid-template-columns: 1fr;
+        }
+        .flywheel-economics {
+          grid-column: auto;
+        }
         .framework {
           grid-template-columns: 1fr 1fr;
         }
@@ -537,10 +750,10 @@
           width: min(calc(100% - 28px), var(--max));
         }
         .hero {
-          padding: 80px 0 70px;
+          padding: 48px 0 38px;
         }
         .section {
-          padding: 75px 0;
+          padding: 32px 0;
         }
         .framework {
           grid-template-columns: 1fr;
@@ -549,10 +762,18 @@
           grid-template-columns: 1fr;
         }
         .diagnostic {
-          padding: 25px;
+          padding: 18px;
+        }
+        .model,
+        .flywheel {
+          padding: 18px;
+          border-radius: 22px;
+        }
+        .case-result {
+          grid-template-columns: 1fr;
         }
         h1 {
-          font-size: 52px;
+          font-size: 44px;
         }
         .site-nav-inner {
           align-items: flex-start;
@@ -561,9 +782,10 @@
         .nav-links {
           order: 3;
           width: 100%;
-          justify-content: space-between;
-          gap: 10px;
-          font-size: 12px;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          gap: 7px 12px;
+          font-size: 11px;
         }
       }
     </style>
@@ -585,16 +807,15 @@
     <header class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">GrowthXsell™ · Amazon Growth</div>
+          <div class="eyebrow">Framework #2 · Amazon Growth</div>
           <h1>
             Find the constraint.<br /><span style="color: var(--accent)"
-              >Deploy the right capabilities.</span
+              >Fix the bottleneck.</span
             ><br />Scale what works.
           </h1>
           <p>
-            Amazon growth rarely comes from one service in isolation. Our Growth
-            Framework connects advertising, listing & SEO, creative, and account
-            operations around the constraint actually limiting your business.
+            The Amazon Growth Framework™ finds what is limiting your business
+            right now, then builds the next growth engine around it.
           </p>
           <div
             style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px"
@@ -604,63 +825,55 @@
           </div>
         </div>
         <div class="hero-note">
+          <span class="note-kicker">The core promise</span>
           <strong>Amazon Growth Framework™</strong>
           <p style="font-size: 14px">
-            One integrated system. Multiple growth levers. A continuous process
-            for finding and removing the next bottleneck.
+            We do not start with services. We start with the question:
+            <em>what is actually limiting growth?</em>
           </p>
-          <span>PPC</span><span>SEO</span><span>Listing</span
-          ><span>Creative</span><span>Account Health</span
-          ><span>Commercial</span>
+          <span>Traffic</span><span>Conversion</span><span>Economics</span>
         </div>
       </div>
     </header>
 
     <section class="section">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">The Growth Architecture</div>
-            <h2>Growth is a system,<br />not a single service.</h2>
-          </div>
-          <p>
-            Every Amazon account has a constraint. The job is to identify it,
-            apply the capability that can move it, measure the result, and then
-            find the next constraint.
-          </p>
-        </div>
-
-        <div class="stack">
-          <div class="stack-card">
-            <div class="num">01 · TRAFFIC</div>
-            <h3>PPC & Advertising</h3>
+        <div class="model">
+          <div class="model-intro">
+            <div class="eyebrow" style="color: var(--accent)">The Growth Constraint Model</div>
+            <h2>What is holding your growth back?</h2>
             <p>
-              Bring profitable demand into the funnel and expand the search
-              terms, keywords and campaigns that work.
+              We look at the three places Amazon growth can get stuck, then
+              focus on the one that will make the biggest difference next.
             </p>
           </div>
-          <div class="stack-card">
-            <div class="num">02 · CONVERSION</div>
-            <h3>Listing & SEO</h3>
-            <p>
-              Turn traffic into sales while improving indexing, organic
-              visibility and rankings.
-            </p>
+          <div class="model-map">
+            <div class="model-branch">
+              <h3>Traffic</h3>
+              <span class="model-branch-label">Can shoppers find you?</span>
+              <p><strong>Bring more qualified shoppers in.</strong>PPC · SEO · Rankings</p>
+            </div>
+            <div class="model-branch">
+              <h3>Conversion</h3>
+              <span class="model-branch-label">Do they choose you?</span>
+              <p><strong>Turn attention into more orders.</strong>Listing · Creative · Offer</p>
+            </div>
+            <div class="model-branch">
+              <h3>Economics</h3>
+              <span class="model-branch-label">Does growth pay?</span>
+              <p><strong>Make revenue worth scaling.</strong>Price · Margin · TACoS</p>
+            </div>
           </div>
-          <div class="stack-card">
-            <div class="num">03 · TRUST</div>
-            <h3>Brand & Creative</h3>
-            <p>
-              Improve CTR, communicate value faster and strengthen the
-              conversion experience.
-            </p>
+          <div class="model-core">
+            Find the biggest blocker
+            <span>Fix it with the right priority action, then scale what works.</span>
           </div>
-          <div class="stack-card wide">
-            <h3>Conversion / Rank → Account Health → Scale</h3>
-            <p>
-              When the fundamentals move, we scale the winning system and repeat
-              the process.
-            </p>
+          <div class="model-steps">
+            <span><b>1</b> Find the blocker</span>
+            <span>→</span>
+            <span><b>2</b> Fix the constraint</span>
+            <span>→</span>
+            <span><b>3</b> Scale the result</span>
           </div>
         </div>
       </div>
@@ -674,8 +887,8 @@
             <h2>Four capabilities.<br />One growth system.</h2>
           </div>
           <p>
-            We do not force every account into the same playbook. The mix
-            changes according to the constraint we uncover.
+            We bring in only the capabilities needed to remove the constraint
+            and move the business forward.
           </p>
         </div>
 
@@ -689,14 +902,11 @@
               <div class="cap-icon">P</div>
             </div>
             <p>
-              Build an advertising engine around profitable demand—not spend for
-              the sake of spend.
+              Bring in more qualified demand without spending blindly.
             </p>
             <ul>
-              <li>Scale profitable campaigns</li>
-              <li>Cut wasted spend</li>
-              <li>Harvest search terms</li>
-              <li>Expand winning keywords</li>
+              <li>Find the campaigns and keywords worth scaling</li>
+              <li>Shift spend toward profitable demand</li>
             </ul>
           </article>
 
@@ -709,14 +919,11 @@
               <div class="cap-icon">S</div>
             </div>
             <p>
-              Improve discoverability and turn more of the traffic you already
-              have into customers.
+              Help the right shoppers find the product and take action.
             </p>
             <ul>
-              <li>Improve indexing</li>
-              <li>Increase organic rankings</li>
-              <li>Improve CVR</li>
-              <li>Optimize content</li>
+              <li>Strengthen indexing and organic visibility</li>
+              <li>Turn existing traffic into more orders</li>
             </ul>
           </article>
 
@@ -729,14 +936,11 @@
               <div class="cap-icon">C</div>
             </div>
             <p>
-              Make the product story clearer, stronger and more persuasive
-              across the shopping experience.
+              Make the value clear before a shopper scrolls away.
             </p>
             <ul>
-              <li>Improve main images</li>
-              <li>Build / improve A+ Content</li>
-              <li>Build Brand Store</li>
-              <li>Refresh underperforming creative</li>
+              <li>Clarify the product story across the listing</li>
+              <li>Build trust through stronger creative and A+ content</li>
             </ul>
           </article>
 
@@ -749,14 +953,11 @@
               <div class="cap-icon">A</div>
             </div>
             <p>
-              Protect the account and keep the operating layer aligned with the
-              growth strategy.
+              Keep the account healthy while growth work moves faster.
             </p>
             <ul>
-              <li>Catalog management</li>
-              <li>Account health</li>
-              <li>Inventory coordination</li>
-              <li>Case resolution & reporting</li>
+              <li>Protect catalog, inventory, and account health</li>
+              <li>Resolve issues before they slow momentum</li>
             </ul>
           </article>
         </div>
@@ -771,15 +972,17 @@
           </div>
           <h2>One problem.<br />Multiple levers.</h2>
           <p>
-            “Revenue isn't growing” is an outcome—not a diagnosis. Select the
-            symptom below to see how GrowthXsell connects the problem to the
-            capabilities that can address it.
+            “Revenue isn't growing” is an outcome—not a diagnosis. Choose the
+            issue that sounds closest to your business and see the next move
+            GrowthXsell would prioritize.
           </p>
 
           <div class="problem">Revenue isn't growing.</div>
 
           <div class="diagnostic-grid">
             <div class="issues">
+              <div class="panel-label">Start with the symptom</div>
+              <p class="panel-help">What feels stuck right now?</p>
               <button
                 class="issue active"
                 data-title="Traffic is weak"
@@ -823,15 +1026,14 @@
             </div>
 
             <div class="solution">
-              <div class="solution-label">
-                GrowthXsell identifies the constraint
-              </div>
+              <div class="panel-label">Your next move</div>
+              <p class="panel-help">The constraint this points to:</p>
               <h3 id="diagTitle">Traffic is weak</h3>
               <p id="diagCopy">
                 Demand generation is the constraint. The focus shifts toward PPC
                 structure, keyword expansion and organic visibility.
               </p>
-              <div class="solution-label" style="margin-top: 24px">Deploy</div>
+              <div class="solution-label" style="margin-top: 24px">Focus the work on</div>
               <div class="pills" id="diagPills">
                 <span class="pill">PPC + SEO</span>
               </div>
@@ -847,14 +1049,7 @@
           <div>
             <div class="eyebrow">The Methodology</div>
             <h2>Five steps.<br />One continuous loop.</h2>
-          </div>
-          <p>
-            The framework keeps strategy tied to execution. Instead of
-            delivering a long list of disconnected recommendations, we identify
-            the few moves most likely to change the growth equation.
-          </p>
-        </div>
-
+          
         <div class="framework">
           <article class="step">
             <div class="number">01</div>
@@ -914,56 +1109,6 @@
       </div>
     </section>
 
-    <section class="section dark">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Constraint Examples</div>
-            <h2>Different symptoms.<br />Different moves.</h2>
-          </div>
-          <p>
-            Our approach changes based on what the data says—not on a fixed
-            package of deliverables.
-          </p>
-        </div>
-        <div class="moves">
-          <div class="move">
-            <b>Scenario 01</b
-            ><span
-              >Traffic is strong → Conversion is weak →
-              <strong>Listing / Creative</strong></span
-            >
-          </div>
-          <div class="move">
-            <b>Scenario 02</b
-            ><span
-              >Conversion is strong → Traffic is weak →
-              <strong>PPC / SEO</strong></span
-            >
-          </div>
-          <div class="move">
-            <b>Scenario 03</b
-            ><span
-              >Revenue is growing → Profit isn't →
-              <strong>Economics / Commercial</strong></span
-            >
-          </div>
-        </div>
-        <div class="loop">
-          <div class="loop-item">Diagnose</div>
-          <div class="loop-arrow">→</div>
-          <div class="loop-item">Find Constraint</div>
-          <div class="loop-arrow">→</div>
-          <div class="loop-item">Prioritize</div>
-          <div class="loop-arrow">→</div>
-          <div class="loop-item">Execute</div>
-          <div class="loop-arrow">→</div>
-          <div class="loop-item">Scale</div>
-          <div class="loop-arrow">↻</div>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="case-studies">
       <div class="container">
         <div class="section-head">
@@ -972,48 +1117,47 @@
             <h2>See the framework<br />in action.</h2>
           </div>
           <p>
-            Use this section to connect the Growth Framework to your case
-            studies. Each story should show the constraint, the intervention,
-            the capabilities deployed and the measurable outcome.
+            Real growth is visible in the numbers, but the numbers only matter
+            when they show which constraint moved and why.
           </p>
         </div>
 
         <div class="case">
           <article class="case-card">
-            <div class="tag">CASE STUDY · ADVERTISING EFFICIENCY</div>
-            <h3>From inefficient spend to a clearer advertising engine.</h3>
+            <div class="tag">CASE STUDY · REVENUE GROWTH</div>
+            <h3>From stalled demand to a larger, healthier engine.</h3>
             <p>
-              Show the starting problem → diagnosis → key moves → execution →
-              result.
+              PPC, SEO and growth strategy moved the constraint from visibility
+              into a repeatable revenue system.
             </p>
-            <div class="case-placeholder">
-              PLACE CASE STUDY SCREENSHOT / CHART HERE<br /><small
-                >Recommended: before/after PPC efficiency or spend allocation
-                visual</small
-              >
+            <div class="case-result">
+              <div><strong>$38K → $92K</strong><span>monthly revenue</span></div>
+              <div><strong>+142%</strong><span>revenue growth</span></div>
+              <div><strong>14% → 11%</strong><span>TACoS</span></div>
             </div>
+            <p><strong>3 → 9</strong> page-one products · PPC + SEO + Growth Strategy</p>
             <div style="margin-top: 20px">
               <a
                 class="btn dark"
-                href="../case studies/case-study-advertising-efficiency.html"
+                href="../case studies/"
                 >Read Case Study →</a
               >
             </div>
           </article>
 
           <article class="case-card">
-            <div class="tag">CASE STUDY · GROWTH CONSTRAINT</div>
-            <h3>Show how multiple capabilities worked together.</h3>
+            <div class="tag">CASE STUDY · ORGANIC GROWTH</div>
+            <h3>When conversion worked, visibility became the constraint.</h3>
             <p>
-              Ideal format: one constraint, 2–3 strategic moves,
-              cross-functional execution, measurable impact.
+              Stronger rankings and organic signals reduced dependence on paid
+              demand while total revenue continued to grow.
             </p>
-            <div class="case-placeholder">
-              PLACE CASE STUDY SCREENSHOT / IMAGE HERE<br /><small
-                >Recommended: listing, creative, keyword or revenue-growth
-                visual</small
-              >
+            <div class="case-result">
+              <div><strong>$52K → $71K</strong><span>revenue</span></div>
+              <div><strong>$21K → $48K</strong><span>organic revenue</span></div>
+              <div><strong>12 → 31</strong><span>page-one keywords</span></div>
             </div>
+            <p><strong>SEO + Ranking Strategy + PPC</strong></p>
             <div style="margin-top: 20px">
               <a class="btn light" href="../case studies/"
                 >View Case Studies →</a
