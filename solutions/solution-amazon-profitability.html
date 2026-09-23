@@ -4,215 +4,1522 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amazon Profitability Framework™ | GrowthXsell</title>
-    <meta name="description" content="Turn Amazon revenue into healthier contribution with the Amazon Profitability Framework™. Align advertising, product economics, pricing, conversion, and portfolio allocation." />
+    <meta
+      name="description"
+      content="Turn Amazon revenue into healthier contribution with the Amazon Profitability Framework™. Align advertising, product economics, pricing, conversion, and portfolio allocation."
+    />
     <style>
-      :root { --bg:#f7f8fa; --ink:#101114; --muted:#656a73; --line:#dfe2e7; --card:#fff; --dark:#111216; --accent:#c7ff4a; --max:1180px; }
-      * { box-sizing:border-box; }
-      html { scroll-behavior:smooth; }
-      body { margin:0; color:var(--ink); background:var(--bg); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.55; }
-      a { color:inherit; text-decoration:none; }
-      .container { width:min(calc(100% - 40px),var(--max)); margin:auto; }
-      .site-nav { padding:13px 0; background:var(--bg); border-bottom:1px solid var(--line); }
-      .site-nav-inner { display:flex; align-items:center; justify-content:space-between; gap:24px; }
-      .logo { font-size:21px; font-weight:800; letter-spacing:-.04em; }
-      .logo span { color:var(--accent); }
-      .nav-links { display:flex; gap:22px; color:var(--muted); font-size:14px; font-weight:700; }
-      .nav-links a:hover { color:var(--ink); }
-      .eyebrow { color:#727780; font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
-      h1,h2,h3,p { margin-top:0; }
-      h1 { margin-bottom:28px; font-size:clamp(48px,7vw,88px); line-height:.94; letter-spacing:-.055em; }
-      h2 { margin-bottom:18px; font-size:clamp(36px,5vw,62px); line-height:1; letter-spacing:-.045em; }
-      h3 { margin-bottom:10px; font-size:22px; line-height:1.15; }
-      p { color:var(--muted); }
-      .btn { display:inline-flex; align-items:center; justify-content:center; padding:14px 20px; border:1px solid var(--ink); border-radius:999px; font-weight:800; transition:transform .2s; }
-      .btn:hover { transform:translateY(-2px); }
-      .btn.dark { color:#fff; background:var(--dark); }
-      .btn.light { background:#fff; }
-      .btn.accent { background:var(--accent); border-color:var(--accent); }
-      .hero { position:relative; overflow:hidden; padding:70px 0 62px; color:#fff; background:var(--dark); }
-      .hero:after { content:""; position:absolute; width:520px; height:520px; right:-180px; top:-180px; border-radius:50%; background:radial-gradient(circle,var(--accent),transparent 65%); opacity:.18; }
-      .hero .eyebrow { color:var(--accent); }
-      .hero p { max-width:670px; color:#b8bbc2; font-size:18px; }
-      .hero-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:60px; align-items:end; }
-      .hero-note { position:relative; z-index:1; padding:26px; border:1px solid #33363e; border-radius:24px; background:#181a1f; }
-      .hero-note strong { display:block; margin-bottom:12px; font-size:20px; }
-      .hero-note p { font-size:14px; }
-      .hero-note span { display:inline-block; margin:4px 3px 0 0; padding:7px 10px; border-radius:8px; color:#d7d9de; background:#252830; font-size:13px; }
-      .section { padding:76px 0; }
-      .section-head { display:flex; align-items:end; justify-content:space-between; gap:40px; margin-bottom:34px; }
-      .section-head p { max-width:520px; }
-      .waterfall { position:relative; display:grid; grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr); gap:30px; overflow:hidden; padding:38px; border-radius:30px; color:#fff; background:var(--dark); }
-      .waterfall:before { content:""; position:absolute; width:360px; height:360px; right:-120px; top:-170px; border-radius:50%; background:radial-gradient(circle,rgba(199,255,74,.2),transparent 68%); }
-      .waterfall-intro { position:relative; z-index:1; align-self:center; max-width:650px; }
-      .waterfall-intro:after { content:"Every deduction is a decision. The job is to know which ones create leverage and which ones quietly erase it."; display:block; max-width:280px; margin-top:26px; padding:16px 18px; border-left:2px solid var(--accent); color:#d7d9de; background:#181a1f; font-size:13px; line-height:1.6; }
-      .waterfall-intro h2 { margin-bottom:12px; font-size:clamp(34px,4.5vw,58px); }
-      .waterfall-intro p { color:#b8bbc2; }
-      .waterfall-list { position:relative; z-index:1; display:grid; gap:4px; align-content:center; width:100%; min-width:0; max-width:700px; margin:0; padding:26px 0 0; }
-      .waterfall-list:before { content:"THE PATH TO CONTRIBUTION"; position:absolute; top:0; left:0; color:var(--accent); font-size:10px; font-weight:900; letter-spacing:.16em; }
-      .waterfall-list:after { content:""; position:absolute; top:48px; bottom:48px; left:35px; width:1px; background:#697633; }
-      .water-step { position:relative; display:grid; grid-template-columns:38px minmax(0,1fr) auto; align-items:center; gap:14px; min-width:0; min-height:45px; padding:8px 16px; border:1px solid #343943; background:#181a1f; transition:transform .2s,border-color .2s,background .2s; }
-      .water-step:hover { z-index:2; transform:translateX(6px); border-color:#697633; background:#20251b; }
-      .water-step:first-child { border-radius:13px 13px 4px 4px; border-color:var(--accent); background:#20251b; }
-      .water-step:last-child { border-radius:4px 4px 13px 13px; border-color:var(--accent); color:var(--ink); background:var(--accent); }
-      .water-step:not(:last-child):after { content:none; }
-      .water-step .water-number { position:relative; z-index:2; display:grid; place-items:center; width:26px; height:26px; border:1px solid var(--accent); border-radius:50%; color:var(--accent); background:#181a1f; font-size:9px; font-weight:800; letter-spacing:.04em; }
-      .water-step:last-child .water-number { color:var(--ink); }
-      .water-step:first-child .water-number { background:var(--accent); color:var(--ink); }
-      .water-step:last-child .water-number { background:var(--ink); color:var(--accent); }
-      .water-step strong { font-size:16px; }
-      .water-step small { color:#9ea3ad; font-size:12px; }
-      .water-step:last-child small { color:#30370f; }
-      .water-step:nth-child(even) { background:#1d2026; }
-      .water-step:nth-child(even) strong { color:#f4f5f7; }
-      .water-step:nth-child(n+6) { display:none; }
-      .water-step:nth-child(5) { border-radius:4px 4px 13px 13px; border-color:var(--accent); color:var(--ink); background:var(--accent); }
-      .water-step:nth-child(5) .water-number { background:var(--ink); color:var(--accent); }
-      .water-step:nth-child(5) small { color:#30370f; }
-      .waterfall { grid-template-columns:1fr; }
-      .waterfall-intro { max-width:700px; }
-      .waterfall-list { width:min(100%,900px); max-width:none; margin:20px auto 0; padding:42px 0 0; }
-      .waterfall-list:after { top:42px; bottom:42px; left:50%; background:#697633; }
-      .water-step { width:calc(50% - 34px); min-height:92px; display:block; padding:20px 24px; }
-      .water-step:before { content:""; position:absolute; top:50%; width:34px; border-top:1px solid #697633; }
-      .water-step:nth-child(odd) { margin-right:auto; text-align:right; }
-      .water-step:nth-child(odd):before { right:-34px; }
-      .water-step:nth-child(odd) .water-number { right:-47px; }
-      .water-step:nth-child(even) { margin-left:auto; text-align:left; }
-      .water-step:nth-child(even):before { left:-34px; }
-      .water-step:nth-child(even) .water-number { left:-47px; }
-      .water-step .water-number { position:absolute; top:50%; transform:translateY(-50%); }
-      .water-step strong { display:block; font-size:19px; }
-      .water-step small { display:block; margin-top:5px; }
-      .waterfall-callout { position:relative; z-index:1; grid-column:1 / -1; max-width:820px; margin:2px auto 0; padding-top:22px; border-top:1px solid #343943; text-align:center; }
-      .waterfall-callout strong { display:block; color:var(--accent); font-size:clamp(24px,3vw,38px); letter-spacing:-.04em; }
-      .waterfall-callout span { color:#b8bbc2; font-size:14px; }
-      .areas { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
-      .area { position:relative; padding:26px 28px 24px; overflow:hidden; border:1px solid var(--line); border-radius:20px; background:var(--card); }
-      .area:before { content:""; position:absolute; left:0; top:0; width:5px; height:100%; background:var(--accent); }
-      .area:last-child { grid-column:auto; }
-      .area-top { display:flex; justify-content:space-between; gap:16px; }
-      .area-num { color:#858991; font-size:12px; font-weight:800; letter-spacing:.1em; }
-      .area-icon { display:grid; place-items:center; width:36px; height:36px; border-radius:10px; color:var(--ink); background:#f0f2f5; font-weight:900; }
-      .area p { margin-bottom:12px; font-size:14px; }
-      .area ul { display:flex; flex-wrap:wrap; gap:7px; margin:0; padding:0; list-style:none; }
-      .area li { padding:6px 9px; border-radius:7px; color:#16181c; background:#f0f2f5; font-size:12px; font-weight:600; }
-      .system { display:grid; grid-template-columns:1fr 1.2fr 1fr; gap:12px; align-items:center; padding:30px; border-radius:30px; color:#fff; background:var(--dark); }
-      .system-column { display:grid; gap:10px; }
-      .system-node { padding:16px; border:1px solid #343943; border-radius:14px; background:#181a1f; }
-      .system-node strong { display:block; color:var(--accent); font-size:13px; letter-spacing:.1em; text-transform:uppercase; }
-      .system-node span { display:block; margin-top:5px; color:#c3c6cc; font-size:13px; }
-      .system-center { display:grid; place-items:center; min-height:150px; border:1px solid var(--accent); border-radius:50%; background:#20251b; text-align:center; }
-      .system-center strong { color:var(--accent); font-size:24px; letter-spacing:-.04em; }
-      .system-center span { display:block; max-width:130px; margin-top:5px; color:#c3c6cc; font-size:12px; }
-      .system-arrow { color:var(--accent); font-size:24px; text-align:center; }
-      .system { display:none; }
-      .area.primary { grid-column:span 2; background:#20251b; border-color:var(--accent); }
-      .area.primary h3 { color:#fff; font-size:28px; }
-      .area.primary p { color:#c3c6cc; }
-      .proof { padding:38px; border-radius:30px; color:#fff; background:var(--dark); }
-      .proof-head { display:flex; justify-content:space-between; gap:30px; align-items:end; }
-      .proof h2 { max-width:600px; }
-      .proof p { max-width:450px; color:#b8bbc2; }
-      .proof-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:30px 0; }
-      .proof-side { padding:24px; border:1px solid #343943; border-radius:18px; background:#181a1f; }
-      .proof-side.after { border-color:var(--accent); background:#20251b; }
-      .proof-side h3 { color:#aeb2ba; font-size:14px; letter-spacing:.12em; text-transform:uppercase; }
-      .proof-side.after h3 { color:var(--accent); }
-      .proof-metric { display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding:14px 0; border-top:1px solid #343943; }
-      .proof-metric:first-of-type { border-top:0; }
-      .proof-metric span { color:#aeb2ba; font-size:14px; }
-      .proof-metric strong { font-size:clamp(24px,3vw,36px); letter-spacing:-.04em; }
-      .proof-side.after .proof-metric strong { color:var(--accent); }
-      .proof-caption { margin-bottom:0; color:#b8bbc2; font-size:13px; }
-      .proof-caption strong { color:#fff; }
-      .diagnostic { padding:38px; border-radius:30px; color:#fff; background:var(--dark); }
-      .diagnostic > p { max-width:700px; color:#aeb2ba; }
-      .diagnostic .problem { margin:24px 0; font-size:30px; font-weight:850; letter-spacing:-.025em; }
-      .diagnostic-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
-      .issues,.solution { padding:24px; border:1px solid #34373f; border-radius:20px; background:#17191e; }
-      .panel-label,.solution-label { color:var(--accent); font-size:11px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
-      .panel-help { margin:5px 0 14px; color:#858b98; font-size:13px; }
-      .issue { display:flex; align-items:center; justify-content:space-between; width:100%; margin:9px 0; padding:14px 16px; border:1px solid #30333a; border-radius:12px; color:#fff; background:#20232a; font:inherit; text-align:left; }
-      .issue.active,.issue:hover { border-color:var(--accent); background:#242820; }
-      .issue small { color:#9297a0; }
-      .solution h3 { margin:10px 0; color:#fff; font-size:30px; }
-      .solution p { color:#c3c6cc; }
-      .pills { display:flex; flex-wrap:wrap; gap:8px; }
-      .pill { padding:8px 11px; border-radius:999px; color:#d7d9de; background:#292c33; font-size:13px; }
-      .framework { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
-      .step { min-height:235px; padding:18px; border:1px solid var(--line); border-radius:16px; background:#fff; }
-      .step .number { color:#858991; font-size:11px; font-weight:800; letter-spacing:.1em; }
-      .step h3 { margin-top:12px; font-size:19px; }
-      .step p,.step li { color:var(--muted); font-size:13px; }
-      .step ul { padding-left:16px; }
-      .constraint { margin-top:14px; padding:10px; border-radius:7px; color:#5d626b; background:#f0f2f5; font-size:12px; }
-      #diagnose .diagnostic:after { content:"Your answer identifies the constraint. Next, we turn it into a focused plan."; display:block; margin-top:24px; padding-top:18px; border-top:1px solid #343943; color:var(--accent); font-size:13px; font-weight:800; }
-      #framework .section-head:after { content:"The method connects the symptom to the right capability, in the right order."; display:block; max-width:270px; color:var(--muted); font-size:13px; }
-      #capabilities .section-head:after { content:"The priority from the diagnosis determines where we start. Supporting capabilities protect the result."; display:block; max-width:270px; color:var(--muted); font-size:13px; }
-      .case { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-      .case-card { padding:26px; border:1px solid var(--line); border-radius:20px; background:#fff; }
-      .case-card h3 { margin-top:12px; }
-      .case-card p { font-size:14px; }
-      .tag { display:inline-block; padding:6px 9px; border-radius:999px; color:#2d3b0a; background:var(--accent2); font-size:11px; font-weight:850; }
-      .case-result { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:20px 0; }
-      .case-result div { padding:10px; border-radius:8px; background:#f0f2f5; }
-      .case-result strong,.case-result span { display:block; }
-      .case-result strong { font-size:18px; }
-      .case-result span { color:#858991; font-size:10px; }
-      .cta { padding:76px 0; background:var(--accent); }
-      .cta-inner { display:flex; align-items:center; justify-content:space-between; gap:40px; }
-      .cta h2 { max-width:730px; }
-      main { display:flex; flex-direction:column; }
-      #diagnose { order:1; }
-      #framework { order:2; }
-      #capabilities { order:3; }
-      #profit-waterfall { display:none; }
-      #case-studies { order:5; }
-      footer { padding:40px 0; color:#aeb2ba; background:var(--dark); font-size:13px; }
-      footer strong { color:#fff; }
-      @media (max-width:900px) { .hero-grid,.section-head,.proof-head,.cta-inner { display:grid; grid-template-columns:1fr; } .waterfall { grid-template-columns:1fr; } .areas,.diagnostic-grid,.case,.system { grid-template-columns:1fr; } .area:last-child,.area.primary { grid-column:auto; } .framework { grid-template-columns:repeat(2,1fr); } .system-center { border-radius:14px; min-height:90px; } }
-      @media (max-width:600px) { .container { width:min(calc(100% - 28px),var(--max)); } .site-nav-inner { align-items:flex-start; flex-wrap:wrap; } .nav-links { display:none; } .hero { padding:58px 0 48px; } .section { padding:58px 0; } .waterfall,.proof,.diagnostic,.system { padding:24px 18px; } .water-step { grid-template-columns:28px 1fr; } .waterfall-list:after { left:30px; } .water-step small { grid-column:2; margin-top:-12px; } .proof-grid,.case-result,.framework { grid-template-columns:1fr; } }
-      @media (max-width:600px) {
-        .waterfall-list { width:100%; padding-left:28px; }
-        .waterfall-list:after { left:12px; }
+      :root {
+        --bg: #f7f8fa;
+        --ink: #101114;
+        --muted: #656a73;
+        --line: #dfe2e7;
+        --card: #fff;
+        --dark: #111216;
+        --accent: #c7ff4a;
+        --max: 1180px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--bg);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.55;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        width: min(calc(100% - 40px), var(--max));
+        margin: auto;
+      }
+      .site-nav {
+        padding: 13px 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+      }
+      .site-nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .logo {
+        font-size: 21px;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+      .logo span {
+        color: var(--accent);
+      }
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .nav-links a:hover {
+        color: var(--ink);
+      }
+      .eyebrow {
+        color: #727780;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+      h1 {
+        margin-bottom: 28px;
+        font-size: clamp(48px, 7vw, 88px);
+        line-height: 0.94;
+        letter-spacing: -0.055em;
+      }
+      h2 {
+        margin-bottom: 18px;
+        font-size: clamp(36px, 5vw, 62px);
+        line-height: 1;
+        letter-spacing: -0.045em;
+      }
+      h3 {
+        margin-bottom: 10px;
+        font-size: 22px;
+        line-height: 1.15;
+      }
+      p {
+        color: var(--muted);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 20px;
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        font-weight: 800;
+        transition: transform 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn.dark {
+        color: #fff;
+        background: var(--dark);
+      }
+      .btn.light {
+        background: #fff;
+      }
+      .btn.accent {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 70px 0 62px;
+        color: #fff;
+        background: var(--dark);
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        width: 520px;
+        height: 520px;
+        right: -180px;
+        top: -180px;
+        border-radius: 50%;
+        background: radial-gradient(circle, var(--accent), transparent 65%);
+        opacity: 0.18;
+      }
+      .hero .eyebrow {
+        color: var(--accent);
+      }
+      .hero p {
+        max-width: 670px;
+        color: #b8bbc2;
+        font-size: 18px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 60px;
+        align-items: end;
+      }
+      .hero-note {
+        position: relative;
+        z-index: 1;
+        padding: 26px;
+        border: 1px solid #33363e;
+        border-radius: 24px;
+        background: #181a1f;
+      }
+      .hero-note strong {
+        display: block;
+        margin-bottom: 12px;
+        font-size: 20px;
+      }
+      .hero-note p {
+        font-size: 14px;
+      }
+      .hero-note span {
+        display: inline-block;
+        margin: 4px 3px 0 0;
+        padding: 7px 10px;
+        border-radius: 8px;
+        color: #d7d9de;
+        background: #252830;
+        font-size: 13px;
+      }
+      .section {
+        padding: 76px 0;
+      }
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 34px;
+      }
+      .section-head p {
+        max-width: 520px;
+      }
+      .waterfall {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+        gap: 30px;
+        overflow: hidden;
+        padding: 38px;
+        border-radius: 30px;
+        color: #fff;
+        background: var(--dark);
+      }
+      .waterfall:before {
+        content: "";
+        position: absolute;
+        width: 360px;
+        height: 360px;
+        right: -120px;
+        top: -170px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(199, 255, 74, 0.2),
+          transparent 68%
+        );
+      }
+      .waterfall-intro {
+        position: relative;
+        z-index: 1;
+        align-self: center;
+        max-width: 650px;
+      }
+      .waterfall-intro:after {
+        content: "Every deduction is a decision. The job is to know which ones create leverage and which ones quietly erase it.";
+        display: block;
+        max-width: 280px;
+        margin-top: 26px;
+        padding: 16px 18px;
+        border-left: 2px solid var(--accent);
+        color: #d7d9de;
+        background: #181a1f;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      .waterfall-intro h2 {
+        margin-bottom: 12px;
+        font-size: clamp(34px, 4.5vw, 58px);
+      }
+      .waterfall-intro p {
+        color: #b8bbc2;
+      }
+      .waterfall-list {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 4px;
+        align-content: center;
+        width: 100%;
+        min-width: 0;
+        max-width: 700px;
+        margin: 0;
+        padding: 26px 0 0;
+      }
+      .waterfall-list:before {
+        content: "THE PATH TO CONTRIBUTION";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--accent);
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+      }
+      .waterfall-list:after {
+        content: "";
+        position: absolute;
+        top: 48px;
+        bottom: 48px;
+        left: 35px;
+        width: 1px;
+        background: #697633;
+      }
+      .water-step {
+        position: relative;
+        display: grid;
+        grid-template-columns: 38px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+        min-height: 45px;
+        padding: 8px 16px;
+        border: 1px solid #343943;
+        background: #181a1f;
+        transition:
+          transform 0.2s,
+          border-color 0.2s,
+          background 0.2s;
+      }
+      .water-step:hover {
+        z-index: 2;
+        transform: translateX(6px);
+        border-color: #697633;
+        background: #20251b;
+      }
+      .water-step:first-child {
+        border-radius: 13px 13px 4px 4px;
+        border-color: var(--accent);
+        background: #20251b;
+      }
+      .water-step:last-child {
+        border-radius: 4px 4px 13px 13px;
+        border-color: var(--accent);
+        color: var(--ink);
+        background: var(--accent);
+      }
+      .water-step:not(:last-child):after {
+        content: none;
+      }
+      .water-step .water-number {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        place-items: center;
+        width: 26px;
+        height: 26px;
+        border: 1px solid var(--accent);
+        border-radius: 50%;
+        color: var(--accent);
+        background: #181a1f;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+      .water-step:last-child .water-number {
+        color: var(--ink);
+      }
+      .water-step:first-child .water-number {
+        background: var(--accent);
+        color: var(--ink);
+      }
+      .water-step:last-child .water-number {
+        background: var(--ink);
+        color: var(--accent);
+      }
+      .water-step strong {
+        font-size: 16px;
+      }
+      .water-step small {
+        color: #9ea3ad;
+        font-size: 12px;
+      }
+      .water-step:last-child small {
+        color: #30370f;
+      }
+      .water-step:nth-child(even) {
+        background: #1d2026;
+      }
+      .water-step:nth-child(even) strong {
+        color: #f4f5f7;
+      }
+      .water-step:nth-child(n + 6) {
+        display: none;
+      }
+      .water-step:nth-child(5) {
+        border-radius: 4px 4px 13px 13px;
+        border-color: var(--accent);
+        color: var(--ink);
+        background: var(--accent);
+      }
+      .water-step:nth-child(5) .water-number {
+        background: var(--ink);
+        color: var(--accent);
+      }
+      .water-step:nth-child(5) small {
+        color: #30370f;
+      }
+      .waterfall {
+        grid-template-columns: 1fr;
+      }
+      .waterfall-intro {
+        max-width: 700px;
+      }
+      .waterfall-list {
+        width: min(100%, 900px);
+        max-width: none;
+        margin: 20px auto 0;
+        padding: 42px 0 0;
+      }
+      .waterfall-list:after {
+        top: 42px;
+        bottom: 42px;
+        left: 50%;
+        background: #697633;
+      }
+      .water-step {
+        width: calc(50% - 34px);
+        min-height: 92px;
+        display: block;
+        padding: 20px 24px;
+      }
+      .water-step:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 34px;
+        border-top: 1px solid #697633;
+      }
+      .water-step:nth-child(odd) {
+        margin-right: auto;
+        text-align: right;
+      }
+      .water-step:nth-child(odd):before {
+        right: -34px;
+      }
+      .water-step:nth-child(odd) .water-number {
+        right: -47px;
+      }
+      .water-step:nth-child(even) {
+        margin-left: auto;
+        text-align: left;
+      }
+      .water-step:nth-child(even):before {
+        left: -34px;
+      }
+      .water-step:nth-child(even) .water-number {
+        left: -47px;
+      }
+      .water-step .water-number {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .water-step strong {
+        display: block;
+        font-size: 19px;
+      }
+      .water-step small {
+        display: block;
+        margin-top: 5px;
+      }
+      .waterfall-callout {
+        position: relative;
+        z-index: 1;
+        grid-column: 1 / -1;
+        max-width: 820px;
+        margin: 2px auto 0;
+        padding-top: 22px;
+        border-top: 1px solid #343943;
+        text-align: center;
+      }
+      .waterfall-callout strong {
+        display: block;
+        color: var(--accent);
+        font-size: clamp(24px, 3vw, 38px);
+        letter-spacing: -0.04em;
+      }
+      .waterfall-callout span {
+        color: #b8bbc2;
+        font-size: 14px;
+      }
+      .areas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .area {
+        position: relative;
+        padding: 26px 28px 24px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--card);
+      }
+      .area:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 5px;
+        height: 100%;
+        background: var(--accent);
+      }
+      .area:last-child {
+        grid-column: auto;
+      }
+      .area-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .area-num {
+        color: #858991;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+      .area-icon {
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        color: var(--ink);
+        background: #f0f2f5;
+        font-weight: 900;
+      }
+      .area p {
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .area ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .area li {
+        padding: 6px 9px;
+        border-radius: 7px;
+        color: #16181c;
+        background: #f0f2f5;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .system {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 1fr;
+        gap: 12px;
+        align-items: center;
+        padding: 30px;
+        border-radius: 30px;
+        color: #fff;
+        background: var(--dark);
+      }
+      .system-column {
+        display: grid;
+        gap: 10px;
+      }
+      .system-node {
+        padding: 16px;
+        border: 1px solid #343943;
+        border-radius: 14px;
+        background: #181a1f;
+      }
+      .system-node strong {
+        display: block;
+        color: var(--accent);
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .system-node span {
+        display: block;
+        margin-top: 5px;
+        color: #c3c6cc;
+        font-size: 13px;
+      }
+      .system-center {
+        display: grid;
+        place-items: center;
+        min-height: 150px;
+        border: 1px solid var(--accent);
+        border-radius: 50%;
+        background: #20251b;
+        text-align: center;
+      }
+      .system-center strong {
+        color: var(--accent);
+        font-size: 24px;
+        letter-spacing: -0.04em;
+      }
+      .system-center span {
+        display: block;
+        max-width: 130px;
+        margin-top: 5px;
+        color: #c3c6cc;
+        font-size: 12px;
+      }
+      .system-arrow {
+        color: var(--accent);
+        font-size: 24px;
+        text-align: center;
+      }
+      .system {
+        display: none;
+      }
+      .area.primary {
+        grid-column: span 2;
+        background: #20251b;
+        border-color: var(--accent);
+      }
+      .area.primary h3 {
+        color: #fff;
+        font-size: 28px;
+      }
+      .area.primary p {
+        color: #c3c6cc;
+      }
+      .proof {
+        padding: 38px;
+        border-radius: 30px;
+        color: #fff;
+        background: var(--dark);
+      }
+      .proof-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: end;
+      }
+      .proof h2 {
+        max-width: 600px;
+      }
+      .proof p {
+        max-width: 450px;
+        color: #b8bbc2;
+      }
+      .proof-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 30px 0;
+      }
+      .proof-side {
+        padding: 24px;
+        border: 1px solid #343943;
+        border-radius: 18px;
+        background: #181a1f;
+      }
+      .proof-side.after {
+        border-color: var(--accent);
+        background: #20251b;
+      }
+      .proof-side h3 {
+        color: #aeb2ba;
+        font-size: 14px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .proof-side.after h3 {
+        color: var(--accent);
+      }
+      .proof-metric {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 0;
+        border-top: 1px solid #343943;
+      }
+      .proof-metric:first-of-type {
+        border-top: 0;
+      }
+      .proof-metric span {
+        color: #aeb2ba;
+        font-size: 14px;
+      }
+      .proof-metric strong {
+        font-size: clamp(24px, 3vw, 36px);
+        letter-spacing: -0.04em;
+      }
+      .proof-side.after .proof-metric strong {
+        color: var(--accent);
+      }
+      .proof-caption {
+        margin-bottom: 0;
+        color: #b8bbc2;
+        font-size: 13px;
+      }
+      .proof-caption strong {
+        color: #fff;
+      }
+      .diagnostic {
+        padding: 38px;
+        border-radius: 30px;
+        color: #fff;
+        background: var(--dark);
+      }
+      .diagnostic > p {
+        max-width: 700px;
+        color: #aeb2ba;
+      }
+      .diagnostic .problem {
+        margin: 24px 0;
+        font-size: 30px;
+        font-weight: 850;
+        letter-spacing: -0.025em;
+      }
+      .diagnostic-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+      .issues,
+      .solution {
+        padding: 24px;
+        border: 1px solid #34373f;
+        border-radius: 20px;
+        background: #17191e;
+      }
+      .panel-label,
+      .solution-label {
+        color: var(--accent);
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .panel-help {
+        margin: 5px 0 14px;
+        color: #858b98;
+        font-size: 13px;
+      }
+      .issue {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin: 9px 0;
+        padding: 14px 16px;
+        border: 1px solid #30333a;
+        border-radius: 12px;
+        color: #fff;
+        background: #20232a;
+        font: inherit;
+        text-align: left;
+      }
+      .issue.active,
+      .issue:hover {
+        border-color: var(--accent);
+        background: #242820;
+      }
+      .issue small {
+        color: #9297a0;
+      }
+      .solution h3 {
+        margin: 10px 0;
+        color: #fff;
+        font-size: 30px;
+      }
+      .solution p {
+        color: #c3c6cc;
+      }
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .pill {
+        padding: 8px 11px;
+        border-radius: 999px;
+        color: #d7d9de;
+        background: #292c33;
+        font-size: 13px;
+      }
+      .framework {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+      .step {
+        min-height: 235px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #fff;
+      }
+      .step .number {
+        color: #858991;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+      .step h3 {
+        margin-top: 12px;
+        font-size: 19px;
+      }
+      .step p,
+      .step li {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .step ul {
+        padding-left: 16px;
+      }
+      .constraint {
+        margin-top: 14px;
+        padding: 10px;
+        border-radius: 7px;
+        color: #5d626b;
+        background: #f0f2f5;
+        font-size: 12px;
+      }
+      #diagnose .diagnostic:after {
+        content: "Your answer identifies the constraint. Next, we turn it into a focused plan.";
+        display: block;
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px solid #343943;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 800;
+      }
+      #framework .section-head:after {
+        content: "The method connects the symptom to the right capability, in the right order.";
+        display: block;
+        max-width: 270px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      #capabilities .section-head:after {
+        content: "The priority from the diagnosis determines where we start. Supporting capabilities protect the result.";
+        display: block;
+        max-width: 270px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .case {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .case-card {
+        padding: 26px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: #fff;
+      }
+      .case-card h3 {
+        margin-top: 12px;
+      }
+      .case-card p {
+        font-size: 14px;
+      }
+      .tag {
+        display: inline-block;
+        padding: 6px 9px;
+        border-radius: 999px;
+        color: #2d3b0a;
+        background: var(--accent2);
+        font-size: 11px;
+        font-weight: 850;
+      }
+      .case-result {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin: 20px 0;
+      }
+      .case-result div {
+        padding: 10px;
+        border-radius: 8px;
+        background: #f0f2f5;
+      }
+      .case-result strong,
+      .case-result span {
+        display: block;
+      }
+      .case-result strong {
+        font-size: 18px;
+      }
+      .case-result span {
+        color: #858991;
+        font-size: 10px;
+      }
+      .cta {
+        padding: 76px 0;
+        background: var(--accent);
+      }
+      .cta-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      }
+      .cta h2 {
+        max-width: 730px;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+      }
+      #diagnose {
+        order: 1;
+      }
+      #framework {
+        order: 2;
+      }
+      #capabilities {
+        order: 3;
+      }
+      #profit-waterfall {
+        display: none;
+      }
+      #case-studies {
+        order: 5;
+      }
+      footer {
+        padding: 40px 0;
+        color: #aeb2ba;
+        background: var(--dark);
+        font-size: 13px;
+      }
+      footer strong {
+        color: #fff;
+      }
+      @media (max-width: 900px) {
+        .hero-grid,
+        .section-head,
+        .proof-head,
+        .cta-inner {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        .waterfall {
+          grid-template-columns: 1fr;
+        }
+        .areas,
+        .diagnostic-grid,
+        .case,
+        .system {
+          grid-template-columns: 1fr;
+        }
+        .area:last-child,
+        .area.primary {
+          grid-column: auto;
+        }
+        .framework {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .system-center {
+          border-radius: 14px;
+          min-height: 90px;
+        }
+      }
+      @media (max-width: 600px) {
+        .container {
+          width: min(calc(100% - 28px), var(--max));
+        }
+        .site-nav-inner {
+          align-items: flex-start;
+          flex-wrap: wrap;
+        }
+        .nav-links {
+          display: none;
+        }
+        .hero {
+          padding: 58px 0 48px;
+        }
+        .section {
+          padding: 58px 0;
+        }
+        .waterfall,
+        .proof,
+        .diagnostic,
+        .system {
+          padding: 24px 18px;
+        }
+        .water-step {
+          grid-template-columns: 28px 1fr;
+        }
+        .waterfall-list:after {
+          left: 30px;
+        }
+        .water-step small {
+          grid-column: 2;
+          margin-top: -12px;
+        }
+        .proof-grid,
+        .case-result,
+        .framework {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .waterfall-list {
+          width: 100%;
+          padding-left: 28px;
+        }
+        .waterfall-list:after {
+          left: 12px;
+        }
         .water-step,
         .water-step:nth-child(odd),
-        .water-step:nth-child(even) { width:100%; margin:0; padding:18px 18px 18px 24px; text-align:left; }
+        .water-step:nth-child(even) {
+          width: 100%;
+          margin: 0;
+          padding: 18px 18px 18px 24px;
+          text-align: left;
+        }
         .water-step:before,
         .water-step:nth-child(odd):before,
-        .water-step:nth-child(even):before { left:-16px; right:auto; width:16px; }
+        .water-step:nth-child(even):before {
+          left: -16px;
+          right: auto;
+          width: 16px;
+        }
         .water-step .water-number,
         .water-step:nth-child(odd) .water-number,
-        .water-step:nth-child(even) .water-number { left:-29px; right:auto; }
+        .water-step:nth-child(even) .water-number {
+          left: -29px;
+          right: auto;
+        }
       }
     </style>
   </head>
   <body>
-    <nav class="site-nav" aria-label="Primary navigation"><div class="container site-nav-inner"><a class="logo" href="../index.html">Growth<span>X</span>sell</a><div class="nav-links"><a href="index.html" aria-current="page">Solutions</a><a href="../capabilities/">Capabilities</a><a href="../case studies/">Case Studies</a><a href="../process/">Process</a><a href="../about/">About</a></div><a class="btn dark" href="../index.html#contact">Free assessment</a></div></nav>
-    <header class="hero"><div class="container hero-grid"><div><div class="eyebrow">Framework #3 · Amazon Profitability</div><h1>Revenue is the top line.<br /><span style="color:var(--accent)">Contribution is the truth.</span></h1><p>Turn Amazon revenue into healthier contribution, not just bigger sales numbers. We find where advertising, conversion, and account operations are eating margin, then show you what to fix first.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px"><a class="btn accent" href="../index.html#contact">Get a free profitability audit</a><a class="btn light" href="#profit-waterfall">See the system</a></div></div><div class="hero-note"><strong>Amazon Profitability Framework™</strong><p>Bring us the account. Leave with a clearer view of where money goes and what the next best move is.</p><span>Ad spend</span><span>Conversion</span><span>Operations</span><span>Margin</span></div></div></header>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="container site-nav-inner">
+        <a class="logo" href="../index.html">Growth<span>X</span>sell</a>
+        <div class="nav-links">
+          <a href="index.html" aria-current="page">Solutions</a
+          ><a href="../capabilities/">Capabilities</a
+          ><a href="../case studies/">Case Studies</a
+          ><a href="../process/">Process</a><a href="../about/">About</a>
+        </div>
+        <a class="btn dark" href="../index.html#contact">Free assessment</a>
+      </div>
+    </nav>
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Framework #3 · Amazon Profitability</div>
+          <h1>
+            Revenue is the top line.<br /><span style="color: var(--accent)"
+              >Contribution is the truth.</span
+            >
+          </h1>
+          <p>
+            Turn Amazon revenue into healthier contribution, not just bigger
+            sales numbers. We find where advertising, conversion, and account
+            operations are eating margin, then show you what to fix first.
+          </p>
+          <div
+            style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px"
+          >
+            <a class="btn accent" href="../index.html#contact"
+              >Get a free profitability audit</a
+            ><a class="btn light" href="#profit-waterfall">See the system</a>
+          </div>
+        </div>
+        <div class="hero-note">
+          <strong>Amazon Profitability Framework™</strong>
+          <p>
+            Bring us the account. Leave with a clearer view of where money goes
+            and what the next best move is.
+          </p>
+          <span>Ad spend</span><span>Conversion</span><span>Operations</span
+          ><span>Margin</span>
+        </div>
+      </div>
+    </header>
     <main>
-      <section class="section" id="profit-waterfall"><div class="container"><div class="section-head"><div><div class="eyebrow">The profitability model</div><h2>Follow the money all the way down.</h2></div><p>Revenue is the starting point, not the scorecard. We trace every deduction and investment until the contribution left behind is clear.</p></div><div class="waterfall"><div class="waterfall-intro"><div class="eyebrow" style="color:var(--accent)">Profit waterfall</div><h2>From sales volume to money the business can keep.</h2><p>When one layer is ignored, the next dollar of growth can make the account less healthy. The framework makes those tradeoffs visible.</p></div><div class="waterfall-list" aria-label="Profit waterfall from revenue to profit"><div class="water-step"><span class="water-number">01</span><strong>Revenue</strong><small>The top line</small></div><div class="water-step"><span class="water-number">02</span><strong>Sales</strong><small>Demand captured</small></div><div class="water-step"><span class="water-number">03</span><strong>Amazon fees</strong><small>Marketplace cost</small></div><div class="water-step"><span class="water-number">04</span><strong>Cost of goods</strong><small>Unit economics</small></div><div class="water-step"><span class="water-number">05</span><strong>Advertising</strong><small>Demand investment</small></div><div class="water-step"><span class="water-number">06</span><strong>Discounts</strong><small>Price giveback</small></div><div class="water-step"><span class="water-number">07</span><strong>Returns + other costs</strong><small>What gets missed</small></div><div class="water-step"><span class="water-number">08</span><strong>Contribution</strong><small>What growth creates</small></div><div class="water-step"><span class="water-number">09</span><strong>Profit</strong><small>The outcome</small></div></div><div class="waterfall-callout"><strong>Revenue is the top line. Contribution is the truth.</strong><span>Every decision gets judged against the economics underneath it.</span></div></div></div></section>
-      <section class="section" id="capabilities"><div class="container"><div class="section-head"><div><div class="eyebrow">The capability hierarchy</div><h2>PPC leads.<br />The rest protects the margin.</h2></div><p>Advertising is the hero capability, supported by the listing, creative, and account systems that determine whether paid demand becomes profitable growth.</p></div><div class="system" aria-label="Profitability system connecting ad spend, conversion, and operations to margin"><div class="system-column"><div class="system-node"><strong>Ad spend</strong><span>Where money is being invested</span></div><div class="system-arrow">↓</div><div class="system-node"><strong>PPC</strong><span>Stop paying for the wrong clicks</span></div></div><div class="system-center"><div><strong>Profitability</strong><span>Better decisions create healthier margin</span></div></div><div class="system-column"><div class="system-node"><strong>Conversion</strong><span>Listing, SEO, and creative</span></div><div class="system-arrow">↓</div><div class="system-node"><strong>Operations</strong><span>Account health and availability</span></div></div></div><div class="areas" style="margin-top:14px">
-        <article class="area primary"><div class="area-top"><div><div class="area-num" style="color:var(--accent)">01 · PRIMARY CAPABILITY</div><h3>PPC &amp; Advertising</h3></div><div class="area-icon">P</div></div><p>Stop paying for the wrong clicks. Scale what already works. See exactly where money goes, which search terms create contribution, and where the next advertising dollar belongs.</p><ul><li>Reduce inefficient spend</li><li>ACoS + TACoS</li><li>Search-term efficiency</li><li>Campaign allocation</li><li>Incremental sales</li></ul></article>
-        <article class="area"><div class="area-top"><div><div class="area-num">02 · SUPPORTING CAPABILITY</div><h3>Listing &amp; SEO</h3></div><div class="area-icon">S</div></div><p>Better conversion creates better advertising efficiency. Turn qualified traffic into more orders before buying more clicks.</p><ul><li>Conversion rate</li><li>Indexing + relevance</li><li>Listing friction</li></ul></article>
-        <article class="area"><div class="area-top"><div><div class="area-num">03 · SUPPORTING CAPABILITY</div><h3>Brand &amp; Creative</h3></div><div class="area-icon">C</div></div><p>Better CTR plus better CVR means more efficient traffic. Make the value clear and give shoppers a reason to choose the product.</p><ul><li>CTR + CVR</li><li>Creative testing</li><li>A+ content</li></ul></article>
-        <article class="area"><div class="area-top"><div><div class="area-num">04 · SUPPORTING CAPABILITY</div><h3>Full Account Management</h3></div><div class="area-icon">A</div></div><p>Catalog errors, suppressed listings, and operational problems can silently destroy sales. Keep the account healthy while profitability work moves.</p><ul><li>Catalog health</li><li>Suppression recovery</li><li>Inventory signals</li></ul></article>
-        <article class="area"><div class="area-top"><div><div class="area-num">05 · DECISION LAYER</div><h3>Margin Allocation</h3></div><div class="area-icon">↗</div></div><p>Connect spend, conversion, and operations to decide which products and opportunities deserve the next dollar.</p><ul><li>Portfolio mix</li><li>Contribution impact</li><li>Marginal return</li></ul></article>
-      </div></div></section>
-      <section class="section dark" id="diagnose"><div class="container"><div class="diagnostic"><div class="eyebrow" style="color:var(--accent)">The killer question</div><h2>One margin problem.<br />Multiple levers.</h2><p>“Revenue is growing” is not the same as “the business is healthier.” Start with the symptom, then find the lever that is actually compressing contribution.</p><div class="problem">Where is profitability breaking down?</div><div class="diagnostic-grid"><div class="issues"><div class="panel-label">Start with the symptom</div><p class="panel-help">What feels expensive right now?</p><button class="issue active" type="button" data-title="Advertising is eating margin" data-copy="Separate efficient demand from activity that creates sales but not contribution. Then reallocate spend toward the products and terms that can carry growth." data-levers="ACoS + TACoS|Incremental sales|Search-term efficiency"><span>Advertising is eating margin</span><small>Spend</small></button><button class="issue" type="button" data-title="High-revenue SKU, low margin" data-copy="A product can win the revenue report and still weaken the account. Find the SKUs that need a price, cost, or spend decision before scaling them further." data-levers="SKU contribution|Product economics|Margin opportunities"><span>High-revenue SKU, low margin</span><small>Mix</small></button><button class="issue" type="button" data-title="Discounts are too deep" data-copy="Promotions should create profitable demand, not hide a weak price position. Measure the contribution impact of coupons, deals, and price changes." data-levers="Price position|Coupon economics|Contribution impact"><span>Discounts are too deep</span><small>Price</small></button><button class="issue" type="button" data-title="Traffic is not converting" data-copy="Poor conversion makes every click more expensive. Fix the listing, offer, and creative friction before adding more paid traffic." data-levers="Listing conversion|CTR + CVR|Offer strength"><span>Traffic is not converting</span><small>CVR</small></button><button class="issue" type="button" data-title="Budget is in the wrong place" data-copy="The next advertising dollar belongs where demand, margin, and conversion can work together. Rebalance spend around marginal return, not lowest ACoS alone." data-levers="Portfolio allocation|Marginal return|Budget priorities"><span>Budget is in the wrong place</span><small>Portfolio</small></button></div><div class="solution"><div class="panel-label">Your next move</div><p class="panel-help">The constraint this points to:</p><h3 id="diagTitle">Advertising is eating margin</h3><p id="diagCopy">Separate efficient demand from activity that creates sales but not contribution. Then reallocate spend toward the products and terms that can carry growth.</p><div class="solution-label" style="margin-top:24px">Focus the work on</div><div class="pills" id="diagPills"><span class="pill">ACoS + TACoS</span><span class="pill">Incremental sales</span><span class="pill">Search-term efficiency</span></div></div></div></div></div></section>
+      <section class="section" id="profit-waterfall">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">The profitability model</div>
+              <h2>Follow the money all the way down.</h2>
+            </div>
+            <p>
+              Revenue is the starting point, not the scorecard. We trace every
+              deduction and investment until the contribution left behind is
+              clear.
+            </p>
+          </div>
+          <div class="waterfall">
+            <div class="waterfall-intro">
+              <div class="eyebrow" style="color: var(--accent)">
+                Profit waterfall
+              </div>
+              <h2>From sales volume to money the business can keep.</h2>
+              <p>
+                When one layer is ignored, the next dollar of growth can make
+                the account less healthy. The framework makes those tradeoffs
+                visible.
+              </p>
+            </div>
+            <div
+              class="waterfall-list"
+              aria-label="Profit waterfall from revenue to profit"
+            >
+              <div class="water-step">
+                <span class="water-number">01</span><strong>Revenue</strong
+                ><small>The top line</small>
+              </div>
+              <div class="water-step">
+                <span class="water-number">02</span><strong>Sales</strong
+                ><small>Demand captured</small>
+              </div>
+              <div class="water-step">
+                <span class="water-number">03</span><strong>Amazon fees</strong
+                ><small>Marketplace cost</small>
+              </div>
+              <div class="water-step">
+                <span class="water-number">04</span
+                ><strong>Cost of goods</strong><small>Unit economics</small>
+              </div>
+              <div class="water-step">
+                <span class="water-number">05</span><strong>Advertising</strong
+                ><small>Demand investment</small>
+              </div>
+              <div class="water-step">
+                <span class="water-number">06</span><strong>Discounts</strong
+                ><small>Price giveback</small>
+              </div>
+              <div class="water-step">
+                <span class="water-number">07</span
+                ><strong>Returns + other costs</strong
+                ><small>What gets missed</small>
+              </div>
+              <div class="water-step">
+                <span class="water-number">08</span><strong>Contribution</strong
+                ><small>What growth creates</small>
+              </div>
+              <div class="water-step">
+                <span class="water-number">09</span><strong>Profit</strong
+                ><small>The outcome</small>
+              </div>
+            </div>
+            <div class="waterfall-callout">
+              <strong
+                >Revenue is the top line. Contribution is the truth.</strong
+              ><span
+                >Every decision gets judged against the economics underneath
+                it.</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="capabilities">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">The capability hierarchy</div>
+              <h2>PPC leads.<br />The rest protects the margin.</h2>
+            </div>
+            <p>
+              Advertising is the hero capability, supported by the listing,
+              creative, and account systems that determine whether paid demand
+              becomes profitable growth.
+            </p>
+          </div>
+          <div
+            class="system"
+            aria-label="Profitability system connecting ad spend, conversion, and operations to margin"
+          >
+            <div class="system-column">
+              <div class="system-node">
+                <strong>Ad spend</strong
+                ><span>Where money is being invested</span>
+              </div>
+              <div class="system-arrow">↓</div>
+              <div class="system-node">
+                <strong>PPC</strong
+                ><span>Stop paying for the wrong clicks</span>
+              </div>
+            </div>
+            <div class="system-center">
+              <div>
+                <strong>Profitability</strong
+                ><span>Better decisions create healthier margin</span>
+              </div>
+            </div>
+            <div class="system-column">
+              <div class="system-node">
+                <strong>Conversion</strong
+                ><span>Listing, SEO, and creative</span>
+              </div>
+              <div class="system-arrow">↓</div>
+              <div class="system-node">
+                <strong>Operations</strong
+                ><span>Account health and availability</span>
+              </div>
+            </div>
+          </div>
+          <div class="areas" style="margin-top: 14px">
+            <article class="area primary">
+              <div class="area-top">
+                <div>
+                  <div class="area-num" style="color: var(--accent)">
+                    01 · PRIMARY CAPABILITY
+                  </div>
+                  <h3>PPC &amp; Advertising</h3>
+                </div>
+                <div class="area-icon">P</div>
+              </div>
+              <p>
+                Stop paying for the wrong clicks. Scale what already works. See
+                exactly where money goes, which search terms create
+                contribution, and where the next advertising dollar belongs.
+              </p>
+              <ul>
+                <li>Reduce inefficient spend</li>
+                <li>ACoS + TACoS</li>
+                <li>Search-term efficiency</li>
+                <li>Campaign allocation</li>
+                <li>Incremental sales</li>
+              </ul>
+            </article>
+            <article class="area">
+              <div class="area-top">
+                <div>
+                  <div class="area-num">02 · SUPPORTING CAPABILITY</div>
+                  <h3>Listing &amp; SEO</h3>
+                </div>
+                <div class="area-icon">S</div>
+              </div>
+              <p>
+                Better conversion creates better advertising efficiency. Turn
+                qualified traffic into more orders before buying more clicks.
+              </p>
+              <ul>
+                <li>Conversion rate</li>
+                <li>Indexing + relevance</li>
+                <li>Listing friction</li>
+              </ul>
+            </article>
+            <article class="area">
+              <div class="area-top">
+                <div>
+                  <div class="area-num">03 · SUPPORTING CAPABILITY</div>
+                  <h3>Brand &amp; Creative</h3>
+                </div>
+                <div class="area-icon">C</div>
+              </div>
+              <p>
+                Better CTR plus better CVR means more efficient traffic. Make
+                the value clear and give shoppers a reason to choose the
+                product.
+              </p>
+              <ul>
+                <li>CTR + CVR</li>
+                <li>Creative testing</li>
+                <li>A+ content</li>
+              </ul>
+            </article>
+            <article class="area">
+              <div class="area-top">
+                <div>
+                  <div class="area-num">04 · SUPPORTING CAPABILITY</div>
+                  <h3>Full Account Management</h3>
+                </div>
+                <div class="area-icon">A</div>
+              </div>
+              <p>
+                Catalog errors, suppressed listings, and operational problems
+                can silently destroy sales. Keep the account healthy while
+                profitability work moves.
+              </p>
+              <ul>
+                <li>Catalog health</li>
+                <li>Suppression recovery</li>
+                <li>Inventory signals</li>
+              </ul>
+            </article>
+            <article class="area">
+              <div class="area-top">
+                <div>
+                  <div class="area-num">05 · DECISION LAYER</div>
+                  <h3>Margin Allocation</h3>
+                </div>
+                <div class="area-icon">↗</div>
+              </div>
+              <p>
+                Connect spend, conversion, and operations to decide which
+                products and opportunities deserve the next dollar.
+              </p>
+              <ul>
+                <li>Portfolio mix</li>
+                <li>Contribution impact</li>
+                <li>Marginal return</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section dark" id="diagnose">
+        <div class="container">
+          <div class="diagnostic">
+            <div class="eyebrow" style="color: var(--accent)">
+              The killer question
+            </div>
+            <h2>One margin problem.<br />Multiple levers.</h2>
+            <p>
+              “Revenue is growing” is not the same as “the business is
+              healthier.” Start with the symptom, then find the lever that is
+              actually compressing contribution.
+            </p>
+            <div class="problem">Where is profitability breaking down?</div>
+            <div class="diagnostic-grid">
+              <div class="issues">
+                <div class="panel-label">Start with the symptom</div>
+                <p class="panel-help">What feels expensive right now?</p>
+                <button
+                  class="issue active"
+                  type="button"
+                  data-title="Advertising is eating margin"
+                  data-copy="Separate efficient demand from activity that creates sales but not contribution. Then reallocate spend toward the products and terms that can carry growth."
+                  data-levers="ACoS + TACoS|Incremental sales|Search-term efficiency"
+                >
+                  <span>Advertising is eating margin</span
+                  ><small>Spend</small></button
+                ><button
+                  class="issue"
+                  type="button"
+                  data-title="High-revenue SKU, low margin"
+                  data-copy="A product can win the revenue report and still weaken the account. Find the SKUs that need a price, cost, or spend decision before scaling them further."
+                  data-levers="SKU contribution|Product economics|Margin opportunities"
+                >
+                  <span>High-revenue SKU, low margin</span
+                  ><small>Mix</small></button
+                ><button
+                  class="issue"
+                  type="button"
+                  data-title="Discounts are too deep"
+                  data-copy="Promotions should create profitable demand, not hide a weak price position. Measure the contribution impact of coupons, deals, and price changes."
+                  data-levers="Price position|Coupon economics|Contribution impact"
+                >
+                  <span>Discounts are too deep</span
+                  ><small>Price</small></button
+                ><button
+                  class="issue"
+                  type="button"
+                  data-title="Traffic is not converting"
+                  data-copy="Poor conversion makes every click more expensive. Fix the listing, offer, and creative friction before adding more paid traffic."
+                  data-levers="Listing conversion|CTR + CVR|Offer strength"
+                >
+                  <span>Traffic is not converting</span
+                  ><small>CVR</small></button
+                ><button
+                  class="issue"
+                  type="button"
+                  data-title="Budget is in the wrong place"
+                  data-copy="The next advertising dollar belongs where demand, margin, and conversion can work together. Rebalance spend around marginal return, not lowest ACoS alone."
+                  data-levers="Portfolio allocation|Marginal return|Budget priorities"
+                >
+                  <span>Budget is in the wrong place</span
+                  ><small>Portfolio</small>
+                </button>
+              </div>
+              <div class="solution">
+                <div class="panel-label">Your next move</div>
+                <p class="panel-help">The constraint this points to:</p>
+                <h3 id="diagTitle">Advertising is eating margin</h3>
+                <p id="diagCopy">
+                  Separate efficient demand from activity that creates sales but
+                  not contribution. Then reallocate spend toward the products
+                  and terms that can carry growth.
+                </p>
+                <div class="solution-label" style="margin-top: 24px">
+                  Focus the work on
+                </div>
+                <div class="pills" id="diagPills">
+                  <span class="pill">ACoS + TACoS</span
+                  ><span class="pill">Incremental sales</span
+                  ><span class="pill">Search-term efficiency</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section class="section" id="framework"><div class="container"><div class="section-head"><div><div class="eyebrow">The methodology</div><h2>Five steps.<br />One continuous loop.</h2></div></div><div class="framework"><article class="step"><div class="number">01</div><h3>Diagnose</h3><p>Build the contribution view before making a change.</p><div class="constraint"><b>01</b> Revenue and fees<br /><b>02</b> COGS and returns<br /><b>03</b> Advertising and pricing</div></article><article class="step"><div class="number">02</div><h3>Find the Leak</h3><p>Locate the layer compressing the economics.</p><div class="constraint"><b>Revenue strong</b><br />↓<br /><b>Contribution weak</b><br />↓<br />Margin leak</div></article><article class="step"><div class="number">03</div><h3>Prioritize</h3><p>Choose the three moves with the clearest return.</p><div class="constraint"><b>01</b> Spend allocation<br /><b>02</b> Product mix<br /><b>03</b> Price discipline</div></article><article class="step"><div class="number">04</div><h3>Execute</h3><p>Put the right commercial levers into motion.</p><div class="constraint"><b>01</b> PPC and search terms<br /><b>02</b> Listing and conversion<br /><b>03</b> Pricing and promotions</div></article><article class="step"><div class="number">05</div><h3>Scale</h3><p>Measure contribution, then fund the next opportunity.</p><div class="constraint"><b>Measure → Learn → Scale</b><br /><br />Make healthier growth repeatable.</div></article></div></div></section>
+      <section class="section" id="framework">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">The methodology</div>
+              <h2>Five steps.<br />One continuous loop.</h2>
+            </div>
+          </div>
+          <div class="framework">
+            <article class="step">
+              <div class="number">01</div>
+              <h3>Diagnose</h3>
+              <p>Build the contribution view before making a change.</p>
+              <div class="constraint">
+                <b>01</b> Revenue and fees<br /><b>02</b> COGS and returns<br /><b
+                  >03</b
+                >
+                Advertising and pricing
+              </div>
+            </article>
+            <article class="step">
+              <div class="number">02</div>
+              <h3>Find the Leak</h3>
+              <p>Locate the layer compressing the economics.</p>
+              <div class="constraint">
+                <b>Revenue strong</b><br />↓<br /><b>Contribution weak</b
+                ><br />↓<br />Margin leak
+              </div>
+            </article>
+            <article class="step">
+              <div class="number">03</div>
+              <h3>Prioritize</h3>
+              <p>Choose the three moves with the clearest return.</p>
+              <div class="constraint">
+                <b>01</b> Spend allocation<br /><b>02</b> Product mix<br /><b
+                  >03</b
+                >
+                Price discipline
+              </div>
+            </article>
+            <article class="step">
+              <div class="number">04</div>
+              <h3>Execute</h3>
+              <p>Put the right commercial levers into motion.</p>
+              <div class="constraint">
+                <b>01</b> PPC and search terms<br /><b>02</b> Listing and
+                conversion<br /><b>03</b> Pricing and promotions
+              </div>
+            </article>
+            <article class="step">
+              <div class="number">05</div>
+              <h3>Scale</h3>
+              <p>Measure contribution, then fund the next opportunity.</p>
+              <div class="constraint">
+                <b>Measure → Learn → Scale</b><br /><br />Make healthier growth
+                repeatable.
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-      <section class="section" id="case-studies"><div class="container"><div class="section-head"><div><div class="eyebrow">Proof, not promises</div><h2>See the framework<br />in action.</h2></div></div><div class="case"><article class="case-card"><div class="tag">CASE STUDY · PROFIT TURNAROUND</div><h3>More revenue. Better economics. A profitable account.</h3><p>PPC, pricing, and product economics changed the quality of growth, not just the size of it.</p><div class="case-result"><div><strong>$62K → $75K</strong><span>revenue</span></div><div><strong>-6% → +12%</strong><span>net margin</span></div><div><strong>2.6X → 4.5X</strong><span>ROAS</span></div></div><p><strong>PPC + Pricing + Product Economics</strong></p><div style="margin-top:20px"><a class="btn dark" href="../case studies/case-study-profit-turnaround.html">See how the account became profitable →</a></div></article><article class="case-card"><div class="tag">THE PROFITABILITY PRINCIPLE</div><h3>Where should the next advertising dollar go?</h3><p>Not simply to the campaign with the lowest ACoS. Put it where demand, margin, conversion, and portfolio opportunity meet.</p><div class="case-result"><div><strong>ACoS</strong><span>efficiency</span></div><div><strong>Margin</strong><span>economics</span></div><div><strong>Mix</strong><span>allocation</span></div></div><p><strong>Revenue is the top line. Contribution is the truth.</strong></p><div style="margin-top:20px"><a class="btn light" href="#profit-waterfall">Review the profit waterfall →</a></div></article></div></div></section>
+      <section class="section" id="case-studies">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Proof, not promises</div>
+              <h2>See the framework<br />in action.</h2>
+            </div>
+          </div>
+          <div class="case">
+            <article class="case-card">
+              <div class="tag">CASE STUDY · PROFIT TURNAROUND</div>
+              <h3>More revenue. Better economics. A profitable account.</h3>
+              <p>
+                PPC, pricing, and product economics changed the quality of
+                growth, not just the size of it.
+              </p>
+              <div class="case-result">
+                <div><strong>$62K → $75K</strong><span>revenue</span></div>
+                <div><strong>-6% → +12%</strong><span>net margin</span></div>
+                <div><strong>2.6X → 4.5X</strong><span>ROAS</span></div>
+              </div>
+              <p><strong>PPC + Pricing + Product Economics</strong></p>
+              <div style="margin-top: 20px">
+                <a
+                  class="btn dark"
+                  href="../case studies/case-study-profit-turnaround.html"
+                  >See how the account became profitable →</a
+                >
+              </div>
+            </article>
+            <article class="case-card">
+              <div class="tag">THE PROFITABILITY PRINCIPLE</div>
+              <h3>Where should the next advertising dollar go?</h3>
+              <p>
+                Not simply to the campaign with the lowest ACoS. Put it where
+                demand, margin, conversion, and portfolio opportunity meet.
+              </p>
+              <div class="case-result">
+                <div><strong>ACoS</strong><span>efficiency</span></div>
+                <div><strong>Margin</strong><span>economics</span></div>
+                <div><strong>Mix</strong><span>allocation</span></div>
+              </div>
+              <p>
+                <strong
+                  >Revenue is the top line. Contribution is the truth.</strong
+                >
+              </p>
+              <div style="margin-top: 20px">
+                <a class="btn light" href="#profit-waterfall"
+                  >Review the profit waterfall →</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
-    <section class="cta"><div class="container cta-inner"><div><div class="eyebrow" style="color:#111216">Start with the economics</div><h2>Find the margin leak before you add more growth.</h2><p style="max-width:650px;color:#40452d">Get a free profitability audit that shows where ad spend, conversion, and account operations are affecting contribution.</p></div><a class="btn dark" href="../index.html#contact">Get your free audit →</a></div></section>
-    <footer><div class="container"><strong>GrowthXsell</strong> · Amazon Growth, Launch, Profitability, and Recovery strategy for brands ready to scale with discipline.</div></footer>
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <div class="eyebrow" style="color: #111216">
+            Start with the economics
+          </div>
+          <h2>Find the margin leak before you add more growth.</h2>
+          <p style="max-width: 650px; color: #40452d">
+            Get a free profitability audit that shows where ad spend,
+            conversion, and account operations are affecting contribution.
+          </p>
+        </div>
+        <a class="btn dark" href="../index.html#contact"
+          >Get your free audit →</a
+        >
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <strong>GrowthXsell</strong> · Amazon Growth, Launch, Profitability, and
+        Recovery strategy for brands ready to scale with discipline.
+      </div>
+    </footer>
     <script>
       document.querySelectorAll(".issue").forEach((issue) => {
         issue.addEventListener("click", () => {
-          document.querySelectorAll(".issue").forEach((item) => item.classList.remove("active"));
+          document
+            .querySelectorAll(".issue")
+            .forEach((item) => item.classList.remove("active"));
           issue.classList.add("active");
-          document.querySelector("#diagTitle").textContent = issue.dataset.title;
+          document.querySelector("#diagTitle").textContent =
+            issue.dataset.title;
           document.querySelector("#diagCopy").textContent = issue.dataset.copy;
           document.querySelector("#diagPills").innerHTML = issue.dataset.levers
             .split("|")
@@ -233,8 +1540,12 @@
         step.querySelector("strong").textContent = waterfallStages[index][0];
         step.querySelector("small").textContent = waterfallStages[index][1];
       });
-      document.querySelector("#profit-waterfall .section-head p").textContent = "Revenue is the starting point, not the scorecard. We group the full path into five decisions that show where contribution is created or lost.";
-      document.querySelector("#profit-waterfall .waterfall-intro p").textContent = "Five useful checkpoints replace nine disconnected deductions. Each point tells you what to measure, what to question, and where an audit can find leverage.";
+      document.querySelector("#profit-waterfall .section-head p").textContent =
+        "Revenue is the starting point, not the scorecard. We group the full path into five decisions that show where contribution is created or lost.";
+      document.querySelector(
+        "#profit-waterfall .waterfall-intro p",
+      ).textContent =
+        "Five useful checkpoints replace nine disconnected deductions. Each point tells you what to measure, what to question, and where an audit can find leverage.";
     </script>
   </body>
 </html>
