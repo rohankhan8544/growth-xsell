@@ -940,6 +940,29 @@
         }
       }
       @media (max-width: 600px) {
+        #framework {
+          background: #eef0f2;
+        }
+        #framework .container {
+          width: calc(100% - 56px);
+          min-width: 0;
+          max-width: var(--max);
+          padding: 14px;
+          border-radius: 14px;
+          background: #fff;
+          overflow: hidden;
+        }
+        #framework .section-head {
+          margin-bottom: 14px;
+        }
+        #framework .eyebrow {
+          font-size: 9px;
+        }
+        #framework .section-head h2 {
+          margin-bottom: 0;
+          font-size: 32px;
+          line-height: 1.03;
+        }
         .container {
           width: min(calc(100% - 28px), var(--max));
         }
@@ -973,9 +996,40 @@
           margin-top: -12px;
         }
         .proof-grid,
-        .case-result,
-        .framework {
+        .case-result {
           grid-template-columns: 1fr;
+        }
+        #framework .framework {
+          grid-template-columns: 1fr 1fr;
+          gap: 5px;
+          min-width: 0;
+        }
+        #framework .step {
+          min-height: 102px;
+          min-width: 0;
+          padding: 11px;
+          border-radius: 11px;
+        }
+        #framework .step:last-child {
+          grid-column: span 2;
+        }
+        #framework .step .number {
+          font-size: 8px;
+        }
+        #framework .step h3 {
+          margin: 7px 0 4px;
+          font-size: 13px;
+        }
+        #framework .step p {
+          margin-bottom: 7px;
+          font-size: 8px;
+          line-height: 1.35;
+        }
+        #framework .constraint {
+          margin-top: 7px;
+          padding: 7px;
+          font-size: 8px;
+          overflow-wrap: anywhere;
         }
       }
       @media (max-width: 600px) {
