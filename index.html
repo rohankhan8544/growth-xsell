@@ -1257,17 +1257,194 @@
       }
 
       footer {
-        padding: 22px 0;
-        font-size: 12px;
-        color: var(--text-dim);
-        font-family: "IBM Plex Mono", monospace;
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        color: var(--dark);
+        padding: 30px 0 16px;
       }
 
-      .footer-row {
+      .footer-main {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+        gap: 42px;
+      }
+
+      .footer-brand {
+        max-width: 420px;
+      }
+
+      .footer-logo {
+        display: inline-block;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .footer-logo span {
+        color: var(--accent);
+        font-style: italic;
+      }
+
+      .footer-brand p {
+        color: var(--text-muted);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        line-height: 1.6;
+        text-transform: uppercase;
+      }
+
+      .footer-contact {
+        align-self: start;
+        margin: 0;
+        padding-top: 2px;
+      }
+
+      .footer-contact-label,
+      .footer-heading {
+        color: var(--accent);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .footer-contact-link {
+        align-items: baseline;
+        border-bottom: 2px solid var(--dark);
+        color: var(--dark);
+        display: inline-flex;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: clamp(32px, 5vw, 64px);
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        line-height: 0.98;
+        padding-bottom: 8px;
+      }
+
+      .footer-contact-link span {
+        color: var(--accent);
+        font-size: 0.42em;
+        margin-left: 10px;
+      }
+
+      .footer-contact-link:hover {
+        color: var(--accent);
+      }
+
+      .footer-email {
+        color: var(--dark);
+        display: block;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: clamp(20px, 2.4vw, 30px);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-top: 18px;
+        text-decoration: underline;
+        text-decoration-color: var(--accent);
+        text-underline-offset: 4px;
+      }
+
+      .footer-email:hover {
+        color: var(--accent);
+      }
+
+      .footer-socials {
         display: flex;
+        gap: 16px;
+        margin-top: 14px;
+      }
+
+      .footer-socials a {
+        color: var(--dark);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px;
+        font-weight: 500;
+      }
+
+      .footer-socials a:hover {
+        color: var(--accent);
+      }
+
+      .footer-columns {
+        display: flex;
+        gap: 44px;
+        margin-top: 30px;
+      }
+
+      .footer-column {
+        min-width: 170px;
+      }
+
+      .footer-column + .footer-column {
+        border-left: 1px solid var(--border);
+        padding-left: 44px;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .footer-links a {
+        color: var(--text);
+        font-size: 13px;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent);
+      }
+
+      .footer-bottom {
+        border-top: 1px dashed var(--text-dim);
+        color: var(--text-muted);
+        display: flex;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 10px;
         justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 10px;
+        gap: 12px;
+        padding-top: 10px;
+      }
+
+      @media (max-width: 760px) {
+        footer {
+          padding-top: 26px;
+        }
+
+        .footer-main {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .footer-contact {
+          padding-top: 0;
+        }
+
+        .footer-contact-link {
+          font-size: clamp(38px, 13vw, 68px);
+        }
+
+        .footer-columns {
+          gap: 28px;
+          margin-top: 24px;
+        }
+
+        .footer-column {
+          min-width: 0;
+        }
+
+        .footer-column + .footer-column {
+          padding-left: 28px;
+        }
+
+        .footer-bottom {
+          align-items: flex-start;
+          flex-direction: column;
+        }
       }
 
       /* Growth solution architecture */
@@ -3357,9 +3534,78 @@
     </section>
 
     <footer>
-      <div class="wrap footer-row">
-        <span>© 2026 Amazon Growth Partners</span>
-        <span>[contact@domain.com] · [phone placeholder</span>
+      <div class="wrap">
+        <div class="footer-main">
+          <div class="footer-left">
+            <div class="footer-brand">
+              <a class="footer-logo" href="/">Growth<span>X</span>sell</a>
+              <p>
+                Amazon Growth &middot; Launch &middot; Profitability &middot;
+                Recovery
+              </p>
+            </div>
+
+            <div class="footer-columns">
+              <div class="footer-column">
+                <div class="footer-heading">Services</div>
+                <nav class="footer-links" aria-label="Services">
+                  <a href="/solutions/solution-amazon-growth.html"
+                    >Amazon Growth</a
+                  >
+                  <a href="/solutions/solution-amazon-launch.html"
+                    >Amazon Launch</a
+                  >
+                  <a href="/solutions/solution-amazon-profitability.html"
+                    >Amazon Profitability</a
+                  >
+                  <a href="/solutions/solution-amazon-recovery.html"
+                    >Amazon Recovery</a
+                  >
+                </nav>
+              </div>
+
+              <div class="footer-column">
+                <div class="footer-heading">Company</div>
+                <nav class="footer-links" aria-label="Company">
+                  <a href="/about/">About us</a>
+                  <a href="/case studies/">Case studies</a>
+                  <a href="/process/">Process</a>
+                  <a href="#contact">Book assessment</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-contact">
+            <div class="footer-contact-label">Start a conversation</div>
+            <a
+              class="footer-contact-link"
+              href="https://calendly.com/growthxsell/free-assesment"
+              target="_blank"
+              rel="noopener"
+              >GET IN TOUCH <span aria-hidden="true">&nearr;</span></a
+            >
+            <a class="footer-email" href="mailto:growthxsell@gmail.com"
+              >growthxsell@gmail.com</a
+            >
+            <div class="footer-socials" aria-label="Social links">
+              <a
+                href="https://www.linkedin.com/company/growthxsell"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn &nearr;</a
+              >
+              <a href="https://x.com/GrowthXsell" target="_blank" rel="noopener"
+                >X &nearr;</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>&copy; 2026 GrowthXsell / Amazon Growth Partners</span>
+          <span>Strategy &middot; Execution &middot; Momentum</span>
+        </div>
       </div>
     </footer>
 
