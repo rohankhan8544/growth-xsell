@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -1460,7 +1460,19 @@
           align-items: start;
         }
       }
+      :root {
+        --sans: "DM Sans", sans-serif;
+        --mono: "IBM Plex Mono", monospace;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      .logo {
+        font-family: "Space Grotesk", sans-serif;
+      }
     </style>
+    <link rel="stylesheet" href="../footer.css" />
   </head>
 
   <body>
@@ -2317,12 +2329,72 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container">
-        <div>© 2026 GrowthXsell — Amazon Growth Partners</div>
-        <div>
-          <a href="/">www.growthxsell.com</a>
-          · Confidential client data, figures used with permission
+    <footer class="gx-footer">
+      <div class="wrap">
+        <div class="footer-main">
+          <div class="footer-left">
+            <div class="footer-brand">
+              <a class="footer-logo" href="/">Growth<span>X</span>sell</a>
+              <p>
+                Amazon Growth &middot; Launch &middot; Profitability &middot;
+                Recovery
+              </p>
+            </div>
+            <div class="footer-columns">
+              <div class="footer-column">
+                <div class="footer-heading">Services</div>
+                <nav class="footer-links" aria-label="Services">
+                  <a href="/solutions/solution-amazon-growth.html"
+                    >Amazon Growth</a
+                  ><a href="/solutions/solution-amazon-launch.html"
+                    >Amazon Launch</a
+                  ><a href="/solutions/solution-amazon-profitability.html"
+                    >Amazon Profitability</a
+                  ><a href="/solutions/solution-amazon-recovery.html"
+                    >Amazon Recovery</a
+                  >
+                </nav>
+              </div>
+              <div class="footer-column">
+                <div class="footer-heading">Company</div>
+                <nav class="footer-links" aria-label="Company">
+                  <a href="/about/">About us</a
+                  ><a href="/case studies/">Case studies</a
+                  ><a href="/process/">Process</a
+                  ><a href="#contact">Book assessment</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="footer-contact">
+            <div class="footer-contact-label">Start a conversation</div>
+            <a
+              class="footer-contact-link"
+              href="https://calendly.com/growthxsell/free-assesment"
+              target="_blank"
+              rel="noopener"
+              >GET IN TOUCH <span aria-hidden="true">&nearr;</span></a
+            ><a class="footer-email" href="mailto:growthxsell@gmail.com"
+              >growthxsell@gmail.com</a
+            >
+            <div class="footer-socials" aria-label="Social links">
+              <a
+                href="https://www.linkedin.com/company/growthxsell"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn &nearr;</a
+              ><a
+                href="https://x.com/GrowthXsell"
+                target="_blank"
+                rel="noopener"
+                >X &nearr;</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 GrowthXsell / Amazon Growth Partners</span
+          ><span>Strategy &middot; Execution &middot; Momentum</span>
         </div>
       </div>
     </footer>
