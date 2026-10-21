@@ -12,22 +12,22 @@
     />
     <style>
       :root {
-        --bg: #f6f3ec;
+        --bg: #f5f6f8;
         --surface: #ffffff;
-        --surface-warm: #efe9dd;
-        --dark: #16203a;
-        --dark-2: #202c4d;
-        --peach: #f6c6a6;
-        --mint: #bfe3d2;
-        --lav: #d6cdec;
-        --accent: #e8792f;
-        --text: #1b1f2a;
-        --text-muted: #666f80;
-        --text-dim: #9198a6;
-        --border: #e7e1d3;
-        --radius-lg: 32px;
-        --radius-md: 20px;
-        --radius-sm: 12px;
+        --surface-warm: #f0f1f3;
+        --dark: #111216;
+        --dark-2: #191b20;
+        --peach: #ff9b54;
+        --mint: #62f4ff;
+        --lav: #a78bfa;
+        --accent: #c7ff4a;
+        --text: #101114;
+        --text-muted: #696e77;
+        --text-dim: #7f8998;
+        --border: #dfe2e7;
+        --radius-lg: 26px;
+        --radius-md: 17px;
+        --radius-sm: 8px;
       }
 
       * {
@@ -43,7 +43,7 @@
       body {
         background: var(--bg);
         color: var(--text);
-        font-family: "Inter", sans-serif;
+        font-family: "DM Sans", sans-serif;
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
       }
@@ -51,7 +51,7 @@
       h1,
       h2,
       h3 {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-weight: 600;
         letter-spacing: -0.01em;
       }
@@ -97,7 +97,7 @@
         background: none;
         border: none;
         cursor: pointer;
-        font-family: "Inter", sans-serif;
+        font-family: "DM Sans", sans-serif;
         font-size: 14px;
         color: var(--text-muted);
         font-weight: 500;
@@ -174,7 +174,7 @@
       }
 
       .logo {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 21px;
         font-weight: 700;
       }
@@ -443,6 +443,14 @@
       .section-head {
         max-width: 640px;
         margin-bottom: 32px;
+      }
+
+      .section-head .eyebrow {
+        color: var(--text-muted);
+      }
+
+      .section-head .eyebrow::before {
+        background: var(--text-muted);
       }
 
       .eyebrow {
@@ -727,7 +735,7 @@
       }
 
       .tl-card h4 {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 15px;
         font-weight: 600;
         margin-bottom: 8px;
@@ -784,7 +792,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-weight: 700;
         font-size: 18px;
         color: var(--accent);
@@ -795,7 +803,7 @@
       .founder-name {
         font-size: 18px;
         font-weight: 600;
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
       }
 
       .founder-role {
@@ -1069,7 +1077,7 @@
       }
 
       .pr-node h4 {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 14.5px;
         font-weight: 600;
         margin-bottom: 4px;
@@ -1145,46 +1153,42 @@
       /* Contact */
       .cta-card {
         max-width: 1180px;
-        margin: 0 32px auto;
+        margin: 0 auto;
         border-radius: var(--radius-lg);
         background:
-          radial-gradient(
-            ellipse 60% 55% at 20% 15%,
-            var(--peach) 0%,
-            transparent 55%
-          ),
-          radial-gradient(
-            ellipse 55% 50% at 85% 25%,
-            var(--mint) 0%,
-            transparent 55%
-          ),
-          radial-gradient(
-            ellipse 60% 55% at 50% 100%,
-            var(--lav) 0%,
-            transparent 55%
-          ),
-          var(--surface-warm);
+          radial-gradient(ellipse 46% 78% at 88% 8%, rgba(199, 255, 74, 0.14), transparent 65%),
+          var(--dark);
+        color: #fff;
         text-align: center;
-        padding: 48px 30px;
+        padding: 48px 30px 42px;
       }
 
-      @media (min-width: 1244px) {
+      @media (max-width: 768px) {
         .cta-card {
-          margin: 0 auto;
+          margin: 0 20px;
+          padding: 40px 22px 34px;
         }
       }
 
       .cta-card h2 {
+        color: #fff;
         font-size: clamp(26px, 3.8vw, 40px);
+        line-height: 1.15;
         max-width: 600px;
         margin: 0 auto 16px;
       }
 
       .cta-card p {
-        color: var(--text-muted);
+        color: #c3c9d5;
         max-width: 440px;
-        margin: 0 auto 32px;
-        font-size: 15px;
+        margin: 0 auto 28px;
+        font-size: 14px;
+      }
+
+      .cta-card .pill-btn {
+        background: var(--accent);
+        color: var(--dark);
+        padding: 13px 22px;
       }
 
       .cta-note {
@@ -1442,7 +1446,7 @@
       }
 
       .dash-title {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 24px;
         font-weight: 600;
         margin: 12px 0 24px;
@@ -1543,7 +1547,7 @@
       }
 
       .cs-stat .n {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 30px;
         font-weight: 700;
         color: var(--accent);
@@ -1586,7 +1590,7 @@
       .cs-card {
         display: flex;
         flex-direction: column;
-        background: var(--surface-warm);
+        background: var(--surface);
         border: 1px solid var(--border);
         border-radius: var(--radius-md);
         padding: 18px 20px 14px;
@@ -1600,7 +1604,7 @@
       .cs-card:hover {
         transform: translateY(-3px);
         border-color: var(--accent);
-        box-shadow: 0 18px 40px -22px rgba(22, 32, 58, 0.35);
+        box-shadow: 0 18px 40px -22px rgba(17, 18, 22, 0.28);
       }
 
       .cs-card:focus-visible {
@@ -1613,16 +1617,16 @@
       }
 
       .cs-topic {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 17px;
         font-weight: 700;
         letter-spacing: -0.01em;
-        color: var(--accent);
+        color: var(--dark);
         margin-bottom: 8px;
       }
 
       .cs-result {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 28px;
         font-weight: 700;
         letter-spacing: -0.02em;
@@ -1643,7 +1647,7 @@
 
       .cs-result small {
         display: block;
-        font-family: "Inter", sans-serif;
+        font-family: "DM Sans", sans-serif;
         font-size: 12.5px;
         font-weight: 500;
         letter-spacing: 0;
@@ -1685,7 +1689,7 @@
       }
 
       .cs-metrics .v {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 14.5px;
         font-weight: 700;
         color: var(--dark);
@@ -1724,6 +1728,15 @@
         white-space: nowrap;
       }
 
+      .cs-card:not(.cs-featured) .cs-arrow,
+      .cs-card:not(.cs-featured) .cs-niche {
+        color: var(--text-muted);
+      }
+
+      .cs-card:not(.cs-featured) .cs-foot .read {
+        color: var(--text);
+      }
+
       /* Featured (lead) case study */
       .cs-card.cs-featured {
         grid-column: 1 / -1;
@@ -1734,16 +1747,11 @@
         align-items: center;
         padding: 26px 28px 20px;
         color: #fff;
-        border-color: var(--dark);
+        border-color: #282a30;
         background:
           radial-gradient(
-            ellipse 45% 70% at 92% 8%,
-            rgba(214, 205, 236, 0.32) 0%,
-            transparent 60%
-          ),
-          radial-gradient(
-            ellipse 45% 60% at 8% 100%,
-            rgba(191, 227, 210, 0.22) 0%,
+            ellipse 48% 72% at 92% 8%,
+            rgba(199, 255, 74, 0.16) 0%,
             transparent 60%
           ),
           var(--dark);
@@ -1780,7 +1788,7 @@
       }
 
       .cs-featured .cs-metrics li {
-        border-color: #34405d;
+        border-color: #303238;
         padding: 9px 0;
         font-size: 13.5px;
       }
@@ -1806,7 +1814,7 @@
       .cs-featured .cs-foot {
         grid-column: 1 / -1;
         margin-top: 16px;
-        border-color: #34405d;
+        border-color: #303238;
       }
 
       .cs-featured .cs-tags {
@@ -1814,7 +1822,7 @@
       }
 
       .cs-featured .cs-foot .read {
-        color: var(--peach);
+        color: var(--accent);
       }
 
       @media (max-width: 900px) {
@@ -1829,7 +1837,7 @@
         }
 
         .cs-featured .cs-metrics li:first-child {
-          border-top: 1px solid #34405d;
+          border-top: 1px solid #303238;
           padding-top: 9px;
         }
       }
@@ -1874,7 +1882,7 @@
       }
 
       .cs-filter-label {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 14px;
         font-weight: 600;
         color: var(--dark);
@@ -1899,7 +1907,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        font-family: "Inter", sans-serif;
+        font-family: "DM Sans", sans-serif;
         font-size: 13px;
         font-weight: 500;
         color: var(--text);
@@ -1965,7 +1973,7 @@
         background: transparent;
         color: var(--text-muted);
         font:
-          500 12.5px "Inter",
+          500 12.5px "DM Sans",
           sans-serif;
         text-align: left;
         cursor: pointer;
@@ -1997,7 +2005,7 @@
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        font-family: "Inter", sans-serif;
+        font-family: "DM Sans", sans-serif;
         font-size: 12.5px;
         font-weight: 500;
         color: var(--text-muted);
@@ -2060,7 +2068,7 @@
       }
 
       .cs-empty {
-        border: 1px dashed #d9c9b3;
+        border: 1px dashed var(--border);
         border-radius: var(--radius-md);
         background: var(--surface-warm);
         text-align: center;
@@ -2069,7 +2077,7 @@
 
       .cs-empty strong {
         display: block;
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 17px;
         color: var(--dark);
         margin-bottom: 6px;
@@ -2137,7 +2145,7 @@
       }
 
       .cs-snap-card .n {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 28px;
         font-weight: 700;
         color: #f6c6a6;
@@ -2189,7 +2197,7 @@
 
       .cs-quote p {
         font-size: 19px;
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-weight: 500;
         max-width: 640px;
         margin: 0 auto 18px;
@@ -2215,6 +2223,77 @@
       .mono,
       .num {
         font-family: "IBM Plex Mono", monospace;
+      }
+
+      .cs-page-hero {
+        padding: 10px 0 30px;
+      }
+
+      .cs-hero-card {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 48px 32px 22px;
+        overflow: hidden;
+        border: 1px solid #282a30;
+        border-radius: var(--radius-lg);
+        background:
+          radial-gradient(ellipse 42% 85% at 88% 10%, rgba(199, 255, 74, 0.14), transparent 65%),
+          var(--dark);
+        color: #fff;
+        text-align: center;
+      }
+
+      .cs-hero-card .eyebrow {
+        justify-content: center;
+        margin-bottom: 12px;
+      }
+
+      .cs-hero-card h1 {
+        max-width: 760px;
+        margin: 0 auto 12px;
+        font-size: clamp(32px, 5vw, 54px);
+        line-height: 1.08;
+      }
+
+      .cs-hero-card > p {
+        max-width: 520px;
+        margin: 0 auto;
+        color: #b9bdc6;
+        font-size: 14px;
+      }
+
+      .cs-stat-strip {
+        border-color: #303238;
+        padding-top: 16px;
+        margin-top: 20px;
+      }
+
+      .cs-stat .n {
+        color: var(--accent);
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .cs-stat .l {
+        color: #9297a1;
+      }
+
+      .cs-filter-label {
+        font-size: 13px;
+      }
+
+      .cs-select-trigger {
+        border-radius: 8px;
+      }
+
+      @media (max-width: 768px) {
+        .cs-page-hero {
+          padding: 8px 0 22px;
+        }
+
+        .cs-hero-card {
+          margin: 0 20px;
+          padding: 38px 20px 20px;
+        }
       }
     </style>
     <link rel="stylesheet" href="../footer.css" />
@@ -2259,41 +2338,26 @@
       </div>
     </nav>
 
-    <section style="padding-top: 8px; padding-bottom: 20px; text-align: center">
+    <section class="cs-page-hero">
       <div class="wrap">
-        <!-- NOTE: metrics on this page are sample figures until real client results are added. -->
-        <h1
-          style="
-            font-size: clamp(28px, 4.2vw, 44px);
-            max-width: 760px;
-            margin: 0 auto 16px;
-          "
-        >
-          See how Amazon brands could grow with GrowthXsell
-        </h1>
-        <p
-          style="
-            color: var(--text-muted);
-            max-width: 560px;
-            margin: 0 auto;
-            font-size: 15.5px;
-          "
-        >
-          The seven problems sellers bring us most often, and what changed.
-        </p>
+        <div class="cs-hero-card">
+          <div class="eyebrow">Amazon growth / case studies</div>
+          <h1>See how Amazon brands could grow with GrowthXsell</h1>
+          <p>The seven problems sellers bring us most often, and what changed.</p>
 
-        <div class="cs-stat-strip">
-          <div class="cs-stat">
-            <div class="n">7</div>
-            <div class="l">Seller situations</div>
-          </div>
-          <div class="cs-stat">
-            <div class="n">+210%</div>
-            <div class="l">Best revenue lift</div>
-          </div>
-          <div class="cs-stat">
-            <div class="n">94%</div>
-            <div class="l">Account health score</div>
+          <div class="cs-stat-strip">
+            <div class="cs-stat">
+              <div class="n">7</div>
+              <div class="l">Seller situations</div>
+            </div>
+            <div class="cs-stat">
+              <div class="n">+210%</div>
+              <div class="l">Best revenue lift</div>
+            </div>
+            <div class="cs-stat">
+              <div class="n">94%</div>
+              <div class="l">Account health score</div>
+            </div>
           </div>
         </div>
       </div>
@@ -2301,6 +2365,11 @@
 
     <section>
       <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Case studies</div>
+          <h2>Find the situation that looks like yours.</h2>
+          <p>Choose the challenge or service that best matches your business.</p>
+        </div>
         <div class="cs-filter">
           <div class="cs-filter-group">
             <div class="cs-filter-label">What are you trying to solve?</div>
@@ -2928,15 +2997,14 @@
     <section id="contact" style="padding-bottom: 36px">
       <div class="cta-card">
         <div class="eyebrow" style="justify-content: center">
-          Want results like these?
+          Find your next growth opportunity
         </div>
         <h2>
-          Let's find the growth work your account should hire us to handle
-          first.
+          Let's find out what's holding your Amazon business back.
         </h2>
         <p>
-          Start with a focused Amazon Growth Assessment — no obligation, real
-          findings either way.
+          Start with a focused Amazon Growth Assessment. We'll identify the
+          biggest opportunities, risks, and next steps for your business.
         </p>
         <a
           href="https://calendly.com/growthxsell/free-assesment"
@@ -2944,11 +3012,8 @@
           rel="noopener"
           class="pill-btn"
           data-analytics-cta="case_studies_contact_assessment"
-          >Get my free assessment →</a
+          >Get our free assessment →</a
         >
-        <div class="cta-note">
-          // Replace with your real booking link before launch.
-        </div>
       </div>
     </section>
 
