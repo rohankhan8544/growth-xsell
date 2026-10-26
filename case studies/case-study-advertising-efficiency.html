@@ -32,38 +32,24 @@
    If the site's stylesheet exposes its own variables, map them here.
    ------------------------------------------------------------------ */
       :root {
-        --bg: #f6f3ec;
-        /* page background (warm cream) */
-        --surface: #efe9dd;
-        /* light cards */
-        --surface-2: #faf8f3;
-        /* figure frames, table cards */
-        --line: #e3dccf;
-        /* hairlines on cream */
-        --navy: #16203a;
-        /* dark cards, buttons */
-        --navy-2: #242d46;
-        /* stat tiles inside dark cards */
-        --ink: #1b1f2a;
-        /* headings */
+        --bg: #f5f6f8;
+        --surface: #ffffff;
+        --surface-2: #f0f1f3;
+        --line: #dfe2e7;
+        --navy: #111216;
+        --navy-2: #191a1f;
+        --ink: #101114;
         --body: #4b4f5a;
-        /* body copy */
-        --muted: #75716b;
-        /* secondary copy */
-        --label: #8a8680;
-        /* mono labels on cream */
-        --orange: #e8792f;
-        /* brand accent */
-        --orange-deep: #cf661f;
-        /* accent hover */
-        --orange-tint: #fbe7d7;
-        /* accent tint */
-        --peach: #f6b784;
-        /* accent values on navy */
-        --on-navy-muted: #aab3c7;
-        --grad-peach: #f3d1b7;
-        --grad-mint: #d4e5d7;
-        --grad-lavender: #d9d1e8;
+        --muted: #696e77;
+        --label: #7f858f;
+        --orange: #637b22;
+        --orange-deep: #52691c;
+        --orange-tint: #f2ffd2;
+        --peach: #c7ff4a;
+        --on-navy-muted: #b9bdc6;
+        --grad-peach: #e5f5bf;
+        --grad-mint: #dcf0e0;
+        --grad-lavender: #e7e8f0;
         --sans:
           "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
           "Segoe UI", Roboto, sans-serif;
@@ -110,7 +96,7 @@
 
       a:focus-visible,
       button:focus-visible {
-        outline: 3px solid var(--orange);
+        outline: 3px solid #8ba83c;
         outline-offset: 3px;
         border-radius: 6px;
       }
@@ -215,7 +201,7 @@
         font-size: 11.5px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--orange);
+        color: var(--muted);
         margin-bottom: 16px;
       }
 
@@ -223,7 +209,7 @@
         content: "";
         width: 18px;
         height: 2px;
-        background: var(--orange);
+        background: #c7ff4a;
         flex: none;
       }
 
@@ -261,22 +247,22 @@
       }
 
       .btn.primary {
-        background: var(--navy);
-        color: #fff;
+        background: #c7ff4a;
+        color: #101114;
       }
 
       .btn.primary:hover {
-        background: #0f1730;
+        background: #b6ee35;
       }
 
       .btn.secondary {
-        border-color: rgba(22, 32, 58, 0.22);
+        border-color: rgba(16, 17, 20, 0.18);
         color: var(--ink);
         background: transparent;
       }
 
       .btn.secondary:hover {
-        border-color: rgba(22, 32, 58, 0.5);
+        border-color: rgba(16, 17, 20, 0.42);
       }
 
       .btn.on-navy {
@@ -311,9 +297,9 @@
         position: sticky;
         top: 0;
         z-index: 30;
-        background: rgba(246, 243, 236, 0.94);
+        background: rgba(245, 246, 248, 0.94);
         backdrop-filter: saturate(160%) blur(8px);
-        border-bottom: 1px solid rgba(22, 32, 58, 0.06);
+        border-bottom: 1px solid rgba(16, 17, 20, 0.08);
       }
 
       .nav .container {
@@ -332,7 +318,7 @@
       }
 
       .brand span {
-        color: var(--orange);
+        color: var(--orange-deep);
       }
 
       .navlinks {
@@ -341,7 +327,7 @@
         gap: 28px;
         font-size: 14px;
         font-weight: 500;
-        color: #4b5060;
+        color: #696e77;
       }
 
       .navlinks a:hover {
@@ -354,8 +340,8 @@
       }
 
       .navcta {
-        background: var(--navy);
-        color: #fff;
+        background: #c7ff4a;
+        color: #101114;
         padding: 11px 20px;
         border-radius: var(--pill);
         font-weight: 700;
@@ -363,14 +349,14 @@
       }
 
       .navcta:hover {
-        background: #0f1730;
-        color: #fff;
+        background: #b6ee35;
+        color: #101114;
       }
 
       .menu-btn {
         display: none;
         background: none;
-        border: 1px solid rgba(22, 32, 58, 0.2);
+        border: 1px solid rgba(16, 17, 20, 0.2);
         border-radius: var(--pill);
         padding: 9px 16px;
         font: inherit;
@@ -404,93 +390,154 @@
         font-weight: 700;
       }
 
-      /* Hero (centered, like the hub) ------------------------------------ */
+      /* Hero ------------------------------------------------------------- */
       .hero {
-        padding: 40px 0 48px;
-        text-align: center;
+        padding: 24px 0 28px;
       }
 
-      .chips {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 34px;
+      .hero-panel {
+        padding: 34px 32px 24px;
+        border-radius: var(--r-lg);
+        background:
+          radial-gradient(ellipse at 94% 8%, rgba(199, 255, 74, 0.1), transparent 32%),
+          linear-gradient(125deg, #111216 0%, #111216 68%, #171b13 100%);
+        color: #f5f6f8;
+        box-shadow: 0 20px 55px rgba(17, 18, 22, 0.1);
       }
 
-      .chip {
+      .hero-back {
         display: inline-block;
-        padding: 7px 14px;
-        border: 1px solid rgba(22, 32, 58, 0.18);
-        border-radius: var(--pill);
-        font-family: var(--mono);
+        margin-bottom: 24px;
+        color: #b9bdc6;
         font-size: 12px;
-        color: var(--ink);
-        background: transparent;
       }
 
-      .chip.solid {
-        background: var(--orange-tint);
-        border-color: rgba(232, 121, 47, 0.45);
-        color: var(--orange-deep);
+      .hero-back:hover {
+        color: #fff;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+        align-items: center;
+        gap: 32px;
+      }
+
+      .hero-panel .kicker {
+        color: #c7ff4a;
+      }
+
+      .hero-panel .kicker::before {
+        background: #c7ff4a;
       }
 
       .hero h1 {
-        max-width: 860px;
-        margin-inline: auto;
+        max-width: 720px;
+        color: #f5f6f8;
       }
 
       .hero .lead {
         font-size: 18px;
         line-height: 1.6;
-        color: var(--muted);
+        color: #b9bdc6;
         max-width: 720px;
-        margin: 22px auto 0;
+        margin: 18px 0 0;
       }
 
       .hero .meta {
         margin-top: 20px;
         font-family: var(--mono);
         font-size: 12px;
-        color: var(--label);
+        color: #a5aab4;
         letter-spacing: 0.02em;
+        border-left: 3px solid #c7ff4a;
+        padding-left: 12px;
       }
 
       .hero-actions {
-        margin-top: 30px;
+        margin-top: 22px;
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
+      }
+
+      .hero-actions .btn.secondary {
+        border-color: #34363d;
+        color: #f5f6f8;
+      }
+
+      .hero-actions .btn.secondary:hover {
+        border-color: #c7ff4a;
+      }
+
+      .hero-result {
+        padding: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.045);
+      }
+
+      .hero-result .label {
+        color: #b9bdc6;
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .hero-result strong {
+        display: block;
+        margin: 8px 0 2px;
+        color: #f5f6f8;
+        font: 600 clamp(42px, 5vw, 56px)/1 "Space Grotesk", sans-serif;
+      }
+
+      .hero-result .result-copy {
+        color: #d0d3d9;
+        font-size: 13px;
+      }
+
+      .hero-result .result-detail {
+        margin-top: 12px;
+        color: #c7ff4a;
+        font-size: 13px;
+        font-weight: 600;
       }
 
       .stats {
-        margin: 52px auto 0;
-        max-width: 960px;
-        padding-top: 36px;
-        border-top: 1px solid var(--line);
+        margin: 18px 0 0;
+        max-width: none;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
+        gap: 12px;
+      }
+
+      .stats > div {
+        min-height: 96px;
+        padding: 18px 16px;
+        border: 1px solid #303239;
+        border-radius: 14px;
+        background: #191a1f;
       }
 
       .stats strong {
         display: block;
-        font-size: clamp(30px, 3.4vw, 40px);
+        font-size: clamp(26px, 3vw, 34px);
         font-weight: 600;
         letter-spacing: -0.03em;
         line-height: 1;
-        color: var(--orange);
+        color: #f5f6f8;
       }
 
       .stats span {
         display: block;
-        margin-top: 10px;
-        font-family: var(--mono);
-        font-size: 11px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--label);
+        margin-top: 8px;
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0;
+        text-transform: none;
+        color: #b9bdc6;
         line-height: 1.6;
       }
 
@@ -499,7 +546,7 @@
         background: var(--surface);
         border-radius: var(--r);
         padding: 28px;
-        border: 1px solid rgba(22, 32, 58, 0.05);
+        border: 1px solid rgba(16, 17, 20, 0.06);
       }
 
       .card p {
@@ -539,7 +586,7 @@
         align-items: baseline;
         gap: 20px;
         padding: 15px 0;
-        border-bottom: 1px solid rgba(22, 32, 58, 0.08);
+        border-bottom: 1px solid rgba(16, 17, 20, 0.08);
         font-family: var(--mono);
         font-size: 11.5px;
         letter-spacing: 0.08em;
@@ -622,7 +669,7 @@
       .objective {
         margin-top: 18px;
         padding-top: 18px;
-        border-top: 1px solid rgba(22, 32, 58, 0.1);
+        border-top: 1px solid rgba(16, 17, 20, 0.1);
         font-size: 15.5px;
         color: var(--ink);
       }
@@ -772,7 +819,7 @@
       .exec .card h3 {
         font-size: 17px;
         padding-bottom: 12px;
-        border-bottom: 1px solid rgba(22, 32, 58, 0.1);
+        border-bottom: 1px solid rgba(16, 17, 20, 0.1);
         margin-bottom: 8px;
       }
 
@@ -793,7 +840,11 @@
       }
 
       .transform .kicker {
-        color: var(--orange);
+        color: var(--peach);
+      }
+
+      .transform .kicker::before {
+        background: var(--peach);
       }
 
       .transform h2 {
@@ -828,7 +879,7 @@
       .tile .from {
         font-size: 17px;
         font-weight: 500;
-        color: #8f98ad;
+        color: #aeb3bd;
       }
 
       .tile .to {
@@ -848,7 +899,7 @@
         letter-spacing: 0.06em;
         padding: 4px 10px;
         border-radius: var(--pill);
-        background: rgba(246, 183, 132, 0.14);
+        background: rgba(199, 255, 74, 0.14);
         color: var(--peach);
       }
 
@@ -886,12 +937,12 @@
 
       .pill.before {
         background: rgba(255, 255, 255, 0.12);
-        color: #dbe2ea;
+        color: #e1e4e9;
       }
 
       .pill.after {
-        background: var(--orange);
-        color: #fff;
+        background: #c7ff4a;
+        color: #101114;
       }
 
       .table-wrap {
@@ -934,7 +985,7 @@
       }
 
       td.before {
-        color: #8f98ad;
+        color: #aeb3bd;
       }
 
       td.after {
@@ -1137,13 +1188,13 @@
       }
 
       .takeaway .rule {
-        border-left: 1px solid rgba(22, 32, 58, 0.12);
+        border-left: 1px solid rgba(16, 17, 20, 0.12);
         padding-left: 40px;
       }
 
       .takeaway .rule li {
         padding: 10px 0;
-        border-bottom: 1px solid rgba(22, 32, 58, 0.08);
+        border-bottom: 1px solid rgba(16, 17, 20, 0.08);
         font-size: 15px;
         color: var(--muted);
       }
@@ -1244,7 +1295,7 @@
       }
 
       .related .card:hover {
-        border-color: rgba(232, 121, 47, 0.5);
+        border-color: rgba(99, 123, 34, 0.5);
       }
 
       .related .type {
@@ -1306,7 +1357,7 @@
       }
 
       .solution-strip a:hover {
-        border-color: rgba(232, 121, 47, 0.5);
+        border-color: rgba(99, 123, 34, 0.5);
       }
 
       .solution-strip strong {
@@ -1376,12 +1427,17 @@
         .takeaway .rule {
           border-left: 0;
           padding-left: 0;
-          border-top: 1px solid rgba(22, 32, 58, 0.1);
+          border-top: 1px solid rgba(16, 17, 20, 0.1);
           padding-top: 24px;
         }
 
         .transform {
           padding: 48px 36px;
+        }
+
+        .hero-grid {
+          grid-template-columns: minmax(0, 1fr) minmax(230px, 0.72fr);
+          gap: 22px;
         }
       }
 
@@ -1425,7 +1481,39 @@
         }
 
         .hero {
-          padding: 28px 0 40px;
+          padding: 20px 0 24px;
+        }
+
+        .hero-panel {
+          padding: 26px 20px 20px;
+          border-radius: 20px;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .hero .lead {
+          font-size: 16px;
+        }
+
+        .hero .meta {
+          font-size: 10px;
+        }
+
+        .hero-actions {
+          margin-top: 18px;
+          gap: 8px;
+        }
+
+        .hero-actions .btn {
+          padding: 12px 16px;
+          font-size: 13px;
+        }
+
+        .hero-result {
+          padding: 18px;
         }
 
         .flow,
@@ -1434,7 +1522,7 @@
         }
 
         .stats {
-          gap: 28px 16px;
+          gap: 12px;
         }
 
         .tile {
@@ -1470,6 +1558,62 @@
       h4,
       .logo {
         font-family: "Space Grotesk", sans-serif;
+      }
+
+      .chip.solid {
+        border-color: rgba(99, 123, 34, 0.35);
+      }
+
+      .tile .delta {
+        color: var(--peach);
+      }
+
+      .cta-card {
+        background:
+          radial-gradient(
+            55% 60% at 10% 18%,
+            rgba(199, 255, 74, 0.12) 0%,
+            rgba(199, 255, 74, 0) 72%
+          ),
+          radial-gradient(
+            42% 55% at 94% 26%,
+            rgba(255, 255, 255, 0.04) 0%,
+            rgba(255, 255, 255, 0) 72%
+          ),
+          #111216;
+        color: #f5f6f8;
+      }
+
+      .cta-card .kicker,
+      .cta-card h2 {
+        color: #f5f6f8;
+      }
+
+      .cta-card .kicker::before {
+        background: #c7ff4a;
+      }
+
+      .cta-card p {
+        color: #b9bdc6;
+      }
+
+      .cta-card .fine {
+        color: #b9bdc6;
+      }
+
+      @media (max-width: 560px) {
+        .stats > div {
+          min-height: 88px;
+          padding: 16px 13px;
+        }
+
+        .stats strong {
+          font-size: 27px;
+        }
+
+        .stats span {
+          font-size: 11px;
+        }
       }
     </style>
     <link rel="stylesheet" href="../footer.css" />
@@ -1518,45 +1662,53 @@
       <!-- 1. HERO — problem + outcome, snapshot metrics, CTA -->
       <section class="hero">
         <div class="container">
-          <div class="chips" aria-label="Case study tags">
-            <a class="chip" href="/case studies/">← All case studies</a>
-            <span class="chip solid">Toys &amp; Games</span>
-            <span class="chip">Amazon PPC</span>
-            <span class="chip">Advertising efficiency</span>
-          </div>
-          <span class="kicker">Client results</span>
-          <h1>22% more ad-driven sales from 19% less ad spend.</h1>
-          <p class="lead">
-            How a Toys &amp; Games brand with $10.2M in Amazon sales this year
-            cut its ACOS from 46.49% to 30.78% and lifted ROAS from 2.15x to
-            3.25x — by making ad spend follow demand instead of a fixed monthly
-            plan.
-          </p>
-          <p class="meta">
-            Amazon Business Report + Ads data · Jan 1 – Oct 11, 2025 ·
-            Confidential client, figures used with permission
-          </p>
-          <div class="hero-actions">
-            <a
-              class="btn primary"
-              href="https://calendly.com/growthxsell/free-assesment"
-              >Get a free assessment →</a
-            >
-            <a class="btn secondary" href="#results"
-              >See the before &amp; after</a
-            >
-          </div>
+          <div class="hero-panel">
+            <a class="hero-back" href="/case studies/">← All case studies</a>
+            <div class="hero-grid">
+              <div>
+                <span class="kicker">Client results · Advertising efficiency</span>
+                <h1>22% more ad-driven sales from 19% less ad spend.</h1>
+                <p class="lead">
+                  How a Toys &amp; Games brand with $10.2M in Amazon sales this
+                  year cut its ACOS from 46.49% to 30.78% and lifted ROAS from
+                  2.15x to 3.25x — by making ad spend follow demand instead of a
+                  fixed monthly plan.
+                </p>
+                <p class="meta">
+                  Amazon Business Report + Ads data · Jan 1 – Oct 11, 2025 ·
+                  Confidential client, figures used with permission
+                </p>
+                <div class="hero-actions">
+                  <a
+                    class="btn primary"
+                    href="https://calendly.com/growthxsell/free-assesment"
+                    >Get a free assessment →</a
+                  >
+                  <a class="btn secondary" href="#results"
+                    >See the before &amp; after ↓</a
+                  >
+                </div>
+              </div>
 
-          <div class="stats" aria-label="Headline results">
-            <div><strong>3.25x</strong><span>ROAS · up from 2.15x</span></div>
-            <div>
-              <strong>30.78%</strong><span>ACOS · down from 46.49%</span>
+              <aside class="hero-result">
+                <div class="label">The headline result</div>
+                <strong>+22%</strong>
+                <div class="result-copy">more ad-driven sales</div>
+                <div class="result-detail">$3.97M → $4.84M</div>
+              </aside>
             </div>
-            <div>
-              <strong>−19%</strong><span>Ad spend · $1.85M → $1.49M</span>
-            </div>
-            <div>
-              <strong>+22%</strong><span>Ad sales · $3.97M → $4.84M</span>
+
+            <div class="stats" aria-label="Headline results">
+              <div><strong>3.25x</strong><span>ROAS · up from 2.15x</span></div>
+              <div>
+                <strong>30.78%</strong><span>ACOS · down from 46.49%</span>
+              </div>
+              <div>
+                <strong>−19%</strong><span>Ad spend · $1.85M → $1.49M</span>
+              </div>
+              <div>
+                <strong>+22%</strong><span>Ad sales · $3.97M → $4.84M</span>
+              </div>
             </div>
           </div>
         </div>
@@ -2101,7 +2253,7 @@
                     cy="60"
                     r="50"
                     fill="none"
-                    stroke="#e3dccf"
+                    stroke="#dfe2e7"
                     stroke-width="14"
                   />
                   <circle
@@ -2109,7 +2261,7 @@
                     cy="60"
                     r="50"
                     fill="none"
-                    stroke="#e8792f"
+                    stroke="#c7ff4a"
                     stroke-width="14"
                     stroke-dasharray="147.65 314.16"
                   />
@@ -2119,9 +2271,9 @@
                 </div>
               </div>
               <div class="legend">
-                <span><i style="background: #e8792f"></i>Ads · $4.84M</span
+                <span><i style="background: #c7ff4a"></i>Ads · $4.84M</span
                 ><span
-                  ><i style="background: #e3dccf"></i>Organic · $5.39M</span
+                  ><i style="background: #dfe2e7"></i>Organic · $5.39M</span
                 >
               </div>
               <p>
