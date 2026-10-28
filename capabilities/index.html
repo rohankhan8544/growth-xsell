@@ -324,6 +324,592 @@
       .num {
         font-family: "IBM Plex Mono", monospace;
       }
+
+      :root {
+        --bg: #f3f5f7;
+        --surface: #fff;
+        --warm: #f3f5f7;
+        --dark: #111216;
+        --accent: #c7ff4a;
+        --text: #17191e;
+        --muted: #68707d;
+        --border: #dfe3e9;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+      }
+
+      .wrap {
+        max-width: 1180px;
+        padding: 0 32px;
+      }
+
+      nav {
+        padding: 8px 0;
+      }
+
+      .nav {
+        min-height: 48px;
+      }
+
+      .logo {
+        font-size: 19px;
+        letter-spacing: -0.06em;
+      }
+
+      .logo span {
+        color: var(--accent);
+        font-style: normal;
+      }
+
+      .links {
+        align-items: center;
+        color: #606875;
+        font-size: 12px;
+        gap: 23px;
+      }
+
+      .links a[aria-current="page"],
+      .links a:hover {
+        color: var(--text);
+      }
+
+      .button {
+        align-items: center;
+        background: var(--accent);
+        border: 1px solid var(--accent);
+        color: var(--text);
+        font-size: 12px;
+        font-weight: 700;
+        justify-content: center;
+        padding: 10px 16px;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .button:hover {
+        box-shadow: 0 7px 18px rgba(17, 18, 22, 0.12);
+        transform: translateY(-2px);
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid #79a900;
+        outline-offset: 3px;
+      }
+
+      .hero {
+        background: transparent;
+        padding: 8px 0 14px;
+      }
+
+      .hero::before,
+      .hero::after {
+        content: none;
+      }
+
+      .hero > .wrap {
+        background:
+          radial-gradient(ellipse at 86% 0%, rgba(199, 255, 74, 0.12), transparent 34%),
+          var(--dark);
+        border-radius: 20px;
+        color: #f7f8fa;
+        max-width: 1116px;
+        overflow: hidden;
+        padding: clamp(32px, 5vw, 58px);
+        position: relative;
+      }
+
+      .hero > .wrap::after {
+        border: 1px solid rgba(199, 255, 74, 0.13);
+        border-radius: 50%;
+        bottom: -192px;
+        box-shadow: 0 0 0 28px rgba(199, 255, 74, 0.025);
+        content: "";
+        height: 280px;
+        position: absolute;
+        right: -56px;
+        width: 280px;
+      }
+
+      .hero-grid {
+        align-items: center;
+        display: grid;
+        gap: clamp(28px, 6vw, 76px);
+        grid-template-columns: minmax(0, 1.15fr) minmax(270px, 0.75fr);
+        position: relative;
+        z-index: 1;
+      }
+
+      .eyebrow {
+        color: #737d8b;
+        font-size: 9px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .hero .eyebrow,
+      .hero-note .eyebrow,
+      .band .eyebrow {
+        color: var(--accent);
+      }
+
+      .hero h1 {
+        color: #f7f8fa;
+        font-size: clamp(38px, 5.2vw, 66px);
+        letter-spacing: -0.065em;
+        line-height: 0.99;
+        margin: 0 0 17px;
+        max-width: 650px;
+      }
+
+      .hero h1 .highlight {
+        color: var(--accent);
+      }
+
+      .hero p {
+        color: #b6bbc5;
+        font-size: 14px;
+        line-height: 1.7;
+        max-width: 540px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 21px;
+      }
+
+      .hero-actions .button {
+        padding: 10px 15px;
+      }
+
+      .hero-actions .button.secondary {
+        background: transparent;
+        border-color: #3a3d45;
+        color: #f5f6f7;
+      }
+
+      .hero-note {
+        background: rgba(25, 27, 32, 0.88);
+        border: 1px solid #30333b;
+        border-radius: 15px;
+        color: #f5f6f7;
+        padding: clamp(19px, 3vw, 27px);
+      }
+
+      .hero-note .note-kicker {
+        align-items: center;
+        color: #9da4b0;
+        display: flex;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 8px;
+        justify-content: space-between;
+        letter-spacing: 0.12em;
+        margin-bottom: 22px;
+        text-transform: uppercase;
+      }
+
+      .hero-note .note-kicker span:first-child::before {
+        background: var(--accent);
+        border-radius: 50%;
+        content: "";
+        display: inline-block;
+        height: 6px;
+        margin-right: 7px;
+        vertical-align: 1px;
+        width: 6px;
+      }
+
+      .hero-note strong {
+        display: block;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(19px, 2.2vw, 25px);
+        letter-spacing: -0.045em;
+        line-height: 1.12;
+        margin-bottom: 8px;
+      }
+
+      .hero-note .note-emphasis {
+        color: var(--accent);
+      }
+
+      .hero-note > p {
+        font-size: 12px;
+        margin-bottom: 17px;
+      }
+
+      .note-steps {
+        list-style: none;
+      }
+
+      .note-steps li {
+        border-top: 1px solid #30333b;
+        color: #d9dce2;
+        font-size: 11px;
+        padding: 10px 0;
+      }
+
+      .note-steps li::before {
+        color: var(--accent);
+        content: "↗";
+        font-family: "IBM Plex Mono", monospace;
+        margin-right: 10px;
+      }
+
+      .focus-strip {
+        background: rgba(255, 255, 255, 0.82);
+        border-bottom: 1px solid var(--border);
+        border-top: 1px solid var(--border);
+      }
+
+      .focus-inner {
+        align-items: center;
+        display: flex;
+        gap: 24px;
+        justify-content: space-between;
+        min-height: 60px;
+      }
+
+      .focus-label {
+        color: #808793;
+        flex: 0 0 auto;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 8px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .focus-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        justify-content: flex-end;
+      }
+
+      .focus-tags span {
+        background: #f8f9fa;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: #505763;
+        font-size: 9px;
+        font-weight: 600;
+        padding: 6px 10px;
+      }
+
+      .section {
+        padding: clamp(42px, 6vw, 72px) 0;
+      }
+
+      .section h2 {
+        font-size: clamp(27px, 3.5vw, 40px);
+        letter-spacing: -0.055em;
+        line-height: 1.08;
+        margin-bottom: 10px;
+      }
+
+      .standards {
+        background: #f3f5f7;
+      }
+
+      .section-kicker {
+        color: #7c8490;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 8px;
+        letter-spacing: 0.14em;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      .standards-grid {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 23px;
+      }
+
+      .standard-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-top: 2px solid var(--accent);
+        border-radius: 10px;
+        min-height: 124px;
+        padding: 18px;
+      }
+
+      .standard-card h3 {
+        font-size: 15px;
+        letter-spacing: -0.03em;
+        margin: 0 0 7px;
+      }
+
+      .standard-card p {
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.6;
+      }
+
+      .capabilities-section {
+        background: #fff;
+      }
+
+      .capabilities-section .intro {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 0;
+        max-width: 610px;
+      }
+
+      .capabilities-heading {
+        align-items: end;
+        display: flex;
+        gap: 28px;
+        justify-content: space-between;
+        margin-bottom: 26px;
+      }
+
+      .capabilities-heading > div {
+        max-width: 640px;
+      }
+
+      .grid {
+        gap: 13px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card,
+      .card:nth-child(2),
+      .card:nth-child(3),
+      .card:nth-child(4) {
+        background: #f5f6f8;
+        border: 1px solid #e3e6eb;
+        border-radius: 14px;
+        min-height: 210px;
+        padding: 23px;
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .card:hover {
+        border-color: #a9cb5d;
+        transform: translateY(-3px);
+      }
+
+      .card:nth-child(2) {
+        background: var(--dark);
+        border-color: var(--dark);
+        color: #fff;
+      }
+
+      .card .eyebrow {
+        color: #7c8490;
+        margin-bottom: 0;
+      }
+
+      .card:nth-child(2) .eyebrow {
+        color: var(--accent);
+      }
+
+      .card h3 {
+        font-size: 20px;
+        letter-spacing: -0.04em;
+        margin: 16px 0 7px;
+      }
+
+      .card p,
+      .card:nth-child(2) p {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.65;
+      }
+
+      .card:nth-child(2) p {
+        color: #b6bbc5;
+      }
+
+      .list {
+        gap: 6px;
+        margin-top: 16px;
+      }
+
+      .list span {
+        background: #fff;
+        border: 1px solid #e2e5e9;
+        color: #626a76;
+        font-size: 9px;
+        padding: 5px 8px;
+      }
+
+      .card:nth-child(2) .list span {
+        background: #202229;
+        border-color: #363942;
+        color: #d1d4db;
+      }
+
+      .band {
+        background: #fff;
+        padding-top: 8px;
+      }
+
+      .band > .wrap {
+        background:
+          radial-gradient(ellipse at 85% 0%, rgba(199, 255, 74, 0.13), transparent 33%),
+          var(--dark);
+        border-radius: 18px;
+        color: #f7f8fa;
+        max-width: 1116px;
+        padding: clamp(32px, 5vw, 55px) 24px;
+        position: relative;
+        text-align: center;
+      }
+
+      .band .eyebrow {
+        margin-bottom: 10px;
+      }
+
+      .band h2 {
+        color: #f7f8fa;
+        font-size: clamp(27px, 4vw, 42px);
+        margin: 0 auto 10px;
+        max-width: 680px;
+      }
+
+      .band p {
+        color: #b6bbc5;
+        font-size: 12px;
+        margin: 0 auto 19px;
+        max-width: 510px;
+      }
+
+      .band .button {
+        display: inline-flex;
+      }
+
+      @media (max-width: 800px) {
+        .hero-grid {
+          gap: 25px;
+          grid-template-columns: minmax(0, 1fr) minmax(225px, 0.8fr);
+        }
+
+        .links {
+          display: none;
+        }
+
+        .mobile-menu-toggle {
+          color: var(--text);
+          display: block;
+          order: -1;
+        }
+
+        .nav {
+          position: relative;
+          justify-content: flex-start;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .links.open {
+          background: #fff;
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          box-shadow: 0 16px 35px rgba(17, 18, 22, 0.13);
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          left: 20px;
+          padding: 7px;
+          position: absolute;
+          right: auto;
+          top: calc(100% + 8px);
+          width: min(250px, calc(100vw - 40px));
+          z-index: 10;
+        }
+
+        .links.open a {
+          padding: 10px;
+        }
+
+        .nav > .logo {
+          margin-left: 5px;
+        }
+
+        .nav > .button {
+          margin-left: auto;
+          white-space: nowrap;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .wrap {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .hero > .wrap {
+          padding: 30px 24px;
+          width: calc(100% - 28px);
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: clamp(38px, 11vw, 54px);
+        }
+
+        .hero-note {
+          max-width: 460px;
+        }
+
+        .focus-inner {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+          padding-bottom: 13px;
+          padding-top: 13px;
+        }
+
+        .focus-tags {
+          justify-content: flex-start;
+        }
+
+        .standards-grid,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .standard-card {
+          min-height: auto;
+        }
+
+        .capabilities-heading {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .card {
+          min-height: auto;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
     </style>
     <link rel="stylesheet" href="../footer.css" />
   </head>
@@ -332,9 +918,9 @@
     <nav>
       <div class="wrap nav">
         <a class="logo" href="/">Growth<span>X</span>sell</a>
-        <div class="links">
+        <div class="links" aria-label="Primary navigation">
           <a href="/solutions/">Services</a
-          ><a href="/capabilities/">Capabilities</a
+          ><a href="/capabilities/" aria-current="page">Capabilities</a
           ><a href="/case studies/">Case Studies</a
           ><a href="/process/">Process</a><a href="/about/">About</a>
         </div>
@@ -365,23 +951,96 @@
     </nav>
     <header class="hero">
       <div class="wrap">
-        <div class="eyebrow">How we deliver</div>
-        <h1>Every growth lever, connected.</h1>
-        <p>
-          Specialists are useful. Connected specialists are what move a business
-          forward. Our capabilities work together around the outcome, not in
-          isolated silos.
-        </p>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Amazon growth, built around your brand</div>
+            <h1>
+              Every capability.<br /><span class="highlight">One connected</span
+              ><br />growth plan.
+            </h1>
+            <p>
+              We bring strategy, advertising, discovery, conversion, and
+              protection together around the outcome your Amazon business needs.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button"
+                href="https://calendly.com/growthxsell/free-assesment"
+                target="_blank"
+                rel="noopener"
+                >Get a free assessment &rarr;</a
+              >
+              <a class="button secondary" href="#capabilities"
+                >Explore capabilities &darr;</a
+              >
+            </div>
+          </div>
+          <aside class="hero-note" aria-label="How our capabilities work together">
+            <div class="note-kicker">
+              <span>Growth, connected</span><span>01 — 04</span>
+            </div>
+            <strong>Growth is a system.<br /><span class="note-emphasis">Not a single metric.</span></strong>
+            <p>We connect the right work to the business constraint that matters.</p>
+            <ul class="note-steps">
+              <li>Understand the real constraint</li>
+              <li>Prioritize what moves the needle</li>
+              <li>Execute for lasting progress</li>
+            </ul>
+          </aside>
+        </div>
       </div>
     </header>
+    <div class="focus-strip">
+      <div class="wrap focus-inner">
+        <span class="focus-label">One connected growth team</span>
+        <div class="focus-tags" aria-label="Areas of expertise">
+          <span>Strategy</span><span>Advertising</span><span>Conversion</span
+          ><span>Profitability</span><span>Account health</span>
+        </div>
+      </div>
+    </div>
     <main>
-      <section class="section">
+      <section class="section standards">
         <div class="wrap">
-          <h2>The capabilities behind the solution.</h2>
-          <p class="intro">
-            We bring the right mix of strategy, discovery, conversion, and
-            protection to the problem in front of your business.
-          </p>
+          <div class="section-kicker">How we work</div>
+          <h2>Standards that scale.</h2>
+          <div class="standards-grid">
+            <article class="standard-card">
+              <h3>Commercial focus</h3>
+              <p>
+                We connect activity to growth, conversion, efficiency, and
+                sustainable profitability.
+              </p>
+            </article>
+            <article class="standard-card">
+              <h3>Direct thinking</h3>
+              <p>
+                We say what the data suggests, prioritize the hard parts, and
+                keep recommendations usable.
+              </p>
+            </article>
+            <article class="standard-card">
+              <h3>Shared ownership</h3>
+              <p>
+                We turn plans into clear actions so the people doing the work
+                can move with confidence.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section capabilities-section" id="capabilities">
+        <div class="wrap">
+          <div class="capabilities-heading">
+            <div>
+              <div class="section-kicker">The capabilities behind the solution</div>
+              <h2>From insight to execution.</h2>
+            </div>
+            <p class="intro">
+              We bring the right mix of strategy, discovery, conversion, and
+              protection to the problem in front of your business.
+            </p>
+          </div>
           <div class="grid">
             <article class="card">
               <div class="eyebrow">01 / Understand</div>

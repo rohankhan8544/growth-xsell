@@ -335,6 +335,559 @@
       .num {
         font-family: "IBM Plex Mono", monospace;
       }
+
+      :root {
+        --bg: #f3f5f7;
+        --warm: #f3f5f7;
+        --dark: #111216;
+        --accent: #c7ff4a;
+        --text: #17191e;
+        --muted: #68707d;
+        --border: #dfe3e9;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+      }
+
+      .wrap {
+        max-width: 1180px;
+        padding: 0 32px;
+      }
+
+      nav {
+        padding: 8px 0;
+      }
+
+      .nav {
+        min-height: 48px;
+      }
+
+      .logo {
+        font-size: 19px;
+        letter-spacing: -0.06em;
+      }
+
+      .logo span {
+        color: var(--accent);
+        font-style: normal;
+      }
+
+      .links {
+        align-items: center;
+        color: #606875;
+        font-size: 12px;
+        gap: 23px;
+      }
+
+      .links a[aria-current="page"],
+      .links a:hover {
+        color: var(--text);
+      }
+
+      .button {
+        align-items: center;
+        background: var(--accent);
+        border: 1px solid var(--accent);
+        border-radius: 999px;
+        color: var(--text);
+        font-size: 12px;
+        font-weight: 700;
+        justify-content: center;
+        padding: 10px 16px;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .button:hover {
+        box-shadow: 0 7px 18px rgba(17, 18, 22, 0.12);
+        transform: translateY(-2px);
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid #79a900;
+        outline-offset: 3px;
+      }
+
+      .hero {
+        background: transparent;
+        padding: 8px 0 14px;
+      }
+
+      .hero > .wrap {
+        background:
+          radial-gradient(ellipse at 86% 0%, rgba(199, 255, 74, 0.12), transparent 34%),
+          var(--dark);
+        border-radius: 20px;
+        color: #f7f8fa;
+        max-width: 1116px;
+        overflow: hidden;
+        padding: clamp(32px, 5vw, 58px);
+        position: relative;
+      }
+
+      .hero > .wrap::after {
+        border: 1px solid rgba(199, 255, 74, 0.13);
+        border-radius: 50%;
+        bottom: -192px;
+        box-shadow: 0 0 0 28px rgba(199, 255, 74, 0.025);
+        content: "";
+        height: 280px;
+        position: absolute;
+        right: -56px;
+        width: 280px;
+      }
+
+      .hero-grid {
+        align-items: center;
+        display: grid;
+        gap: clamp(28px, 6vw, 76px);
+        grid-template-columns: minmax(0, 1.15fr) minmax(270px, 0.75fr);
+        position: relative;
+        z-index: 1;
+      }
+
+      .eyebrow {
+        color: #737d8b;
+        font-size: 9px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .hero .eyebrow,
+      .hero-note .note-kicker,
+      .band .eyebrow {
+        color: var(--accent);
+      }
+
+      .hero h1 {
+        color: #f7f8fa;
+        font-size: clamp(38px, 5.2vw, 66px);
+        letter-spacing: -0.065em;
+        line-height: 0.99;
+        margin: 0 0 17px;
+        max-width: 650px;
+      }
+
+      .hero h1 .highlight,
+      .hero-note .note-emphasis {
+        color: var(--accent);
+      }
+
+      .hero p {
+        color: #b6bbc5;
+        font-size: 14px;
+        line-height: 1.7;
+        max-width: 540px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 21px;
+      }
+
+      .hero-actions .button {
+        padding: 10px 15px;
+      }
+
+      .hero-actions .button.secondary {
+        background: transparent;
+        border-color: #3a3d45;
+        color: #f5f6f7;
+      }
+
+      .hero-note {
+        background: rgba(25, 27, 32, 0.88);
+        border: 1px solid #30333b;
+        border-radius: 15px;
+        color: #f5f6f7;
+        padding: clamp(19px, 3vw, 27px);
+      }
+
+      .hero-note .note-kicker {
+        align-items: center;
+        display: flex;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 8px;
+        justify-content: space-between;
+        letter-spacing: 0.12em;
+        margin-bottom: 22px;
+        text-transform: uppercase;
+      }
+
+      .hero-note .note-kicker span:first-child::before {
+        background: var(--accent);
+        border-radius: 50%;
+        content: "";
+        display: inline-block;
+        height: 6px;
+        margin-right: 7px;
+        vertical-align: 1px;
+        width: 6px;
+      }
+
+      .hero-note strong {
+        display: block;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(19px, 2.2vw, 25px);
+        letter-spacing: -0.045em;
+        line-height: 1.12;
+        margin-bottom: 8px;
+      }
+
+      .hero-note > p {
+        font-size: 12px;
+        margin-bottom: 17px;
+      }
+
+      .hero-note .note-steps {
+        list-style: none;
+        margin: 0;
+      }
+
+      .hero-note .note-steps li {
+        border-top: 1px solid #30333b;
+        color: #d9dce2;
+        font-size: 11px;
+        padding: 10px 0;
+      }
+
+      .hero-note .note-steps li::before {
+        color: var(--accent);
+        content: "↗";
+        font-family: "IBM Plex Mono", monospace;
+        margin-right: 10px;
+      }
+
+      .phase-strip {
+        background: rgba(255, 255, 255, 0.82);
+        border-bottom: 1px solid var(--border);
+        border-top: 1px solid var(--border);
+      }
+
+      .phase-inner {
+        align-items: center;
+        display: flex;
+        gap: 24px;
+        justify-content: space-between;
+        min-height: 60px;
+      }
+
+      .phase-label {
+        color: #808793;
+        flex: 0 0 auto;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 8px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .phase-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        justify-content: flex-end;
+        list-style: none;
+      }
+
+      .phase-list li {
+        background: #f8f9fa;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: #505763;
+        font-size: 9px;
+        font-weight: 600;
+        padding: 6px 10px;
+      }
+
+      .section {
+        background: #fff;
+        padding: clamp(42px, 6vw, 72px) 0;
+      }
+
+      .section-heading {
+        align-items: end;
+        display: flex;
+        gap: 28px;
+        justify-content: space-between;
+        margin-bottom: 26px;
+      }
+
+      .section-heading > div {
+        max-width: 640px;
+      }
+
+      .section-kicker {
+        color: #7c8490;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 8px;
+        letter-spacing: 0.14em;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      .section h2 {
+        font-size: clamp(27px, 3.5vw, 40px);
+        letter-spacing: -0.055em;
+        line-height: 1.08;
+        margin-bottom: 10px;
+      }
+
+      .intro {
+        color: var(--muted);
+        font-size: 13px;
+        margin: 0;
+        max-width: 460px;
+      }
+
+      .steps {
+        gap: 13px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .step,
+      .step:nth-child(2),
+      .step:nth-child(3) {
+        background: #f5f6f8;
+        border: 1px solid #e3e6eb;
+        border-radius: 14px;
+        min-height: 290px;
+        padding: 23px;
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .step:hover {
+        border-color: #a9cb5d;
+        transform: translateY(-3px);
+      }
+
+      .step:nth-child(2) {
+        background: var(--dark);
+        border-color: var(--dark);
+        color: #fff;
+      }
+
+      .num,
+      .step:nth-child(2) .num {
+        color: #7c8490;
+        font-size: 9px;
+        letter-spacing: 0.12em;
+      }
+
+      .step:nth-child(2) .num {
+        color: var(--accent);
+      }
+
+      .step h3 {
+        font-size: clamp(20px, 2.2vw, 25px);
+        letter-spacing: -0.045em;
+        margin: 38px 0 9px;
+      }
+
+      .step p,
+      .step:nth-child(2) p {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.65;
+      }
+
+      .step:nth-child(2) p {
+        color: #b6bbc5;
+      }
+
+      .checklist,
+      .step:nth-child(2) .checklist {
+        border-top: 1px solid #e1e4e9;
+        color: #606875;
+        font-size: 10px;
+        gap: 0;
+        margin-top: 16px;
+        padding-top: 5px;
+      }
+
+      .checklist li {
+        border-bottom: 1px solid #e1e4e9;
+        padding: 7px 0;
+      }
+
+      .checklist li::before {
+        color: #88b820;
+        content: "↗";
+        font-family: "IBM Plex Mono", monospace;
+        margin-right: 8px;
+      }
+
+      .step:nth-child(2) .checklist {
+        border-color: #30333b;
+        color: #c4c7ce;
+      }
+
+      .step:nth-child(2) .checklist li {
+        border-color: #30333b;
+      }
+
+      .band {
+        background: #f3f5f7;
+        color: #f7f8fa;
+        padding: 8px 0 clamp(42px, 6vw, 72px);
+      }
+
+      .band > .wrap {
+        background:
+          radial-gradient(ellipse at 85% 0%, rgba(199, 255, 74, 0.13), transparent 33%),
+          var(--dark);
+        border-radius: 18px;
+        max-width: 1116px;
+        padding: clamp(32px, 5vw, 55px) 24px;
+        text-align: center;
+      }
+
+      .band .eyebrow {
+        margin-bottom: 10px;
+      }
+
+      .band h2 {
+        color: #f7f8fa;
+        font-size: clamp(27px, 4vw, 42px);
+        margin: 0 auto 10px;
+        max-width: 680px;
+      }
+
+      .band p {
+        color: #b6bbc5;
+        font-size: 12px;
+        margin: 0 auto 19px;
+        max-width: 510px;
+      }
+
+      .band .button {
+        display: inline-flex;
+      }
+
+      @media (max-width: 800px) {
+        .hero-grid {
+          gap: 25px;
+          grid-template-columns: minmax(0, 1fr) minmax(225px, 0.8fr);
+        }
+
+        .links {
+          display: none;
+        }
+
+        .mobile-menu-toggle {
+          color: var(--text);
+          display: block;
+          order: -1;
+        }
+
+        .nav {
+          position: relative;
+          justify-content: flex-start;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .links.open {
+          background: #fff;
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          box-shadow: 0 16px 35px rgba(17, 18, 22, 0.13);
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          left: 20px;
+          padding: 7px;
+          position: absolute;
+          right: auto;
+          top: calc(100% + 8px);
+          width: min(250px, calc(100vw - 40px));
+          z-index: 10;
+        }
+
+        .links.open a {
+          padding: 10px;
+        }
+
+        .nav > .logo {
+          margin-left: 5px;
+        }
+
+        .nav > .button {
+          margin-left: auto;
+          white-space: nowrap;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .wrap {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .hero > .wrap {
+          padding: 30px 24px;
+          width: calc(100% - 28px);
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: clamp(38px, 11vw, 54px);
+        }
+
+        .hero-note {
+          max-width: 460px;
+        }
+
+        .phase-inner {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+          padding-bottom: 13px;
+          padding-top: 13px;
+        }
+
+        .phase-list {
+          justify-content: flex-start;
+        }
+
+        .section-heading {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .steps {
+          grid-template-columns: 1fr;
+        }
+
+        .step,
+        .step:nth-child(2),
+        .step:nth-child(3) {
+          min-height: auto;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
     </style>
     <link rel="stylesheet" href="../footer.css" />
   </head>
@@ -343,11 +896,12 @@
     <nav>
       <div class="wrap nav">
         <a class="logo" href="/">Growth<span>X</span>sell</a>
-        <div class="links">
+        <div class="links" aria-label="Primary navigation">
           <a href="/solutions/">Services</a
           ><a href="/capabilities/">Capabilities</a
           ><a href="/case studies/">Case Studies</a
-          ><a href="/process/">Process</a><a href="/about/">About</a>
+          ><a href="/process/" aria-current="page">Process</a
+          ><a href="/about/">About</a>
         </div>
         <button
           class="mobile-menu-toggle"
@@ -376,23 +930,68 @@
     </nav>
     <header class="hero">
       <div class="wrap">
-        <div class="eyebrow">Our growth system</div>
-        <h1>Diagnose. Strategize. Execute. Optimize. Scale.</h1>
-        <p>
-          Every engagement starts with understanding the business before
-          deciding which Amazon levers to pull.
-        </p>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Amazon growth, built around your brand</div>
+            <h1>
+              Clear thinking.<br /><span class="highlight">Focused action.</span
+              ><br />Measurable growth.
+            </h1>
+            <p>
+              Every engagement starts with understanding your business, then
+              turns the clearest opportunities into focused work and measurable
+              progress.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button"
+                href="https://calendly.com/growthxsell/free-assesment"
+                target="_blank"
+                rel="noopener"
+                >Get a free assessment &rarr;</a
+              >
+              <a class="button secondary" href="#process"
+                >See how we work &darr;</a
+              >
+            </div>
+          </div>
+          <aside class="hero-note" aria-label="Our process at a glance">
+            <div class="note-kicker">
+              <span>How we work</span><span>01 — 03</span>
+            </div>
+            <strong>From insight to action.<br /><span class="note-emphasis">Then better outcomes.</span></strong>
+            <p>One connected process, built around your business priorities.</p>
+            <ul class="note-steps">
+              <li>Diagnose the real constraint</li>
+              <li>Prioritize the highest-impact work</li>
+              <li>Execute, measure, and improve</li>
+            </ul>
+          </aside>
+        </div>
       </div>
     </header>
+    <div class="phase-strip" aria-label="Process stages">
+      <div class="wrap phase-inner">
+        <span class="phase-label">A focused growth process</span>
+        <ol class="phase-list">
+          <li>Diagnose</li><li>Strategize</li><li>Execute</li><li>Optimize</li
+          ><li>Scale</li>
+        </ol>
+      </div>
+    </div>
     <main>
-      <section class="section">
+      <section class="section" id="process">
         <div class="wrap">
-          <h2>A clear path from insight to action.</h2>
-          <p class="intro">
-            The process stays focused on decisions. We find the bottleneck,
-            prioritize the moves, and build a feedback loop that keeps improving
-            the business.
-          </p>
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">Our approach</div>
+              <h2>A clear path from insight to action.</h2>
+            </div>
+            <p class="intro">
+              We find the bottleneck, prioritize the moves, and build a feedback
+              loop that keeps improving the business.
+            </p>
+          </div>
           <div class="steps">
             <article class="step">
               <div class="num">01 / DIAGNOSE</div>
